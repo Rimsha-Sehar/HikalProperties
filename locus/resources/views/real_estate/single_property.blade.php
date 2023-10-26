@@ -56,8 +56,8 @@
                                @php
                                 if($key == 1){
                                     break;
-                                } 
-                                @endphp 
+                                }
+                                @endphp
                             <!-- large Single Slide -->
                             <div class="large-single-slide">
                                 <img  id="bigImg" src="{{ asset('public/uploads/real_estate/galleryImages/'.$photo) }}" alt="image">
@@ -76,7 +76,7 @@
                                 @php
                                     if($key == 4){
                                         break;
-                                    } 
+                                    }
                                 @endphp
                                 <div class="col-lg-3 col-md-3 col-sm-6 mb__20">
                                     <div class="single-small-slide">
@@ -115,7 +115,7 @@
                                 </div>
                                 <div class="g-apart d-flex justify-content-between">
                                     <div class="aprt-info g_appart">
-                                        <h4> 
+                                        <h4>
                                         <svg  viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_164_10032)">
                                             <path d="M26.9927 13.9327V5.86933C26.9927 4.2297 25.6128 2.89575 23.9166 2.89575H6.89186C5.19568 2.89575 3.81586 4.2297 3.81586 5.86933V13.9327C1.86141 14.3872 0.404297 16.0902 0.404297 18.117V24.1312C0.404297 24.6084 0.804434 24.9952 1.29803 24.9952H3.8158V27.0847C3.8158 27.5618 4.21594 27.9486 4.70953 27.9486C5.20312 27.9486 5.60326 27.5618 5.60326 27.0847V24.9952H25.2052V27.0847C25.2052 27.5618 25.6054 27.9486 26.0989 27.9486C26.5925 27.9486 26.9927 27.5618 26.9927 27.0847V24.9952H29.5104C30.004 24.9952 30.4042 24.6084 30.4042 24.1312V18.117C30.4043 16.0902 28.9472 14.3872 26.9927 13.9327ZM5.60332 5.86933C5.60332 5.1825 6.18141 4.62369 6.89186 4.62369H23.9167C24.6272 4.62369 25.2053 5.1825 25.2053 5.86933V13.8127H22.2519V12.4497C22.2519 10.1915 20.3512 8.35427 18.0152 8.35427H12.7935C10.4574 8.35427 8.55686 10.1915 8.55686 12.4497V13.8127H5.60332V5.86933ZM20.4644 12.4497V13.8127H10.3442V12.4497C10.3442 11.1442 11.4429 10.0821 12.7934 10.0821H18.0151C19.3656 10.0821 20.4644 11.1443 20.4644 12.4497ZM2.19176 23.2673V18.117C2.19176 16.6964 3.38736 15.5406 4.85695 15.5406H25.9515C27.4211 15.5406 28.6167 16.6964 28.6167 18.117V23.2673H2.19176Z" fill="#9098A4"/>
@@ -169,7 +169,7 @@
                                             <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_164_10038" result="shape"/>
                                             </filter>
                                             </defs>
-                                          </svg>  
+                                          </svg>
                                         {{ $listing->area }}</h4>
                                         <span>{{ get_phrase('Square Feet') }}</span>
                                     </div>
@@ -340,7 +340,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
               </div>
               <div class="row section-margin-top">
                  <div class="col-lg-12">
@@ -357,7 +357,7 @@
                         @if($key==2)@break @endif
 
                         @endforeach
-                        
+
                         <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                             <div class="antry-amen more-amentities">
                                 <a href="#"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <p class="amen-text"><span>+{{ count($amenities) }}</span> {{ get_phrase('More ') }}</p></a>
@@ -389,27 +389,27 @@
                     </div>
                     </div>
                 </div>
-                <!-- Amenties Modal End --> 
+                <!-- Amenties Modal End -->
                <div class="row section-margin-top">
                   <div class="col-lg-12 floor-plan">
                     <h3 class="rl-title f-28">{{ get_phrase('Floor Plans') }}</h3>
-                        @php 
-                        $additional_gallery=json_decode($listing->additional_gallery,true); 
-                        if(empty( $additional_gallery)) $additional_gallery=array(); 
+                        @php
+                        $additional_gallery=json_decode($listing->additional_gallery,true);
+                        if(empty( $additional_gallery)) $additional_gallery=array();
                         @endphp
                         <div class="floor-area owl-carousel owl-theme">
                             @forelse ( $additional_gallery as $photo )
-                            
+
                             <div class="single-floor">
                                 <a href="{{ asset('public/uploads/real_estate/additionalGallery/'.$photo) }}"> <img src="{{ asset('public/uploads/real_estate/additionalGallery/'.$photo) }}" alt="image"></a>
                             </div>
-                            
+
                             @empty
-                            
+
                             @endforelse
                         </div>
                   </div>
-               </div> 
+               </div>
                <div class="row section-margin-top">
                     <div class="col-lg-12">
                         <h3 class="rl-title f-28">{{ get_phrase('Video') }}</h3>
@@ -422,8 +422,8 @@
                                 }
                             }
                         @endphp
-                        @if(!empty($listing->promo_video) && strpos($listing->promo_video, 'https') !== false)  
-                        
+                        @if(!empty($listing->promo_video) && strpos($listing->promo_video, 'https') !== false)
+
                         <div class="row mt-5">
                             <div class="col-lg-12">
                                 <div class="antry-real-vedio" id="player">
@@ -435,7 +435,7 @@
                             </div>
                         </div>
                         @endif
-                        @if(!empty($listing->promo_video) && strpos($listing->promo_video, 'promo_video') !== false)    
+                        @if(!empty($listing->promo_video) && strpos($listing->promo_video, 'promo_video') !== false)
                         <div class="row mt-5">
                             <div class="col-lg-12">
                                 <div class="antry-real-vedio video_bg">
@@ -448,7 +448,7 @@
                         @endif
                     </div>
                 </div>
-                  
+
                 @if($listing->model)
                 <div class="row section-margin-top">
                      <div class="col-lg-12">
@@ -490,7 +490,7 @@
                                 @else
                                    <a href="javascript:void(0)" onclick="followers('{{ $listing->user_id }}')" id="followStatus"> {{ $text }}</a>
                                 @endif
-                                    
+
                                     <a href="{{ route('agentDetails',$listing->user_id) }}">{{ get_phrase('View Details') }}</a>
                                 </div>
                             </div>
@@ -522,7 +522,7 @@
                                  </div>
                             </div>
                             @if(isset(auth()->user()->id) && (auth()->user()->id != $listing->user_id))
-                         
+
                             <div class="property-form">
                                 <p class="dot-title">{{ get_phrase('Enquire About This Property') }} </p>
                                 <form>
@@ -556,11 +556,11 @@
                             @php $reactcounter=0 @endphp
 
                             @forelse ($reviews as $index => $review)
-                            
+
                                 @php
                                     $react="";
-                                    
-                                    
+
+
                                     $no_of_like=json_decode($review->like,true);
 
                                     if(Auth::check() && in_array(auth()->user()->id, $no_of_like)) {
@@ -598,14 +598,14 @@
                                                     <div class="like">
                                                         <i class="fa-regular fa-thumbs-up"></i>
                                                         <p>{{ get_phrase('Like') }}</p>
-                                                    </div> 
+                                                    </div>
                                                 </a>
                                                 <span id="{{ 'like_count_'.$reactcounter }}">{{ count( $no_of_like) }}</span>
                                             </li>
                                             <li>
                                                 <a class="{{$disliked_react}}" id="{{ 'dislike_'.$reactcounter }}" onclick="like_or_dislike('dislike',{{ $listing->id}},{{ $review->id }},{{ $reactcounter }})" href="javascript:void(0); ">
                                                     <div class="dis-like">
-                                                        <i class="fa-regular fa-thumbs-down"></i> 
+                                                        <i class="fa-regular fa-thumbs-down"></i>
                                                         <p>{{ get_phrase('Dislike') }}</p>
                                                     </div>
                                                 </a>
@@ -617,14 +617,14 @@
                                 </div>
 
                             @empty
-                            
+
                             @endforelse
-                           
+
                              <a href="javascript:;" id="load-more" class="show_more_btn  @if(count($reviews) > 2 ) d-none  @endif">{{get_phrase('Show More')}}</a>
-                           
-                          
+
+
                         </div>
-                    </div>  
+                    </div>
                     <!-- New Review Area -->
                     <div class="col-lg-12 b-review-form section-margin-top">
                         @if(auth()->user())
@@ -655,8 +655,8 @@
                         </div>
 
                         @else
-                        @php 
-                            $user_review_count=$user_review_count->toArray(); 
+                        @php
+                            $user_review_count=$user_review_count->toArray();
                             $user_review_count=$user_review_count[0];
                         @endphp
                         <h4 id="edit-review-sec" class="h-design f-28">{{ get_phrase('Edit Your Review') }}</h4>
@@ -684,7 +684,7 @@
                             </form>
                         </div>
                         @endif
-                       @endif                 
+                       @endif
                     </div>
                 </div>
            </div>
@@ -693,7 +693,7 @@
                    <div class="share-link mt-0">
                            @php $wish_status=check_wishlist_status($listing->id); @endphp
                             <a href="javascript:void(0)" id="{{$listing->id}}" class="s-heart {{ $wish_status }}  " onclick="wishlist_check('<?= $listing->id ?>',this.id)">
-                               @if($wish_status == 'active-color')   
+                               @if($wish_status == 'active-color')
                                  <i class="fa-solid fa-heart"></i>
                                   {{get_phrase('Saved')}}</a>
                              @else
@@ -722,7 +722,7 @@
                             <ul class="nav nav-pills " id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active mb-3" id="pills-Person-tab" onclick="appointment('person')" data-bs-toggle="pill" data-bs-target="#pills-Person" type="button" role="tab" aria-controls="pills-Person" aria-selected="true">
-                                    <i class="fa-regular fa-circle-check"></i> 
+                                    <i class="fa-regular fa-circle-check"></i>
                                      {{ get_phrase('In Person') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
@@ -733,7 +733,7 @@
                                     {{ get_phrase('video Chat') }}</button>
                                 </li>
                             </ul>
-                            
+
                             <input type="hidden" id="appointment_type" name="appointment_type" value="person">
                             <input type="hidden" id="listing_id" name="listing_id" value="{{ $listing->id }}">
                             <input type="hidden" id="agent_id" name="agent_id" value="{{ $listing->user_id }}">
@@ -765,7 +765,7 @@
                 <div class="related-pro-area estate-product mb-5 pb-5 row">
 
                     @php $counter=1 @endphp
-                    
+
                     @foreach($related_listings as $listing_related)
                         @php
                             $counter++;
@@ -775,9 +775,9 @@
                             }
                             else {
                                 $image='nophoto';
-                            }       
-                          
-                            
+                            }
+
+
                             $property_details = $listing_related->get_property_details($listing_related->listing_type_id, $listing_related->id);
 
                             $location = ucfirst($listing_related->listing_to_city->title)." ,".ucfirst($listing_related->listing_to_state->title)." ,".ucfirst($listing_related->listing_to_country->name);
@@ -797,11 +797,11 @@
                                      @elseif($listing_related->type == 'rent')
                                       <span class="featured">{{ $listing_related->type}}</span>
                                      @endif
-                                     
+
                                     <img src="{{ get_listing_image_or_video($listing_related->id, $image) }}" alt="" />
                                     @php $wish_status=check_wishlist_status($listing_related->id); @endphp
                                     <span id="{{ 'grid_'.$counter }}" class="wishlist {{ $wish_status }}" onclick="wishlist_check('<?= $listing_related->id ?>','<?= $counter ?>'); return false;">
-                                    @if($wish_status == 'active-color')   
+                                    @if($wish_status == 'active-color')
                                        <i class="fa-solid fa-heart"></i>
                                     @else
                                        <i class="fa-regular fa-heart"></i>
@@ -866,7 +866,7 @@
                                 </div>
                             </div>
                         </a>
-                    
+
                     @endforeach
 
                 </div>
@@ -880,7 +880,7 @@
 
 <script>
     "use strict";
-    //  Product gallary 
+    //  Product gallary
     var mainImg = document.getElementById('bigImg');
     var smallImg = document.getElementsByClassName('small_image'); // Change 'small-img' to 'small_image'
 
@@ -1041,7 +1041,7 @@
             url: url,
             data:{listing_id:listing_id},
             success: function(response) {
-        
+
                if(response==1) {
                   $('#grid_' + id).html('<i class="fa-solid fa-heart"></i>');
                          $(list).addClass('active-color');
@@ -1139,14 +1139,14 @@ $(document).ready(function() {
 document.addEventListener("DOMContentLoaded", function() {
     var loadMoreButton = document.getElementById('load-more');
     var reviewsContainer = document.getElementById('reviews-container');
-    
+
     loadMoreButton.addEventListener('click', function() {
         // Show all reviews by changing display style of each review div
         var reviewDivs = reviewsContainer.getElementsByClassName('review');
         for (var i = 0; i < reviewDivs.length; i++) {
             reviewDivs[i].style.display = 'block';
         }
-        
+
         // Hide the "Click More" button
         loadMoreButton.style.display = 'none';
     });

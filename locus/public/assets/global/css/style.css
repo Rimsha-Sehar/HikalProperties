@@ -138,8 +138,8 @@ img {
 
 /************** New Header Css  ****************/
 .header_new {
-    background-color: rgba(11, 22, 45, 1);
-    /* background-color: rgb(218, 31, 38); */
+    /* background-color: rgba(11, 22, 45, 1); */
+    background-color: rgb(218, 31, 38);
     padding: 20px 0;
 }
 
@@ -156,12 +156,13 @@ img {
     color: #fff;
     margin-right: 10px;
 }
-.new_header_left ul li a svg
-{
-text-align: center;
-margin-bottom: 2px;
-margin-right: 1px;
+
+.new_header_left ul li a svg {
+    text-align: center;
+    margin-bottom: 2px;
+    margin-right: 1px;
 }
+
 .new_header_right ul {
     justify-content: flex-end;
 }
@@ -171,8 +172,8 @@ margin-right: 1px;
     margin-left: 24px;
     font-size: 17px;
 }
-.new_header_right ul li a i:hover
-{
+
+.new_header_right ul li a i:hover {
     color: #da1f26;
 }
 
@@ -232,7 +233,7 @@ margin-right: 1px;
     padding-bottom: 50px;
     margin-bottom: 240px;
     /* background-image: url('https://demo.creativeitem.com/locus/public/assets/uploads/bannar/873279490.png'); */
- }
+}
 
 .entry_header_control:before {
     position: absolute;
@@ -716,9 +717,13 @@ margin-right: 1px;
 }
 
 .single-building img {
-    height: 47px;
+    /* height: 47px;
     width: 47px;
-    object-fit: contain;
+    object-fit: contain; */
+    width: 100%;
+    height: 100%;
+    border-radius: 50% !important;
+
 }
 
 .single-building svg {
@@ -756,7 +761,7 @@ margin-right: 1px;
 
 .title_gallary span {
     /* color: #007BFF; */
-    color:#da1f26;
+    color: #da1f26;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 4px;
@@ -1776,7 +1781,8 @@ margin-right: 1px;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(11, 22, 45, 1);
+    /* background-color: rgba(11, 22, 45, 1); */
+    background-color: #000;
     z-index: -1;
     opacity: 0.8;
 }
@@ -1857,7 +1863,8 @@ margin-right: 1px;
 }
 
 .hero-icon-control .hero-icon a {
-    background-color: rgba(255, 107, 136, 1);
+    /* background-color: rgba(255, 107, 136, 1); */
+    background-color: #da1f26;
     color: #fff;
 }
 
@@ -2029,6 +2036,9 @@ margin-right: 1px;
     border-bottom: 1px solid #838B9545;
     padding-bottom: 18px;
     margin-top: 12px;
+    padding: 12px;
+    border: 1px solid #da1f26;
+
 }
 
 .accordion-button,
@@ -2045,7 +2055,7 @@ margin-right: 1px;
 }
 
 .accordion_antry .accordion-item:last-child {
-    border-bottom: none;
+    /* border-bottom: none; */
 }
 
 .rate i {
@@ -2297,10 +2307,12 @@ margin-right: 1px;
 }
 
 .packageBox {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #000;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 12px;
     color: #0B162D;
+    /* color: #fff; */
     padding: 30px;
     position: relative;
     overflow: hidden;
@@ -2375,7 +2387,8 @@ margin-right: 1px;
     font-size: 20px;
     font-weight: 500;
     line-height: 25px;
-    color: #0B162D;
+    /* color: #0B162D; */
+    color: #fff;
     padding-bottom: 16px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -2428,7 +2441,7 @@ margin-right: 1px;
     height: 66px;
     width: 66px;
     border-radius: 50%;
-    border: 1px solid #007BFF;
+    border: 1px solid #da1f26;
     display: inline-block;
     line-height: 66px;
     text-align: center;
@@ -2439,7 +2452,11 @@ margin-right: 1px;
     height: 30px;
     width: 28px;
 }
+.price_icon svg path
+{
+    fill: #da1f26 !important;
 
+}
 .packageBox h4 {
     font-size: 22px;
     font-weight: 700;
@@ -2467,12 +2484,15 @@ margin-right: 1px;
 .Eprice h3 {
     font-size: 48px;
     font-weight: 700;
-    color: #151D27;
+    /* color: #151D27; */
+    color: #ffffff;
+
 }
 
 .Eprice p {
     font-size: 15px;
-    color: #9098A4;
+    /* color: #9098A4; */
+    color: #ffffff;
 }
 
 .packageBox:hover svg path,
@@ -2481,7 +2501,8 @@ margin-right: 1px;
 .packageBox:hover h4,
 .packageBox:hover h3 {
     color: #fff;
-    fill: #007BFF;
+    /* fill: #007BFF; */
+    fill: #da1f26;
     transition: .5s;
 }
 
@@ -6018,8 +6039,9 @@ margin-right: 1px;
 /************ Footer   Area  Start
 ***************************************************/
 .footer-area {
-    background-color: #0B162D;
+    /* background-color: #0B162D; */
     /* background-color: #da1f26; */
+    background-color: #000;
     padding-top: 80px;
     padding-bottom: 40px;
 }
@@ -6110,7 +6132,7 @@ margin-right: 1px;
 
 .social-link li a:hover {
     /* background-color: var(--primary-color); */
-     /* background-color: #000; */
+    /* background-color: #000; */
     color: #fff;
 }
 
@@ -6516,9 +6538,9 @@ model-viewer {
     border-radius: 50px;
     font-size: 14px;
     color: #fff;
-    box-shadow: 0px 3px 16px 3px rgba(255, 255, 255, 0.94);
+    /* box-shadow: 0px 3px 16px 3px rgba(255, 255, 255, 0.94);
     -webkit-box-shadow: 0px 3px 16px 3px rgba(255, 255, 255, 0.94);
-    -moz-box-shadow: 0px 3px 16px 3px rgba(255, 255, 255, 0.94);
+    -moz-box-shadow: 0px 3px 16px 3px rgba(255, 255, 255, 0.94); */
 }
 
 .newslater-form .form-control {
