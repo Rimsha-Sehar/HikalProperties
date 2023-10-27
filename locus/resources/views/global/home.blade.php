@@ -1059,7 +1059,7 @@
                                                         </clipPath>
                                                     </defs>
                                                 </svg>
-                                                {{ $date ?? '' }}
+                                                {{ $date }}
                                             </li>
                                             <li>
                                                 <svg width="19" height="19" viewBox="0 0 19 19"
@@ -1095,7 +1095,7 @@
                                     <h3><a
                                             href="{{ route('blogDetails', ['slug' => slugify($blog->title), 'id' => $blog->id]) }}">{{ $blog->title }}</a>
                                     </h3>
-                                    @if ($length ?? ""  < 85)
+                                    @if ($length < 85)
                                         <p>{{ Str::limit(strip_tags($blog->description), 80) }}</p>
                                     @else
                                         <p>{{ Str::limit(strip_tags($blog->description)) }}...</p>

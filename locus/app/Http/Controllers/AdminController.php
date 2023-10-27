@@ -45,7 +45,7 @@ class AdminController extends Controller
         $page_data['listing'] = Listing::get();
         $page_data['user'] = User::where('role', 'user')->get();
         $page_data['agent'] = User::where('is_agent', 1)->get();
-        $page_data['subscriptions'] = SubcriptionPayment::sum('amount');   
+        $page_data['subscriptions'] = SubcriptionPayment::sum('amount');
         $monthly_amount = array(0);
         for ($i = 1; $i <= 12; $i++) {
             $total_amount = date('t', strtotime(date("Y-$i-1 00:00:00")));
@@ -104,7 +104,7 @@ class AdminController extends Controller
                 'type' => 'required|unique:listing_arrtibute_types|max:255',
             ]);
             $data=$request->all();
-            
+
 
             // Property Image Add
             if($request->property_image){
@@ -113,7 +113,7 @@ class AdminController extends Controller
                 $request->property_image->move(public_path('uploads/real_estate/property-image'),$image);
                 $data_image['property_image'] = $image;
             }else{
-                $image = ""; 
+                $image = "";
             }
 
             if($request->og_image){
@@ -122,9 +122,9 @@ class AdminController extends Controller
                 $request->og_image->move(public_path('uploads/seo'),$og_image);
                 $data_image['og_image'] = $og_image;
             }else{
-                $og_image = ""; 
+                $og_image = "";
             }
-           
+
 
             $listing_type=Listing_type::whereSlug('real-estate')->first()->value('id');
             $listing_attribute=Listing_attribute::where('listing_type_id', $listing_type)->where('attribute_name','category')->value('id');
@@ -142,7 +142,7 @@ class AdminController extends Controller
             $newCategory['og_image']= $og_image;
             $newCategory['canonical']= $data['canonical'];
             $newCategory->save();
-           
+
             return redirect()->route('admin.RealEstateCategoryPropertyAmenities', ['active_tab' => 'category'])->with('message', 'Category Created Successfully');
        }catch (ValidationException $e) {
             return redirect()->back()->with('error', 'Category type already exists.');
@@ -159,18 +159,18 @@ class AdminController extends Controller
 
     function RealEstateCategoryEditModalPost(Request $request)
     {
-        
+
         $data=$request->all();
         if($request->property_image){
             $randome_name = rand();
             $attachment = $randome_name.'.'.$request->property_image->getClientOriginalExtension();
             $request->property_image->move(public_path('uploads/real_estate/property-image/'), $attachment);
-            
+
             if(!empty($request->old_property_image) && (file_exists(public_path('uploads/real_estate/property-image/'.$request->old_property_image)))){
-            
+
                 unlink(public_path('uploads/real_estate/property-image/'.$request->old_property_image));
             }
-        
+
         }else{
             $attachment = $request->old_property_image;
         }
@@ -182,7 +182,7 @@ class AdminController extends Controller
             if(!empty($request->old_og_image) && file_exists(public_path('uploads/seo/' . $request->old_og_image))){
                 unlink(public_path('uploads/seo/' . $request->old_og_image));
             }
-        
+
         }else{
             $attachment = $request->old_og_image;
         }
@@ -325,7 +325,7 @@ class AdminController extends Controller
      }
 
      //state
- 
+
      function AddStatesModal()
      {
          $page_data = array();
@@ -356,7 +356,7 @@ class AdminController extends Controller
          return redirect()->back()->with('msg', 'State added Successfully');
 
      }
-     
+
 
      function EditStatesModal($id)
      {
@@ -376,10 +376,10 @@ class AdminController extends Controller
             $attachment = $randome_name.'.'.$request->thumbnail->getClientOriginalExtension();
             $request->thumbnail->move(public_path('assets/uploads/state'), $attachment);
             if($request->old_thumbnail && file_exists('public/assets/uploads/state/'.$request->old_thumbnail)){
-               
+
                 unlink(public_path('assets/uploads/state/'.$request->old_thumbnail));
             }
-        
+
         }else{
             $attachment = $request->old_thumbnail;
         }
@@ -573,11 +573,11 @@ class AdminController extends Controller
             'public_live_key' => $data['public_live_key'],
             'secret_live_key' => $data['secret_live_key'],
         ];
-    
+
         SystemSetting::where('key', 'stripe')->update([
-            'value' => json_encode($stripeArray), 
+            'value' => json_encode($stripeArray),
         ]);
-    
+
         return redirect()->back()->with('message', 'Stripe Payment Update Successfully!');
      }
     //  Paypal Payment Update
@@ -592,11 +592,11 @@ class AdminController extends Controller
             'live_client_id' => $data['live_client_id'],
             'live_secret_key' => $data['live_secret_key'],
         ];
-    
+
         SystemSetting::where('key', 'paypal')->update([
-            'value' => json_encode($paypalArray), 
+            'value' => json_encode($paypalArray),
         ]);
-    
+
         return redirect()->back()->with('message', 'Paypal Payment Update Successfully!');
      }
 
@@ -707,7 +707,7 @@ class AdminController extends Controller
 
         $page_data['customers']=$customers;
         $page_data['search'] = $search;
-        
+
         return view('backend.admin.user.customer.customer_list',$page_data);
     }
 
@@ -775,7 +775,7 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Customer deleted Successfully');
     }
     //Admin Archive User
-    
+
         public function adminCustomerArchive($id){
             $user = User::find($id);
             $user->update(['archive' => 0]);
@@ -865,7 +865,7 @@ class AdminController extends Controller
 
         $agent= User::find($id);
         $agent['name']=$data['name'];
-        
+
         $address['country_code'] = $request->country_code;
         $address['state'] = !empty($request->state) ? $request->state : '';
         $address['addressline'] = $request->addressline;
@@ -1107,18 +1107,22 @@ class AdminController extends Controller
 
     public function profileUpdate(Request $request)
     {
+        $request->validate([
+            'email' => ['unique:users,email,' . auth()->user()->id],
+        ]);
         $data['name'] = $request->name;
-        $old_email = User::find(auth()->user()->id)->value('email');
-        if($request->email != $old_email) {
-            $check_duplicate = User::where('email', $request->email)->get();
-            if(count($check_duplicate) == 0) {
-                $data['email'] = $request->email;
-            } else {
-                return redirect()->back()->with('error', 'Sorry this email already exists');
-            }
-        } else {
-            $data['email'] = $old_email;
-        }
+        $data['email'] = $request->email;
+        // $old_email = User::find(auth()->user()->id)->value('email');
+        // if($request->email != $old_email) {
+        //     $check_duplicate = User::where('email', $request->email)->get();
+        //     if(count($check_duplicate) == 0) {
+        //         $data['email'] = $request->email;
+        //     } else {
+        //         return redirect()->back()->with('error', 'Sorry this email already exists');
+        //     }
+        // } else {
+        //     $data['email'] = $old_email;
+        // }
 
         $data['gender'] = $request->gender;
         $data['phone'] = $request->phone;
@@ -1130,7 +1134,7 @@ class AdminController extends Controller
         $data['social'] = json_encode($social);
 
         $data['about'] = $request->about;
-        
+
         $address['country_code'] = $request->country_code;
         $address['addressline'] = $request->addressline;
         $address['zipcode'] = $request->zipcode;
@@ -1156,12 +1160,12 @@ class AdminController extends Controller
             'gender' => $data['gender'],
             'image' => $data['image']
         ]);
-        
+
         return redirect(route('admin.profile'))->with('message', get_phrase('Profile info updated successfully'));
     }
 
 
-    public function password($action_type = null, Request $request) 
+    public function password($action_type = null, Request $request)
     {
         if($action_type == 'update'){
 
@@ -1222,7 +1226,7 @@ class AdminController extends Controller
 
         unset($data['_token']);
 
-        BlogCategory::where('id', $id)->update($data);    
+        BlogCategory::where('id', $id)->update($data);
 
         return redirect()->back()->with('message', 'Blog category updated successfully');
     }
@@ -1283,7 +1287,7 @@ class AdminController extends Controller
             $thumbnailName = time().'.'.$data['thumbnail']->extension();
 
             $data['thumbnail']->move(public_path('uploads/blog/'), $thumbnailName);
-            
+
             $blog['thumbnail']  = $thumbnailName;
         } else {
             $blog['thumbnail'] = '';
@@ -1293,12 +1297,12 @@ class AdminController extends Controller
             $thumbnailName = time().'.'.$data['og_image']->extension();
 
             $data['og_image']->move(public_path('uploads/seo/'), $thumbnailName);
-            
+
             $blog['og_image']  = $thumbnailName;
         } else {
             $blog['og_image'] = '';
         }
-      
+
         $blog->save();
 
         return redirect()->back()->with('message', 'Blog added successfully');
@@ -1326,7 +1330,7 @@ class AdminController extends Controller
             if(!empty($request->old_thumbnail) && file_exists(public_path('uploads/blog/' . $request->old_thumbnail))){
                 unlink(public_path('uploads/blog/' . $request->old_thumbnail));
             }
-        
+
         }else{
             $thumbnail = $request->old_thumbnail;
         }
@@ -1338,7 +1342,7 @@ class AdminController extends Controller
             if(!empty($request->old_og_image) && file_exists(public_path('uploads/seo/' . $request->old_og_image))){
                 unlink(public_path('uploads/seo/' . $request->old_og_image));
             }
-        
+
         }else{
             $attachment = $request->old_og_image;
         }
@@ -1495,7 +1499,7 @@ class AdminController extends Controller
             if($request->old_light_logo && file_exists('public/assets/uploads/logo/'.$request->old_light_logo)) {
                 unlink(public_path('assets/uploads/logo/'.$request->old_light_logo));
             }
-            
+
         }
         if($request->dark_logo){
             // Frontend Header Logo
@@ -1515,7 +1519,7 @@ class AdminController extends Controller
             if($request->old_dark_logo && file_exists('public/assets/uploads/logo/'.$request->old_dark_logo)) {
                 unlink(public_path('assets/uploads/logo/'.$request->old_dark_logo));
             }
-            
+
         }
         if($request->footer_logo){
             // Frontend Footer Logo
@@ -1557,7 +1561,7 @@ class AdminController extends Controller
            }
             return redirect()->back()->with('message', "Logo  Update successfully");
      }
-    // Frontend Bannar Image Add 
+    // Frontend Bannar Image Add
     public function bannarImageAdd(Request $request){
         $validated = $request->all([
             'bannar_image' => 'required'
@@ -1574,7 +1578,7 @@ class AdminController extends Controller
             $data = array(
                 'type' => $bannarImage,
             );
-        
+
            $image = FrontendSettings::where('type', 'bannar')->update(['description' => $bannarImage]);
            if($image){
             if($request->old_bannar_image){
@@ -1583,7 +1587,7 @@ class AdminController extends Controller
            }
             return redirect()->back()->with('message', "Banner Update successfully");
     }
-    // Frontend Video Image Add 
+    // Frontend Video Image Add
     public function videoImageAdd(Request $request){
         $validated = $request->all([
             'video_image' => 'required'
@@ -1599,7 +1603,7 @@ class AdminController extends Controller
             $data = array(
                 'type' => $videoImage,
             );
-        
+
            $image = FrontendSettings::where('type', 'video_image')->update(['description' => $videoImage]);
            if($image){
             if($request->old_video_image){
@@ -1803,7 +1807,7 @@ class AdminController extends Controller
             $data['value'] = $request->purchase_code;
 
             $status = $this->curl_request($data['value']);
-            if($status){  
+            if($status){
                 SystemSetting::where('key', 'purchase_code')->update($data);
                 session()->flash('message', get_phrase('Purchase code has been updated'));
                 echo 1;
@@ -1813,7 +1817,7 @@ class AdminController extends Controller
         }else{
             return view('backend.admin.settings.save_purchase_code_form');
         }
-        
+
     }
 
     public function listings()
@@ -1833,7 +1837,7 @@ class AdminController extends Controller
         return view('backend.admin.listings.contact_agent', $page_data);
     }
 
-    function agentPdfGenerate() 
+    function agentPdfGenerate()
     {
         $page_data=array();
 
@@ -1843,10 +1847,10 @@ class AdminController extends Controller
         $pdf = PDF::loadView('backend.admin.user.agent.pdf_view', $page_data);
         // download PDF file with download method
         return $pdf->download('agent-list-'.time().'.pdf');
-        
+
     }
 
-    function customerPdfGenerate() 
+    function customerPdfGenerate()
     {
         $page_data=array();
 
@@ -1858,10 +1862,10 @@ class AdminController extends Controller
         $pdf = PDF::loadView('backend.admin.user.customer.pdf_view', $page_data);
         // download PDF file with download method
         return $pdf->download('customer-list-'.time().'.pdf');
-        
+
     }
 
-    function subscriptionReportPdf() 
+    function subscriptionReportPdf()
     {
         $date_from = new Carbon('first day of January this year');
         $date_to = new Carbon('first day of december this year');
@@ -1964,8 +1968,8 @@ class AdminController extends Controller
                 }else{
                     $attachment =  $request->old_og_image;
                 }
-            
-               
+
+
 
             $updateSeo = SeoMetaTag::where('route', $route)->first();
             $updateSeo->title = $request->title;

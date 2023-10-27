@@ -27,7 +27,8 @@
       font-size: 14px;
       padding:10px 14px;
       border-radius: 5px;
-      background-color: #007BFF;
+      /* background-color: #007BFF; */
+      background-color: #da1f26;
       color: #fff !important;
       display: inline-block;
   }

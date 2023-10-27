@@ -37,7 +37,7 @@
     <script type="text/javascript">
 
     "use strict";
-    
+
     $('#select_listing_type').on('change', function () {
 
         var type = $(this).val(); // get selected value

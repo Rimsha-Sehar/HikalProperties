@@ -221,6 +221,10 @@ img {
 .no_data_pos img {
     height: 320px;
 }
+.no_data img
+{
+    filter: hue-rotate(133deg);
+}
 
 /************ Header Area Start
 *************************************************************/
