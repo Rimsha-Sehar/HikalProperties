@@ -15,7 +15,7 @@
             <div class="contact-icon-box text-center">
                <i class="fa-solid fa-phone"></i>
                <div class="icon-content">
-                  <p><a href="tel:'{{ get_settings('phone') }}'">{{ get_settings('phone') }}</a></p>
+                  <p><a href="#">+971544335041</a></p>
                   <p><br /></p>
                </div>
             </div>
@@ -24,7 +24,7 @@
             <div class="contact-icon-box text-center">
               <i class="fa-solid fa-envelope"></i>
                <div class="icon-content">
-                  <p><a href="mailto: '{{ get_settings('system_email') }}'">{{ get_settings('system_email') }}</a></p>
+                  <p><a href="#">info@hikalagency.ae</a></p>
                   <p><br /></p>
                </div>
             </div>
@@ -37,7 +37,8 @@
             <div class="contact-icon-box text-center">
               <i class="fa-solid fa-location-dot"></i>
                <div class="icon-content">
-                    <p><a href="{{ $url }}" target="_blank">{{ get_settings('address') }}</a></p>
+                    {{-- <p><a href="{{ $url }}" target="_blank">{{ get_settings('address') }}</a></p> --}}
+                    <p><a href="#">Dubai</a></p>
                </div>
             </div>
          </div>
