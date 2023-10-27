@@ -1043,8 +1043,9 @@
 /************ Footer   Area  Start
 *************************************************************/
 .footer-area {
-    background-color: #0B162D;
+    /* background-color: #0B162D; */
     /* background-color: #da1f26; */
+    background-color: #000;
     padding-top: 80px;
     padding-bottom: 40px;
 }
@@ -1999,8 +2000,8 @@
 }
 
 .header_new {
-    background-color: #0B162D;
-    /* background-color: #da1f26; */
+    /* background-color: #0B162D; */
+    background-color: #da1f26;
     padding: 20px 0;
 }
 
