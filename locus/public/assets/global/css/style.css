@@ -1284,6 +1284,7 @@ img {
 .product-meta-item .bed {
     height: 18px !important;
     width: 18px !important;
+    filter: hue-rotate(133deg);
 }
 
 .product-entry .product-meta-item div {
