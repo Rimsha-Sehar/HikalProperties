@@ -174,7 +174,7 @@ img {
 }
 
 .new_header_right ul li a i:hover {
-    color: #da1f26;
+    color: #000;
 }
 
 .mt-50 {
@@ -2465,7 +2465,7 @@ img {
 .packageBox h4 {
     font-size: 22px;
     font-weight: 700;
-    color: #040404;
+    color: #fff;
     margin-bottom: 16px;
 }
 
@@ -2735,8 +2735,10 @@ img {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd !important;
+    /* background-color: #0d6efd;
+    border-color: #0d6efd !important; */
+    background-color: #da1f26;
+    border-color: #da1f26 !important;
 }
 
 .page-item:last-child .page-link,
@@ -6585,7 +6587,7 @@ model-viewer {
 
 .social-link li a:hover {
     /* background: transparent; */
-    color: #000;
+    color: #da1f26;
     /* color: #007BFF; */
 
 }

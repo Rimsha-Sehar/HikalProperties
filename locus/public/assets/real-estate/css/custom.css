@@ -961,7 +961,8 @@
 .user-profile .dropmenu-end {
     padding: 0;
     border: none;
-    border-top: 2px solid #00aa6c;
+    /* border-top: 2px solid #00aa6c; */
+    border-top: 2px solid #da1f26 !important;
     border-radius: 1px 1px 5px 5px;
     background-color: #fff;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);

@@ -33,9 +33,12 @@
                 <div class="col-md-8 col-lg-8 col-sm-8 col-12">
                     <div class="new_header_left">
                         <ul class="d-flex align-items-center">
-                            <li><a href="tel:{{ get_settings('phone') }}"><i
-                                        class="fa-solid fa-phone"></i>{{ get_settings('phone') }}</a></li>
-                            <li><a href="mailto:{{ get_settings('system_email') }}"><svg class="text-center"
+                            <li><a href="#"><i
+                                class="fa-solid fa-phone"></i>+971 54 433 5041</a></li>
+                                <li><a href="#"><i
+                                    class="fa-solid fa-envelope"></i>info@hikalagency.ae</a></li>
+
+                            {{-- <li><a href="#"><svg class="text-center"
                                         fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px"
                                         viewBox="0 0 395.71 395.71" xml:space="preserve" stroke="#ffffff">
@@ -52,7 +55,7 @@
                                         </g>
 
                                     </svg>
-                                    {{ get_settings('address') }}</a></li>
+                                    {{ get_settings('address') }}</a></li> --}}
                         </ul>
                     </div>
                 </div>
