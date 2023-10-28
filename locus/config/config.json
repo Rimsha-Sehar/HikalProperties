@@ -1,1 +1,1 @@
-{"MAIL_MAILER":"SMTP","MAIL_HOST":"smtp.gmail.com","MAIL_PORT":"587","MAIL_USERNAME":"smtp.gmail.com","MAIL_PASSWORD":"smtp.gmail.com","MAIL_ENCRYPTION":"tls","MAIL_FROM_ADDRESS":"smtp.gmail.com","MAIL_FROM_NAME":"Laravel application"}
+{"MAIL_MAILER":"SMTP","MAIL_HOST":"sandbox.smtp.mailtrap.io","MAIL_PORT":"2525","MAIL_USERNAME":"16e956a921ac82","MAIL_PASSWORD":"2d31c175e87dd6","MAIL_ENCRYPTION":"ssl","MAIL_FROM_ADDRESS":"usamaramzan978@gmail.com","MAIL_FROM_NAME":"Laravel application"}

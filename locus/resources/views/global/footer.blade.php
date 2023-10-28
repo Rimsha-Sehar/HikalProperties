@@ -76,15 +76,15 @@ $categoris = App\Models\Listing_arrtibute_type::where('listring_attribute_id', 1
                     <div class="single-footer">
                         <h3>{{get_phrase('Help')}}</h3>
                         <ul class="contact ">
-                            {{-- <li><a href="{{ route('contactUs') }}">{{ get_phrase('Contact Us') }}</a></li> --}}
+                            <li><a href="{{ route('contactUs') }}">{{ get_phrase('Contact Us') }}</a></li>
 
-                            <li><a href="#"><i class="fa-solid fa-envelope"></i>
-                            {{-- <span>{{ get_settings('system_email') }}</span> --}}
-                            <span>info@hikalagency.ae</span>
+                            <li><a href="mailto:{{ get_settings('system_email') }}"><i class="fa-solid fa-envelope"></i>
+                            <span>{{ get_settings('system_email') }}</span>
+                            {{-- <span>info@hikalagency.ae</span> --}}
                             </a></li>
-                            <li><a href="#" class="contact-num"><i class="fa-solid fa-phone"></i>
-                            {{-- <span>{{ get_settings('phone') }}</span> --}}
-                            <span>+971 54 433 5041</span>
+                            <li><a href="tel:{{ get_settings('phone') }}" class="contact-num"><i class="fa-solid fa-phone"></i>
+                            <span>{{ get_settings('phone') }}</span>
+                            {{-- <span>+971 54 433 5041</span> --}}
                            </a></li>
                         </ul>
 

@@ -2585,6 +2585,10 @@ img {
     /* color: #da1f26; */
     margin-bottom: 20px;
 }
+.contact-icon-box
+{
+    color: #000;
+}
 
 .icon-content p {
     color: #69696a;

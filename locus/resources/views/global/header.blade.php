@@ -5,14 +5,16 @@
             <div class="col-md-8 col-lg-8 col-sm-8 col-12">
                 <div class="new_header_left">
                     <ul class="d-flex align-items-center">
-                        <li><a href="#"><i
+                        {{-- <li><a href="#"><i
                             class="fa-solid fa-phone"></i>+971 54 433 5041</a></li>
                             <li><a href="#"><i
-                                class="fa-solid fa-envelope"></i>info@hikalagency.ae</a></li>
-                        {{-- <li><a href="tel:{{ get_settings('phone') }}"><i
-                                    class="fa-solid fa-phone"></i>{{ get_settings('phone') }}</a></li>
+                                class="fa-solid fa-envelope"></i>info@hikalagency.ae</a></li> --}}
+
+                                <li><a href="tel:{{ get_settings('phone') }}"><i class="fa-solid fa-phone"></i>
+                                    <span>{{ get_settings('phone') }}</span>
+
                         <li><a href="mailto:{{ get_settings('system_email') }}"><i
-                                    class="fa-solid fa-envelope"></i>{{ get_settings('system_email') }}</a></li> --}}
+                                    class="fa-solid fa-envelope"></i>{{ get_settings('system_email') }}</a></li>
                     </ul>
                 </div>
             </div>

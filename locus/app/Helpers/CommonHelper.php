@@ -9,7 +9,7 @@ use App\Models\Language;
 //All common helper functions
 if (! function_exists('get_user_image')) {
     function get_user_image($file_name_or_user_id = '') {
-       
+
         if(is_numeric($file_name_or_user_id)){
             $user_id = $file_name_or_user_id;
             $file_name = "";
