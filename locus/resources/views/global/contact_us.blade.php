@@ -45,6 +45,7 @@
                         <i class="fa-solid fa-envelope"></i>
                         {{ get_settings('system_email') }}</a>
                 </div>
+                
                 @php
                     $destinationAddress = urlencode(get_settings('address'));
                     $url = "https://www.google.com/maps/dir/?api=1&origin=current_location&destination={$destinationAddress}&travelmode=driving";
