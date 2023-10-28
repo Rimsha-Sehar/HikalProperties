@@ -1250,7 +1250,8 @@
 }
 
 .listing-btn {
-    background-color: #007bff;
+    /* background-color: #007bff; */
+    background-color: #da1f26;
     padding: 14px 22px;
     border-radius: 5px;
     color: #FFFFFF !important;
@@ -1260,7 +1261,8 @@
 }
 
 .listing-btn:hover {
-    background-color: #007bff !important;
+    /* background-color: #007bff !important; */
+    background-color: #da1f26 !important;
 }
 
 .toggle-icon,
@@ -1271,7 +1273,8 @@
     width: 52px;
     line-height: 52px;
     text-align: center;
-    background-color: #007bff;
+    /* background-color: #007bff; */
+    background-color: #da1f26;
     color: #fff;
     border-radius: 5px;
     margin-left: 10px;
@@ -1332,7 +1335,8 @@
 .user-profile .dropmenu-end {
     padding: 0;
     border: none;
-    border-top: 2px solid #007bff;
+    /* border-top: 2px solid #007bff; */
+    border-top: 2px solid #da1f26;
     border-radius: 1px 1px 5px 5px;
     background-color: #fff;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -1344,7 +1348,8 @@
 .user-profile .dropdown-item.active,
 .user-profile .dropdown-item:active {
     background-color: transparent;
-    color: #007bff;
+    /* color: #007bff; */
+    color: #da1f26;
 }
 
 .sm-show-btn {
@@ -1440,7 +1445,8 @@
 }
 
 .footer-menu-link li a:hover {
-    color: #2449FF;
+    /* color: #2449FF; */
+    color: #da1f26;
 }
 
 .single-footer p,
@@ -1897,7 +1903,8 @@
 }
 
 .l-city-item .right .icons button:hover svg path {
-    fill: #12a3ff;
+    /* fill: #12a3ff; */
+    fill: #000;
 }
 
 .l-city-item .city-items .city-item {
@@ -1962,7 +1969,8 @@
 }
 
 .l-city-item .city-items .city-item .edit-icon button:hover svg path {
-    fill: #00a3ff;
+    /* fill: #00a3ff; */
+    fill: #000;
 }
 
 .l-city-item .city-items .city-item:hover .edit-icon {
@@ -1975,7 +1983,8 @@
 }
 
 .copyright-text p a {
-    color: #00a3ff;
+    /* color: #00a3ff; */
+    color: #da1f26;
 }
 
 .eNav-Tabs-vertical button.nav-link {

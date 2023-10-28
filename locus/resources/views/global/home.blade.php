@@ -17,6 +17,7 @@
     }
 </style>
 
+
 @php
     $banner_image = asset('public/assets/uploads/bannar/' . get_frontend_settings('bannar'));
     if (!file_exists($banner_image)) {
@@ -33,10 +34,8 @@
                 <div class="col-md-8 col-lg-8 col-sm-8 col-12">
                     <div class="new_header_left">
                         <ul class="d-flex align-items-center">
-                            <li><a href="#"><i
-                                class="fa-solid fa-phone"></i>+971 54 433 5041</a></li>
-                                <li><a href="#"><i
-                                    class="fa-solid fa-envelope"></i>info@hikalagency.ae</a></li>
+                            <li><a href="#"><i class="fa-solid fa-phone"></i>+971 54 433 5041</a></li>
+                            <li><a href="#"><i class="fa-solid fa-envelope"></i>info@hikalagency.ae</a></li>
 
                             {{-- <li><a href="#"><svg class="text-center"
                                         fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
@@ -788,7 +787,7 @@
 <!-- Real Estate Area End   -->
 <!-- Hero  Area Start  -->
 <section class="hero-area wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="700ms"
-    style="background-image: url({{ asset('public/assets/uploads/bannar/' . get_frontend_settings('video_image')) }}); ">
+    style="background-image: url({{ asset('public/assets/global/images/apartmwent.jpg') }}); ">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 hero-icon-control">
@@ -977,6 +976,7 @@
             <div class="section-intro">
                 <h4>{{ get_frontend_settings('faq_title') }}</h4>
             </div>
+
             <div class="col-lg-12">
                 <div class="accordion_antry">
                     <div class="accordion" id="accordionExample">
@@ -1018,8 +1018,8 @@
                         <!-- Blog Start -->
                         @foreach ($blogs as $blog)
                             @php
-                            $date = date('M d, Y', strtotime($blog->created_at));
-                            $length = strlen($blog->description);
+                                $date = date('M d, Y', strtotime($blog->created_at));
+                                $length = strlen($blog->description);
                             @endphp
                             <div class="post-item antry-blog-post wow fadeInUp" data-wow-duration="1000ms"
                                 data-wow-delay="500ms">

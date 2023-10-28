@@ -857,7 +857,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
 }
 
 .header-bg .header-btn a {
@@ -1069,7 +1069,8 @@
 }
 
 .footer-menu-link li a:hover {
-    color: #2449FF;
+    /* color: #2449FF; */
+    color: #da1f26;
 }
 
 .single-footer p,

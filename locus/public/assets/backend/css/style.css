@@ -2835,17 +2835,21 @@ body {
 }
 
 .eBtn-blue {
-    background-color: #00a3ff;
-    border: 1px solid #00a3ff;
+    /* background-color: #00a3ff;
+    border: 1px solid #00a3ff; */
+    background-color: #da1f26;
+    border: 1px solid #da1f26;
     border-radius: 5px;
 }
 
 .eBtn-outline-blue {
     background-color: transparent;
-    border: 1px solid #00a3ff;
+    border: 1px solid #da1f26;
+    /* border: 1px solid #00a3ff; */
     border-radius: 5px;
     border-width: 1.5px;
-    color: #00a3ff;
+    /* color: #00a3ff; */
+    color: #da1f26;
 }
 
 .eBtn-blueish {
@@ -2856,9 +2860,11 @@ body {
 
 .eBtn-outline-blueish {
     background-color: transparent;
-    border: 1px solid #00a3ff;
+    /* border: 1px solid #00a3ff; */
+    border: 1px solid #da1f26;
     border-radius: 5px;
-    color: #00a3ff;
+    /* color: #00a3ff; */
+    color: #da1f26;
 }
 
 .eBtn-green {
@@ -5154,7 +5160,8 @@ input[type=time]::-webkit-calendar-picker-indicator {
 
 .eDropdown-menu-2 li a:hover {
     background-color: #edf2f6;
-    color: #00a3ff;
+    /* color: #00a3ff; */
+    color: #da1f26;
 }
 
 .adminTable-action {
