@@ -701,6 +701,7 @@ img {
 
 .single-building:hover {
     box-shadow: rgba(7, 22, 244, 0.14) 11px 14px 27px 2px;
+    transform: scale(1.1);
 }
 
 .mr-14 {

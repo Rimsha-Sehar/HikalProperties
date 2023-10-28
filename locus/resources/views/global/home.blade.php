@@ -177,7 +177,7 @@
         <div class="container">
             <div class="inner-col">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 grow">
                         <div class="bannar-content text-center ">
                             <span class="wow fadeInUp" data-wow-duration="1000ms"
                                 data-wow-delay="600ms">{{ get_frontend_settings('website_hero_title') }}</span>

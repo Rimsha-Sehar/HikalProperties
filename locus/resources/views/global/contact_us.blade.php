@@ -24,7 +24,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-3 p-5">
                     <a href="tel:{{ get_settings('phone') }}"
                         class="contact-icon-box  d-flex gap-4 flex-column align-items-center justify-content-center">
-                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-phone"></i>
                         {{ get_settings('phone') }}</a>
                 </div>
                 {{-- <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
@@ -45,7 +45,7 @@
                         <i class="fa-solid fa-envelope"></i>
                         {{ get_settings('system_email') }}</a>
                 </div>
-                
+
                 @php
                     $destinationAddress = urlencode(get_settings('address'));
                     $url = "https://www.google.com/maps/dir/?api=1&origin=current_location&destination={$destinationAddress}&travelmode=driving";
@@ -53,7 +53,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-3 p-5">
                     <a href="{{ $url }}" target="_blank"
                         class="contact-icon-box  d-flex gap-4 flex-column align-items-center justify-content-center">
-                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-location-dot"></i>
 
                         {{ get_settings('address') }}</a>
                 </div>
