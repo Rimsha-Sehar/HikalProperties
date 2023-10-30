@@ -882,7 +882,8 @@
     width: 48px;
     line-height: 48px;
     text-align: center;
-    background-color: #007bff;
+    /* background-color: #007bff; */
+    background-color: #da1f26;
     color: #fff;
     border-radius: 10px;
     margin-left: 10px;

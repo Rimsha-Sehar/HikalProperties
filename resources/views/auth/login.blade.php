@@ -7,7 +7,9 @@
     <div class="container-xl">
         <div class="row align-items-center p-5 ">
             <div class="col-lg-7 d-none d-lg-block p-0 pr-5">
-                <div class="bg-image"></div>
+                <div class="bg-image d-flex align-items-center justify-content-center">
+                    <img src="{{asset('public/assets/customer/images/bg/image.png')}}" alt="" srcset="">
+                </div>
             </div>
             <div class="col-lg-5 p-0 position-relative">
                 <div class="parent-elem">
@@ -39,7 +41,7 @@
                                                       <div class="g-recaptcha" data-sitekey="{{get_settings('recaptcha_sitekey')}}"></div><br/>
                                                     @endif
                                                 <div class="remember-area d-flex align-items-center justify-content-between">
-                                                  
+
                                                   <div class="input-group forgetPass d-flex align-items-center">
                                                     <input type="checkbox" class="form-check" id="remember">
                                                     <label for="remember"> {{ get_phrase('Remember me') }}</label>
