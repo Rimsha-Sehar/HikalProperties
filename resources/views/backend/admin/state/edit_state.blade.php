@@ -83,8 +83,8 @@
                 @else
                    <img  id="thumbnail" class="img-fluied" src="{{asset('public/assets/backend/images/test-2.png')}}" alt="img" name="thumbnail" >
                 @endif
-            <input type="file" class="form-control eForm-control inputDate" id="thumbnail" name="thumbnail" required>
-            <input type="hidden" name="old_thumbnail" value="{{$state->thumbnail}}">                                         
+            <input type="file" class="form-control eForm-control inputDate" id="thumbnail" name="thumbnail" >
+            <input type="hidden" name="old_thumbnail" value="{{$state->thumbnail}}">
         </div>
 
         <input type="hidden"  id="id" name="id" value="{{ $state->id }}"  >
