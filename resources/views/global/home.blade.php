@@ -938,7 +938,8 @@
                         <div class="card-body">
                             <div class="Eprice">
                                 <h3>{{ $package->price }}</h3>
-                                <p>/{{ $package->interval }}</p>
+                                <p>({{ currency() }})</p>
+                                <p>/ {{ $package->interval }}</p>
                             </div>
                             <ul class="packageFeatures">
                                 @php $service_list = json_decode($package->services); @endphp
