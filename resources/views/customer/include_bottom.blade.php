@@ -39,7 +39,7 @@
         "closeButton" : true,
         "progressBar" : true
     }
-    toastr.error("{{ session('error') }}");
+    toastr.error("{!! session('error') !!}");
     @endif
 
     @if(Session::has('info'))

@@ -11,6 +11,7 @@
   }
   .no_data img{
       height: 113px;
+      filter: hue-rotate(132deg);
   }
   .property_data{
       text-align: center

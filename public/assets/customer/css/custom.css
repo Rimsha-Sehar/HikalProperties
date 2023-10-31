@@ -2118,10 +2118,11 @@
 }
 
 .packageBox {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #000;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 12px;
-    color: #0B162D;
+    color: #fff !important;
     padding: 30px;
     position: relative;
     overflow: hidden;
@@ -2141,12 +2142,14 @@
 
 .packageBox:hover .packageSubs_btn {
     background-color: #fff;
-    color: #007BFF;
+    color: #da1f26;
 }
 
 .packageBox:hover {
-    background-color: #007BFF;
-    color: #007BFF;
+    /* background-color: #007BFF;
+    color: #007BFF; */
+    background-color: #da1f26;
+    color: #da1f26;
 }
 
 .packageBox:hover span,
@@ -2157,7 +2160,8 @@
 
 .packageTitle {
     display: inline-block;
-    background-color: #007BFF;
+    /* background-color: #007BFF; */
+    background-color: #da1f26;
     border-radius: 22px;
     padding: 7px 24px;
     font-size: 16px;
@@ -2172,7 +2176,7 @@
     font-weight: 400;
     line-height: 10.625px;
     line-height: 1.0625rem;
-    color: #0B162D;
+    color: #fff;
     margin-bottom: 22.5px;
     margin-bottom: 2.25rem;
     -webkit-transition: all 0.3s;
@@ -2182,7 +2186,7 @@
 .packagePrice span {
     font-size: 30px;
     font-weight: 600;
-    color: #0B162D;
+    color: #fff;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     margin-top: 20px;
@@ -2198,7 +2202,8 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 25px;
-    color: #0B162D;
+    /* color: #0B162D; */
+    color: #FFF;
     padding-bottom: 16px;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -2230,8 +2235,10 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #007BFF;
-    border: 1px solid #007BFF;
+    /* background-color: #007BFF; */
+    /* border: 1px solid #007BFF; */
+    background-color: #da1f26;
+    border: 1px solid #da1f26;
     border-radius: 12px;
     font-size: 15px;
     font-weight: 700;
@@ -2251,7 +2258,8 @@
     height: 66px;
     width: 66px;
     border-radius: 50%;
-    border: 1px solid #007BFF;
+    /* border: 1px solid #007BFF; */
+    border: 1px solid #da1f26;
     display: inline-block;
     line-height: 66px;
     text-align: center;
@@ -2266,7 +2274,8 @@
 .packageBox h4 {
     font-size: 22px;
     font-weight: 700;
-    color: #040404;
+    /* color: #040404; */
+    color: #FFF;
     margin-bottom: 16px;
 }
 
@@ -2290,12 +2299,14 @@
 .Eprice h3 {
     font-size: 48px;
     font-weight: 700;
-    color: #151D27;
+    /* color: #151D27; */
+    color: #FFF;
 }
 
 .Eprice p {
     font-size: 15px;
-    color: #9098A4;
+    /* color: #9098A4; */
+    color: #FFF;
 }
 
 .packageBox:hover svg path,
@@ -2304,7 +2315,8 @@
 .packageBox:hover h4,
 .packageBox:hover h3 {
     color: #fff;
-    fill: #007BFF;
+    /* fill: #007BFF; */
+    fill: #da1f26;
     transition: .5s;
 }
 

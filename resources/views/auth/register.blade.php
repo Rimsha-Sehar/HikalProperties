@@ -5,7 +5,10 @@
     <div class="container-xl">
         <div class="row align-items-center p-5 ">
             <div class="col-lg-7 d-none d-lg-block p-0 pr-5">
-                <div class="bg-image"></div>
+                <div class="bg-image">
+                    <img src="{{asset('public/assets/customer/images/bg/image.png')}}" alt="" srcset="">
+
+                </div>
             </div>
             <div class="col-lg-5 p-0 position-relative">
                 <div class="parent-elem">
@@ -18,7 +21,7 @@
                                         <p class="subtitle-form pb-30">
                                         {{ get_phrase('Create account to start using Locus') }}
                                         </p>
-                                        
+
                                         <!-- Form -->
                                         <form id="signup_form" method="post" action="{{ route('register') }}">
                                             @csrf

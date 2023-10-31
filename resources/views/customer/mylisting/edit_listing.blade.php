@@ -38,7 +38,8 @@
         }
 
         .new_label {
-            border: 1px solid #007BFF;
+            /* border: 1px solid #007BFF; */
+            border: 1px solid #da1f26;
             width: 100%;
             text-align: center;
             padding: 10px 15px;

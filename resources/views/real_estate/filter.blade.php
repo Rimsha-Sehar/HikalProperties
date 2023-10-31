@@ -2,11 +2,11 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('public/assets/global/css/jquery-ui.css') }}">
     <script src="{{ asset('public/assets/global/js/jquery-ui.js') }}"></script>
-  
+
     @php
         $min_value = $min_value != '' ? $min_value:0;
         $max_value = $max_value != '' ? $max_value:0;
-        
+
         isset($type) ? $type : ($type = '');
         isset($searched_word) ? '' : ($searched_word = '');
         isset($searched_category) ? '' : ($searched_category = []);
@@ -17,18 +17,18 @@
         isset($searched_bedroom) ? '' : ($searched_bedroom = []);
         isset($searched_bathroom) ? '' : ($searched_bathroom = []);
         isset($searched_garage) ? '' : ($searched_garage = []);
-        
+
         isset($searched_min_price_range) ? '0' : ($searched_min_price_range = $min_value);
         isset($searched_max_price_range) ? '0' : ($searched_max_price_range = $max_value);
         isset($searched_area_range) ? '' : ($searched_area_range = $max_area);
-        
+
         $number_of_visible_categories = 3;
         $number_of_visible_amenities = 3;
         $number_of_visible_cities = 3;
         $number_of_visible_states = 3;
-        
+
         $licenses = ['Sell', 'Rent'];
-        
+
         $numbers = ['01', '02', '03', '04', '05'];
     @endphp
     <style>
@@ -168,7 +168,7 @@
                                     } else {
                                         $filterRouter = route('realeStateListingsFilter');
                                     }
-                                    
+
                                 @endphp
                                 <form id="filter_form" action="{{ $filterRouter }}" class="real-search">
                                     <!-- Sidebar Items -->
@@ -428,7 +428,7 @@
                         </div>
                     </div>
                     <!-- Pagination -->
-                    <div class="adminPanel-pagi pt-60">
+                    <div class="adminPanel-pagi pt-60 d-flex align-content-center justify-content-center">
                         {!! $listings->appends(request()->all())->links('pagination::bootstrap-4') !!}
                     </div>
                 </div>
@@ -439,7 +439,7 @@
                 @foreach ($listings as $listing)
                     @php
                         array_push($map_location, ['long' => $listing['longitude'], 'lat' => $listing['latitude']]);
-                        
+
                     @endphp
                 @endforeach
 
@@ -517,7 +517,7 @@
                 });
             });
         }
-    
+
         document.addEventListener("DOMContentLoaded", function() {
             var showMoreButton = document.getElementById('showMoreButton');
             var reviewsContainer = document.getElementById('Example');
@@ -531,7 +531,7 @@
                 showMoreButton.style.display = 'none';
             });
         });
-    
+
         $(function() {
             var minPrice = <?= $min_value ?>;
             var maxPrice = <?= $max_value + 10 ?>;
