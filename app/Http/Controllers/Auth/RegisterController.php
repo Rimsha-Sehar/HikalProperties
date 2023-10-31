@@ -107,8 +107,8 @@ class RegisterController extends Controller
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:users'],
                 'password' => [
-                    'required', 'string', 'min:4',
-                    Password::min(4)->letters()->mixedCase()->numbers()->symbols()
+                    'required', 'string',
+                    Password::min(4)->mixedCase()->numbers()
                 ],
             ]);
             // Require at least one letter...
