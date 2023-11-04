@@ -11,7 +11,7 @@
                 <p class="text-center my-1" style="display: flex; justify-content: center; ">
                     בריכת שחייה
                 </p>
-                <img class="my-1" src="assets/images/amenities/pool.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/pool.png" height="55" />
                 <p class="my-1">
                     המקום הטוב ביותר להפנות אליו כאשר ברצונך להירגע ולשחזור
                 </p>
@@ -23,7 +23,7 @@
                 <p class="text-center my-1" style="display: flex; justify-content: center; ">
                     שטחים ירוקים
                 </p>
-                <img class="my-1" src="assets/images/amenities/greenspaces.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/greenspaces.png" height="55" />
                 <p class="my-1">
                     לספק אורח חיים בריא וקיימא
                 </p>
@@ -35,7 +35,7 @@
                 <p class="text-center my-1" style="display: flex; justify-content: center; ">
                     אבטחת 24 שעות
                 </p>
-                <img class="my-1" src="assets/images/amenities/security.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/security.png" height="55" />
                 <p class="my-1">
                     הפרויקט מספק את כל צרכי האבטחה והשמירה
                 </p>
@@ -47,7 +47,7 @@
                 <p class="text-center my-1" style="display: flex; justify-content: center; ">
                     שירות חניה ואיסוף רכב בצורה מקצועית
                 </p>
-                <img class="my-1" src="assets/images/amenities/valet.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/valet.png" height="55" />
                 <p class="my-1">
                     מקום חניה מקורה שבו ניתן לחנות את הרכב 
                 </p>
@@ -59,7 +59,7 @@
                 <p class="text-center my-1" style="display: flex; justify-content: center; ">
                     מסעדות
                 </p>
-                <img class="my-1" src="assets/images/amenities/dining.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/dining.png" height="55" />
                 <p class="my-1">
                     כאן מוגשות מגוון רחב של מאכלים טעימים
                 </p>
@@ -71,7 +71,7 @@
                 <p class="text-center my-1" style="display: flex; justify-content: center; ">
                     סופרמרקט
                 </p>
-                <img class="my-1" src="assets/images/amenities/supermarket.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/supermarket.png" height="55" />
                 <p class="my-1">
                     חנות ביד עצמית המציעה מגוון רחב של מזון ומוצרי בית 
                 </p>
@@ -83,7 +83,7 @@
                 <p class="text-center my-1" style="display: flex; justify-content: center; ">
                     מרכז טיפולים
                 </p>
-                <img class="my-1" src="assets/images/amenities/healthcare.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/healthcare.png" height="55" />
                 <p class="my-1">
                     מרכזי טיפול ברמה עולמית עם מתקנים מקצועיים
                 </p>
@@ -95,7 +95,7 @@
                 <p class="text-center my-1" style="display: flex; justify-content: center; ">
                     גן
                 </p>
-                <img class="my-1" src="assets/images/amenities/garden.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/garden.png" height="55" />
                 <p class="my-1">
                     אזורים מושלמים לפיקניקים ולהיתרחץ בבוקר ובערב
                 </p>

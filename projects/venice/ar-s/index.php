@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include('../dbconfig/dbhybrid.php');
+include('../../dbconfig/dbhybrid.php');
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
@@ -37,11 +37,11 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- ICON -->
-    <link rel="icon" type="image/png" href="../assets/images/logo/hikalagency-icon.png" />
+    <link rel="icon" type="image/png" href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
     <!-- https://hikalproperties.com/projects/ -->
     <!-- STYLES -->
-    <link rel="stylesheet" href="../assets/css/dark-theme-gold.css" />
-    <link rel="stylesheet" href="../assets/css/animation.css" />
+    <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
+    <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
     <!-- Google Tag Manager -->
     <script>
@@ -98,7 +98,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 </div>
             </div>
             <div class="row mobile">
-                <img loading="eager" class="mobile img-style" src="../assets/images/projects/venice/v6.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v6.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
             <div class="container container-fluid">
                 <div class="row d-flex align-items-center">
@@ -127,7 +127,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                             ?>
                                             <!--NEW FORM-->
                                             <div class="contact-form" dir="ltr">
-                                                <form id="lead-form" method="POST" action="add-lead-country-hybrid.php">
+                                                <form id="lead-form" method="POST" action="../../controllers/add-lead-country-hybrid.php">
                                                     <div style="display: none">
                                                         <input type="text" id="Project" name="Project" value="Venice" />
                                                         <input type="text" id="LeadType" name="LeadType" value="Apartment" />
@@ -208,7 +208,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     </div>
                 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
-                        <img loading="eager" class="desktop img-style" src="../assets/images/projects/venice/v6.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v6.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
                     </div>
                 </div>
             </div>
@@ -220,7 +220,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 <div class="desktop">
                     <div class="row my-4">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="../assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
@@ -247,12 +247,12 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="../assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                     </div>
                     <div class="row my-4">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="../assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
@@ -277,7 +277,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             انطلق في رحلة من الفخامة مع مشروع مصمم بعناية. استكشف مجموعة من الاستوديوهات والشقق بغرفة واحدة واثنتين وثلاث غرف نوم، بالإضافة إلى الفلل الاستثنائية، وكلها تقع على واجهة المياه. يعكس هذا العمل المعماري الرائع الأسلوب المعاصر والأناقة الخالدة. مع أبراج تتراوح بين الطابق الأرضي + 10 إلى الطابق الأرضي + 22، يضع هذا المشروع معايير جديدة للعيش الرفيع، مقدماً تجربة لا مثيل لها في نمط الحياة.
                         </h6>
                     </div>
-                    <img class="img-style" src="../assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
                             موقع متميز واتصالات لا مثيل لها
@@ -287,7 +287,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             يقع هذا المشروع في قلب دبي الجنوب، حيث يتمتع بموقع استراتيجي يجاور مطار المكتوم الدولي ويقع بالقرب من مشروع إعمار الجنوب الراقي. ويتزايد جاذبيته بفضل قربه من محطة المترو المخطط لها، مما يضمن للسكان تجربة استثنائية في الاتصال وسهولة الوصول. ابحث عن إقامة تجمع بين الراحة والملاءمة.
                         </h6>
                     </div>
-                    <img class="img-style" src="../assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
                             واحة من الفخامة على واجهة المياه
@@ -297,7 +297,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             هذا المكان الاستثنائي ليس مجرد مسكن؛ بل هو ملاذ من الفرح على واجهة المياه. ومع 23% من مساحته مغطاة بالمياه، يتميز هذا المكان بوجود بحيرة بطول 18 كيلومتراً، مع موجات صناعية ومياه عذبة. هنا، يمكن للسكان الاستمتاع بجمال البحر عن كثب. القلب النابض لهذه المجتمع، بوليفارد بطول 700 متر، يضمن توفر متاجر متنوعة، مما يضمن توفير جميع الضروريات على مقربة من الجميع. علاوة على ذلك، يوفر المجتمع أماكن ثقافية ومدارس ومستشفيات وفنادق فاخرة، مما يخلق أجواء حيوية ومليئة بالإثراء.
                         </h6>
                     </div>
-                    <img class="img-style" src="../assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                 </div>
             </div>
         </div>
@@ -365,23 +365,23 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     
         <!--IMAGE-->
         <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style" src="../assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 60%" />
-            <img loading="eager" class="mobile img-style" src="../assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 100%" />
+            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 60%" />
+            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 100%" />
         </div>
     
         <!--AMENITIES-->
         <div class="fourth_section my-5">
-            <?php include_once("../components/amenities-ar.php"); ?>
+            <?php include_once("../../components/amenities-ar.php"); ?>
         </div>
     
         <!--WHY DUBAI-->
         <div class="fifth_section my-5">
-            <?php include_once("../components/whydubai-ar.php"); ?>
+            <?php include_once("../../components/whydubai-ar.php"); ?>
         </div>
         
         <footer style="background-color: #000000;">
             <!--<img src="assets/images/static/footer-img.jpg" style="width: 100vw;" />-->
-            <?php include_once("../components/footer-copyright.php"); ?>
+            <?php include_once("../../components/footer-copyright.php"); ?>
         </footer>
         
         <!--COUNTRY CODE-->

@@ -14,7 +14,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/currency.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/currency.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -31,7 +31,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/security.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/security.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -50,7 +50,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/tax.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/tax.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -67,7 +67,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/covid.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/covid.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -86,7 +86,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/family.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/family.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -103,7 +103,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/infrastructure.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/infrastructure.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -122,7 +122,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/plane.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/plane.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -139,7 +139,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/location.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/location.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -158,7 +158,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/peace.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/peace.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">
@@ -175,7 +175,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/everybody.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/everybody.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: bold;">

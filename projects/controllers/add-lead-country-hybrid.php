@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/dbhybrid.php');
+include('../dbconfig/dbhybrid.php');
 
 // IP AND DEVICE
 $ip = $_SERVER['REMOTE_ADDR'];

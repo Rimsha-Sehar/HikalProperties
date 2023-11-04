@@ -1,7 +1,7 @@
 <?php ?>
 <div class="container container-fluid my-3">
     <div style="display: block; text-align: center;">
-        <img class="mb-3" src="assets/images/logo/fullLogoREWhite.png" width="300" />
+        <img class="mb-3" src="https://hikalproperties.com/projects/assets/images/logo/fullLogoREWhite.png" width="300" />
         <div class="d-flex align-items-center justify-content-center">
             <a class="mx-2" href="https://www.facebook.com/hikalagency/" target="_blank"><i class="fa-brands fa-facebook" style="color: #DA1F26;"></i></a>
             <a class="mx-2" href="https://www.linkedin.com/company/hikal-marketing-management/" target="_blank"><i class="fa-brands fa-linkedin" style="color: #DA1F26;"></i></a>
@@ -13,5 +13,5 @@
 </div> 
 <div class="bg-black text-white py-3 w-full text-center">
     Copyright &copy; <?php echo date('Y'); ?>
-    <strong><a href="https://hikalproperties.ae/" style="color: #DA1F26;">HIKAL</a></strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="privacypolicy" style="color: #fff;">Privacy Policy</a>
+    <strong><a href="https://hikalproperties.com/" style="color: #DA1F26;">HIKAL</a></strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="privacypolicy" style="color: #fff;">Privacy Policy</a>
 </div>

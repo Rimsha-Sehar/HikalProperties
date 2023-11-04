@@ -10,7 +10,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/currency.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/currency.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">استقرار العملة</p>
@@ -23,7 +23,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/security.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/security.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">بيئة آمنة للجميع</p>
@@ -38,7 +38,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/tax.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/tax.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">الحوافز الضريبية</p>
@@ -51,7 +51,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/covid.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/covid.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">19-إدارة أزمة كوفيد</p>
@@ -66,7 +66,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/family.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/family.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">نظام صحيّ عالمي المستوى</p>
@@ -79,7 +79,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/infrastructure.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/infrastructure.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">بنية تحتية عالمية المستوى</p>
@@ -94,7 +94,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/plane.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/plane.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">سهولة الاتصال</p>
@@ -107,7 +107,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/location.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/location.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">موقع استراتيجي</p>
@@ -122,7 +122,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/peace.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/peace.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">تناغم بين أفراد المجتمع</p>
@@ -135,7 +135,7 @@
             <div style="padding: 10px 1px;">
                 <div class="row">
                     <div class="col-2">
-                        <img src="assets/images/whydubai/everybody.svg" style="width: 100%;" />
+                        <img src="https://hikalproperties.com/projects/assets/images/whydubai/everybody.svg" style="width: 100%;" />
                     </div>
                     <div class="col-10">
                         <p style="font-weight: 300;">نظام منفتح وحرّ</p>

@@ -11,7 +11,7 @@
                 <p class="my-1" style="display: flex; justify-content: center;">
                     حوض السباحة
                 </p>
-                <img class="my-1" src="assets/images/amenities/pool.png" height="55" />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/pool.png" height="55" />
                 <p class="my-1">
                     أفضل مكان للذهاب عندما تريد الاسترخاء وتنشيط روحك وعقلك
                 </p>
@@ -23,7 +23,7 @@
                 <p class="my-1" style="display: flex; justify-content: center;">
                     محيطات خضراء
                 </p>
-                <img class="my-1" src="assets/images/amenities/greenspaces.png" height="55"  />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/greenspaces.png" height="55"  />
                 <p class="my-1">
                     لتوفير نمط حياة صحي ومستدام
                 </p>
@@ -35,7 +35,7 @@
                 <p class="my-1" style="display: flex; justify-content: center;">
                     أمن على مدار 24ساعة
                 </p>
-                <img class="my-1" src="assets/images/amenities/security.png" height="55"  />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/security.png" height="55"  />
                 <p class="my-1">
                     يوفر المشروع جميع احتياجات الأمان والحراسة على مدار الساعة
                 </p>
@@ -47,7 +47,7 @@
                 <p class="my-1" style="display: flex; justify-content: center;">
                     خدمات ركن السيارات
                 </p>
-                <img class="my-1" src="assets/images/amenities/valet.png" height="55"  />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/valet.png" height="55"  />
                 <p class="my-1">
                     مساحة مغطاة لوقوف السيارات حيث يمكنك ركن السيارة
                 </p>
@@ -59,7 +59,7 @@
                 <p class="my-1" style="display: flex; justify-content: center;">
                     أفضل الوجهات لتناول الطعام برفقة العائلة
                 </p>
-                <img class="my-1" src="assets/images/amenities/dining.png" height="55"  />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/dining.png" height="55"  />
                 <p class="my-1">
                     توفر أطباق شهية لجميع فئات المجتمع  
                 </p>
@@ -71,7 +71,7 @@
                 <p class="my-1" style="display: flex; justify-content: center;">
                     مراكز التسوّق
                 </p>
-                <img class="my-1" src="assets/images/amenities/supermarket.png" height="55"  />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/supermarket.png" height="55"  />
                 <p class="my-1">
                     مكان يلبّي كافة متطلباتك اليومية و اكثر     
                 </p>
@@ -83,7 +83,7 @@
                 <p class="my-1" style="display: flex; justify-content: center;">
                     مركز الرعاية الصحية
                 </p>
-                <img class="my-1" src="assets/images/amenities/healthcare.png" height="55"  />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/healthcare.png" height="55"  />
                 <p class="my-1">
                     مراكز رعاية صحية عالمية المستوى مع مرافق من الدرجة الأولى
                 </p>
@@ -95,7 +95,7 @@
                 <p class="my-1" style="display: flex; justify-content: center;">
                     أفضل الحدائق للأنشطة في الهواء الطلق في دبي
                 </p>
-                <img class="my-1" src="assets/images/amenities/garden.png" height="55"  />
+                <img class="my-1" src="https://hikalproperties.com/projects/assets/images/amenities/garden.png" height="55"  />
                 <p class="my-1">
                     مساحات مثالية للتنزه والجلوس صباحاً ومساءً
                 </p>
