@@ -40,7 +40,7 @@ $enquiryType = $enquiryType . " " . $extra;
 if (isset($_SESSION['form_submitted'])) {
     // Redirect or display an error message to the user
     // Preventing duplicate form submission
-    header("Location: thankyou.php");
+    header("Location: ../thankyou");
 }
 
 // Check if name and contact fields are empty
@@ -64,7 +64,7 @@ else {
             $dupf = mysqli_fetch_array($dupq);
             if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $dupf['project'] == $project && $dupf['language'] == $language) {
                 // Preventing duplicate form submission
-                header("Location: thankyou.php");
+                header("Location: ../thankyou");
             }
             else {
                 // if ($con) {
@@ -76,19 +76,19 @@ else {
                     $_SESSION['form_submitted'] = false;
         
                     if ($language == "English") {
-                        header("Location: en-thankyou.php");
+                        header("Location: ../thankyou/en");
                     }
                     elseif ($language == "Arabic") {
-                        header("Location: ar-thankyou.php");
+                        header("Location: ../thankyou/ar");
                     }
                     elseif ($language == "French") {
-                        header("Location: fr-thankyou.php");
+                        header("Location: ../thankyou/fr");
                     }
                     elseif ($language == "Hebrew") {
-                        header("Location: he-thankyou.php");
+                        header("Location: ../thankyou/he");
                     }
                     elseif ($language == "Chinese") {
-                        header("Location: cn-thankyou.php");
+                        header("Location: ../thankyou/cn");
                     }
                     else {
                         header("Location: thankyou.php");
