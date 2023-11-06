@@ -1,0 +1,306 @@
+/* LANGUAGE */
+.arabic {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    text-align: right;
+    font-size: small;
+}
+/* ENGLISH */
+.english {
+    font-family: 'Raleway', sans-serif;
+    font-size: small;
+}
+/*HEBREW*/
+.hebrew {
+    font-family: 'Noto Sans Hebrew', sans-serif;
+    text-align: right;
+}
+
+
+/* COLORS */
+.red {
+    color: #DA1F26;
+}
+.white {
+    color: #FFFFFF;
+}
+.black {
+    color: #000000;
+}
+.gold {
+    color: #d4a556;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom right, #a2682a 0%, #faf0a0 50%, #b17b32 77%, #d4a245 88%, #a4692a 100%);
+  border-radius: 10px;
+}
+
+/* BODY */
+body {
+    overflow-x: hidden;
+    color: #EEEEEE;
+    /*background: linear-gradient(to bottom, #1C1C1C, #333333);*/
+    background: #000000;
+    background-image: url('https://hikalproperties.ae/assets/images/bg/bg-gold.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*GRADIENT TEXT*/
+.gold-grad {
+    background-image: linear-gradient(to bottom right, #a2682a 0%, #be8c3c 8%, #be8c3c 18%, #d3b15f 27%, #faf0a0 35%, #ffffc2 40%, #faf0a0 50%, #d3b15f 58%, #be8c3c 67%, #b17b32 77%, #bb8332 83%, #d4a245 88%, #e1b453 93%, #a4692a 100%);
+    background-size: 150%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 1px rgba(255, 200, 0, .3));
+    font-weight: 600;
+}
+
+/*IMAGE STYLE*/
+.img-style {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.29);
+    border-radius: 5px;
+}
+
+
+/* SCROLL TO TOP BUTTON */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto;
+    border: none;
+    box-shadow: none;
+}
+
+
+/* WHATSAPP BUTTON */
+#whatsappBtn {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 1001;
+    font-size: 30px;
+    color: #25d366;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+}
+#whatsappBtn:hover {
+    position: fixed;
+    color: #d4a556;
+}
+
+/* SCREENS ON DESKTOP VIEW */
+.desktop {
+    display: block;
+}
+.mobile {
+    display: none;
+}
+
+
+/* HEADINGS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 15px 0px;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+h4 {
+    font-weight: bold;
+}
+h6 {
+    font-weight: 200;
+    line-height: 2rem;
+}
+
+
+/* FORM */
+.container {
+    width: 90% !important;
+}
+.containerform {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #000000;
+    /*box-shadow: 5px 5px 10px #294464, -5px -5px 10px #394C67;*/
+    border-top: 0.11em solid #fadc88;
+    border-left: 0.11em solid #9c7625;
+    border-right: 0.11em solid #9c7625;
+    border-bottom: 0.11em solid #9c7625;
+}
+
+
+/* NUMBER TEXT FIELD */
+.iti {
+    width: 100% !important;
+    color: #000 !important;
+}
+
+
+/* INPUT FIELDS & LABELS */
+input,
+textarea {
+    caret-color: #AAAAAA;
+    width: 100%;
+}
+label,
+input,
+button,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+label {
+    color: #d4a556;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+input::placeholder {
+    color: #333333;
+    font-size: small;
+}
+input[type=text] {
+    background: #e3e1ee;
+    padding: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-radius: 11px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px 3px 3px white;
+    margin-bottom: 3px;
+}
+
+input[type=email] {
+    background: #e3e1ee;
+    padding: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-radius: 11px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px 3px 3px white;
+    margin-bottom: 3px;
+}
+        
+input[type=tel] {
+    background: #e3e1ee;
+    padding: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-radius: 11px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px 3px 3px white;
+    margin-bottom: 3px;
+}
+
+textarea {
+    background: #e3e1ee;
+    padding: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-radius: 11px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px 3px 3px white;
+}
+
+/*DROPDOWN*/
+select {
+    background: #e3e1ee;
+    padding: 7px 11px;
+    border-radius: 11px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px 3px 3px white;
+    margin-bottom: 3px;
+    border: none;
+    width: 100%;
+}
+
+
+/* BUTTONS */
+button {
+    /*color: white;*/
+    margin: 20px 0px 0px 0px;
+    /*padding: 5px;*/
+    /*background: #d4a556;*/
+    /*background: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);*/
+    /*border-radius: 11px;*/
+    /*cursor: pointer;*/
+    /*transition: 0.5s;*/
+    
+    display: inline-block;
+    outline: none;
+    font-family: inherit;
+    box-sizing: border-box;
+    border: none;
+    border-radius: .3em;
+    /*height: 2.75em;*/
+    line-height: 2.5em;
+    text-transform: uppercase;
+    padding: 0 1em;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(110,80,20,.4),
+                inset 0 -2px 5px 1px rgba(139,66,8,1),
+                inset 0 -1px 1px 3px rgba(250,227,133,1);
+    background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
+    border: 1px solid #a55d07;
+    color: rgb(120,50,5);
+    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background-size: 100% 100%;
+    background-position:center;
+}
+
+button:hover {
+    /*box-shadow: 3px 3px 3px #cbced1, -3px -3px 3px white;*/
+    background-size: 150% 150%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23),
+                inset 0 -2px 5px 1px #b17d10,inset 0 -1px 1px 3px rgba(250,227,133,1);
+    border: 1px solid rgba(165,93,7,.6);color:rgba(120,50,5,.8)
+}
+
+
+@media screen and (max-width: 800px) {
+    .containerform {
+        width: 100%;
+        border-radius: 20px;
+        padding: 30px;
+    }
+    
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+}
