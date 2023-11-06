@@ -364,6 +364,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    b:switch
 
     <!-- WHATSAPP -->
     <!--<a href="https://api.whatsapp.com/send?phone=971585600604" id="whatsappBtn" class="btn btn-sm" title="WhatsApp" onclick="dataLayer.push({'event': 'button1-click', 'var': 'whatsapp-click'});"><i class="fa fa-whatsapp"></i></a>-->
@@ -389,7 +390,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         </div>
         <img class="mobile" loading="eager" src="https://hikalproperties.ae/assets/images/lpvenus/venus-mobo.jpg" alt="HIKAL PROPERTIES" style="width: 100%; margin-bottom: 0%; margin-top: 10%;" />
     </div>
-    
+
     <div class="third_section" style="min-height: 555px; height: auto; z-index: 1;">
         <div class="containerform">
             <div class="inputs" style="font-weight: 400;">
@@ -905,14 +906,14 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             </div>
         </div>
     </div>
-    
+
     <!--<div class="binghatti_section" style="margin: 0% -11% 0% -11%; background-color: #e33c42; padding-top: 0px; display: flex; justify-content: center;">-->
     <!--    <video width="250" autoplay="true" autopictureinpicture="true" muted="true" style="z-index: 1001;" loop="true" preload='none' playsinline>-->
     <!--      <source src="assets/video/binghatti.mp4" type="video/mp4">-->
           <!--<source src="https://hikalproperties.ae/assets/video/binghatti.mp4" type="video/ogg">-->
     <!--    </video>-->
     <!--</div>-->
-    
+
     <div class="last_section" style="margin: 20px -11% 0% -11%; padding: 20px 11% 20px 11%; background-color: #133465; display: flex; justify-content: center;">
         <img class="desktop" src="https://hikalproperties.ae/assets/images/lpcrescent/jvcmap.jpg" loading="eager" alt="HIKAL PROPERTIES" style="width: 60%;" />
         <img class="mobile" src="https://hikalproperties.ae/assets/images/lpcrescent/jvcmap.jpg" loading="eager" alt="HIKAL PROPERTIES" style="width: 100%;" />
@@ -948,7 +949,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 var leadFor = $("input[type='radio'][name='LeadForRadio1']:checked").val();
                 // var lat = $("#Latitude").val();
                 // var long = $("#Longitude").val();
-                
+
                 var lat = "";
                 var long = "";
 
@@ -956,7 +957,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 // console.log(leadname);
                 // console.log(enquiryType);
                 // console.log(leadFor);
-    
+
                 // console.log(phone);
 
                 if (leadname == "") {
@@ -980,7 +981,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                         "latitude" : lat,
                         "longitude" : long
                     };
-                    
+
 
                     $.ajax({
                         url : 'addleadfromlandingpage.php',
@@ -995,8 +996,8 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                         },
                     });
                 }
-            
-            
+
+
                 // $.ajax({
                 //     url: window.location.href,
                 //     type: 'POST',
