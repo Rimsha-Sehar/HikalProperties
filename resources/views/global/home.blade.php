@@ -258,7 +258,7 @@
                                             </span>
                                             <div>
                                                 <select name="searched_cities"
-                                                    class="form-select nice-control location_h" aria-label="">
+                                                    class="form-select nice-control cate_city" aria-label="">
                                                     <option value="">{{ get_phrase('Location') }}</option>
                                                     @foreach ($cities as $city)
                                                         <option value="{{ $city->id }}">{{ $city->title }}

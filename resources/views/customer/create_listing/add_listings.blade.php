@@ -1,4 +1,5 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
 @section('customerRightPanel')
 <style>
     .h-200px{
@@ -263,7 +264,7 @@
 <script>
 
     "use strict";
-    
+
     function countryWiseState(countryid) {
 
 

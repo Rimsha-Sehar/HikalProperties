@@ -1,8 +1,6 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
 @section('customerRightPanel')
-
-
-
 
 <div class="col-lg-9">
     <div class="dl_column_content d-flex flex-column rg-30">

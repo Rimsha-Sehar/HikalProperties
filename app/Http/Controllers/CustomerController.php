@@ -234,7 +234,7 @@ class CustomerController extends Controller
                 $categories=Listing_arrtibute_type::where('listring_attribute_id',$attribute_category_id)->get();
                 $property_details=Listing_arrtibute_type::where('listring_attribute_id',$attribute_property_details_id)->get();
 
-                
+
 
                 $property_type_id=Listing_arrtibute_type::where('listring_attribute_id',$attribute_property_details_id)->where('type','property_type')->value('id');
                 $amenities=Listing_arrtibute_type::where('listring_attribute_id',$attribute_amenities_id)->get();
@@ -695,7 +695,7 @@ class CustomerController extends Controller
         $newListing['listing_attribute_id']=2;
         $newListing['user_id']=auth()->user()->id;
         $newListing['listing_arrtibute_type_id']=$data['category'];
-      
+
 
         $newListing['country_id']=$country_id;
         $newListing['state_id']=$data['state_id'];
@@ -772,7 +772,7 @@ class CustomerController extends Controller
         {
             $updateListing=Listing::find($listing_id);
             $updateListing['listing_arrtibute_type_id']=$data['category'];
-            
+
             $updateListing->save();
 
             $property_details = Listing_arrtibute_type::where('listring_attribute_id', 2)->get();
@@ -788,7 +788,7 @@ class CustomerController extends Controller
                     $Listing_attribute_values_table['value'] = $data[$property->slug];
                     $Listing_attribute_values_table['listing_id'] = $listing_id;
                     $Listing_attribute_values_table->save();
-                    
+
                 }
             }
 
@@ -808,13 +808,13 @@ class CustomerController extends Controller
 
             if($request->og_image){
                 $randome_name = rand();
-                
+
                 $attachment = $randome_name.'.'.$request->og_image->getClientOriginalExtension();
                 $request->og_image->move(public_path('uploads/seo/'), $attachment);
                 if(!empty($request->old_og_image) && file_exists(public_path('uploads/seo/' . $request->old_og_image))){
                     unlink(public_path('uploads/seo/' . $request->old_og_image));
                 }
-            
+
             }else{
                 $attachment = $request->old_og_image;
             }
@@ -855,7 +855,7 @@ class CustomerController extends Controller
                 if(!empty($request->old_model) && (file_exists('public/assets/uploads/3d/'.$request->old_model))){
                     unlink(public_path('assets/uploads/3d/'.$request->old_model));
                 }
-            
+
             }else{
                 $attachment = $request->old_model;
             }
@@ -1005,10 +1005,8 @@ class CustomerController extends Controller
 
     public function unsetListingTypeSession()
     {
-
         Session::forget('listing_type_id');
         return "unsetListingTypeSession";
-
     }
 
 
@@ -1639,7 +1637,7 @@ class CustomerController extends Controller
             $thumbnailName = time().'.'.$data['thumbnail']->extension();
 
             $data['thumbnail']->move(public_path('uploads/blog/'), $thumbnailName);
-            
+
             $blog['thumbnail']  = $thumbnailName;
         } else {
             $blog['thumbnail'] = '';
@@ -1650,7 +1648,7 @@ class CustomerController extends Controller
             $thumbnailName = time().'.'.$data['og_image']->extension();
 
             $data['og_image']->move(public_path('uploads/seo/'), $thumbnailName);
-            
+
             $blog['og_image']  = $thumbnailName;
         } else {
             $blog['og_image'] = '';
@@ -1683,7 +1681,7 @@ class CustomerController extends Controller
             if(!empty($request->old_thumbnail) && file_exists(public_path('uploads/blog/' . $request->old_thumbnail))){
                 unlink(public_path('uploads/blog/' . $request->old_thumbnail));
             }
-        
+
         }else{
             $thumbnail = $request->old_thumbnail;
         }
@@ -1695,7 +1693,7 @@ class CustomerController extends Controller
             if(!empty($request->old_og_image) && file_exists(public_path('uploads/seo/' . $request->old_og_image))){
                 unlink(public_path('uploads/seo/' . $request->old_og_image));
             }
-        
+
         }else{
             $attachment = $request->old_og_image;
         }
@@ -1717,7 +1715,7 @@ class CustomerController extends Controller
             'json_ld' => $data['json_ld'],
             'canonical' => $data['canonical'],
             'og_image' => $attachment,
-        ]); 
+        ]);
 
         return redirect()->back()->with('message','Blog updated successfully.');
     }

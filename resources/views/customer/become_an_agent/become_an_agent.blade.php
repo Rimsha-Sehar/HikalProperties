@@ -1,4 +1,6 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
+
 @section('customerRightPanel')
 
     <div class="col-lg-9">

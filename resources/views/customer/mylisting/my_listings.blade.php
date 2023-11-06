@@ -1,4 +1,5 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
 @section('customerRightPanel')
 
 @php

@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ get_phrase('Customer') }} | {{ get_phrase('Panel') }}</title>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	
+
 
 	@include('customer.include_top')
 
@@ -18,7 +18,7 @@
     <!-- Header Area End   -->
 
     @php
-		
+
 	use App\Models\Listing_type;
 	$listing_types=Listing_type::all();
 	isset($current_route) ? "" : $current_route ="empty";

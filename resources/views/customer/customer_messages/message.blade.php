@@ -1,4 +1,5 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
 @section('customerRightPanel')
 
 <?php use App\Models\MessageThread; ?>
@@ -37,7 +38,7 @@
               @if($row->receiver == auth()->user()->id)
                 @php $user_name = $row->message_to_sender->name; @endphp
               @endif
-              @php 
+              @php
               $unread_message_number = count_unread_message_of_thread($row->message_thread_code);
               @endphp
               <li class="nav-item" role="presentation">
@@ -174,7 +175,7 @@
     var messageBodyHeight = $('#scroll').height();
 
     setInterval(function() {
-     
+
       var message_thread_code = '<?= $current_message_thread_code ?>';
         let url = "{{ route('getSingleMassege', ['param1' => ":message_thread_code"]) }}";
         url = url.replace(":message_thread_code", message_thread_code);
@@ -186,7 +187,7 @@
           }
         });
     }, 5000);
- 
+
   });
   @endif
 </script>

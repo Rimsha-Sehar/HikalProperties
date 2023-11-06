@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/real-estate/vendors/slick/slick-theme.css') }}" />
 
     <!-- Range slider -->
+    <link rel="stylesheet" href="{{ asset('public/assets/global/css/jquery-ui.css') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/real-estate/vendors/venobox/venobox.min.css') }}" />
 

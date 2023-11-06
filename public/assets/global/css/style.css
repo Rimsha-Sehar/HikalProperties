@@ -570,7 +570,13 @@ img {
 }
 
 .single-search .cate {
-    background-position: 81px 13px !important;
+    background-position: 100px 18px !important;
+    padding: 1rem;
+}
+.single-search .cate_city
+{
+    background-position: 120px 18px !important;
+    padding: 1rem;
 }
 
 .single-search .form-control:focus,

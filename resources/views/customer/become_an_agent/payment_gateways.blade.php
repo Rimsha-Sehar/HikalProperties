@@ -1,4 +1,6 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
+
 @section('customerRightPanel')
 
 <style type="text/css">
@@ -96,7 +98,7 @@
                                         <input type="text" placeholder="26474" class="form-control eForm-control2" id="zipcode" name="zipcode" value="{{ $address->zipcode }}" />
                                         @else
                                          <input type="text" placeholder="26474" class="form-control eForm-control2" id="zipcode" name="zipcode" value="" />
-                                        
+
                                         @endif
                                     </div>
                                 </div>

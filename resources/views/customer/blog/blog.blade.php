@@ -1,4 +1,6 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
+
 @section('customerRightPanel')
 <div class="col-lg-9" id="blog_body">
 	<div class="l_col_main">
@@ -10,7 +12,7 @@
 	        <h4>{{ get_phrase('All blogs') }}</h4>
 	      </div>
 	      <!-- Button -->
-	      <a href="javascript:;" class="add-listing cg-10" onclick="add_blog()" 
+	      <a href="javascript:;" class="add-listing cg-10" onclick="add_blog()"
 	        ><i class="fa-solid fa-plus"></i> {{ get_phrase('Write a Blog') }}</a
 	      >
 	    </div>
@@ -25,7 +27,7 @@
 	            <div class="post-item">
                     <div class="post-image">
                         <a href="{{ route('blogDetails', ['slug' => slugify($blog->title), 'id' => $blog->id]) }}" target="_blank">
-							
+
 							@if($blog->thumbnail)
 							<img src="{{ asset('public/uploads/blog/'.$blog->thumbnail) }}" width="200px" alt="...">
 							@else

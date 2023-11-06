@@ -7,6 +7,7 @@
 
 <script src="{{ asset('public/assets/real-estate/vendors/slick/slick.min.js') }}"></script>
 <script src="{{ asset('public/assets/real-estate/vendors/rangeslider/rangeslider.min.js') }}"></script>
+<script src="{{ asset('public/assets/global/js/jquery-ui.js') }}"></script>
 
 <script src="{{ asset('public/assets/real-estate/vendors/venobox/venobox.min.js') }}"></script>
 

@@ -212,9 +212,9 @@
                                             <div id="slider-range" class="new_slider"></div>
                                             <span class="new_range">
                                                 <p>{{ get_phrase('Price:') }}({{ currency() }})</p>
-                                                <input type="text" id="min" name="min_price" value="{{ $searched_min_price_range }}" readonly
+                                                <input type="number" id="min" name="min_price" value="{{ $searched_min_price_range }}"
                                                     onchange="document.getElementById('filter_form').submit()">
-                                                <input type="text" id="max" name="max_price" value="{{ $searched_max_price_range }}" readonly
+                                                <input type="number" id="max" name="max_price" value="{{ $searched_max_price_range }}"
                                                     onchange="document.getElementById('filter_form').submit()">
                                             </span>
 
@@ -428,7 +428,7 @@
                         </div>
                     </div>
                     <!-- Pagination -->
-                    <div class="adminPanel-pagi pt-60 d-flex align-content-center justify-content-center">
+                    <div class="adminPanel-pagi pt-60">
                         {!! $listings->appends(request()->all())->links('pagination::bootstrap-4') !!}
                     </div>
                 </div>
@@ -561,5 +561,6 @@
             });
         });
     </script>
+
 @endsection
 

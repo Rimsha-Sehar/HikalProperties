@@ -1940,7 +1940,7 @@
 
 .social-link li a:hover {
     background: transparent;
-    color: #000;
+    color: #da1f26;
     /* color: #007BFF; */
 
 }
@@ -2040,7 +2040,10 @@
     color: #fff;
     font-size: 17px;
 }
-
+.new_header_right ul li svg path:hover
+{
+    color: #000;
+}
 .mt-50 {
     margin-top: 50px;
 }

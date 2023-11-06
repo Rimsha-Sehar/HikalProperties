@@ -1,4 +1,6 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
+
 @section('customerRightPanel')
 
 
@@ -35,9 +37,9 @@
 
 
     <script type="text/javascript">
-    
+
     "use strict";
-    
+
     $('#select_listing_type').on('change', function () {
 
         var type = $(this).val(); // get selected value

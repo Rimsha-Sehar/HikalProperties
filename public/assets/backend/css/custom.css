@@ -1486,7 +1486,8 @@
 }
 
 .social-link li a:hover {
-    background-color: #2449FF;
+    /* background-color: #2449FF; */
+    background-color: #da1f26;
     color: #fff;
 }
 

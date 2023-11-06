@@ -1,4 +1,6 @@
-@extends('customer.index')
+{{-- @extends('customer.index') --}}
+@extends('customer.user_index')
+
 @section('customerRightPanel')
 
 <style>
@@ -163,7 +165,7 @@
         </div>
     </div>
 
-   
+
 
 
 
@@ -212,7 +214,7 @@
    function show_app(value,link)
    {
         var url = '{{route('agent.zoom',':id')}}';
-        url = url.replace(':id', value); 
+        url = url.replace(':id', value);
         $('#zoom_meeting_link').val(link);
        $('#zoom').attr('action', url);
        if(link){
