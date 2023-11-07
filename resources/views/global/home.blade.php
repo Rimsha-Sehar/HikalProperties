@@ -190,7 +190,11 @@
                                 foreach ($banner_title_arr as $key => $value) {
                                     if ($key == count($banner_title_arr) - 1) {
                                         echo '<span class="last_text">' . $value . '</span>';
-                                    } else {
+
+                                    } if($key == count($banner_title_arr) - 6){
+                                        echo '<span class="last_text">' . $value . '</span>';
+
+                                    }else {
                                         echo $value . ' ';
                                     }
                                 }
