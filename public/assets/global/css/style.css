@@ -221,6 +221,7 @@ img {
 .no_data_pos img {
     height: 320px;
 }
+
 /************ Header Area Start
 *************************************************************/
 .entry_header_control {
@@ -231,7 +232,7 @@ img {
     z-index: 1;
     padding-bottom: 50px;
     margin-bottom: 240px;
-    /* background-image: url('https://demo.creativeitem.com/locus/public/assets/uploads/bannar/873279490.png'); */
+    /* background-image: url("{{ asset('public/assets/global/images/apartmwent.webp') }}"); */
 }
 
 .entry_header_control:before {
@@ -573,8 +574,8 @@ img {
     background-position: 100px 18px !important;
     padding: 1rem;
 }
-.single-search .cate_city
-{
+
+.single-search .cate_city {
     background-position: 120px 18px !important;
     padding: 1rem;
 }
@@ -2047,9 +2048,10 @@ img {
     /* border: 1px solid #da1f26; */
 
 }
+
 .accordion_antry .accordion-item .accordion-button:not(.collapsed)::after {
 
-        filter: hue-rotate(133deg) !important;
+    filter: hue-rotate(133deg) !important;
 }
 
 .accordion-button,
@@ -2463,11 +2465,12 @@ img {
     height: 30px;
     width: 28px;
 }
-.price_icon svg path
-{
+
+.price_icon svg path {
     fill: #da1f26 !important;
 
 }
+
 .packageBox h4 {
     font-size: 22px;
     font-weight: 700;
@@ -2501,8 +2504,8 @@ img {
     align-items: center;
     justify-content: center;
 }
-.Eprice h3 span
-{
+
+.Eprice h3 span {
     font-family: 12px !important;
 }
 
@@ -2593,8 +2596,8 @@ img {
     /* color: #da1f26; */
     margin-bottom: 20px;
 }
-.contact-icon-box
-{
+
+.contact-icon-box {
     color: #000;
 }
 
@@ -5230,11 +5233,12 @@ img {
     position: relative;
     line-height: 28px;
 }
-.address-type li:first-child
-{
+
+.address-type li:first-child {
     padding: 28px 0;
 
 }
+
 .f-28 {
     font-size: 28px !important;
     margin-bottom: 0;
