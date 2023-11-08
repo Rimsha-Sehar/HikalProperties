@@ -2,6 +2,7 @@
 session_start();
 include('../dbconfig/dbhybrid.php');
 
+
 // IP AND DEVICE
 $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT']; 
@@ -46,6 +47,12 @@ if ($leadSource == "Campaign Snapchat") {
     date_default_timezone_set('Asia/Dubai');
     $cur_time = time();
 
+    $_SESSION['leadSource'] = $leadSource;
+    $_SESSION['fileName'] = $filename;
+    $_SESSION['hashed_email'] = $hashed_email;
+    $_SESSION['hashed_ip'] = $hashed_ip;
+    $_SESSION['user_agent'] = $device;
+
     $url = 'https://staging.hikalcrm.com/api/validate-snap';
 
     $data = array(
@@ -56,7 +63,7 @@ if ($leadSource == "Campaign Snapchat") {
         "event_tag" => "Hikal Properties",
         "page_url" => (string)$filename, 
         "hashed_email" => (string)$hashed_email,
-        "user_agent" => (string)$user_agent,
+        "user_agent" => (string)$device,
         "hashed_ip_address" => (string)$hashed_ip 
     );
     // print_r($data);
