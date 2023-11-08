@@ -9,6 +9,7 @@ if ($_SESSION['leadSource'] == "Campaign Snapchat") {
 
     $filename = $_SESSION['fileName'];
     $hashed_email = $_SESSION['hashed_email'];
+    $hashed_phone = $_SESSION['hashed_phone_number'];
     $hashed_ip = $_SESSION['hashed_ip'];
     $device = $_SESSION['user_agent'];
 
@@ -22,6 +23,7 @@ if ($_SESSION['leadSource'] == "Campaign Snapchat") {
         "event_tag" => "Hikal Properties",
         "page_url" => (string)$filename, 
         "hashed_email" => (string)$hashed_email,
+        "hashed_phone_number" => (string)$hashed_phone,
         "user_agent" => (string)$device,
         "hashed_ip_address" => (string)$hashed_ip 
     );
