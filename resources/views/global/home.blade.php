@@ -21,7 +21,7 @@
 @php
     $banner_image = asset('public/assets/uploads/bannar/' . get_frontend_settings('bannar'));
     if (!file_exists($banner_image)) {
-        $banner_image = asset('public/assets/global/images/apartmwent.jpg');
+        $banner_image = asset('public/assets/global/images/apartmwent.webp');
     }
 
 @endphp
@@ -787,7 +787,7 @@
 <!-- Real Estate Area End   -->
 <!-- Hero  Area Start  -->
 <section class="hero-area wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="700ms"
-    style="background-image: url({{ asset('public/assets/global/images/apartmwent.jpg') }}); ">
+    style="background-image: url({{ asset('public/assets/global/images/apartmwent.webp') }}); ">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 hero-icon-control">
