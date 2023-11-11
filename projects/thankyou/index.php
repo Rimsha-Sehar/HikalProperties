@@ -1,6 +1,55 @@
 <?php
 session_start();
 error_reporting(0);
+
+// SNAP PIXEL 
+if ($_SESSION['leadSource'] == "Campaign Snapchat") {
+    date_default_timezone_set('Asia/Dubai');
+    $cur_time = time();
+
+    $filename = $_SESSION['fileName'];
+    $hashed_email = $_SESSION['hashed_email'];
+    $hashed_phone = $_SESSION['hashed_phone_number'];
+    $hashed_ip = $_SESSION['hashed_ip'];
+    $device = $_SESSION['user_agent'];
+
+    $url = 'https://staging.hikalcrm.com/api/validate-snap';
+
+    $data = array(
+        "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
+        "timestamp" => (string)$cur_time,
+        "event_type" => "PURCHASE",
+        "event_conversion_type" => "WEB",
+        "event_tag" => "Hikal Properties",
+        "page_url" => (string)$filename, 
+        "hashed_email" => (string)$hashed_email,
+        "hashed_phone_number" => (string)$hashed_phone,
+        "user_agent" => (string)$device,
+        "hashed_ip_address" => (string)$hashed_ip 
+    );
+    // print_r($data);
+
+    $token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
+
+    $ch = curl_init($url);
+
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'Authorization: Bearer ' . $token
+    ));
+
+    $response = curl_exec($ch);
+
+    if(curl_errno($ch)){
+        // echo 'Error: ' . curl_error($ch);
+    }
+
+    curl_close($ch);
+}
+// SNAP PIXEL END
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +86,7 @@ error_reporting(0);
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
     <!-- Google Tag Manager -->
-    <script>
+    <!-- <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -52,13 +101,13 @@ error_reporting(0);
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-K7J7SRR');
-    </script>
+    </script> -->
     <!-- End Google Tag Manager -->
 </head>
 
 <body class="english">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7J7SRR" height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript>
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7J7SRR" height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
 
     

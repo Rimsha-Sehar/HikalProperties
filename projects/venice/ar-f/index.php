@@ -44,7 +44,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
     <!-- Google Tag Manager -->
-    <script>
+    <!-- <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -59,13 +59,13 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-K7J7SRR');
-    </script>
+    </script> -->
     <!-- End Google Tag Manager -->
 </head>
 
 <body class="arabic" dir="rtl">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7J7SRR" height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript>
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7J7SRR" height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
     
     <?php

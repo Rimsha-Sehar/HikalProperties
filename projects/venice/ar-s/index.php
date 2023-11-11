@@ -7,6 +7,56 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
 ?>
 
+<?php
+$url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$link = parse_url($url);
+
+// $ip = $_SERVER['REMOTE_ADDR'];
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+$hashed_ip = hash('sha256', $ip);
+
+date_default_timezone_set('Asia/Dubai');
+$cur_time = time();
+?>
+
+<?php
+$url = 'https://staging.hikalcrm.com/api/validate-snap';
+
+$data = array(
+    "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
+    "timestamp" => (string)$cur_time,
+    "event_type" => "PAGE_VIEW",
+    "event_conversion_type" => "WEB",
+    "event_tag" => "Hikal Properties",
+    "page_url" => (string)$link, 
+    // "hashed_email" => "a7f30dae8b1a9c9db51c116810e1f0e9c29e91cdac1220e5ff9fc5c88b7df18f",
+    "user_agent" => (string)$user_agent,
+    "hashed_ip_address" => (string)$hashed_ip 
+);
+// print_r($data);
+
+$token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
+
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . $token
+));
+
+$response = curl_exec($ch);
+
+if(curl_errno($ch)){
+    // echo 'Error: ' . curl_error($ch);
+}
+
+curl_close($ch);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -44,7 +94,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
     <!-- Google Tag Manager -->
-    <script>
+    <!-- <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -59,13 +109,13 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-K7J7SRR');
-    </script>
+    </script> -->
     <!-- End Google Tag Manager -->
 </head>
 
 <body class="arabic" dir="rtl">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7J7SRR" height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript>
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7J7SRR" height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
     
     <?php
