@@ -5,8 +5,8 @@ session_start();
 error_reporting(0);
 include('../../dbconfig/dbhybrid.php');
 
-include('../../data/off-plan-en.php');
-include('../../data/agents-en.php');
+include('../../data/off-plan-ar.php');
+include('../../data/agents-ar.php');
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
@@ -54,7 +54,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <script src="https://hikalproperties.com/projects/gtm/head.js"></script> 
 </head>
 
-<body class="english" style="background: #0E0E0E;">
+<body class="arabic" dir="rtl" style="background: #0E0E0E;">
     <?php include_once("../../gtm/body.php"); ?>
 
     <?php
@@ -64,9 +64,9 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         ?>
         <div class="d-flex justify-content-center align-items-center text-center p-5" style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                We've detected some suspicious activity from your device! Please contact 
+                لقد اكتشفنا بعض الأنشطة المشبوهة من جهازك! يرجى التواصل مع 
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                for further assistance!
+                للمساعدة الإضافية!
             </h1>
         </div>
         <?php
@@ -82,24 +82,24 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 <div class="row py-2 d-flex align-items-center">
                     <div class="col-6 d-flex justify-content-start align-items-center">
                         <img class="desktop" src="https://hikalproperties.com/projects/assets/images/logo/fullLogoREWhite.png" width="100" />
-                        <p class="desktop my-0 py-1 mx-1" style="font-weight: 400;">PROPERTY CONSUTATION</p>
+                        <p class="desktop my-0 py-1 mx-1" style="font-weight: 400;">استشارات العقارات</p>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-flex justify-content-end p-1">
                         <button class="" style="width: auto; border-radius: 50px; border: none; font-weight: bold;;">
                             <span id="hourglass-start"><i class="fa-solid fa-hourglass-start mx-1"></i></span>
                             <span id="hourglass-half" style="display: none;"><i class="fa-regular fa-hourglass-half mx-1"></i></span>
                             <span id="hourglass-end" style="display: none;"><i class="fa-solid fa-hourglass-end mx-1"></i></span>
-                            <span class="mx-1 text-uppercase" id="waiting-list">7 waiting</span>
+                            <span class="mx-1 text-uppercase" id="waiting-list">7 انتظار</span>
                         </button>
                     </div>
                 </div>
                 <div class="row d-flex align-items-center">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 px-1 py-1">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2.5rem; font-size: 2.5rem; font-family: 'Playfair Display', serif; font-style: italic;">Free Consultation</h1>
+                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2.5rem; font-size: 2.5rem;">استشارة مجانية</h1>
                         <h5 style="text-align: center; line-height: 2rem; font-weight: 400;">
-                            REGISTER NOW TO GET A FREE CONSULTATION ON
+                            سجّل الآن للحصول على استشارة مجانية حول
                             <br />
-                            UAE REAL ESTATE MARKET
+                            سوق العقارات في الإمارات
                         </h5>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
@@ -119,7 +119,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                         if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
                                             ?>
                                             <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
-                                                Thank you for registering with us. Our professionals will be in touch with you shortly!
+                                                شكرًا لتسجيلك معنا. سيتواصل محترفونا معك قريبًا!                                             
                                             </div>
                                             <?php
                                         }
@@ -141,22 +141,22 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     </div>
                                                     
                                                     <!-- NAME -->
-                                                    <label class="gold-grad" style="margin-top: 0px;">NAME</label>
+                                                    <label class="gold-grad" style="margin-top: 0px;">الإسم</label>
                                                     <input type="text" name="Name" id="Name" required />
                                             
                                                     <!--EMAIL-->
-                                                    <label class="gold-grad">EMAIL ADDRESS</label>
+                                                    <label class="gold-grad">عنوان البريد الإلكتروني</label>
                                                     <input type="email" name="Email" id="Email" placeholder="example@gmail.com" required />
                                                     
                                                     <!-- CONTACT NUMBER -->
-                                                    <label class="gold-grad">CONTACT NUMBER</label>
+                                                    <label class="gold-grad">رقم الاتصال</label>
                                                     <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" required />
                                                     
                                                     <!--PROJECT-->
-                                                    <label class="gold-grad">PROJECT</label>
+                                                    <label class="gold-grad">المشروع</label>
                                                     <!--<input type="text" name="Project" id="Project" required />-->
-                                                    <select name="Project" id="Project">
-                                                        <option value="">---SELECT---</option>
+                                                    <select name="Project" id="Project" dir="rtl">
+                                                        <option value="">---اختيار---</option>
                                                         <!--<option value="Jacob & Co">Burj Binghatti Jacob & Co</option>-->
                                                         <!--<option value="Bugatti">Bugatti Residences</option>-->
                                                         <!--<option value="Trillionaire">Trillionaire</option>-->
@@ -170,45 +170,41 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                             </option>
                                                         <?php endfor; ?>
 
-                                                        <option value="Other">Any/Other</option>
+                                                        <option value="Other">أي / آخر</option>
                                                     </select>
                                                     
                                                     <!--LANGUAGE-->
-                                                    <label class="gold-grad">PREFERRED LANGUAGE</label>
+                                                    <label class="gold-grad">اللغة المفضلة</label>
                                                     <!--<input type="text" name="Language" id="Language" required />-->
-                                                    <select name="Language" id="Language" required>
-                                                        <option value="English">English</option>
+                                                    <select name="Language" id="Language" required dir="rtl">
                                                         <option value="Arabic">العربية</option>
+                                                        <option value="English">English</option>
                                                         <option value="French">Français</option>
                                                         <option value="Chinese">中文</option>
                                                     </select>
                                             
-                                                    <!-- CONSULTATION  -->
-                                                    <label class="gold-grad">CONSULTATION</label>
-                                                    <div style="display: flex;">
+                                                    <!-- PURPOSE  -->
+                                                    <label class="gold-grad">استشارة</label>
+                                                    <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation1" value="Live Video Call Meeting" style="width: 20px;" required>
                                                         <label for="Consultation1" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF; display: flex; align-items: center;">
-                                                            Live Video Call Meeting
+                                                             الاجتماع عبر مكالمة فيديو مباشرة
                                                             <div class="mx-2 p-1 white" style="background: #DA1F26; font-weight: bold; font-size: small; border-radius: 5px; display: flex; align-items: center;">
-                                                                <img src="https://hikalproperties.com/projects/assets/images/static/live.svg" class="live-icon mx-1" style="width: 20px;" />
+                                                                <img src="https://hikalproperties.ae/assets/images/static/live.svg" class="live-icon mx-1" style="width: 20px;" />
                                                                 <span class="mx-1">LIVE</span>
                                                             </div>
                                                         </label>
                                                     </div>
-                                                    <div style="display: flex;">
+                                                    <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="Register for later" style="width: 20px;" required>
                                                         <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
-                                                            Register for later
+                                                            سجّل لوقت لاحق
                                                         </label>
                                                     </div>
-                                                    
-                                                    <!--ENQUIRY NOTE-->
-                                                    <!--<label class="gold-grad">ENQUIRY NOTE</label>-->
-                                                    <!--<textarea type="text" name="Enote" id="Enote" required>I'm looking for professional guidance in the real estate market.</textarea>-->
                                             
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
-                                                            <button type="submit" class="submit-click">SUBMIT</button>
+                                                            <button type="submit" class="submit-click" onclick="dataLayer.push({'event': 'submit-click', 'var': 'submit-click'});" style="font-weight: bold;">إرسال</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -230,7 +226,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             <div class="container container-fluid pt-5">
                 <div class="row" style="text-align: center;">
                     <h4 class="gold-grad-anim" style="font-weight: 900;">
-                        OUR PROFESSIONAL CONSULTANTS
+                        مستشارونا المحترفون
                     </h4>
                 </div>
                 
@@ -274,7 +270,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                         border-left: 0.11em solid #9c7625;
                         border-right: 0.11em solid #9c7625;
                         border-bottom: 0.11em solid #9c7625;
-                        box-shadow: 0 19px 38px rgba(255,255,255,0.10), 0 15px 12px rgba(255,255,255,0.02);
                     }
 
                     .team-block .inner-box:hover .image-box .image:after,
@@ -366,7 +361,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             <div class="container container-fluid py-5">
                 <div class="row" style="text-align: center;">
                     <h4 class="gold-grad-anim" style="font-weight: 900;">
-                        SOME OFF-PLAN PROJECTS
+                        بعض المشاريع الجديدة
                     </h4>
                 </div>
                 <div class="row">
@@ -375,17 +370,17 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             <div style="border-radius: 15px; background-color: #000000; width: 100%; box-shadow: 0 19px 38px rgba(255,255,255,0.10), 0 15px 12px rgba(255,255,255,0.02);">
                                 <div style="width: 100%;">
                                     <img src="<?php echo $offplan['picture']; ?>" style="height: 200px; width: 100%; border-top-left-radius: 15px; border-top-right-radius: 15px;" />
-                                    <a a href="<?php echo $offplan['link']; ?>" target="_blank" style="color: #FFFFFF;">
+                                    <a href="<?php echo $offplan['link']; ?>" target="_blank" style="color: #FFFFFF;">
                                         <div class="p-3">
-                                            <div class="my-1" style="font-weight: bold;">
+                                            <div class="my-2" style="font-weight: bold;">
                                                 <?php echo $offplan['project']; ?>
                                             </div>
-                                            <div class="d-flex align-items-center my-1">
-                                                <i class="fa-solid fa-location-dot gold-grad me-2"></i>
+                                            <div class="d-flex align-items-center my-2">
+                                                <i class="fa-solid fa-location-dot gold-grad ms-2"></i>
                                                 <?php echo $offplan['address']; ?>
                                             </div>
-                                            <div class="d-flex align-items-center my-1">
-                                                <i class="fa-solid fa-bed gold-grad me-2"></i>
+                                            <div class="d-flex align-items-center my-2">
+                                                <i class="fa-solid fa-bed gold-grad ms-2"></i>
                                                 <?php echo $offplan['bedrooms']; ?>
                                             </div>
                                         </div>
@@ -445,6 +440,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         		"use strict";
     		    //  TESTIMONIALS CAROUSEL HOOK
     	        $('#team-slider').owlCarousel({
+    	            rtl:true,
                     loop: true,
     	            center: true,
     	            items: 3,
@@ -485,7 +481,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 // Calculate the new waiting count, ensuring it stays between 3 and 14
                 let newCount = Math.max(Math.min(currentCount + change, 14), 3);
             
-                document.getElementById('waiting-list').textContent = `${newCount} waiting`;
+                document.getElementById('waiting-list').textContent = `${newCount} انتظار`;
             
                 // Schedule the next update after a random interval between 1 to 4 seconds
                 setTimeout(updateWaitingList, getRandomInt(3000, 20000));

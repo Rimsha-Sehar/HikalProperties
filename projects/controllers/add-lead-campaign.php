@@ -11,7 +11,7 @@ $leadSource = "Campaign";
 $leadStatus = "New";
 $feedback = "New";
 $addedBy = "101";
-$coldcall = 10;
+$coldcall = 6;
 
 // RETRIEVE FORM DATA
 $leadSource = $_POST['LeadSource'];
