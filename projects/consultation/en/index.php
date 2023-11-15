@@ -188,7 +188,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                         <label for="Consultation1" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF; display: flex; align-items: center;">
                                                             Live Video Call Meeting
                                                             <div class="mx-2 p-1 white" style="background: #DA1F26; font-weight: bold; font-size: small; border-radius: 5px; display: flex; align-items: center;">
-                                                                <img src="https://hikalproperties.com/assets/images/static/live.svg" class="live-icon mx-1" style="width: 20px;" />
+                                                                <img src="https://hikalproperties.com/projects/assets/images/static/live.svg" class="live-icon mx-1" style="width: 20px;" />
                                                                 <span class="mx-1">LIVE</span>
                                                             </div>
                                                         </label>
