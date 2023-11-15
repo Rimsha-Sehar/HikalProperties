@@ -8,16 +8,18 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 ?>
 
 <?php
-$url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$link = parse_url($url);
 
-// $ip = $_SERVER['REMOTE_ADDR'];
-$user_agent = $_SERVER['HTTP_USER_AGENT'];
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+$host = $_SERVER['HTTP_HOST'];
+$uri = $_SERVER['REQUEST_URI'];
+$fullUrl = $protocol . $host . $uri;
 
-$hashed_ip = hash('sha256', $ip);
+$_SESSION["page_url"] = $fullUrl;
+
 
 date_default_timezone_set('Asia/Dubai');
 $cur_time = time();
+$hashed_ip = hash('sha256', $ip);
 ?>
 
 <?php
@@ -25,14 +27,14 @@ $url = 'https://staging.hikalcrm.com/api/validate-snap';
 
 $data = array(
     "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
-    "timestamp" => (string)$cur_time,
     "event_type" => "PAGE_VIEW",
+    "timestamp" => (string)$cur_time,
     "event_conversion_type" => "WEB",
     "event_tag" => "Hikal Properties",
-    "page_url" => (string)$link, 
-    // "hashed_email" => "a7f30dae8b1a9c9db51c116810e1f0e9c29e91cdac1220e5ff9fc5c88b7df18f",
-    "user_agent" => (string)$user_agent,
-    "hashed_ip_address" => (string)$hashed_ip 
+    "page_url" => (string)$fullUrl, 
+    "user_agent" => (string)$device,
+    "hashed_ip_address" => (string)$hashed_ip,
+    "item_category" => "",
 );
 // print_r($data);
 
@@ -92,31 +94,9 @@ curl_close($ch);
     <!-- STYLES -->
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
-
-    <!-- Google Tag Manager -->
-    <!-- <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-K7J7SRR');
-    </script> -->
-    <!-- End Google Tag Manager -->
 </head>
 
 <body class="arabic" dir="rtl">
-    <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7J7SRR" height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript> -->
-    <!-- End Google Tag Manager (noscript) -->
     
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
