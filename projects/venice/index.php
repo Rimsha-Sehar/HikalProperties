@@ -123,10 +123,9 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                             </form>
                                         </div>
                                         <?php
-                                        $query = mysqli_query($con, "SELECT ip FROM leads ORDER BY creationDate DESC LIMIT 1");
+                                        $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
                                         $fetch = mysqli_fetch_array($query);
-                                        if ($ip == $fetch['ip']) {
-                                             // && $filename == $fetch['filename']
+                                        if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
                                             ?>
                                             <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
                                                 شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
@@ -207,13 +206,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                             <button type="submit" class="submit-click">إرسال</button>
                                                         </div>
                                                     </div>
-                                                </form>
-                                                <form id="otp-form" method="POST" action="../controllers/verify-otp.php" style="display: none;">
-                                                    <label class="gold-grad" style="text-align: center;">Enter OTP</label>
-                                                    <input type="text" name="otp">
-                                                    <button type="submit" style="font-weight: bold;">
-                                                        تحقق من رمز التحقق
-                                                    </button>
                                                 </form>
                                             </div>
                                             <?php
@@ -410,8 +402,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });
-
-            // var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
         </script>
     
         <!--SCROLL TO TOP-->
@@ -504,38 +494,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
                 return false;
             }
-        </script>
-
-        <!-- VERIFY OTP -->
-        <script>
-            // function verifyOTPForm() {
-
-            //     var otpData = $("#otp-form").serialize();
-            //     otpData += "&" + formData;
-            //     console.log(otpData);
-
-            //     $.ajax({
-            //         url: "../controllers/verify-otp.php",
-            //         method: "POST",
-            //         data: formData,
-            //         dataType: "json",
-            //         success: function(response) {
-            //             if (response.otp) {
-            //                 // RENDER OTP FORM 
-            //                 console.log(response);
-            //             }
-            //             else {
-            //                 console.log("Error: ", response);
-            //             }
-            //         },
-            //         error: function(jqXHR, textStatus, errorThrown) {
-            //             console.error("AJAX Error:", textStatus, errorThrown);
-            //             console.log("Response Text:", jqXHR.responseText);
-            //         }
-            //     });
-
-            //     return false;
-            // }
         </script>
 
         <?php

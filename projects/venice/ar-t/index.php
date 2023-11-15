@@ -42,32 +42,9 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <!-- STYLES -->
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
-
-    <!-- Google Tag Manager -->
-    <!-- <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-K7J7SRR');
-    </script> -->
-    <!-- End Google Tag Manager -->
 </head>
 
-<body class="arabic" dir="rtl">
-    <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7J7SRR" height="0" width="0" style="display:none; visibility:hidden"></iframe></noscript> -->
-    <!-- End Google Tag Manager (noscript) -->
-    
+<body class="arabic" dir="rtl">    
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);
@@ -113,6 +90,38 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                         $parsedUrl = parse_url($url);
                                         $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
                                         ?>
+                                        <!-- OTP FORM  -->
+                                        <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
+                                            <form method="POST" action="../../controllers/verify-otp.php">
+                                                <!-- action="../controllers/verify-otp.php" -->
+                                                <h5 class="gold-grad" style="text-align: center;">
+                                                    OTP has been sent to 
+                                                    <span id="phone_no"></span>
+                                                </h5>
+                                                <!-- <label class="gold-grad" style="text-align: center;">
+                                                    OTP
+                                                </label> -->
+                                                <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+
+                                                <div style="display: none">
+                                                    <input type="text" name="phone_number" id="phone_number">
+                                                    <input type="text" name="lead_name" id="lead_name" >
+                                                    <input type="text" name="lead_email" id="lead_email" >
+                                                    <input type="text" name="lang" id="lang" >
+                                                    <input type="text" name="project_name" id="project_name" >
+                                                    <input type="text" name="lead_type" id="lead_type" >
+                                                    <input type="text" name="lead_source" id="lead_source" >
+                                                    <input type="text" name="enquiry_type" id="enquiry_type" >
+                                                    <input type="text" name="lead_for" id="lead_for" >
+                                                    <input type="text" name="country_name" id="country_name" >
+                                                    <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
+                                                </div>
+
+                                                <button type="submit" style="font-weight: bold;">
+                                                    تحقق من رمز التحقق
+                                                </button>
+                                            </form>
+                                        </div>
                                         <?php
                                         $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
                                         $fetch = mysqli_fetch_array($query);
@@ -127,7 +136,8 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                             ?>
                                             <!--NEW FORM-->
                                             <div class="contact-form" dir="ltr">
-                                                <form id="lead-form" method="POST" action="../../controllers/add-lead-country-hybrid.php">
+                                                <form id="lead-form" onsubmit="return submitLeadForm();">
+                                                    <!-- action="../controllers/add-lead-country-hybrid.php" -->
                                                     <div style="display: none">
                                                         <input type="text" id="Project" name="Project" value="Venice" />
                                                         <input type="text" id="LeadType" name="LeadType" value="Apartment" />
@@ -193,7 +203,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                             
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
-                                                            <button type="submit" class="submit-click" onclick="dataLayer.push({'event': 'submit-click', 'var': 'submit-click'});">إرسال</button>
+                                                            <button type="submit" class="submit-click">إرسال</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -380,7 +390,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         </div>
         
         <footer style="background-color: #000000;">
-            <!--<img src="assets/images/static/footer-img.jpg" style="width: 100vw;" />-->
             <?php include_once("../../components/footer-copyright.php"); ?>
         </footer>
         
@@ -417,6 +426,73 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             function topFunction() {
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
+            }
+        </script>
+
+        <!-- SUBMIT LEAD FORM -->
+        <script>
+            function submitLeadForm() {
+                var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
+
+                var phoneOTP = document.getElementById('phone_number');
+                phoneOTP.value = full_number;
+
+                var phoneTitle = document.getElementById('phone_no');
+                phoneTitle.textContent = full_number;
+
+                var LeadName1 = document.getElementById('lead_name');
+                LeadName1.value = $("#LeadName1").val(); 
+
+                var LeadEmail1 = document.getElementById('lead_email');
+                LeadEmail1.value = $("#LeadEmail1").val(); 
+
+                var Language = document.getElementById('lang');
+                Language.value = $("#Language").val(); 
+
+                var Project = document.getElementById('project_name');
+                Project.value = $("#Project").val(); 
+
+                var LeadType = document.getElementById('lead_type');
+                LeadType.value = $("#LeadType").val(); 
+
+                var LeadSource = document.getElementById('lead_source');
+                LeadSource.value = $("#LeadSource").val(); 
+
+                var EnquiryRadio1 = document.getElementById('enquiry_type');
+                EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
+
+                var LeadForRadio1 = document.getElementById('lead_for');
+                LeadForRadio1.value = $("#LeadForRadio1").val(); 
+
+                var Country = document.getElementById('country_name');
+                Country.value = $("#Country").val(); 
+
+                var formData = $("#lead-form").serialize();
+                formData += "&leadContact=" + encodeURIComponent(full_number);
+                // console.log(formData);
+
+                $.ajax({
+                    url: "../../controllers/add-lead-country-hybrid.php",
+                    method: "GET",
+                    data: formData,
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.otp) {
+                            // RENDER OTP FORM 
+                            $("#lead-form").hide();
+                            $("#otp-form").show();
+                        }
+                        else {
+                            console.log("Error: ", response);
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("AJAX Error:", textStatus, errorThrown);
+                        console.log("Response Text:", jqXHR.responseText);
+                    }
+                });
+
+                return false;
             }
         </script>
 
