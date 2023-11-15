@@ -54,9 +54,14 @@ if ($leadSource == "Campaign Snapchat") {
     $cur_time = time();
 
     $_SESSION['leadSource'] = $leadSource;
+<<<<<<< Updated upstream
     $_SESSION['fileName'] = $page_url;
     $_SESSION['hashed_email'] = $hashed_email;
     $_SESSION['hashed_phone_number'] = $hashed_phone;
+=======
+    $_SESSION['fileName'] = $filename;
+    $_SESSION['hashed_email'] = $hashed_email;
+>>>>>>> Stashed changes
     $_SESSION['hashed_ip'] = $hashed_ip;
     $_SESSION['user_agent'] = $device;
 
@@ -70,7 +75,10 @@ if ($leadSource == "Campaign Snapchat") {
         "event_tag" => "Hikal Properties",
         "page_url" => (string)$page_url, 
         "hashed_email" => (string)$hashed_email,
+<<<<<<< Updated upstream
         "hashed_phone_number" => (string)$hashed_phone,
+=======
+>>>>>>> Stashed changes
         "user_agent" => (string)$device,
         "hashed_ip_address" => (string)$hashed_ip 
     );
