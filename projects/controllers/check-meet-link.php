@@ -17,11 +17,11 @@ $lead_ip = $_SESSION['lead_ip'];
 $note = $_SESSION['note'];
 $start_time = $_SESSION['start_time'];
 
-$checkq = mysqli_query($con, "SELECT meet_link FROM leads WHERE leadName = '$lead_name' AND leadContact = '$lead_contact' AND leadEmail = '$lead_email' AND ip = '$lead_ip' AND coldcall = 10");
+$checkq = mysqli_query($con, "SELECT meet_link FROM leads WHERE leadName = '$lead_name' AND leadContact = '$lead_contact' AND leadEmail = '$lead_email' AND ip = '$lead_ip' AND coldcall = 6");
 
 $checkf = mysqli_fetch_array($checkq);
 
-if ($checkf['meet_link'] == null || $checkf['meet_link'] == "" || $checkf['meet_link'] == "null") {
+if ($checkf['meet_link'] == NULL || $checkf['meet_link'] == "" || $checkf['meet_link'] == "null") {
     // No meet_link available yet
     echo 'not_available';
 } else {

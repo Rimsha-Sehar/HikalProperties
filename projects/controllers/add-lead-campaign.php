@@ -23,59 +23,74 @@ $filename = $_POST['Filename'];
 $leadName = $_POST['Name'];
 $leadEmail = $_POST['Email'];
 
-if ($_POST['phone']['full'] == "") {
-    $leadContact = $_POST['phone']['main'];
-}
-else {
+if (isset($_POST['phone']['full']) && ($_POST['phone']['full'] != "")) {
     $leadContact = $_POST['phone']['full'];
 }
-// $phone = $_POST['phone']['main'];
-// $leadContact = $_POST['phone'];
+else if (isset($_POST['phone']['main']) && ($_POST['phone']['main'] != "")) {
+    $leadContact = $_POST['phone']['main'];
+}
+
+if (isset($_POST['leadContact']) && ($_POST['leadContact'] != "")) {
+    $leadContact = $_POST['leadContact'];
+}
 
 $project = $_POST['Project'];
 $language = $_POST['Language'];
 $note = $_POST['Consultation'];
-$enote = $_POST['Enote'];
 
-// $final_note = $note . " | " . $enote;
-// exit($final_note);
+// STORE LEAD DETAILS IN SESSION
+$_SESSION['lead_name'] = $leadName;
+$_SESSION['lead_contact'] = $leadContact;
+$_SESSION['lead_email'] = $leadEmail;
+$_SESSION['lead_ip'] = $ip;
+$_SESSION['note'] = $note;
+$_SESSION['start_time'] = time();
 
-if (isset($_SESSION['form_submitted'])) {
+$dupq = mysqli_query($con, "SELECT leadName, leadContact, project, language FROM leads ORDER BY id DESC LIMIT 1");
+$dupf = mysqli_fetch_array($dupq);
+
+if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $dupf['project'] == $project && $dupf['language'] == $language) {
+    // Preventing duplicate form submission
     header("Location: ../thankyou");
 }
-
-if (empty($leadName) || empty($leadContact)) {
-    $error = "Please enter name and contact to register!";
-} 
 else {
-    // Set the session variable to mark the form as submitted
-    $_SESSION['form_submitted'] = true;
-    
-    // STORE LEAD DETAILS IN SESSION
-    $_SESSION['lead_name'] = $leadName;
-    $_SESSION['lead_contact'] = $leadContact;
-    $_SESSION['lead_email'] = $leadEmail;
-    $_SESSION['lead_ip'] = $ip;
-    $_SESSION['note'] = $note;
-    $_SESSION['start_time'] = time();
-    
-    
-    $dupq = mysqli_query($con, "SELECT leadName, leadContact, project, language FROM leads ORDER BY id DESC LIMIT 1");
-    $dupf = mysqli_fetch_array($dupq);
-    
-    if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $dupf['project'] == $project && $dupf['language'] == $language) {
-        // Preventing duplicate form submission
-        header("Location: thankyou.php");
-    }
-    else {
-        $query = "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')";
-        $runquery = mysqli_query($con, $query);
-        
-        if ($runquery) {
-            // Clear the session variable after successful form submission
-            $_SESSION['form_submitted'] = false;
+    // SEND OTP 
+    if (substr($leadContact, 0, 4) === "+971") {
+        $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");
 
-            // if ($note == "Live Video Call Meeting") {
+        if ($query) {
+            // CALL GENERATE OTP API 
+            $getOTP = 'https://staging.hikalcrm.com/api/otp';
+
+            $otpData = array(
+                'phone_number' => (string)$leadContact,
+                'senderAddr' => "AD-HIKAL",
+                'message' => "The OTP for verification is: "
+            );
+
+            // Initialize cURL session
+            $getch = curl_init($getOTP);
+
+            // Set cURL options
+            curl_setopt($getch, CURLOPT_POST, 1);
+            curl_setopt($getch, CURLOPT_POSTFIELDS, $otpData);
+            curl_setopt($getch, CURLOPT_RETURNTRANSFER, true);
+
+            $response = curl_exec($getch);
+
+            $responseData = json_decode($response, true);
+
+            if (isset($responseData['message'])) {
+                $message = $responseData['message'];
+
+                $_SESSION['otp'] = true;
+            }
+            else {
+                $_SESSION['otp'] = false;
+            }
+            curl_close($getch);
+
+            if ($note == "Live Video Call Meeting") {
                 if ($language == "Arabic") {
                     header("Location: ../consultation/ar/waiting");
                 }
@@ -83,29 +98,69 @@ else {
                     header("Location: ../consultation/en/waiting");
                 }
                 exit();
-            // }
-            // else {
-            //     if ($language == "English") {
-            //         header("Location: en-thankyou");
-            //     }
-            //     elseif ($language == "Arabic") {
-            //         header("Location: ar-thankyou");
-            //     }
-            //     elseif ($language == "French") {
-            //         header("Location: fr-thankyou");
-            //     }
-            //     elseif ($language == "Hebrew") {
-            //         header("Location: he-thankyou");
-            //     }
-            //     elseif ($language == "Chinese") {
-            //         header("Location: cn-thankyou");
-            //     }
-            //     else {
-            //         header("Location: thankyou");
-            //     }
-            // }
+            }
+            else {
+                if ($language == "English") {
+                    header("Location: ../thankyou/en");
+                }
+                elseif ($language == "Arabic") {
+                    header("Location: ../thankyou/ar");
+                }
+                elseif ($language == "French") {
+                    header("Location: ../thankyou/fr");
+                }
+                elseif ($language == "Hebrew") {
+                    header("Location: ../thankyou/he");
+                }
+                elseif ($language == "Chinese") {
+                    header("Location: ../thankyou/cn");
+                }
+                else {
+                    header("Location: ../thankyou");
+                }
+                exit();
+            }
             // exit();
         }
+    }
+    else {
+        $query = "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')";
+        $runquery = mysqli_query($con, $query);
+        
+        if ($runquery) {
+
+            if ($note == "Live Video Call Meeting") {
+                if ($language == "Arabic") {
+                    header("Location: ../consultation/ar/waiting");
+                }
+                else {
+                    header("Location: ../consultation/en/waiting");
+                }
+                exit();
+            }
+            else {
+                if ($language == "English") {
+                    header("Location: ../thankyou/en");
+                }
+                elseif ($language == "Arabic") {
+                    header("Location: ../thankyou/ar");
+                }
+                elseif ($language == "French") {
+                    header("Location: ../thankyou/fr");
+                }
+                elseif ($language == "Hebrew") {
+                    header("Location: ../thankyou/he");
+                }
+                elseif ($language == "Chinese") {
+                    header("Location: ../thankyou/cn");
+                }
+                else {
+                    header("Location: ../thankyou");
+                }
+                exit();
+            }
+        }
+
     }
 }
 

@@ -150,7 +150,8 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     
                                                     <!-- CONTACT NUMBER -->
                                                     <label class="gold-grad">CONTACT NUMBER</label>
-                                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" required />
+                                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" required oninput="updateLeadContact()" />
+                                                    <input type="tel" name="leadContact" id="leadContact" style="display: none;" />
                                                     
                                                     <!--PROJECT-->
                                                     <label class="gold-grad">PROJECT</label>
@@ -208,7 +209,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                             
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
-                                                            <button type="submit" class="submit-click">SUBMIT</button>
+                                                            <button type="submit" class="submit-click" onclick="dataLayer.push({'event': 'submit-click', 'var': 'submit-click'});" style="font-weight: bold;">SUBMIT</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -398,7 +399,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             </div>
         </div>
     
-    
         <footer>
             <?php include_once("../../components/footer-copyright.php"); ?>
         </footer>
@@ -412,6 +412,11 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });
+
+            function updateLeadContact() {
+                var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
+                document.getElementById('leadContact').value = full_number;
+            }
         </script>
     
         <!--SCROLL TO TOP-->
@@ -445,6 +450,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         		"use strict";
     		    //  TESTIMONIALS CAROUSEL HOOK
     	        $('#team-slider').owlCarousel({
+                    rtl: false,
                     loop: true,
     	            center: true,
     	            items: 3,

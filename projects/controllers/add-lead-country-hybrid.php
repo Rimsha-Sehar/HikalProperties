@@ -140,18 +140,38 @@ else {
 
             $response = curl_exec($getch);
 
-            // if (curl_errno($getch)) {
-            //     echo json_encode(['success' => false, 'message' => 'Failed to send OTP']);
-            // }
-            // else {
-                $_SESSION['otp'] = true;
+            $responseData = json_decode($response, true);
+
+            if (isset($responseData['message'])) {
+                $message = $responseData['message'];
+
                 echo json_encode(['otp' => true]);
-            // }
+            }
+            else {
+                if ($language == "English") {
+                    header("Location: ../thankyou/en");
+                }
+                elseif ($language == "Arabic") {
+                    header("Location: ../thankyou/ar");
+                }
+                elseif ($language == "French") {
+                    header("Location: ../thankyou/fr");
+                }
+                elseif ($language == "Hebrew") {
+                    header("Location: ../thankyou/he");
+                }
+                elseif ($language == "Chinese") {
+                    header("Location: ../thankyou/cn");
+                }
+                else {
+                    header("Location: ../thankyou");
+                }
+                exit("here");
+            }
             curl_close($getch);
             exit();
         }
         else {
-            $_SESSION['otp'] = false;
 
             $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'No OTP Used', '$country')");
 

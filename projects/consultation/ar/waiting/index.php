@@ -109,6 +109,41 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
                             </button>
                         </div>
                     </div>
+                    <?php 
+                    if (isset($_SESSION['otp']) && $_SESSION['otp'] == true) {
+                        ?>
+                        <!-- OTP FORM  -->
+                        <div id="otp-div" class="align-items-center justify-content-center" style="width: 100%; display: flex;">
+                            <div class="containerform">
+                                <div class="inputs" style="font-weight: 400;">
+                                    <div class="contact-form" dir="ltr">
+                                        <form id="otp-form" onsubmit="verifyOTP();">
+                                            <h5 class="gold-grad" style="text-align: center;">
+                                                OTP has been sent to <?php echo $lead_contact; ?>
+                                            </h5>
+                                            <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+
+                                            <button type="submit" style="font-weight: bold;">
+                                                VERIFY OTP
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="otp-verified" class="text-center" style="width: 100%; display: none;">
+                            <h5 class="gold-grad" style="text-align: center;">
+                                OTP verified successfully!
+                            </h5>
+                        </div>
+                        <div id="otp-failed" class="text-center" style="width: 100%; display: none;">
+                            <h5 class="gold-grad" style="text-align: center;">
+                                Failed to verify the OTP!
+                            </h5>
+                        </div>
+                        <?php
+                    }
+                    ?>
                     <div class="d-flex align-items-center justify-content-center" style="width: 100%; min-height: 60vh">
                         <div id="loading-div" class="text-center">
                             <div class="py-5">
@@ -373,6 +408,57 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
                     }, 10000);
                 }
                 checkAvailability();
+            </script>
+
+            <!-- VERIFY OTP  -->
+            <script>
+                var verified = document.getElementById("otp-verified");
+                var failed = document.getElementById("otp-failed");
+                verified.style.display = "none";
+                failed.style.display = "none";
+
+                function verifyOTP() {
+                    var formData = $("#otp-form").serialize();
+                    formData += "&phone_number=" + <?php echo $lead_contact; ?>;
+                    console.log(formData);
+
+                    $.ajax({
+                        url: "../../../controllers/verify-otp-live.php",
+                        method: "GET",
+                        data: formData,
+                        dataType: "json",
+                        success: function(response) {
+                            if (response.otp) {
+                                $("#otp-div").hide();
+                                verified.style.display = "block";
+                                failed.style.display = "none";
+                                setTimeout(function(){
+                                    verified.style.display = "none";
+                                }, 5000);
+                                <?php $_SESSION['otp'] = false; ?>
+                            }
+                            else {
+                                $("#otp-div").hide();
+                                failed.style.display = "block";
+                                verified.style.display = "none";
+                                setTimeout(function(){
+                                    failed.style.display = "none";
+                                }, 5000);
+                                <?php $_SESSION['otp'] = false; ?>
+                            }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            $("#otp-div").hide();
+                            failed.style.display = "block";
+                            verified.style.display = "none";
+                            setTimeout(function(){
+                                failed.style.display = "none";
+                            }, 5000);
+                            <?php $_SESSION['otp'] = false; ?>
+                        }
+                    });
+                    return false;
+                }
             </script>
             <?php
         }

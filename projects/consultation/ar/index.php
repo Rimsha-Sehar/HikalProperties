@@ -150,8 +150,9 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     
                                                     <!-- CONTACT NUMBER -->
                                                     <label class="gold-grad">رقم الاتصال</label>
-                                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" required />
-                                                    
+                                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" required oninput="updateLeadContact()" />
+                                                    <input type="tel" name="leadContact" id="leadContact" style="display: none;" />
+
                                                     <!--PROJECT-->
                                                     <label class="gold-grad">المشروع</label>
                                                     <!--<input type="text" name="Project" id="Project" required />-->
@@ -202,6 +203,10 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                         </label>
                                                     </div>
                                             
+                                                    <!--ENQUIRY NOTE-->
+                                                    <!--<label class="gold-grad">ENQUIRY NOTE</label>-->
+                                                    <!--<textarea type="text" name="Enote" id="Enote" required>I'm looking for professional guidance in the real estate market.</textarea>-->
+
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
                                                             <button type="submit" class="submit-click" onclick="dataLayer.push({'event': 'submit-click', 'var': 'submit-click'});" style="font-weight: bold;">إرسال</button>
@@ -270,6 +275,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                         border-left: 0.11em solid #9c7625;
                         border-right: 0.11em solid #9c7625;
                         border-bottom: 0.11em solid #9c7625;
+                        box-shadow: 0 19px 38px rgba(255,255,255,0.10), 0 15px 12px rgba(255,255,255,0.02);
                     }
 
                     .team-block .inner-box:hover .image-box .image:after,
@@ -393,7 +399,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             </div>
         </div>
     
-    
         <footer>
             <?php include_once("../../components/footer-copyright.php"); ?>
         </footer>
@@ -407,6 +412,11 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });
+
+            function updateLeadContact() {
+                var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
+                document.getElementById('leadContact').value = full_number;
+            }
         </script>
     
         <!--SCROLL TO TOP-->
