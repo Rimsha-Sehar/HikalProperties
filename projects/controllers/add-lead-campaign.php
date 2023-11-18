@@ -34,9 +34,20 @@ if (isset($_POST['leadContact']) && ($_POST['leadContact'] != "")) {
     $leadContact = $_POST['leadContact'];
 }
 
-$project = $_POST['Project'];
+// $project = $_POST['Project'];
+
+$project = "";
 $language = $_POST['Language'];
 $note = $_POST['Consultation'];
+
+if ($note == "Register for later") {
+    $note = $_POST['Schedule'];
+
+    $dateTime = new DateTime($note);
+    $formattedDateTime = $dateTime->format("Y-m-d h:i A");
+
+    $note = "Scheduled for " . $formattedDateTime;
+}
 
 // STORE LEAD DETAILS IN SESSION
 $_SESSION['lead_name'] = $leadName;

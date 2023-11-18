@@ -154,25 +154,26 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     <input type="tel" name="leadContact" id="leadContact" style="display: none;" />
 
                                                     <!--PROJECT-->
-                                                    <label class="gold-grad">المشروع</label>
-                                                    <!--<input type="text" name="Project" id="Project" required />-->
+                                                    <!-- <label class="gold-grad">المشروع</label>
                                                     <select name="Project" id="Project" dir="rtl">
-                                                        <option value="">---اختيار---</option>
-                                                        <!--<option value="Jacob & Co">Burj Binghatti Jacob & Co</option>-->
-                                                        <!--<option value="Bugatti">Bugatti Residences</option>-->
-                                                        <!--<option value="Trillionaire">Trillionaire</option>-->
-                                                        <!--<option value="Venice">Venice</option>-->
-                                                        <!--<option value="Riviera">Riviera</option>-->
-                                                        <!--<option value="Hartland">Hartland</option>-->
-                                                        
-                                                        <?php for ($i = 0; $i < count($offplan); $i++) : ?>
-                                                            <option value="<?php echo $offplan[$i]['projectName']; ?>">
-                                                                <?php echo $offplan[$i]['project']; ?>
-                                                            </option>
-                                                        <?php endfor; ?>
-
-                                                        <option value="Other">أي / آخر</option>
-                                                    </select>
+                                                        <option value="">---اختيار---</option> -->
+                                                        <?php 
+                                                        // for ($i = 0; $i < count($offplan); $i++) : 
+                                                            ?>
+                                                            <!-- <option value=" -->
+                                                            <?php 
+                                                            // echo $offplan[$i]['projectName']; 
+                                                            ?>
+                                                            <!-- "> -->
+                                                                <?php 
+                                                                // echo $offplan[$i]['project']; 
+                                                                ?>
+                                                            <!-- </option> -->
+                                                        <?php 
+                                                        // endfor; 
+                                                        ?>
+                                                        <!-- <option value="Other">أي / آخر</option>
+                                                    </select> -->
                                                     
                                                     <!--LANGUAGE-->
                                                     <label class="gold-grad">اللغة المفضلة</label>
@@ -187,7 +188,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     <!-- PURPOSE  -->
                                                     <label class="gold-grad">استشارة</label>
                                                     <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="Consultation" id="Consultation1" value="Live Video Call Meeting" style="width: 20px;" required>
+                                                        <input class="mx-2" type="radio" name="Consultation" id="Consultation1" value="Live Video Call Meeting" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation1" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF; display: flex; align-items: center;">
                                                              الاجتماع عبر مكالمة فيديو مباشرة
                                                             <div class="mx-2 p-1 white" style="background: #DA1F26; font-weight: bold; font-size: small; border-radius: 5px; display: flex; align-items: center;">
@@ -197,11 +198,17 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="Register for later" style="width: 20px;" required>
+                                                        <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="Register for later" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
                                                             سجّل لوقت لاحق
                                                         </label>
                                                     </div>
+
+                                                    <!-- SCHEDULE  -->
+                                                    <div id="ScheduleDatetime" style="display: none;">
+                                                        <label class="gold-grad">SCHEDULE LIVE CALL</label>
+                                                        <input type="datetime-local" id="Schedule" name="Schedule" min="" max="">
+                                                    </div> 
                                             
                                                     <!--ENQUIRY NOTE-->
                                                     <!--<label class="gold-grad">ENQUIRY NOTE</label>-->
@@ -362,42 +369,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 </div>
             </div>
         </div>
-        
-        <div class="third_section mt-5">
-            <div class="container container-fluid py-5">
-                <div class="row" style="text-align: center;">
-                    <h4 class="gold-grad-anim" style="font-weight: 900;">
-                        بعض المشاريع الجديدة
-                    </h4>
-                </div>
-                <div class="row">
-                    <?php foreach ($offplan as $index => $offplan) : ?>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-3">
-                            <div style="border-radius: 15px; background-color: #000000; width: 100%; box-shadow: 0 19px 38px rgba(255,255,255,0.10), 0 15px 12px rgba(255,255,255,0.02);">
-                                <div style="width: 100%;">
-                                    <img src="<?php echo $offplan['picture']; ?>" style="height: 200px; width: 100%; border-top-left-radius: 15px; border-top-right-radius: 15px;" />
-                                    <a href="<?php echo $offplan['link']; ?>" target="_blank" style="color: #FFFFFF;">
-                                        <div class="p-3">
-                                            <div class="my-2" style="font-weight: bold;">
-                                                <?php echo $offplan['project']; ?>
-                                            </div>
-                                            <div class="d-flex align-items-center my-2">
-                                                <i class="fa-solid fa-location-dot gold-grad ms-2"></i>
-                                                <?php echo $offplan['address']; ?>
-                                            </div>
-                                            <div class="d-flex align-items-center my-2">
-                                                <i class="fa-solid fa-bed gold-grad ms-2"></i>
-                                                <?php echo $offplan['bedrooms']; ?>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
     
         <footer>
             <?php include_once("../../components/footer-copyright.php"); ?>
@@ -522,6 +493,35 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             }
 
             animateHourglass(); // Start the animation
+        </script>
+
+        <!-- SCHEDULE MEETING  -->
+        <script>
+            function scheduleMeeting() {
+                var scheduleDiv = document.getElementById("ScheduleDatetime");
+                var schedule = document.getElementById("Schedule");
+                var meetRadio = document.querySelector('input[name="Consultation"]:checked');
+
+                if (meetRadio && meetRadio.value === "Register for later") {
+                    scheduleDiv.style.display = "block";
+                    // schedule.min = new Date().toISOString().split('Z')[0];
+                    
+                    var now = new Date();
+                    var minDateTime = new Date(now.getTime() + 60 * 60 * 1000); // Add 1 hour
+                    var maxDateTime = new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000); // Add 2 weeks
+
+                    // Format the minimum and maximum date and time as required by the input element
+                    var minDateTimeFormatted = minDateTime.toISOString().slice(0, 16);
+                    var maxDateTimeFormatted = maxDateTime.toISOString().slice(0, 16);
+
+                    // Set the min and max attributes of the input element
+                    schedule.min = minDateTimeFormatted;
+                    schedule.max = maxDateTimeFormatted;
+
+                } else {
+                    scheduleDiv.style.display = "none";
+                }
+            }
         </script>
         <?php
     }

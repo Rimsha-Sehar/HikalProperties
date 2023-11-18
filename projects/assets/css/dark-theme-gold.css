@@ -221,6 +221,16 @@ input[type=tel] {
     margin-bottom: 3px;
 }
 
+input[type=datetime-local] {
+    background: #e3e1ee;
+    padding: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-radius: 11px;
+    box-shadow: inset 3px 3px 3px #cbced1, inset -3px 3px 3px white;
+    margin-bottom: 3px;
+}
+
 textarea {
     background: #e3e1ee;
     padding: 5px;
