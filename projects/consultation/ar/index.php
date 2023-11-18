@@ -114,16 +114,16 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                         $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
                                         ?>
                                         <?php
-                                        $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
-                                        $fetch = mysqli_fetch_array($query);
-                                        if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
+                                        // $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
+                                        // $fetch = mysqli_fetch_array($query);
+                                        // if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
                                             ?>
-                                            <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
+                                            <!-- <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
                                                 شكرًا لتسجيلك معنا. سيتواصل محترفونا معك قريبًا!                                             
-                                            </div>
+                                            </div> -->
                                             <?php
-                                        }
-                                        else {
+                                        // }
+                                        // else {
                                             ?>
                                             <!--NEW FORM-->
                                             <div class="contact-form" dir="ltr">
@@ -222,7 +222,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                 </form>
                                             </div>
                                             <?php
-                                        }
+                                        // }
                                         ?>
                                     </div>
                                 </div>
