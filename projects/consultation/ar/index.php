@@ -517,9 +517,18 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     // Set the min and max attributes of the input element
                     schedule.min = minDateTimeFormatted;
                     schedule.max = maxDateTimeFormatted;
+                    document.getElementById("Schedule").setAttribute("required", "true");
 
-                } else {
+                } 
+                else if (meetRadio && meetRadio.value === "Live Video Call Meeting") {
+                    document.getElementById("Schedule").setAttribute("required", "false");
+                    var form = document.getElementById('lead-form');
+                    form.submit();
+                }
+                else {
                     scheduleDiv.style.display = "none";
+                    document.getElementById("Schedule").setAttribute("required", "false");
+
                 }
             }
         </script>

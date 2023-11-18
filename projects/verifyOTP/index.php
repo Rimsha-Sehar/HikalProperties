@@ -128,7 +128,7 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
 
         <!-- VERIFY OTP  -->
         <script>
-            var lang = <?php echo $language; ?>;
+            var lang = "<?php echo $language; ?>";
 
             function verifyOTP() {
                 var formData = $("#otp-form").serialize();
@@ -142,7 +142,7 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
                     dataType: "json",
                     success: function(response) {
                         if (response.otp) {
-                            <?php $_SESSION['requireOTP'] = false; ?>
+                            console.log("SUCCESS:", response);
                             if (lang == "English") {
                                 window.location.href = 'https://hikalproperties.com/projects/thankyou/en';
                             }
@@ -154,7 +154,7 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
                             }
                         }
                         else {
-                            <?php $_SESSION['requireOTP'] = true; ?>
+                            console.log("OTP SENT:", response);
                             if (lang == "English") {
                                 window.location.href = 'https://hikalproperties.com/projects/thankyou/en';
                             }
@@ -167,7 +167,7 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
-                        <?php $_SESSION['requireOTP'] = false; ?>
+                        console.log("ERROR:", response);
                         if (lang == "English") {
                                 window.location.href = 'https://hikalproperties.com/projects/thankyou/en';
                             }
