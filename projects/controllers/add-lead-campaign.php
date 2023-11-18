@@ -53,6 +53,7 @@ if ($note == "Register for later") {
 $_SESSION['lead_name'] = $leadName;
 $_SESSION['lead_contact'] = $leadContact;
 $_SESSION['lead_email'] = $leadEmail;
+$_SESSION['language'] = $language;
 $_SESSION['lead_ip'] = $ip;
 $_SESSION['note'] = $note;
 $_SESSION['start_time'] = time();
@@ -111,27 +112,10 @@ else {
                 exit();
             }
             else {
-                if ($language == "English") {
-                    header("Location: ../thankyou/en");
-                }
-                elseif ($language == "Arabic") {
-                    header("Location: ../thankyou/ar");
-                }
-                elseif ($language == "French") {
-                    header("Location: ../thankyou/fr");
-                }
-                elseif ($language == "Hebrew") {
-                    header("Location: ../thankyou/he");
-                }
-                elseif ($language == "Chinese") {
-                    header("Location: ../thankyou/cn");
-                }
-                else {
-                    header("Location: ../thankyou");
-                }
+                $_SESSION['requireOTP'] = true;
+                header("Location: ../verifyOTP");
                 exit();
             }
-            // exit();
         }
     }
     else {

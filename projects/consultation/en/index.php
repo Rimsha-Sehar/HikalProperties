@@ -207,7 +207,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     <!-- SCHEDULE  -->
                                                     <div id="ScheduleDatetime" style="display: none;">
                                                         <label class="gold-grad">SCHEDULE LIVE CALL</label>
-                                                        <input type="datetime-local" id="Schedule" name="Schedule" min="" max="">
+                                                        <input type="datetime-local" id="Schedule" name="Schedule" min="" max="" value="" required>
                                                     </div>  
                                                     
                                                     <!--ENQUIRY NOTE-->
