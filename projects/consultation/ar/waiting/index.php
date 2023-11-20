@@ -169,18 +169,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                             </h5>
                         </div>
                     </div>
-                </div>
-            </div>
-        
-            <!--CONSULTANTS-->
-            <div class="second_section" style="background-color: #000000; ">
-                <div class="container container-fluid pt-5">
-                    <div class="row" style="text-align: center;">
-                        <h4 class="gold-grad-anim" style="font-weight: 900;">
-                            مستشارونا المحترفون
-                        </h4>
-                    </div>
-                    
+
                     <style>
                         #team-slider .item {
                             text-align: center;
@@ -293,10 +282,10 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
         	            smartSpeed: 400,
         	            responsive: {
         	                0: {
-        	                    items: 1
+        	                    items: 3
         	                },
         	                768: {
-        	                    items: 2
+        	                    items: 3
         	                },
         	                1170: {
         	                    items: 3

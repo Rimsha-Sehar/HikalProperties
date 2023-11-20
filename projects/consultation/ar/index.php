@@ -245,7 +245,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 <style>
                     .team-block {
                         position: relative;
-                        margin-bottom: 40px;
+                        margin-bottom: 20px;
                     }
 
                     .team-block .inner-box {
@@ -337,7 +337,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 </style>
                 <div class="row py-4">
                     <?php foreach ($agents as $index => $agents) : ?>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 px-4 py-2">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-3 px-2 py-2">
                             <div class="team-block">
                                 <div class="inner-box">
                                     <div class="image-box">
@@ -359,7 +359,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                             </div>
                                         </figure>
                                         <div class="text-center">
-                                            <h6 class="gold-grad m-0 pt-3 text-uppercase" style="font-size: 0.9rem;"><?php echo $agents['userName']; ?></h6>
+                                            <h6 class="gold-grad m-0 pt-3 text-uppercase" style="font-size: 0.7rem; line-height: 1rem;"><?php echo $agents['userName']; ?></h6>
                                         </div>
                                     </div>
                                 </div>
@@ -523,7 +523,9 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 else if (meetRadio && meetRadio.value === "Live Video Call Meeting") {
                     document.getElementById("Schedule").setAttribute("required", "false");
                     var form = document.getElementById('lead-form');
-                    form.submit();
+                    if (leadForm.checkValidity()) {
+                        form.submit();
+                    }
                 }
                 else {
                     scheduleDiv.style.display = "none";

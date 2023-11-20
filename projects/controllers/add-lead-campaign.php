@@ -67,73 +67,64 @@ if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $d
 }
 else {
     // SEND OTP 
-    if (substr($leadContact, 0, 4) === "+971") {
-        $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");
-
+    if ($note == "Live Video Call Meeting") {
+        $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')");
+        
         if ($query) {
-            // CALL GENERATE OTP API 
-            $getOTP = 'https://staging.hikalcrm.com/api/otp';
-
-            $otpData = array(
-                'phone_number' => (string)$leadContact,
-                'senderAddr' => "AD-HIKAL",
-                'message' => "The OTP for verification is: "
-            );
-
-            // Initialize cURL session
-            $getch = curl_init($getOTP);
-
-            // Set cURL options
-            curl_setopt($getch, CURLOPT_POST, 1);
-            curl_setopt($getch, CURLOPT_POSTFIELDS, $otpData);
-            curl_setopt($getch, CURLOPT_RETURNTRANSFER, true);
-
-            $response = curl_exec($getch);
-
-            $responseData = json_decode($response, true);
-
-            if (isset($responseData['message'])) {
-                $message = $responseData['message'];
-
-                $_SESSION['otp'] = true;
+            if ($language == "Arabic") {
+                header("Location: ../consultation/ar/waiting");
             }
             else {
-                $_SESSION['otp'] = false;
+                header("Location: ../consultation/en/waiting");
             }
-            curl_close($getch);
+            exit();
+        }
+    }
+    else {
+        if (substr($leadContact, 0, 4) === "+971") {
+            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");
 
-            if ($note == "Live Video Call Meeting") {
-                if ($language == "Arabic") {
-                    header("Location: ../consultation/ar/waiting");
+            if ($query) {
+                // CALL GENERATE OTP API 
+                $getOTP = 'https://staging.hikalcrm.com/api/otp';
+
+                $otpData = array(
+                    'phone_number' => (string)$leadContact,
+                    'senderAddr' => "AD-HIKAL",
+                    'message' => "The OTP for verification is: "
+                );
+
+                // Initialize cURL session
+                $getch = curl_init($getOTP);
+
+                // Set cURL options
+                curl_setopt($getch, CURLOPT_POST, 1);
+                curl_setopt($getch, CURLOPT_POSTFIELDS, $otpData);
+                curl_setopt($getch, CURLOPT_RETURNTRANSFER, true);
+
+                $response = curl_exec($getch);
+
+                $responseData = json_decode($response, true);
+
+                if (isset($responseData['message'])) {
+                    $message = $responseData['message'];
+
+                    $_SESSION['otp'] = true;
                 }
                 else {
-                    header("Location: ../consultation/en/waiting");
+                    $_SESSION['otp'] = false;
                 }
-                exit();
-            }
-            else {
+                curl_close($getch);
+
                 $_SESSION['requireOTP'] = true;
                 header("Location: ../verifyOTP");
                 exit();
             }
         }
-    }
-    else {
-        $query = "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')";
-        $runquery = mysqli_query($con, $query);
+        else {
+            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')");
         
-        if ($runquery) {
-
-            if ($note == "Live Video Call Meeting") {
-                if ($language == "Arabic") {
-                    header("Location: ../consultation/ar/waiting");
-                }
-                else {
-                    header("Location: ../consultation/en/waiting");
-                }
-                exit();
-            }
-            else {
+            if ($query) {
                 if ($language == "English") {
                     header("Location: ../thankyou/en");
                 }
@@ -155,8 +146,117 @@ else {
                 exit();
             }
         }
-
     }
+
+
+
+
+    // if (substr($leadContact, 0, 4) === "+971") {
+    //     $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");
+
+    //     if ($query) {
+    //         CALL GENERATE OTP API 
+    //         $getOTP = 'https://staging.hikalcrm.com/api/otp';
+
+    //         $otpData = array(
+    //             'phone_number' => (string)$leadContact,
+    //             'senderAddr' => "AD-HIKAL",
+    //             'message' => "The OTP for verification is: "
+    //         );
+
+    //         // Initialize cURL session
+    //         $getch = curl_init($getOTP);
+
+    //         // Set cURL options
+    //         curl_setopt($getch, CURLOPT_POST, 1);
+    //         curl_setopt($getch, CURLOPT_POSTFIELDS, $otpData);
+    //         curl_setopt($getch, CURLOPT_RETURNTRANSFER, true);
+
+    //         $response = curl_exec($getch);
+
+    //         $responseData = json_decode($response, true);
+
+    //         if (isset($responseData['message'])) {
+    //             $message = $responseData['message'];
+
+    //             $_SESSION['otp'] = true;
+    //         }
+    //         else {
+    //             $_SESSION['otp'] = false;
+    //         }
+    //         curl_close($getch);
+
+    //         if ($note == "Live Video Call Meeting") {
+    //             if ($language == "Arabic") {
+    //                 header("Location: ../consultation/ar/waiting");
+    //             }
+    //             else {
+    //                 header("Location: ../consultation/en/waiting");
+    //             }
+    //             exit();
+    //         }
+    //         else {
+    //             // $_SESSION['requireOTP'] = true;
+    //             // header("Location: ../verifyOTP");
+    //             if ($language == "English") {
+    //                 header("Location: ../thankyou/en");
+    //             }
+    //             elseif ($language == "Arabic") {
+    //                 header("Location: ../thankyou/ar");
+    //             }
+    //             elseif ($language == "French") {
+    //                 header("Location: ../thankyou/fr");
+    //             }
+    //             elseif ($language == "Hebrew") {
+    //                 header("Location: ../thankyou/he");
+    //             }
+    //             elseif ($language == "Chinese") {
+    //                 header("Location: ../thankyou/cn");
+    //             }
+    //             else {
+    //                 header("Location: ../thankyou");
+    //             }
+    //             exit();
+    //         }
+    //     }
+    // }
+    // else {
+    //     $query = "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')";
+    //     $runquery = mysqli_query($con, $query);
+        
+    //     if ($runquery) {
+    //         if ($note == "Live Video Call Meeting") {
+    //             if ($language == "Arabic") {
+    //                 header("Location: ../consultation/ar/waiting");
+    //             }
+    //             else {
+    //                 header("Location: ../consultation/en/waiting");
+    //             }
+    //             exit();
+    //         }
+    //         else {
+    //             if ($language == "English") {
+    //                 header("Location: ../thankyou/en");
+    //             }
+    //             elseif ($language == "Arabic") {
+    //                 header("Location: ../thankyou/ar");
+    //             }
+    //             elseif ($language == "French") {
+    //                 header("Location: ../thankyou/fr");
+    //             }
+    //             elseif ($language == "Hebrew") {
+    //                 header("Location: ../thankyou/he");
+    //             }
+    //             elseif ($language == "Chinese") {
+    //                 header("Location: ../thankyou/cn");
+    //             }
+    //             else {
+    //                 header("Location: ../thankyou");
+    //             }
+    //             exit();
+    //         }
+    //     }
+    // }
 }
 
 ?>

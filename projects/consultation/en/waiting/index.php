@@ -147,12 +147,12 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                     ?>
                     <div id="loading-div" class="text-center">
                         <div class="row">
-                            <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 30vh">
+                            <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 30vh;">
                                 <?php include_once('../../../components/loading-animation.php'); ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="d-flex align-items-center justify-content-center" style="width: 100%; min-height: 20vh">
+                            <div class="d-flex align-items-center justify-content-center" style="width: 100%; min-height: 20vh;">
                                 <h5 class="py-5">
                                     <br>
                                     Please wait while we check for a professional consultant for you...
@@ -169,22 +169,11 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                             </h5>
                         </div>
                     </div>
-                </div>
-            </div>
-        
-            <!--CONSULTANTS-->
-            <div class="second_section" style="background-color: #000000; ">
-                <div class="container container-fluid pt-5">
-                    <div class="row" style="text-align: center;">
-                        <h4 class="gold-grad-anim" style="font-weight: 900;">
-                            OUR PROFESSIONAL CONSULTANTS
-                        </h4>
-                    </div>
-                    
+
                     <style>
                         #team-slider .item {
                             text-align: center;
-                            padding: 30px;
+                            padding: 5px;
                             opacity: .9;
                             -webkit-transform: scale3d(0.8, 0.8, 1);
                             transform: scale3d(0.8, 0.8, 1);
@@ -212,9 +201,9 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                         
                         .shadow-effect {
                             background: #000000;
-                            padding: 20px;
-                            padding-bottom: 10px;
-                            border-radius: 15px;
+                            padding: 5px;
+                            padding-bottom: 5px;
+                            border-radius: 5px;
                             text-align: center;
                             border: 1px solid #ECECEC;
                             box-shadow: 0 19px 38px rgba(255,255,255,0.10), 0 15px 12px rgba(255,255,255,0.02);
@@ -237,7 +226,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                                             <?php
                                         }
                                         ?>
-                                        <h6 class="gold-grad mt-3 mb-0 p-0 text-uppercase"><?php echo $agents['userName']; ?></h6>
+                                        <h6 class="gold-grad mt-3 mb-0 p-0 text-uppercase" style="font-size: 0.7rem; line-height: 1rem;"><?php echo $agents['userName']; ?></h6>
                                         <!--<h6 class="m-0 p-0">RERA</h6>-->
                                     </div>
                                 </div>
@@ -292,10 +281,10 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
         	            smartSpeed: 400,
         	            responsive: {
         	                0: {
-        	                    items: 1
+        	                    items: 3
         	                },
         	                768: {
-        	                    items: 2
+        	                    items: 3
         	                },
         	                1170: {
         	                    items: 3
