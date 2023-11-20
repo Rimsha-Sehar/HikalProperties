@@ -16,7 +16,8 @@ $lead_ip = $_SESSION['lead_ip'];
 $note = $_SESSION['note'];
 $start_time = $_SESSION['start_time'];
 
-if (isset($start_time) && (time() - $start_time > 3600)) {
+if (isset($start_time) && (time() - $start_time > 7200)) { 
+    // 3600 = 1 HOUR
     session_unset();
     session_destroy();
 }
@@ -144,19 +145,25 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
                         <?php
                     }
                     ?>
-                    <div class="d-flex align-items-center justify-content-center" style="width: 100%; min-height: 60vh">
-                        <div id="loading-div" class="text-center">
-                            <div class="py-5">
-                                <?php include_once('../../../components/loading-circle.php'); ?>
+                    <div id="loading-div" class="text-center">
+                        <div class="row">
+                            <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 30vh">
+                                <?php include_once('../../../components/loading-animation.php'); ?>
                             </div>
-                            <h5 class="py-5">
-                                Checking for available consultants...
-                                <br>
-                                <br>
-                                It might take few minutes.
-                            </h5>
                         </div>
-                        <div id="available-div" style="display: none;">
+                        <div class="row">
+                            <div class="d-flex align-items-center justify-content-center" style="width: 100%; min-height: 20vh">
+                                <h5 class="py-5">
+                                    <br>
+                                    Please wait while we check for a professional consultant for you...
+                                    <br>
+
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="available-div" style="display: none;">
+                        <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 50vh">
                             <h5 class="text-center py-5">
                                 We regret to inform you that currently, no consultants are available. Rest assured, we will promptly follow up with you. Thank you for your understanding and patience.
                             </h5>
@@ -354,7 +361,7 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
                 setTimeout(function() {
                     document.querySelector('.load').style.display = 'none';
                     document.querySelector('.no-load').style.display = 'block';
-                }, 600000); // 300000 milliseconds = 5 minutes
+                }, 7200000); // 60000 milliseconds = 1 minute
             </script>
             
             <!--CHECKING SESSION TIME-->
@@ -366,12 +373,12 @@ if (isset($start_time) && (time() - $start_time > 3600)) {
                 var timeDifference = currentTime - startTime;
 
                 // If less than 5 minutes, keep showing loading div
-                if (timeDifference <= 600) {
+                if (timeDifference <= 7200) { // 60 seconds = 1 minute | 7200 seconds = 2 hours
                     setTimeout(function() {
                         document.getElementById('loading-div').style.display = 'none';
                         document.getElementById('available-div').style.display = 'block';
                         console.log("loading-div");
-                    }, (600 - timeDifference) * 1000); // Convert seconds to milliseconds
+                    }, (7200 - timeDifference) * 1000); // Convert seconds to milliseconds
                 } else {
                     // If more than 5 minutes, show not available immediately
                     document.getElementById('loading-div').style.display = 'none';
