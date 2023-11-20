@@ -61,11 +61,11 @@ $_SESSION['start_time'] = time();
 $dupq = mysqli_query($con, "SELECT leadName, leadContact, project, language FROM leads ORDER BY id DESC LIMIT 1");
 $dupf = mysqli_fetch_array($dupq);
 
-if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $dupf['project'] == $project && $dupf['language'] == $language) {
+// if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $dupf['project'] == $project && $dupf['language'] == $language) {
     // Preventing duplicate form submission
-    header("Location: ../thankyou");
-}
-else {
+    // header("Location: ../thankyou");
+// }
+// else {
     // SEND OTP 
     if ($note == "Live Video Call Meeting") {
         $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')");
@@ -257,6 +257,6 @@ else {
     //         }
     //     }
     // }
-}
+// }
 
 ?>

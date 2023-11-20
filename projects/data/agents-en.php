@@ -32,7 +32,7 @@ $agents = [
     ],
     [
         "uid" => 339,
-        "userName" => "Hanan Nassouh Alzaeem",
+        "userName" => "Hanan Alzaeem",
         "rera" => "",
         "picture" => "https://hikalproperties.com/projects/assets/images/team/hanan.jpg",
     ],
@@ -42,12 +42,12 @@ $agents = [
         "rera" => "",
         "picture" => "https://hikalproperties.com/projects/assets/images/team/borhane.jpg",
     ],
-    [
-        "uid" => 180,
-        "userName" => "Hams Hossam",
-        "rera" => "",
-        "picture" => "https://hikalproperties.com/projects/assets/images/team/hams.jpg",
-    ],
+    // [
+    //     "uid" => 180,
+    //     "userName" => "Hams Hossam",
+    //     "rera" => "",
+    //     "picture" => "https://hikalproperties.com/projects/assets/images/team/hams.jpg",
+    // ],
     [
         "uid" => 195,
         "userName" => "Khaled Kouri",

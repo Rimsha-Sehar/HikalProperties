@@ -219,6 +219,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                             <button type="submit" class="submit-click" onclick="dataLayer.push({'event': 'submit-click', 'var': 'submit-click'});" style="font-weight: bold;">إرسال</button>
                                                         </div>
                                                     </div>
+                                                    <div id="Message" class="pt-3 text-center" style="color: #DA1F26; display: none;">Please enter all the fields!</div>
                                                 </form>
                                             </div>
                                             <?php
@@ -523,14 +524,26 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 else if (meetRadio && meetRadio.value === "Live Video Call Meeting") {
                     document.getElementById("Schedule").setAttribute("required", "false");
                     var form = document.getElementById('lead-form');
-                    if (leadForm.checkValidity()) {
+                    
+                    // FIELDS
+                    var name = document.getElementById("Name");
+                    var contact = document.getElementById("mobile");
+                    var email = document.getElementById("Email");
+
+                    if (name.value !== "" && contact.value !== "" && email.value !== "") {
                         form.submit();
+                    }
+                    else {
+                        var message = document.getElementById("Message");
+                        message.style.display = "block";
+                        setTimeout(function(){
+                            message.style.display = "none";
+                        }, 5000);
                     }
                 }
                 else {
                     scheduleDiv.style.display = "none";
                     document.getElementById("Schedule").setAttribute("required", "false");
-
                 }
             }
         </script>
