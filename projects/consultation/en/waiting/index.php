@@ -277,7 +277,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
         	            margin: 0,
         	            autoplay: true,
         	            dots:true,
-        	            autoplayTimeout: 3000,
+        	            autoplayTimeout: 1500,
         	            smartSpeed: 400,
         	            responsive: {
         	                0: {
