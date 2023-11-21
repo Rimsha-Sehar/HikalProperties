@@ -40,6 +40,63 @@ $project = "";
 $language = $_POST['Language'];
 $note = $_POST['Consultation'];
 
+// SNAP PIXEL 
+if ($leadSource == "Campaign Snapchat") {
+    $phone = preg_replace('/[^0-9]/', '', $leadContact);
+    $page_url = $_SESSION["page_url"];
+
+    $hashed_ip = hash('sha256', $ip);
+    $hashed_email = hash('sha256', $leadEmail);
+    $hashed_phone = hash('sha256', $phone);
+
+    date_default_timezone_set('Asia/Dubai');
+    $cur_time = time();
+
+    $_SESSION['leadSource'] = $leadSource;
+    $_SESSION['fileName'] = $page_url;
+    $_SESSION['hashed_email'] = $hashed_email;
+    $_SESSION['hashed_phone_number'] = $hashed_phone;
+    $_SESSION['hashed_ip'] = $hashed_ip;
+    $_SESSION['user_agent'] = $device;
+
+    $url = 'https://staging.hikalcrm.com/api/validate-snap';
+
+    $data = array(
+        "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
+        "timestamp" => (string)$cur_time,
+        "event_type" => "SIGN_UP",
+        "event_conversion_type" => "WEB",
+        "event_tag" => "Live Consultation",
+        "page_url" => (string)$page_url, 
+        "hashed_email" => (string)$hashed_email,
+        "hashed_phone_number" => (string)$hashed_phone,
+        "user_agent" => (string)$device,
+        "hashed_ip_address" => (string)$hashed_ip 
+    );
+    // print_r($data);
+
+    $token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
+
+    $ch = curl_init($url);
+
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'Authorization: Bearer ' . $token
+    ));
+
+    $response = curl_exec($ch);
+
+    if(curl_errno($ch)){
+        // echo 'Error: ' . curl_error($ch);
+    }
+
+    curl_close($ch);
+}
+// SNAP PIXEL END
+
 if ($note == "Register for later") {
     $note = $_POST['Schedule'];
 
