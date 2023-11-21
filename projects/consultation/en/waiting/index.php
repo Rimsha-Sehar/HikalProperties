@@ -95,6 +95,16 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
             <!-- TOP SCROLL -->
             <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
             
+            <div id="start-audio" class="mobile" style="position: fixed; top:0; left: 0; height: 100vh; width: 100vw; background-color: rgba(0,0,0,0.5); padding: 10%; z-index: 101;">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #000000; border: 2px solid #333333; padding: 15px; border-radius: 10px; text-align: center;">
+                    We are currently finding the best consultant for you based on your requirements. Your video call will be initiated shortly. We appreciate your understanding and apologize for any inconvenience caused.
+                    <br />
+                    <button onclick="startAudio()" style="font-weight: bold;">
+                        START
+                    </button>
+                </div>
+            </div>
+
             <!--HEADINGS & FORM-->
             <div class="first_section" style="min-height: 80vh; background-image: url('https://hikalproperties.com/projects/assets/images/static/sliverBgDark.png'); background-size: contain; background-repeat: no-repeat; background-position: center center;">
                 <div class="container container-fluid pb-5">
@@ -469,7 +479,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
             <!-- AUDIO  -->
             <script>
                 var audioDiv = document.getElementById("loading-audio");
-                const audio = new Audio('../../../assets/audio/waiting-arabic.mp3');
+                // const audio = new Audio('../../../assets/audio/waiting-arabic.mp3');
                 var volume = document.getElementById("volume-icon");
 
                 function toggleMute() {
@@ -487,9 +497,12 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                 //     audio.play();
                 // }
 
-                window.onload = function() {
-                    audio.play();
+                function startAudio() {
+                    var start = document.getElementById("start-audio");
+                    start.style.display = "none";
+                    audioDiv.play();
                     audioDiv.muted = false;
+                    audioDiv.loop = true;
                 }
             </script>
             <?php
