@@ -187,23 +187,23 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                             
                                                     <!-- CONSULTATION  -->
                                                     <label class="gold-grad">استشارة</label>
-                                                    <div style="display: flex;" dir="rtl">
+                                                    <div style="display: flex; align-items: center;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation1" value="Live Video Call Meeting" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation1" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF; display: flex; align-items: center;">
                                                              الاجتماع عبر مكالمة فيديو مباشرة
                                                             <div class="mx-2 p-1 white" style="background: #DA1F26; font-weight: bold; font-size: small; border-radius: 5px; display: flex; align-items: center;">
-                                                                <img src="https://hikalproperties.com/assets/images/static/live.svg" class="live-icon mx-1" style="width: 20px;" />
+                                                                <img src="https://hikalproperties.com/projects/assets/images/static/live.svg" class="live-icon mx-1" style="width: 20px;" />
                                                                 <span class="mx-1">LIVE</span>
                                                             </div>
                                                         </label>
                                                     </div>
-                                                    <div style="display: flex;">
+                                                    <div style="display: flex; align-items: center;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="WhatsApp Consultation" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
                                                             استشارة عبر ال WhatsApp
                                                         </label>
                                                     </div>
-                                                    <div style="display: flex;" dir="rtl">
+                                                    <div style="display: flex; align-items: center;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="Register for later" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
                                                             سجّل لوقت لاحق

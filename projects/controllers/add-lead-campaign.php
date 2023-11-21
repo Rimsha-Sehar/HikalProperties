@@ -74,10 +74,12 @@ $dupf = mysqli_fetch_array($dupq);
             if ($language == "Arabic") {
                 $_SESSION['triggerAction'] = true;
                 header("Location: ../consultation/ar/waiting");
+                // header("Location: ../consultation/ar/waiting/index.php");
             }
             else {
                 $_SESSION['triggerAction'] = true;
                 header("Location: ../consultation/en/waiting");
+                // header("Location: ../consultation/en/waiting/index.php");
             }
             exit();
         }

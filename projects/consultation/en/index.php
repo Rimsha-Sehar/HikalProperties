@@ -187,7 +187,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                             
                                                     <!-- CONSULTATION  -->
                                                     <label class="gold-grad">CONSULTATION</label>
-                                                    <div style="display: flex;">
+                                                    <div style="display: flex; align-items: center;">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation1" value="Live Video Call Meeting" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation1" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF; display: flex; align-items: center;">
                                                             Start Live Call Now
@@ -197,13 +197,13 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                             </div>
                                                         </label>
                                                     </div>
-                                                    <div style="display: flex;">
+                                                    <div style="display: flex; align-items: center;">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="WhatsApp Consultation" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
                                                             WhatsApp Consultation
                                                         </label>
                                                     </div>
-                                                    <div style="display: flex;">
+                                                    <div style="display: flex; align-items: center;">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="Register for later" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
                                                             Register for later

@@ -157,7 +157,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                         </button>  
 
                         <div class="row">
-                            <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 30vh;">
+                            <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 30vh;" dir="ltr">
                                 <?php include_once('../../../components/loading-animation.php'); ?>
                             </div>
                         </div>
