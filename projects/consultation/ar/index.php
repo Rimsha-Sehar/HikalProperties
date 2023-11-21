@@ -199,8 +199,11 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     </div>
                                                     <div style="display: flex; align-items: center;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="WhatsApp Consultation" style="width: 20px;" required onchange="scheduleMeeting()">
-                                                        <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
+                                                        <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF; display: flex;">
                                                             إستشارة عبر الواتساب
+                                                            <div class="mx-2 p-1 white" style="background: #24CC63; border-radius: 5px; display: flex; align-items: center; width: auto;">
+                                                                <i class="fa-brands fa-whatsapp" style="color: #FFFFFF; font-size: 16px;"></i>
+                                                            </div>
                                                         </label>
                                                     </div>
                                                     <div style="display: flex; align-items: center;" dir="rtl">
