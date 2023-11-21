@@ -505,10 +505,6 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                     audioDiv.muted = false;
                     audioDiv.loop = true;
                 }
-
-                window.onload = function() {
-                    startAudio();
-                }
             </script>
             <?php
         }
