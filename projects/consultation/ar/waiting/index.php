@@ -100,7 +100,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                     نحن حاليا نبحث عن أفضل مستشار لك بناءً على متطلباتك. سيتم بدء مكالمة الفيديو الخاصة بك قريبًا. نقدر تفهمك ونعتذر عن أي إزعاج قد يحدث.
                     <br />
                     <button onclick="startAudio()" style="font-weight: bold;">
-                        START
+                        ابدأ
                     </button>
                 </div>
             </div>
@@ -504,6 +504,10 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                     audioDiv.play();
                     audioDiv.muted = false;
                     audioDiv.loop = true;
+                }
+
+                window.onload = function() {
+                    startAudio();
                 }
             </script>
             <?php
