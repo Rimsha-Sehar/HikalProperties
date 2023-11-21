@@ -487,6 +487,11 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                 // if (triggerAction == true) {
                 //     audio.play();
                 // }
+
+                window.onload = function() {
+                    audio.play();
+                    audioDiv.muted = false;
+                }
             </script>
             <?php
         }
