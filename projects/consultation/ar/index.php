@@ -200,7 +200,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     <div style="display: flex; align-items: center;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="WhatsApp Consultation" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
-                                                            استشارة عبر ال WhatsApp
+                                                            إستشارة عبر الواتساب
                                                         </label>
                                                     </div>
                                                     <div style="display: flex; align-items: center;" dir="rtl">
@@ -212,7 +212,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
                                                     <!-- SCHEDULE  -->
                                                     <div id="ScheduleDatetime" style="display: none;">
-                                                        <label class="gold-grad">SCHEDULE LIVE CALL</label>
+                                                        <label class="gold-grad">جدولة مكالمة حية</label>
                                                         <input type="datetime-local" id="Schedule" name="Schedule" min="" max="" value="">
                                                     </div> 
                                             
