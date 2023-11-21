@@ -198,6 +198,12 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;">
+                                                        <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="WhatsApp Consultation" style="width: 20px;" required onchange="scheduleMeeting()">
+                                                        <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
+                                                            WhatsApp Consultation
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="Register for later" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
                                                             Register for later
@@ -503,6 +509,13 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 var schedule = document.getElementById("Schedule");
                 var meetRadio = document.querySelector('input[name="Consultation"]:checked');
 
+                document.getElementById("Schedule").setAttribute("required", "false");
+                var form = document.getElementById('lead-form');
+                // FIELDS
+                var name = document.getElementById("Name");
+                var contact = document.getElementById("mobile");
+                var email = document.getElementById("Email");
+
                 if (meetRadio && meetRadio.value === "Register for later") {
                     scheduleDiv.style.display = "block";
                     // schedule.min = new Date().toISOString().split('Z')[0];
@@ -522,14 +535,18 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
                 } 
                 else if (meetRadio && meetRadio.value === "Live Video Call Meeting") {
-                    document.getElementById("Schedule").setAttribute("required", "false");
-                    var form = document.getElementById('lead-form');
-
-                    // FIELDS
-                    var name = document.getElementById("Name");
-                    var contact = document.getElementById("mobile");
-                    var email = document.getElementById("Email");
-
+                    if (name.value !== "" && contact.value !== "" && email.value !== "") {
+                        form.submit();
+                    }
+                    else {
+                        var message = document.getElementById("Message");
+                        message.style.display = "block";
+                        setTimeout(function(){
+                            message.style.display = "none";
+                        }, 5000);
+                    }
+                }
+                else if (meetRadio && meetRadio.value === "WhatsApp Consultation") {
                     if (name.value !== "" && contact.value !== "" && email.value !== "") {
                         form.submit();
                     }

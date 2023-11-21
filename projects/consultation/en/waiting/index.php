@@ -16,6 +16,8 @@ $lead_ip = $_SESSION['lead_ip'];
 $note = $_SESSION['note'];
 $start_time = $_SESSION['start_time'];
 
+$trigger = $_SESSION['triggerAction'];
+
 if (isset($start_time) && (time() - $start_time > 7200)) { 
     // 3600 = 1 HOUR
     session_unset();
@@ -94,7 +96,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
             <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
             
             <!--HEADINGS & FORM-->
-            <div class="first_section" style="min-height: 80vh; background-image: url('https://hikalproperties.com/projects/assets/images/static/sliverBgDark.png'); background-size: contain; background-repeat: no-repeat; background-position: center bottom;">
+            <div class="first_section" style="min-height: 80vh; background-image: url('https://hikalproperties.com/projects/assets/images/static/sliverBgDark.png'); background-size: contain; background-repeat: no-repeat; background-position: center center;">
                 <div class="container container-fluid pb-5">
                     <div class="row py-2 d-flex align-items-center">
                         <div class="col-6 d-flex justify-content-start align-items-center">
@@ -145,7 +147,15 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                         <?php
                     }
                     ?>
-                    <div id="loading-div" class="text-center">
+                    <div id="loading-div" class="text-center;">
+                        <!-- AUDIO  -->
+                        <audio id="loading-audio" autoplay loop>
+                            <source src="../../../assets/audio/waiting-arabic.mp3" type="audio/mp3">
+                        </audio>
+                        <button id="volume" style="position: fixed; bottom: 15px; right: 15px; border-radius: 50%; z-index: 100; width: 50px; height: 50px;" onclick="toggleMute()">
+                            <i id="volume-icon" class="fa-solid fa-volume-high" style="font-size: 16px;"></i>
+                        </button>
+
                         <div class="row">
                             <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 30vh;">
                                 <?php include_once('../../../components/loading-animation.php'); ?>
@@ -153,7 +163,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                         </div>
                         <div class="row">
                             <div class="d-flex align-items-center justify-content-center" style="width: 100%; min-height: 20vh;">
-                                <h5 class="py-5">
+                                <h5 class="py-5 text-center">
                                     <br>
                                     Please wait while we check for a professional consultant for you...
                                     <br>
@@ -407,53 +417,75 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
 
             <!-- VERIFY OTP  -->
             <script>
-                var verified = document.getElementById("otp-verified");
-                var failed = document.getElementById("otp-failed");
-                verified.style.display = "none";
-                failed.style.display = "none";
+                // var verified = document.getElementById("otp-verified");
+                // var failed = document.getElementById("otp-failed");
+                // verified.style.display = "none";
+                // failed.style.display = "none";
 
-                function verifyOTP() {
-                    var formData = $("#otp-form").serialize();
-                    formData += "&phone_number=" + <?php echo $lead_contact; ?>;
-                    console.log(formData);
+                // function verifyOTP() {
+                //     var formData = $("#otp-form").serialize();
+                //     formData += "&phone_number=" + <?php echo $lead_contact; ?>;
+                //     console.log(formData);
 
-                    $.ajax({
-                        url: "../../../controllers/verify-otp-live.php",
-                        method: "GET",
-                        data: formData,
-                        dataType: "json",
-                        success: function(response) {
-                            if (response.otp) {
-                                $("#otp-div").hide();
-                                verified.style.display = "block";
-                                failed.style.display = "none";
-                                setTimeout(function(){
-                                    verified.style.display = "none";
-                                }, 5000);
-                                <?php $_SESSION['otp'] = false; ?>
-                            }
-                            else {
-                                $("#otp-div").hide();
-                                failed.style.display = "block";
-                                verified.style.display = "none";
-                                setTimeout(function(){
-                                    failed.style.display = "none";
-                                }, 5000);
-                                <?php $_SESSION['otp'] = false; ?>
-                            }
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            $("#otp-div").hide();
-                            failed.style.display = "block";
-                            verified.style.display = "none";
-                            setTimeout(function(){
-                                failed.style.display = "none";
-                            }, 5000);
-                            <?php $_SESSION['otp'] = false; ?>
-                        }
-                    });
-                    return false;
+                //     $.ajax({
+                //         url: "../../../controllers/verify-otp-live.php",
+                //         method: "GET",
+                //         data: formData,
+                //         dataType: "json",
+                //         success: function(response) {
+                //             if (response.otp) {
+                //                 $("#otp-div").hide();
+                //                 verified.style.display = "block";
+                //                 failed.style.display = "none";
+                //                 setTimeout(function(){
+                //                     verified.style.display = "none";
+                //                 }, 5000);
+                //                 <?php $_SESSION['otp'] = false; ?>
+                //             }
+                //             else {
+                //                 $("#otp-div").hide();
+                //                 failed.style.display = "block";
+                //                 verified.style.display = "none";
+                //                 setTimeout(function(){
+                //                     failed.style.display = "none";
+                //                 }, 5000);
+                //                 <?php $_SESSION['otp'] = false; ?>
+                //             }
+                //         },
+                //         error: function(jqXHR, textStatus, errorThrown) {
+                //             $("#otp-div").hide();
+                //             failed.style.display = "block";
+                //             verified.style.display = "none";
+                //             setTimeout(function(){
+                //                 failed.style.display = "none";
+                //             }, 5000);
+                //             <?php $_SESSION['otp'] = false; ?>
+                //         }
+                //     });
+                //     return false;
+                // }
+            </script>
+
+            <!-- AUDIO  -->
+            <script>
+                var audioDiv = document.getElementById("loading-audio");
+                const audio = new Audio('../../../assets/audio/waiting-arabic.mp3');
+                var volume = document.getElementById("volume-icon");
+
+                function toggleMute() {
+                    if (audioDiv.muted) {
+                        audioDiv.muted = false;
+                        volume.className = "fa-solid fa-volume-high";
+                    }
+                    else {
+                        audioDiv.muted = true;
+                        volume.className = "fa-solid fa-volume-xmark";
+                    }
                 }
+                // const triggerAction = <?php echo $trigger; ?>;
+                // if (triggerAction == true) {
+                //     audio.play();
+                // }
             </script>
             <?php
         }

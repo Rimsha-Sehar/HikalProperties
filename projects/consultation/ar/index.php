@@ -89,7 +89,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             <span id="hourglass-start"><i class="fa-solid fa-hourglass-start mx-1"></i></span>
                             <span id="hourglass-half" style="display: none;"><i class="fa-regular fa-hourglass-half mx-1"></i></span>
                             <span id="hourglass-end" style="display: none;"><i class="fa-solid fa-hourglass-end mx-1"></i></span>
-                            <span class="mx-1 text-uppercase" id="waiting-list">7 انتظار</span>
+                            <span class="mx-1 text-uppercase" id="waiting-list">7في الإنتظار</span>
                         </button>
                     </div>
                 </div>
@@ -185,16 +185,22 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                         <option value="Chinese">中文</option>
                                                     </select>
                                             
-                                                    <!-- PURPOSE  -->
+                                                    <!-- CONSULTATION  -->
                                                     <label class="gold-grad">استشارة</label>
                                                     <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="Consultation" id="Consultation1" value="Live Video Call Meeting" style="width: 20px;" required onchange="scheduleMeeting()">
                                                         <label for="Consultation1" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF; display: flex; align-items: center;">
                                                              الاجتماع عبر مكالمة فيديو مباشرة
                                                             <div class="mx-2 p-1 white" style="background: #DA1F26; font-weight: bold; font-size: small; border-radius: 5px; display: flex; align-items: center;">
-                                                                <img src="https://hikalproperties.ae/assets/images/static/live.svg" class="live-icon mx-1" style="width: 20px;" />
+                                                                <img src="https://hikalproperties.com/assets/images/static/live.svg" class="live-icon mx-1" style="width: 20px;" />
                                                                 <span class="mx-1">LIVE</span>
                                                             </div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;">
+                                                        <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="WhatsApp Consultation" style="width: 20px;" required onchange="scheduleMeeting()">
+                                                        <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
+                                                            استشارة عبر ال WhatsApp
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;" dir="rtl">
@@ -207,7 +213,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     <!-- SCHEDULE  -->
                                                     <div id="ScheduleDatetime" style="display: none;">
                                                         <label class="gold-grad">SCHEDULE LIVE CALL</label>
-                                                        <input type="datetime-local" id="Schedule" name="Schedule" min="" max=""value="" required>
+                                                        <input type="datetime-local" id="Schedule" name="Schedule" min="" max="" value="">
                                                     </div> 
                                             
                                                     <!--ENQUIRY NOTE-->
@@ -219,7 +225,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                             <button type="submit" class="submit-click" onclick="dataLayer.push({'event': 'submit-click', 'var': 'submit-click'});" style="font-weight: bold;">إرسال</button>
                                                         </div>
                                                     </div>
-                                                    <div id="Message" class="pt-3 text-center" style="color: #DA1F26; display: none;">Please enter all the fields!</div>
+                                                    <div id="Message" name="Message" class="pt-3 text-center" style="color: #DA1F26; display: none;">يرجى إدخال جميع الحقول!</div>
                                                 </form>
                                             </div>
                                             <?php
@@ -463,7 +469,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 // Calculate the new waiting count, ensuring it stays between 3 and 14
                 let newCount = Math.max(Math.min(currentCount + change, 14), 3);
             
-                document.getElementById('waiting-list').textContent = `${newCount} انتظار`;
+                document.getElementById('waiting-list').textContent = `${newCount}في الإنتظار`;
             
                 // Schedule the next update after a random interval between 1 to 4 seconds
                 setTimeout(updateWaitingList, getRandomInt(3000, 20000));
@@ -503,6 +509,13 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 var schedule = document.getElementById("Schedule");
                 var meetRadio = document.querySelector('input[name="Consultation"]:checked');
 
+                document.getElementById("Schedule").setAttribute("required", "false");
+                var form = document.getElementById('lead-form');
+                // FIELDS
+                var name = document.getElementById("Name");
+                var contact = document.getElementById("mobile");
+                var email = document.getElementById("Email");
+
                 if (meetRadio && meetRadio.value === "Register for later") {
                     scheduleDiv.style.display = "block";
                     // schedule.min = new Date().toISOString().split('Z')[0];
@@ -522,14 +535,18 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
                 } 
                 else if (meetRadio && meetRadio.value === "Live Video Call Meeting") {
-                    document.getElementById("Schedule").setAttribute("required", "false");
-                    var form = document.getElementById('lead-form');
-                    
-                    // FIELDS
-                    var name = document.getElementById("Name");
-                    var contact = document.getElementById("mobile");
-                    var email = document.getElementById("Email");
-
+                    if (name.value !== "" && contact.value !== "" && email.value !== "") {
+                        form.submit();
+                    }
+                    else {
+                        var message = document.getElementById("Message");
+                        message.style.display = "block";
+                        setTimeout(function(){
+                            message.style.display = "none";
+                        }, 5000);
+                    }
+                }
+                else if (meetRadio && meetRadio.value === "WhatsApp Consultation") {
                     if (name.value !== "" && contact.value !== "" && email.value !== "") {
                         form.submit();
                     }

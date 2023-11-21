@@ -72,14 +72,24 @@ $dupf = mysqli_fetch_array($dupq);
         
         if ($query) {
             if ($language == "Arabic") {
+                $_SESSION['triggerAction'] = true;
                 header("Location: ../consultation/ar/waiting");
             }
             else {
+                $_SESSION['triggerAction'] = true;
                 header("Location: ../consultation/en/waiting");
             }
             exit();
         }
     }
+    else if ($note = "WhatsApp Consultation") {
+        $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')");
+        
+        if ($query) {
+            header("Location: https://wa.me/971585556605");
+            exit();
+        }
+    } 
     else {
         if (substr($leadContact, 0, 4) === "+971") {
             $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");

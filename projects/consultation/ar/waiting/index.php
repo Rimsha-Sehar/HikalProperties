@@ -16,6 +16,8 @@ $lead_ip = $_SESSION['lead_ip'];
 $note = $_SESSION['note'];
 $start_time = $_SESSION['start_time'];
 
+$trigger = $_SESSION['triggerAction'];
+
 if (isset($start_time) && (time() - $start_time > 7200)) { 
     // 3600 = 1 HOUR
     session_unset();
@@ -94,7 +96,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
             <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
             
             <!--HEADINGS & FORM-->
-            <div class="first_section" style="min-height: 80vh; background-image: url('https://hikalproperties.com/projects/assets/images/static/sliverBgDark.png'); background-size: contain; background-repeat: no-repeat; background-position: center bottom;">
+            <div class="first_section" style="min-height: 80vh; background-image: url('https://hikalproperties.com/projects/assets/images/static/sliverBgDark.png'); background-size: contain; background-repeat: no-repeat; background-position: center center;">
                 <div class="container container-fluid pb-5">
                     <div class="row py-2 d-flex align-items-center">
                         <div class="col-6 d-flex justify-content-start align-items-center">
@@ -106,7 +108,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                                 <span id="hourglass-start"><i class="fa-solid fa-hourglass-start mx-1"></i></span>
                                 <span id="hourglass-half" style="display: none;"><i class="fa-regular fa-hourglass-half mx-1"></i></span>
                                 <span id="hourglass-end" style="display: none;"><i class="fa-solid fa-hourglass-end mx-1"></i></span>
-                                <span class="mx-1 text-uppercase" id="waiting-list">7 في انتظارك</span>
+                                <span class="mx-1 text-uppercase" id="waiting-list">7 في الإنتظار</span>
                             </button>
                         </div>
                     </div>
@@ -146,14 +148,22 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                     }
                     ?>
                     <div id="loading-div" class="text-center">
+                        <!-- AUDIO -->
+                        <audio id="loading-audio" autoplay loop>
+                            <source src="../../../assets/audio/waiting-arabic.mp3" type="audio/mp3">
+                        </audio>
+                        <button id="volume" style="position: fixed; bottom: 15px; right: 15px; border-radius: 50%; z-index: 100; width: 50px; height: 50px;" onclick="toggleMute()">
+                            <i id="volume-icon" class="fa-solid fa-volume-high" style="font-size: 16px;"></i>
+                        </button>  
+
                         <div class="row">
-                            <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 30vh">
+                            <div class="d-flex align-items-end justify-content-center py-5" style="width: 100%; min-height: 30vh;">
                                 <?php include_once('../../../components/loading-animation.php'); ?>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="d-flex align-items-center justify-content-center" style="width: 100%; min-height: 20vh">
-                                <h5 class="py-5">
+                            <div class="d-flex align-items-center justify-content-center" style="width: 100%; min-height: 20vh;">
+                                <h5 class="py-5 text-center">
                                     <br>
                                     يرجى الانتظار بينما نتحقق من وجود مستشار محترف لك..
                                     <br>
@@ -173,7 +183,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                     <style>
                         #team-slider .item {
                             text-align: center;
-                            padding: 30px;
+                            padding: 5px;
                             opacity: .9;
                             -webkit-transform: scale3d(0.8, 0.8, 1);
                             transform: scale3d(0.8, 0.8, 1);
@@ -201,9 +211,9 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                         
                         .shadow-effect {
                             background: #000000;
-                            padding: 20px;
-                            padding-bottom: 10px;
-                            border-radius: 15px;
+                            padding: 5px;
+                            padding-bottom: 5px;
+                            border-radius: 5px;
                             text-align: center;
                             border: 1px solid #ECECEC;
                             box-shadow: 0 19px 38px rgba(255,255,255,0.10), 0 15px 12px rgba(255,255,255,0.02);
@@ -226,7 +236,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                                             <?php
                                         }
                                         ?>
-                                        <h6 class="gold-grad mt-3 mb-0 p-0 text-uppercase"><?php echo $agents['userName']; ?></h6>
+                                        <h6 class="gold-grad mt-3 mb-0 p-0 text-uppercase" style="font-size: 0.7rem; line-height: 1rem;"><?php echo $agents['userName']; ?></h6>
                                         <!--<h6 class="m-0 p-0">RERA</h6>-->
                                     </div>
                                 </div>
@@ -312,7 +322,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                     // Calculate the new waiting count, ensuring it stays between 3 and 14
                     let newCount = Math.max(Math.min(currentCount + change, 14), 3);
                 
-                    document.getElementById('waiting-list').textContent = `${newCount} في انتظارك`;
+                    document.getElementById('waiting-list').textContent = `${newCount} في الإنتظار`;
                 
                     // Schedule the next update after a random interval between 1 to 4 seconds
                     setTimeout(updateWaitingList, getRandomInt(3000, 20000));
@@ -362,6 +372,7 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                 
                 var timeDifference = currentTime - startTime;
 
+                // If less than 5 minutes, keep showing loading div
                 if (timeDifference <= 7200) { // 60 seconds = 1 minute | 7200 seconds = 2 hours
                     setTimeout(function() {
                         document.getElementById('loading-div').style.display = 'none';
@@ -407,53 +418,75 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
 
             <!-- VERIFY OTP  -->
             <script>
-                var verified = document.getElementById("otp-verified");
-                var failed = document.getElementById("otp-failed");
-                verified.style.display = "none";
-                failed.style.display = "none";
+                // var verified = document.getElementById("otp-verified");
+                // var failed = document.getElementById("otp-failed");
+                // verified.style.display = "none";
+                // failed.style.display = "none";
 
-                function verifyOTP() {
-                    var formData = $("#otp-form").serialize();
-                    formData += "&phone_number=" + <?php echo $lead_contact; ?>;
-                    console.log(formData);
+                // function verifyOTP() {
+                //     var formData = $("#otp-form").serialize();
+                //     formData += "&phone_number=" + <?php echo $lead_contact; ?>;
+                //     console.log(formData);
 
-                    $.ajax({
-                        url: "../../../controllers/verify-otp-live.php",
-                        method: "GET",
-                        data: formData,
-                        dataType: "json",
-                        success: function(response) {
-                            if (response.otp) {
-                                $("#otp-div").hide();
-                                verified.style.display = "block";
-                                failed.style.display = "none";
-                                setTimeout(function(){
-                                    verified.style.display = "none";
-                                }, 5000);
-                                <?php $_SESSION['otp'] = false; ?>
-                            }
-                            else {
-                                $("#otp-div").hide();
-                                failed.style.display = "block";
-                                verified.style.display = "none";
-                                setTimeout(function(){
-                                    failed.style.display = "none";
-                                }, 5000);
-                                <?php $_SESSION['otp'] = false; ?>
-                            }
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            $("#otp-div").hide();
-                            failed.style.display = "block";
-                            verified.style.display = "none";
-                            setTimeout(function(){
-                                failed.style.display = "none";
-                            }, 5000);
-                            <?php $_SESSION['otp'] = false; ?>
-                        }
-                    });
-                    return false;
+                //     $.ajax({
+                //         url: "../../../controllers/verify-otp-live.php",
+                //         method: "GET",
+                //         data: formData,
+                //         dataType: "json",
+                //         success: function(response) {
+                //             if (response.otp) {
+                //                 $("#otp-div").hide();
+                //                 verified.style.display = "block";
+                //                 failed.style.display = "none";
+                //                 setTimeout(function(){
+                //                     verified.style.display = "none";
+                //                 }, 5000);
+                //                 <?php $_SESSION['otp'] = false; ?>
+                //             }
+                //             else {
+                //                 $("#otp-div").hide();
+                //                 failed.style.display = "block";
+                //                 verified.style.display = "none";
+                //                 setTimeout(function(){
+                //                     failed.style.display = "none";
+                //                 }, 5000);
+                //                 <?php $_SESSION['otp'] = false; ?>
+                //             }
+                //         },
+                //         error: function(jqXHR, textStatus, errorThrown) {
+                //             $("#otp-div").hide();
+                //             failed.style.display = "block";
+                //             verified.style.display = "none";
+                //             setTimeout(function(){
+                //                 failed.style.display = "none";
+                //             }, 5000);
+                //             <?php $_SESSION['otp'] = false; ?>
+                //         }
+                //     });
+                //     return false;
+                // }
+            </script>
+
+            <!-- AUDIO  -->
+            <script>
+                var audioDiv = document.getElementById("loading-audio");
+                const audio = new Audio('../../../assets/audio/waiting-arabic.mp3');
+                var volume = document.getElementById("volume-icon");
+
+                function toggleMute() {
+                    if (audioDiv.muted) {
+                        audioDiv.muted = false;
+                        volume.className = "fa-solid fa-volume-high";
+                    }
+                    else {
+                        audioDiv.muted = true;
+                        volume.className = "fa-solid fa-volume-xmark";
+                    }
                 }
+                // const triggerAction = <?php echo $trigger; ?>;
+                // if (triggerAction == true) {
+                //     audio.play();
+                // }
             </script>
             <?php
         }
