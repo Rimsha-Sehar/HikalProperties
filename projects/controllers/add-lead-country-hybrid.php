@@ -108,7 +108,7 @@ else {
     $dupf = mysqli_fetch_array($dupq);
 
     // EMAIL DATA
-    $send_to = "workofmuskan@gmail.com";
+    $send_to = "leads@hikalagency.ae";
     $notification = "common";
     $title = "New Lead Alert | Hikal CRM";
     $emailBody = "<p>Lead Name: $leadName</p><p>Contact Number: $leadContact</p><p>Email address: $leadEmail</p><p>Language: $language</p><br /><p>Project Name: $project</p><p>Enquiry for: $enquiryType</p><p>Purpose of enquiry: $leadFor</p><br /><p>Source: $leadSource</p><p>IP Address: $ip</p><p>Devie: $device</p>";
