@@ -18,7 +18,9 @@ $_SESSION["page_url"] = $fullUrl;
 
 
 date_default_timezone_set('Asia/Dubai');
-$cur_time = time();
+$current_time = time();
+$cur_time = date('c', $current_time);
+
 $hashed_ip = hash('sha256', $ip);
 ?>
 
