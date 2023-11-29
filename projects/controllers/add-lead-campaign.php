@@ -12,11 +12,17 @@ $leadStatus = "New";
 $feedback = "New";
 $addedBy = "101";
 $coldcall = 6;
+$otpText = "No OTP used";
+
+// APIS 
+$api_snapchat = "https://staging.hikalcrm.com/api/validate-snap";
+$api_sendEmail = "https://staging.hikalcrm.com/api/newEmail";
+$api_addLead = "https://staging.hikalcrm.com/api/create-lead";
+$api_sendOtp = "https://staging.hikalcrm.com/api/otp";
 
 // RETRIEVE FORM DATA
 $leadSource = $_POST['LeadSource'];
 $filename = $_POST['Filename'];
-// $leadType = $_POST['LeadType'];
 // $country = $_POST['Country'];
 
 // FORM DATA
@@ -59,7 +65,7 @@ if ($leadSource == "Campaign Snapchat") {
     $_SESSION['hashed_ip'] = $hashed_ip;
     $_SESSION['user_agent'] = $device;
 
-    $url = 'https://staging.hikalcrm.com/api/validate-snap';
+    $api_snapchat = 'https://staging.hikalcrm.com/api/validate-snap';
 
     $data = array(
         "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
@@ -77,7 +83,7 @@ if ($leadSource == "Campaign Snapchat") {
 
     $token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
 
-    $ch = curl_init($url);
+    $ch = curl_init($api_snapchat);
 
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
@@ -118,16 +124,68 @@ $_SESSION['start_time'] = time();
 $dupq = mysqli_query($con, "SELECT leadName, leadContact, project, language FROM leads ORDER BY id DESC LIMIT 1");
 $dupf = mysqli_fetch_array($dupq);
 
-// if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $dupf['project'] == $project && $dupf['language'] == $language) {
-    // Preventing duplicate form submission
-    // header("Location: ../thankyou");
-// }
-// else {
-    // SEND OTP 
+// EMAIL DATA
+$send_to = "leads@hikalagency.ae";
+$notification = "common";
+$title = "Live Call New Lead Alert | Hikal CRM";
+$emailBody = "<h1>Live Call Alert</h1><p>Lead Name: $leadName</p><p>Contact Number: $leadContact</p><p>Email address: $leadEmail</p><p>Language: $language</p><br /><p>Consultation: $note</p><br /><p>Source: $leadSource</p><p>IP Address: $ip</p><p>Devie: $device</p>";
+$style = "span{font-weight: bold; color: #1245A8;}";
+
+// SEND EMAIL 
+$emailData = array(
+    "email" => $send_to, 
+    "notification" => $notification,
+    "title" => $title,  
+    "message" => $emailBody,
+    "style" => $style,
+);
+$emailDataJson = json_encode($emailData);
+$sech = curl_init($api_sendEmail);
+curl_setopt($sech, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($sech, CURLOPT_POST, true);
+curl_setopt($sech, CURLOPT_POSTFIELDS, $emailDataJson);
+curl_setopt($sech, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+$emailResponse = curl_exec($sech);
+curl_close($sech);
+// SEND EMAIL END 
+
+if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $dupf['language'] == $language) {
+    header("Location: ../thankyou");
+}
+else {
+    // LIVE CALL CONSULTATION 
     if ($note == "Live Video Call Meeting") {
-        $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')");
-        
-        if ($query) {
+        // ADD NEW LEAD 
+        $leadData = array(
+            "leadName" => (string)$leadName, 
+            "leadContact" => (string)$leadContact, 
+            "leadEmail" => (string)$leadEmail, 
+            "leadStatus" => (string)$leadStatus, 
+            "leadSource" => (string)$leadSource, 
+            "feedback" => (string)$feedback, 
+            "language" => (string)$language, 
+            "addedBy" => $addedBy, 
+            "filename" => (string)$filename, 
+            "ip" => (string)$ip, 
+            "device" => (string)$device, 
+            "otp" => (string)$otpText, 
+            "notes" => (string)$note,
+            "coldcall" => $coldcall
+        );
+
+        $leadDataJson = json_encode($leadData);
+        $clch = curl_init($api_addLead);
+        curl_setopt($clch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($clch, CURLOPT_POST, true);
+        curl_setopt($clch, CURLOPT_POSTFIELDS, $leadDataJson);
+        curl_setopt($clch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+        $leadResponse = curl_exec($clch);
+        $leadResponseData = json_decode($leadResponse, true);
+        if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
+            $lead_id = $leadResponseData['lead']['id'];
+            $_SESSION['lead_id'] = $lead_id;
+            curl_close($clch);
+
             if ($language == "Arabic") {
                 $_SESSION['triggerAction'] = true;
                 header("Location: ../consultation/ar/waiting");
@@ -140,33 +198,115 @@ $dupf = mysqli_fetch_array($dupq);
             }
             exit();
         }
-    }
-    else if ($note = "WhatsApp Consultation") {
-        $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')");
+        // ADD NEW LEAD END 
+        else {
+            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail','$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText')");
         
-        if ($query) {
+            if ($query) {
+                if ($language == "Arabic") {
+                    $_SESSION['triggerAction'] = true;
+                    header("Location: ../consultation/ar/waiting");
+                    // header("Location: ../consultation/ar/waiting/index.php");
+                }
+                else {
+                    $_SESSION['triggerAction'] = true;
+                    header("Location: ../consultation/en/waiting");
+                    // header("Location: ../consultation/en/waiting/index.php");
+                }
+                exit();
+            }
+        }
+    }
+    // WHATSAPP CONSULTATION 
+    else if ($note = "WhatsApp Consultation") {
+        // ADD NEW LEAD 
+        $leadData = array(
+            "leadName" => (string)$leadName, 
+            "leadContact" => (string)$leadContact, 
+            "leadEmail" => (string)$leadEmail, 
+            "leadStatus" => (string)$leadStatus, 
+            "leadSource" => (string)$leadSource, 
+            "feedback" => (string)$feedback, 
+            "language" => (string)$language, 
+            "addedBy" => $addedBy, 
+            "filename" => (string)$filename, 
+            "ip" => (string)$ip, 
+            "device" => (string)$device, 
+            "otp" => (string)$otpText, 
+            "notes" => (string)$note,
+            "coldcall" => $coldcall
+        );
+
+        $leadDataJson = json_encode($leadData);
+        $clch = curl_init($api_addLead);
+        curl_setopt($clch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($clch, CURLOPT_POST, true);
+        curl_setopt($clch, CURLOPT_POSTFIELDS, $leadDataJson);
+        curl_setopt($clch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+        $leadResponse = curl_exec($clch);
+        $leadResponseData = json_decode($leadResponse, true);
+        if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
+            $lead_id = $leadResponseData['lead']['id'];
+            $_SESSION['lead_id'] = $lead_id;
+            curl_close($clch);
+            
             header("Location: https://wa.me/971585556605");
             exit();
         }
+        // ADD NEW LEAD END 
+        else {
+            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText')");
+        
+            if ($query) {
+                header("Location: https://wa.me/971585556605");
+                exit();
+            }
+        }
     } 
+    // REGISTER FOR LATER 
     else {
         if (substr($leadContact, 0, 4) === "+971") {
-            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");
+            $otpText = "Not Verified";
 
-            if ($query) {
-                // CALL GENERATE OTP API 
-                $getOTP = 'https://staging.hikalcrm.com/api/otp';
+            // ADD NEW LEAD 
+            $leadData = array(
+                "leadName" => (string)$leadName, 
+                "leadContact" => (string)$leadContact, 
+                "leadEmail" => (string)$leadEmail, 
+                "leadStatus" => (string)$leadStatus, 
+                "leadSource" => (string)$leadSource, 
+                "feedback" => (string)$feedback, 
+                "language" => (string)$language, 
+                "addedBy" => $addedBy, 
+                "filename" => (string)$filename, 
+                "ip" => (string)$ip, 
+                "device" => (string)$device, 
+                "otp" => (string)$otpText, 
+                "notes" => (string)$note,
+                "coldcall" => $coldcall
+            );
 
+            $leadDataJson = json_encode($leadData);
+            $clch = curl_init($api_addLead);
+            curl_setopt($clch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($clch, CURLOPT_POST, true);
+            curl_setopt($clch, CURLOPT_POSTFIELDS, $leadDataJson);
+            curl_setopt($clch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+            $leadResponse = curl_exec($clch);
+            $leadResponseData = json_decode($leadResponse, true);
+            if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
+                $lead_id = $leadResponseData['lead']['id'];
+                $_SESSION['lead_id'] = $lead_id;
+                curl_close($clch);
+                // ADD NEW LEAD END 
+
+                // SEND OTP
                 $otpData = array(
                     'phone_number' => (string)$leadContact,
                     'senderAddr' => "AD-HIKAL",
                     'message' => "The OTP for verification is: "
                 );
-
-                // Initialize cURL session
-                $getch = curl_init($getOTP);
-
-                // Set cURL options
+                $getch = curl_init($api_sendOtp);
                 curl_setopt($getch, CURLOPT_POST, 1);
                 curl_setopt($getch, CURLOPT_POSTFIELDS, $otpData);
                 curl_setopt($getch, CURLOPT_RETURNTRANSFER, true);
@@ -188,12 +328,80 @@ $dupf = mysqli_fetch_array($dupq);
                 $_SESSION['requireOTP'] = true;
                 header("Location: ../verifyOTP");
                 exit();
+                // SEND OTP END 
+            }
+            else {
+                $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");
+
+                if ($query) {
+                    // SEND OTP
+                    $otpData = array(
+                        'phone_number' => (string)$leadContact,
+                        'senderAddr' => "AD-HIKAL",
+                        'message' => "The OTP for verification is: "
+                    );
+
+                    // Initialize cURL session
+                    $getch = curl_init($api_sendOtp);
+
+                    // Set cURL options
+                    curl_setopt($getch, CURLOPT_POST, 1);
+                    curl_setopt($getch, CURLOPT_POSTFIELDS, $otpData);
+                    curl_setopt($getch, CURLOPT_RETURNTRANSFER, true);
+
+                    $response = curl_exec($getch);
+
+                    $responseData = json_decode($response, true);
+
+                    if (isset($responseData['message'])) {
+                        $message = $responseData['message'];
+
+                        $_SESSION['otp'] = true;
+                    }
+                    else {
+                        $_SESSION['otp'] = false;
+                    }
+                    curl_close($getch);
+
+                    $_SESSION['requireOTP'] = true;
+                    header("Location: ../verifyOTP");
+                    exit();
+                }
             }
         }
         else {
-            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')");
-        
-            if ($query) {
+            // ADD NEW LEAD 
+            $leadData = array(
+                "leadName" => (string)$leadName, 
+                "leadContact" => (string)$leadContact, 
+                "leadEmail" => (string)$leadEmail, 
+                "leadStatus" => (string)$leadStatus, 
+                "leadSource" => (string)$leadSource, 
+                "feedback" => (string)$feedback, 
+                "language" => (string)$language, 
+                "addedBy" => $addedBy, 
+                "filename" => (string)$filename, 
+                "ip" => (string)$ip, 
+                "device" => (string)$device, 
+                "otp" => (string)$otpText, 
+                "notes" => (string)$note,
+                "coldcall" => $coldcall
+            );
+
+            $leadDataJson = json_encode($leadData);
+            $clch = curl_init($api_addLead);
+            curl_setopt($clch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($clch, CURLOPT_POST, true);
+            curl_setopt($clch, CURLOPT_POSTFIELDS, $leadDataJson);
+            curl_setopt($clch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+            $leadResponse = curl_exec($clch);
+            $leadResponseData = json_decode($leadResponse, true);
+            if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
+                $lead_id = $leadResponseData['lead']['id'];
+                $_SESSION['lead_id'] = $lead_id;
+                curl_close($clch);
+                // ADD NEW LEAD END 
+
                 if ($language == "English") {
                     header("Location: ../thankyou/en");
                 }
@@ -214,118 +422,32 @@ $dupf = mysqli_fetch_array($dupq);
                 }
                 exit();
             }
+            else {
+                $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText')");
+        
+                if ($query) {
+                    if ($language == "English") {
+                        header("Location: ../thankyou/en");
+                    }
+                    elseif ($language == "Arabic") {
+                        header("Location: ../thankyou/ar");
+                    }
+                    elseif ($language == "French") {
+                        header("Location: ../thankyou/fr");
+                    }
+                    elseif ($language == "Hebrew") {
+                        header("Location: ../thankyou/he");
+                    }
+                    elseif ($language == "Chinese") {
+                        header("Location: ../thankyou/cn");
+                    }
+                    else {
+                        header("Location: ../thankyou");
+                    }
+                    exit();
+                }
+            }
         }
     }
-
-
-
-
-    // if (substr($leadContact, 0, 4) === "+971") {
-    //     $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");
-
-    //     if ($query) {
-    //         CALL GENERATE OTP API 
-    //         $getOTP = 'https://staging.hikalcrm.com/api/otp';
-
-    //         $otpData = array(
-    //             'phone_number' => (string)$leadContact,
-    //             'senderAddr' => "AD-HIKAL",
-    //             'message' => "The OTP for verification is: "
-    //         );
-
-    //         // Initialize cURL session
-    //         $getch = curl_init($getOTP);
-
-    //         // Set cURL options
-    //         curl_setopt($getch, CURLOPT_POST, 1);
-    //         curl_setopt($getch, CURLOPT_POSTFIELDS, $otpData);
-    //         curl_setopt($getch, CURLOPT_RETURNTRANSFER, true);
-
-    //         $response = curl_exec($getch);
-
-    //         $responseData = json_decode($response, true);
-
-    //         if (isset($responseData['message'])) {
-    //             $message = $responseData['message'];
-
-    //             $_SESSION['otp'] = true;
-    //         }
-    //         else {
-    //             $_SESSION['otp'] = false;
-    //         }
-    //         curl_close($getch);
-
-    //         if ($note == "Live Video Call Meeting") {
-    //             if ($language == "Arabic") {
-    //                 header("Location: ../consultation/ar/waiting");
-    //             }
-    //             else {
-    //                 header("Location: ../consultation/en/waiting");
-    //             }
-    //             exit();
-    //         }
-    //         else {
-    //             // $_SESSION['requireOTP'] = true;
-    //             // header("Location: ../verifyOTP");
-    //             if ($language == "English") {
-    //                 header("Location: ../thankyou/en");
-    //             }
-    //             elseif ($language == "Arabic") {
-    //                 header("Location: ../thankyou/ar");
-    //             }
-    //             elseif ($language == "French") {
-    //                 header("Location: ../thankyou/fr");
-    //             }
-    //             elseif ($language == "Hebrew") {
-    //                 header("Location: ../thankyou/he");
-    //             }
-    //             elseif ($language == "Chinese") {
-    //                 header("Location: ../thankyou/cn");
-    //             }
-    //             else {
-    //                 header("Location: ../thankyou");
-    //             }
-    //             exit();
-    //         }
-    //     }
-    // }
-    // else {
-    //     $query = "INSERT INTO leads (leadName, leadContact, leadEmail, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'No OTP Used')";
-    //     $runquery = mysqli_query($con, $query);
-        
-    //     if ($runquery) {
-    //         if ($note == "Live Video Call Meeting") {
-    //             if ($language == "Arabic") {
-    //                 header("Location: ../consultation/ar/waiting");
-    //             }
-    //             else {
-    //                 header("Location: ../consultation/en/waiting");
-    //             }
-    //             exit();
-    //         }
-    //         else {
-    //             if ($language == "English") {
-    //                 header("Location: ../thankyou/en");
-    //             }
-    //             elseif ($language == "Arabic") {
-    //                 header("Location: ../thankyou/ar");
-    //             }
-    //             elseif ($language == "French") {
-    //                 header("Location: ../thankyou/fr");
-    //             }
-    //             elseif ($language == "Hebrew") {
-    //                 header("Location: ../thankyou/he");
-    //             }
-    //             elseif ($language == "Chinese") {
-    //                 header("Location: ../thankyou/cn");
-    //             }
-    //             else {
-    //                 header("Location: ../thankyou");
-    //             }
-    //             exit();
-    //         }
-    //     }
-    // }
-// }
-
+}
 ?>
