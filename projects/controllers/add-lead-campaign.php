@@ -56,8 +56,7 @@ if ($leadSource == "Campaign Snapchat") {
     $hashed_phone = hash('sha256', $phone);
 
     date_default_timezone_set('Asia/Dubai');
-    $current_time = time();
-    $cur_time = date('c', $current_time);
+    $cur_time = time();
 
     $_SESSION['leadSource'] = $leadSource;
     $_SESSION['fileName'] = $page_url;

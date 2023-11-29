@@ -1,7 +1,8 @@
 <?php
+session_start();
+
 date_default_timezone_set('Asia/Dubai');
-$current_time = time();
-$cur_time = date('c', $current_time);
+$cur_time = time();
 
 $page_url = $_SESSION["page_url"];
 $hashed_ip = $_SESSION["hashed_ip"];

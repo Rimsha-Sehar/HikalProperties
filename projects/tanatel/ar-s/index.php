@@ -14,15 +14,14 @@ $uri = $_SERVER['REQUEST_URI'];
 $fullUrl = $protocol . $host . $uri;
 
 date_default_timezone_set('Asia/Dubai');
-$current_time = time();
-$cur_time = date('c', $current_time);
+$cur_time = time();
 
 $hashed_ip = hash('sha256', $ip);
 
 $_SESSION["page_url"] = $fullUrl;
 $_SESSION["hashed_ip"] = $hashed_ip;
 $_SESSION["user_agent"] = $device;
-$_SESSION["source"] = $snapchat;
+$_SESSION["source"] = "Snapchat";
 ?>
 
 <?php
@@ -846,7 +845,7 @@ curl_close($ch);
                 dataType: "json",
                 success: function(response) {
                     console.log(response);
-                    // window.location.href = "https://wa.me/971589491100?text=Hello%20I%20am%20interested%20in%20inquiring%20about%20furniture";
+                    window.location.href = "https://wa.me/971589491100?text=Hello%20I%20am%20interested%20in%20inquiring%20about%20furniture";
                     if (response.status === "success") {
                         console.log("API CALL SUCCESS");
                     }
@@ -856,10 +855,12 @@ curl_close($ch);
                 },
                 error: function (xhr, status, error) {
                     console.error('Error:', status, error);
-                    // window.location.href = "https://wa.me/971589491100?text=Hello%20I%20am%20interested%20in%20inquiring%20about%20furniture";
+                    window.location.href = "https://wa.me/971589491100?text=Hello%20I%20am%20interested%20in%20inquiring%20about%20furniture";
 
                 }
             });
+
+            return false;
         }
     </script>
 </body>
