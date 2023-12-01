@@ -103,7 +103,7 @@ if ($leadSource == "Campaign Snapchat") {
 }
 // SNAP PIXEL END
 
-if ($note == "Register for later") {
+if ($_POST['Consultation'] == "Register for later") {
     $note = $_POST['Schedule'];
 
     $dateTime = new DateTime($note);
@@ -219,7 +219,7 @@ else {
         }
     }
     // WHATSAPP CONSULTATION 
-    else if ($note = "WhatsApp Consultation") {
+    elseif ($note == "WhatsApp Consultation") {
         // ADD NEW LEAD 
         $leadData = array(
             "leadName" => (string)$leadName, 
