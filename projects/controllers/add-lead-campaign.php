@@ -23,7 +23,7 @@ $api_sendOtp = "https://staging.hikalcrm.com/api/otp";
 // RETRIEVE FORM DATA
 $leadSource = $_POST['LeadSource'];
 $filename = $_POST['Filename'];
-// $country = $_POST['Country'];
+$country = $_POST['Country'];
 
 // FORM DATA
 $leadName = $_POST['Name'];
@@ -164,6 +164,7 @@ else {
             "leadSource" => (string)$leadSource, 
             "feedback" => (string)$feedback, 
             "language" => (string)$language, 
+            "country" => (string)$country,
             "addedBy" => $addedBy, 
             "filename" => (string)$filename, 
             "ip" => (string)$ip, 
@@ -200,7 +201,7 @@ else {
         }
         // ADD NEW LEAD END 
         else {
-            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail','$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText')");
+            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail','$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText', '$country')");
         
             if ($query) {
                 if ($language == "Arabic") {
@@ -228,6 +229,7 @@ else {
             "leadSource" => (string)$leadSource, 
             "feedback" => (string)$feedback, 
             "language" => (string)$language, 
+            "country" => (string)$country,
             "addedBy" => $addedBy, 
             "filename" => (string)$filename, 
             "ip" => (string)$ip, 
@@ -255,7 +257,7 @@ else {
         }
         // ADD NEW LEAD END 
         else {
-            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText')");
+            $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText', '$country')");
         
             if ($query) {
                 header("Location: https://wa.me/971585556605");
@@ -277,6 +279,7 @@ else {
                 "leadSource" => (string)$leadSource, 
                 "feedback" => (string)$feedback, 
                 "language" => (string)$language, 
+                "country" => (string)$country,
                 "addedBy" => $addedBy, 
                 "filename" => (string)$filename, 
                 "ip" => (string)$ip, 
@@ -331,7 +334,7 @@ else {
                 // SEND OTP END 
             }
             else {
-                $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', 'Not Verified')");
+                $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText', '$country')");
 
                 if ($query) {
                     // SEND OTP
@@ -379,6 +382,7 @@ else {
                 "leadSource" => (string)$leadSource, 
                 "feedback" => (string)$feedback, 
                 "language" => (string)$language, 
+                "country" => (string)$country,
                 "addedBy" => $addedBy, 
                 "filename" => (string)$filename, 
                 "ip" => (string)$ip, 
@@ -423,7 +427,7 @@ else {
                 exit();
             }
             else {
-                $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText')");
+                $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, coldcall, notes, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', '$coldcall', '$note', '$otpText', '$country')");
         
                 if ($query) {
                     if ($language == "English") {
