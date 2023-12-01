@@ -259,8 +259,8 @@ curl_close($ch);
                                                         </label>
                                                     </div>
                                                     <div style="display: flex; align-items: center;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="Consultation" id="Consultation2" value="Register for later" style="width: 20px;" required onchange="scheduleMeeting()">
-                                                        <label for="Consultation2" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
+                                                        <input class="mx-2" type="radio" name="Consultation" id="Consultation3" value="Register for later" style="width: 20px;" required onchange="scheduleMeeting()">
+                                                        <label for="Consultation3" style="margin-top: 7px; padding-left: 7px; color: #FFFFFF;">
                                                             سجّل لوقت لاحق
                                                         </label>
                                                     </div>
