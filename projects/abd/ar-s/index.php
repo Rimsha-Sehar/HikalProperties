@@ -387,7 +387,7 @@ curl_close($ch);
     
         <!--CONTENT-->
         <div class="second_section">
-            <div class="container container-fluid py-3 m-3">
+            <div class="container container-fluid p-5 my-3">
                 <!-- IMAGE GALLERY -->
                 <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" data-mdb-carousel-init>
                     <!-- Indicators -->
