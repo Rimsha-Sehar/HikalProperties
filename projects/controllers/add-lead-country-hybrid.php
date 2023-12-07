@@ -141,90 +141,111 @@ else {
             $otpText = "Not Verified";
 
             // ADD NEW LEAD 
-            $leadData = array(
-                "leadName" => (string)$leadName, 
-                "leadContact" => (string)$leadContact, 
-                "leadEmail" => (string)$leadEmail, 
-                "enquiryType" => (string)$enquiryType, 
-                "leadFor" => (string)$leadFor, 
-                "leadType" => (string)$leadType, 
-                "project" => (string)$project, 
-                "projectName" => (string)$project, 
-                "leadStatus" => (string)$leadStatus, 
-                "leadSource" => (string)$leadSource, 
-                "feedback" => (string)$feedback, 
-                "language" => (string)$language, 
-                "addedBy" => $addedBy, 
-                "filename" => (string)$filename, 
-                "ip" => (string)$ip, 
-                "device" => (string)$device, 
-                "otp" => (string)$otpText, 
-                "country" => (string)$country,
-            );
+            // $leadData = array(
+            //     "leadName" => (string)$leadName, 
+            //     "leadContact" => (string)$leadContact, 
+            //     "leadEmail" => (string)$leadEmail, 
+            //     "enquiryType" => (string)$enquiryType, 
+            //     "leadFor" => (string)$leadFor, 
+            //     "leadType" => (string)$leadType, 
+            //     "project" => (string)$project, 
+            //     "projectName" => (string)$project, 
+            //     "leadStatus" => (string)$leadStatus, 
+            //     "leadSource" => (string)$leadSource, 
+            //     "feedback" => (string)$feedback, 
+            //     "language" => (string)$language, 
+            //     "addedBy" => $addedBy, 
+            //     "filename" => (string)$filename, 
+            //     "ip" => (string)$ip, 
+            //     "device" => (string)$device, 
+            //     "otp" => (string)$otpText, 
+            //     "country" => (string)$country,
+            // );
 
-            $leadDataJson = json_encode($leadData);
-            $clch = curl_init($api_addLead);
-            curl_setopt($clch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($clch, CURLOPT_POST, true);
-            curl_setopt($clch, CURLOPT_POSTFIELDS, $leadDataJson);
-            curl_setopt($clch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
-            $leadResponse = curl_exec($clch);
-            $leadResponseData = json_decode($leadResponse, true);
+            // $leadDataJson = json_encode($leadData);
+            // $clch = curl_init($api_addLead);
+            // curl_setopt($clch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($clch, CURLOPT_POST, true);
+            // curl_setopt($clch, CURLOPT_POSTFIELDS, $leadDataJson);
+            // curl_setopt($clch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+            // $leadResponse = curl_exec($clch);
+            // $leadResponseData = json_decode($leadResponse, true);
 
-            if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
-                $lead_id = $leadResponseData['lead']['id'];
-                $_SESSION['lead_id'] = $lead_id;
+            // if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
+            //     $lead_id = $leadResponseData['lead']['id'];
+            //     $_SESSION['lead_id'] = $lead_id;
 
-                curl_close($clch);
-                // ADD NEW LEAD END 
+            //     curl_close($clch);
+            //     // ADD NEW LEAD END 
 
-                // SEND OTP
-                $otpData = array(
-                    'phone_number' => (string)$leadContact,
-                    'senderAddr' => "AD-HIKAL",
-                    'message' => "The OTP for verification is: "
-                );
+            //     // SEND OTP
+            //     $otpData = array(
+            //         'phone_number' => (string)$leadContact,
+            //         'senderAddr' => "AD-HIKAL",
+            //         'message' => "The OTP for verification is: "
+            //     );
 
-                $soch = curl_init($api_sendOtp);
-                curl_setopt($soch, CURLOPT_POST, 1);
-                curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
-                curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
-                $otpResponse = curl_exec($soch);
-                $otpResponseData = json_decode($otpResponse, true);
+            //     $soch = curl_init($api_sendOtp);
+            //     curl_setopt($soch, CURLOPT_POST, 1);
+            //     curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+            //     curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+            //     $otpResponse = curl_exec($soch);
+            //     $otpResponseData = json_decode($otpResponse, true);
 
-                if (isset($otpResponseData['message'])) {
-                    $message = $otpResponseData['message'];
-                    echo json_encode(['otp' => true]);
-                }
-                // SEND OTP END 
+            //     if (isset($otpResponseData['message'])) {
+            //         $message = $otpResponseData['message'];
+            //         echo json_encode(['otp' => true]);
+            //     }
+            //     // SEND OTP END 
 
-                else {
-                    if ($language == "English") {
-                        header("Location: ../thankyou/en");
-                    }
-                    elseif ($language == "Arabic") {
-                        header("Location: ../thankyou/ar");
-                    }
-                    elseif ($language == "French") {
-                        header("Location: ../thankyou/fr");
-                    }
-                    elseif ($language == "Hebrew") {
-                        header("Location: ../thankyou/he");
-                    }
-                    elseif ($language == "Chinese") {
-                        header("Location: ../thankyou/cn");
-                    }
-                    else {
-                        header("Location: ../thankyou");
-                    }
-                    exit("here");
-                }
-                curl_close($soch);
-                exit();
-            }
-            else {
+            //     else {
+            //         if ($language == "English") {
+            //             header("Location: ../thankyou/en");
+            //         }
+            //         elseif ($language == "Arabic") {
+            //             header("Location: ../thankyou/ar");
+            //         }
+            //         elseif ($language == "French") {
+            //             header("Location: ../thankyou/fr");
+            //         }
+            //         elseif ($language == "Hebrew") {
+            //             header("Location: ../thankyou/he");
+            //         }
+            //         elseif ($language == "Chinese") {
+            //             header("Location: ../thankyou/cn");
+            //         }
+            //         else {
+            //             header("Location: ../thankyou");
+            //         }
+            //         exit("here");
+            //     }
+            //     curl_close($soch);
+            //     exit();
+            // }
+            // else {
                 $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'Not Verified', '$country')");
                 if ($query) {
+                    // SEND OTP
+                    $otpData = array(
+                        'phone_number' => (string)$leadContact,
+                        'senderAddr' => "AD-HIKAL",
+                        'message' => "The OTP for verification is: "
+                    );
+
+                    $soch = curl_init($api_sendOtp);
+                    curl_setopt($soch, CURLOPT_POST, 1);
+                    curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+                    curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+                    $otpResponse = curl_exec($soch);
+                    $otpResponseData = json_decode($otpResponse, true);
+
+                    if (isset($otpResponseData['message'])) {
+                        $message = $otpResponseData['message'];
+                        echo json_encode(['otp' => true]);
+                        exit();
+                    }
+                    // SEND OTP END 
+
                     if ($language == "English") {
                         header("Location: ../thankyou/en");
                     }
@@ -248,69 +269,69 @@ else {
                 else {
                     header("Location: ../thankyou");
                 }
-            }
+            // }
         }
         // NON UAE NUMBERS 
         else {
             // ADD NEW LEAD 
-            $leadData = array(
-                "leadName" => (string)$leadName, 
-                "leadContact" => (string)$leadContact, 
-                "leadEmail" => (string)$leadEmail, 
-                "enquiryType" => (string)$enquiryType, 
-                "leadFor" => (string)$leadFor, 
-                "leadType" => (string)$leadType, 
-                "project" => (string)$project, 
-                "projectName" => (string)$project, 
-                "leadStatus" => (string)$leadStatus, 
-                "leadSource" => (string)$leadSource, 
-                "feedback" => (string)$feedback, 
-                "language" => (string)$language, 
-                "addedBy" => $addedBy, 
-                "filename" => (string)$filename, 
-                "ip" => (string)$ip, 
-                "device" => (string)$device, 
-                "otp" => (string)$otpText, 
-                "country" => (string)$country,
-            );
+            // $leadData = array(
+            //     "leadName" => (string)$leadName, 
+            //     "leadContact" => (string)$leadContact, 
+            //     "leadEmail" => (string)$leadEmail, 
+            //     "enquiryType" => (string)$enquiryType, 
+            //     "leadFor" => (string)$leadFor, 
+            //     "leadType" => (string)$leadType, 
+            //     "project" => (string)$project, 
+            //     "projectName" => (string)$project, 
+            //     "leadStatus" => (string)$leadStatus, 
+            //     "leadSource" => (string)$leadSource, 
+            //     "feedback" => (string)$feedback, 
+            //     "language" => (string)$language, 
+            //     "addedBy" => $addedBy, 
+            //     "filename" => (string)$filename, 
+            //     "ip" => (string)$ip, 
+            //     "device" => (string)$device, 
+            //     "otp" => (string)$otpText, 
+            //     "country" => (string)$country,
+            // );
 
-            $leadDataJson = json_encode($leadData);
-            $clch = curl_init($api_addLead);
-            curl_setopt($clch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($clch, CURLOPT_POST, true);
-            curl_setopt($clch, CURLOPT_POSTFIELDS, $leadDataJson);
-            curl_setopt($clch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
-            $leadResponse = curl_exec($clch);
-            $leadResponseData = json_decode($leadResponse, true);
+            // $leadDataJson = json_encode($leadData);
+            // $clch = curl_init($api_addLead);
+            // curl_setopt($clch, CURLOPT_RETURNTRANSFER, true);
+            // curl_setopt($clch, CURLOPT_POST, true);
+            // curl_setopt($clch, CURLOPT_POSTFIELDS, $leadDataJson);
+            // curl_setopt($clch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+            // $leadResponse = curl_exec($clch);
+            // $leadResponseData = json_decode($leadResponse, true);
 
-            if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
-                $lead_id = $leadResponseData['lead']['id'];
-                $_SESSION['lead_id'] = $lead_id;
+            // if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
+            //     $lead_id = $leadResponseData['lead']['id'];
+            //     $_SESSION['lead_id'] = $lead_id;
 
-                curl_close($clch);
-                // ADD NEW LEAD END 
+            //     curl_close($clch);
+            //     // ADD NEW LEAD END 
 
-                if ($language == "English") {
-                header("Location: ../thankyou/en");
-                }
-                elseif ($language == "Arabic") {
-                    header("Location: ../thankyou/ar");
-                }
-                elseif ($language == "French") {
-                    header("Location: ../thankyou/fr");
-                }
-                elseif ($language == "Hebrew") {
-                    header("Location: ../thankyou/he");
-                }
-                elseif ($language == "Chinese") {
-                    header("Location: ../thankyou/cn");
-                }
-                else {
-                    header("Location: ../thankyou");
-                }
-                exit("here");
-            }
-            else {
+            //     if ($language == "English") {
+            //     header("Location: ../thankyou/en");
+            //     }
+            //     elseif ($language == "Arabic") {
+            //         header("Location: ../thankyou/ar");
+            //     }
+            //     elseif ($language == "French") {
+            //         header("Location: ../thankyou/fr");
+            //     }
+            //     elseif ($language == "Hebrew") {
+            //         header("Location: ../thankyou/he");
+            //     }
+            //     elseif ($language == "Chinese") {
+            //         header("Location: ../thankyou/cn");
+            //     }
+            //     else {
+            //         header("Location: ../thankyou");
+            //     }
+            //     exit("here");
+            // }
+            // else {
                 $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'No OTP Used', '$country')");
                 if ($query) {
                     if ($language == "English") {
@@ -336,7 +357,7 @@ else {
                 else {
                     header("Location: ../thankyou");
                 }
-            }
+            // }
         }
     }
 }
