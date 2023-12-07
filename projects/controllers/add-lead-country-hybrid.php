@@ -41,9 +41,12 @@ if (isset($_GET['leadContact'])) {
 
 $leadEmail = $_GET['LeadEmail1'];
 $leadName = $_GET['LeadName1'];
-$enquiryType = $_GET['EnquiryRadio1'];
 $leadFor = $_GET['LeadForRadio1'];
+$enquiryType = $_GET['EnquiryRadio1'];
 
+if (isset($_GET['EnquiryType']) && $_GET['EnquiryType'] !== "") {
+    $enquiryType = $_GET['EnquiryType'];
+}
 
 // SNAP PIXEL 
 if ($leadSource == "Campaign Snapchat") {
