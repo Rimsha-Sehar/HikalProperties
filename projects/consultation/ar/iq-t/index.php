@@ -51,11 +51,12 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
-    <script src="https://hikalproperties.com/projects/gtm/head.js"></script> 
+    <!-- META PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
 </head>
 
 <body class="arabic" dir="rtl" style="background: #0E0E0E;">
-    <?php include_once("../../../gtm/body.php"); ?>
+    <?php include_once("../../../gtm/meta.php"); ?>
 
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");

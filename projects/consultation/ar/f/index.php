@@ -56,7 +56,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 </head>
 
 <body class="arabic" dir="rtl" style="background: #0E0E0E;">
-    <?php include_once("../../gtm/meta.php"); ?>
+    <?php include_once("../../../gtm/meta.php"); ?>
 
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
