@@ -534,6 +534,9 @@ curl_close($ch);
                             $("#lead-form").hide();
                             $("#otp-form").show();
                         }
+                        else if (response.thankyou) {
+                            window.location.href = response.redirectUrl;
+                        }
                         else {
                             console.log("Error: ", response);
                         }

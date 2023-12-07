@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include('../dbconfig/dbhybrid.php');
 
 // IP AND DEVICE
@@ -246,29 +247,32 @@ else {
                     }
                     // SEND OTP END 
 
-                    if ($language == "English") {
-                        header("Location: ../thankyou/en");
-                    }
-                    elseif ($language == "Arabic") {
-                        header("Location: ../thankyou/ar");
-                    }
-                    elseif ($language == "French") {
-                        header("Location: ../thankyou/fr");
-                    }
-                    elseif ($language == "Hebrew") {
-                        header("Location: ../thankyou/he");
-                    }
-                    elseif ($language == "Chinese") {
-                        header("Location: ../thankyou/cn");
-                    }
                     else {
-                        header("Location: ../thankyou");
+                        if ($language == "English") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";
+                        }
+                        elseif ($language == "Arabic") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/ar";
+                        }
+                        elseif ($language == "French") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/fr";
+                        }
+                        elseif ($language == "Hebrew") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/he";
+                        }
+                        elseif ($language == "Chinese") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/cn";
+                        }
+                        else {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou";
+                        }
                     }
-                    exit("here");
                 }
                 else {
-                    header("Location: ../thankyou");
+                    $redirectUrl = "https://hikalproperties.com/projects/thankyou";
                 }
+                echo json_encode(['thankyou' => true, 'redirectUrl' => $redirectUrl]);
+                exit();
             // }
         }
         // NON UAE NUMBERS 
@@ -335,28 +339,29 @@ else {
                 $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'No OTP Used', '$country')");
                 if ($query) {
                     if ($language == "English") {
-                        header("Location: ../thankyou/en");
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";
                     }
                     elseif ($language == "Arabic") {
-                        header("Location: ../thankyou/ar");
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/ar";
                     }
                     elseif ($language == "French") {
-                        header("Location: ../thankyou/fr");
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/fr";
                     }
                     elseif ($language == "Hebrew") {
-                        header("Location: ../thankyou/he");
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/he";
                     }
                     elseif ($language == "Chinese") {
-                        header("Location: ../thankyou/cn");
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/cn";
                     }
                     else {
-                        header("Location: ../thankyou");
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou";
                     }
-                    exit("here");
                 }
                 else {
-                    header("Location: ../thankyou");
+                    $redirectUrl = "https://hikalproperties.com/projects/thankyou";
                 }
+                echo json_encode(['thankyou' => true, 'redirectUrl' => $redirectUrl]);
+                exit();
             // }
         }
     }

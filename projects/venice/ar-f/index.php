@@ -482,6 +482,9 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             $("#lead-form").hide();
                             $("#otp-form").show();
                         }
+                        else if (response.thankyou) {
+                            window.location.href = response.redirectUrl;
+                        }
                         else {
                             console.log("Error: ", response);
                         }
