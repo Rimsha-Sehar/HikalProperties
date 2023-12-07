@@ -552,7 +552,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 }
                 else if (meetRadio && meetRadio.value === "WhatsApp Consultation") {
                     if (name.value !== "" && contact.value !== "" && email.value !== "") {
-                        form.submit();
+                        // form.submit();
                     }
                     else {
                         var message = document.getElementById("Message");
