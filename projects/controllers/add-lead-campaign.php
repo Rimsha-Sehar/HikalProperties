@@ -191,11 +191,55 @@ else {
                 $_SESSION['triggerAction'] = true;
                 header("Location: ../consultation/ar/waiting");
                 // header("Location: ../consultation/ar/waiting/index.php");
+
+                // SEND SMS NOTIFICATION 
+                $otpData = array(
+                    'phone_number' => "+971585556605",
+                    'senderAddr' => "AD-HIKAL",
+                    'message' => "Live Call Lead Alert! Name: $leadName, Language: $language",
+                    'type' => "sms"
+                );
+
+                $soch = curl_init($api_sendOtp);
+                curl_setopt($soch, CURLOPT_POST, 1);
+                curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+                curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+                $otpResponse = curl_exec($soch);
+                $otpResponseData = json_decode($otpResponse, true);
+
+                if (isset($otpResponseData['message'])) {
+                    $message = $otpResponseData['message'];
+                    echo json_encode(['otp' => true]);
+                    exit();
+                }
+                // SEND SMS NOTIFICATION END 
             }
             else {
                 $_SESSION['triggerAction'] = true;
                 header("Location: ../consultation/en/waiting");
                 // header("Location: ../consultation/en/waiting/index.php");
+
+                // SEND SMS NOTIFICATION 
+                $otpData = array(
+                    'phone_number' => "+971585556605",
+                    'senderAddr' => "AD-HIKAL",
+                    'message' => "Live Call Lead Alert! Name: $leadName, Language: $language",
+                    'type' => "sms"
+                );
+
+                $soch = curl_init($api_sendOtp);
+                curl_setopt($soch, CURLOPT_POST, 1);
+                curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+                curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+                $otpResponse = curl_exec($soch);
+                $otpResponseData = json_decode($otpResponse, true);
+
+                if (isset($otpResponseData['message'])) {
+                    $message = $otpResponseData['message'];
+                    echo json_encode(['otp' => true]);
+                    exit();
+                }
+                // SEND SMS NOTIFICATION END 
             }
             exit();
         }
@@ -208,11 +252,55 @@ else {
                     $_SESSION['triggerAction'] = true;
                     header("Location: ../consultation/ar/waiting");
                     // header("Location: ../consultation/ar/waiting/index.php");
+
+                    // SEND SMS NOTIFICATION 
+                    $otpData = array(
+                        'phone_number' => "+971585556605",
+                        'senderAddr' => "AD-HIKAL",
+                        'message' => "Live Call Lead Alert! Name: $leadName, Language: $language",
+                        'type' => "sms"
+                    );
+
+                    $soch = curl_init($api_sendOtp);
+                    curl_setopt($soch, CURLOPT_POST, 1);
+                    curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+                    curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+                    $otpResponse = curl_exec($soch);
+                    $otpResponseData = json_decode($otpResponse, true);
+
+                    if (isset($otpResponseData['message'])) {
+                        $message = $otpResponseData['message'];
+                        echo json_encode(['otp' => true]);
+                        exit();
+                    }
+                    // SEND SMS NOTIFICATION END 
                 }
                 else {
                     $_SESSION['triggerAction'] = true;
                     header("Location: ../consultation/en/waiting");
                     // header("Location: ../consultation/en/waiting/index.php");
+
+                    // SEND SMS NOTIFICATION 
+                    $otpData = array(
+                        'phone_number' => "+971585556605",
+                        'senderAddr' => "AD-HIKAL",
+                        'message' => "Live Call Lead Alert! Name: $leadName, Language: $language",
+                        'type' => "sms"
+                    );
+
+                    $soch = curl_init($api_sendOtp);
+                    curl_setopt($soch, CURLOPT_POST, 1);
+                    curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+                    curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+                    $otpResponse = curl_exec($soch);
+                    $otpResponseData = json_decode($otpResponse, true);
+
+                    if (isset($otpResponseData['message'])) {
+                        $message = $otpResponseData['message'];
+                        echo json_encode(['otp' => true]);
+                        exit();
+                    }
+                    // SEND SMS NOTIFICATION END 
                 }
                 exit();
             }
