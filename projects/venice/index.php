@@ -38,13 +38,17 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     
     <!-- ICON -->
     <link rel="icon" type="image/png" href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
-    <!-- https://hikalproperties.com/projects/ -->
+
     <!-- STYLES -->
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
+
+    <!-- META PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
 </head>
 
 <body class="arabic" dir="rtl">    
+    <?php include_once("../../gtm/meta.php"); ?>
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);
