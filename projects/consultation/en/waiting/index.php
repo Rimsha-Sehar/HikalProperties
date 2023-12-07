@@ -103,7 +103,17 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #000000; border: 2px solid #333333; padding: 25px; border-radius: 10px; text-align: center;">
                     We are currently finding the best consultant for you based on your requirements. Your video call will be initiated shortly. We appreciate your understanding and apologize for any inconvenience caused.
                     <br />
-                    <button onclick="startAudio()" style="font-weight: bold;">
+                    <div id="prompt" class="mt-3" style="height: 50px; width: 100%; display: none;">
+                        <div class="tooltip-anim">
+                            <div class="gold-grad-anim" style="font-weight: bold;">
+                                PRESS HERE
+                            </div>
+                            <div class="gold-grad">
+                                <i class="fa-solid fa-chevron-down" style="font-size: 1.3rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="startAudio()" class="mt-1" style="font-weight: bold;">
                         START
                     </button>
                 </div>
@@ -508,6 +518,20 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
                     audioDiv.muted = false;
                     audioDiv.loop = true;
                 }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    var startAudioDiv = document.getElementById('start-audio');
+
+                    setTimeout(function () {
+                        if (isElementVisible(startAudioDiv) && startAudioDiv.classList.contains('mobile')) {
+                            document.getElementById('prompt').style.display = 'block';
+                        }
+                    }, 3000);
+
+                    function isElementVisible(element) {
+                        return element.offsetWidth > 0 || element.offsetHeight > 0;
+                    }
+                });
             </script>
             <?php
         }
