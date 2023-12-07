@@ -6,7 +6,7 @@ include('../../dbconfig/dbhybrid.php');
 $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
 ?>
-
+<!-- CHANGE TO SNAPCHAT BECAUSE IT IS BEING USED IN SNAPCHAT  -->
 <!DOCTYPE html>
 <html>
 
@@ -142,7 +142,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                         <input type="text" id="Project" name="Project" value="Venice" />
                                                         <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                                         <input type="text" id="Language" name="Language" value="Arabic" />
-                                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign TikTok" />
+                                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign Snapchat" />
                                                         <input type="text" id="Country" name="Country" value="" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                                     </div>
