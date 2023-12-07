@@ -73,7 +73,7 @@ curl_close($ch);
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400&family=Noto+Kufi+Arabic:wght@200;300;600&family=Playfair+Display:ital@0;1&family=Raleway:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400&family=Noto+Kufi+Arabic:wght@200;300;600&family=Lilita+One&family=Playfair+Display:ital@0;1&family=Raleway:wght@200;400;600;800&display=swap" rel="stylesheet">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -97,6 +97,90 @@ curl_close($ch);
 
     <!-- META PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+
+    <style>
+        .gold-text {
+            color: #F5C21B;
+            background: -webkit-gradient(linear, left top, left bottom, from(#F5C21B), to(#D17000));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 13em;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: relative;
+            /*top: 50% !important;*/
+            /*left: 50% !important;*/
+            /*transform: translate(-50%, -50%);*/
+        }
+        
+        .gold-text::before {
+            content: "%40";
+            -webkit-animation: flare 5s infinite;
+            -webkit-animation-timing-function: linear;
+            background-image: linear-gradient(65deg, transparent 20%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.3) 27%, transparent 27%, transparent 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #FFF;
+            position: absolute;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%);
+        }
+
+        .gold-text::after {
+            color: #FFF;
+            content: "%40";
+            position: absolute;
+            background-position: -180px;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%);
+            text-shadow: 0 1px #6E4414, 0 2px #6E4414, 0 3px #6E4414, 0 4px #6E4414, 0 5px #6E4414, 0 6px #6E4414, 0 7px #6E4414, 0 8px #6E4414, 0 9px #6E4414, 0 10px #6E4414;
+            top: 0;
+            z-index: -1;
+        }
+        
+        .inner-gold::after, .inner-gold::before {
+            -webkit-animation: sparkle 4s infinite;
+            -webkit-animation-timing-function: linear;
+            background: #FFF;
+            border-radius: 100%;
+            box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 25px #FFF, 0 0 30px #FFF, 0 0 35px #FFF;
+            content: "";
+            display: block;
+            height: 10px;
+            opacity: 0.7;
+            position: absolute;
+            width: 10px;
+        }
+
+        .inner-gold::before {
+            -webkit-animation-delay: 0.2s;
+            height: 7px;
+            left: 0.12em;
+            top: 0.8em;
+            width: 7px;
+        }
+
+        .inner-gold::after {
+            top: 0.32em;
+            right: -5px;
+        }
+        
+        @-webkit-keyframes flare {
+            0%   { background-position: -180px; }
+            30%  { background-position: 500px; }
+            100% { background-position: 500px; }
+        }
+
+        @-webkit-keyframes sparkle {
+            0%   { opacity: 0; }
+            30%  { opacity: 0; }
+            40%  { opacity: 0.8; }
+            60%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+    </style>
 </head>
 
 <body class="arabic" dir="rtl">
@@ -125,8 +209,21 @@ curl_close($ch);
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">فرصتك قبل الطرح أحصل علي كوبون فرش لشقتك مجانا</h1>
-                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">سجل بياناتك الحين للمزيد من التفاصيل</h3>
+                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
+                        سجل الأن 
+                        </h1>
+                        <h1 style="text-align: center; line-height: 2rem; font-weight: 800;">
+                                                        وأحصل علي خصم
+                                                    </h1>
+
+                        <div style="position: relative;">
+                            <h1 class="gold-text py-2" style="text-align: center; line-height: 3rem; font-weight: 500; font-size: 4rem; font-family: 'Lilita One', sans-serif;">
+                                <span class="inner-gold">%40</span>
+                            </h1>
+                        </div>
+                        <h1 style="text-align: center; line-height: 2rem; font-weight: 800;">
+                                قبل الطرح
+                            </h1>
                     </div>
                 </div>
             </div>
@@ -290,7 +387,7 @@ curl_close($ch);
     
         <!--CONTENT-->
         <div class="second_section">
-            <div class="container container-fluid py-3 my-3">
+            <div class="container container-fluid py-3 m-3">
                 <!-- IMAGE GALLERY -->
                 <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" data-mdb-carousel-init>
                     <!-- Indicators -->
@@ -327,22 +424,22 @@ curl_close($ch);
                   <div class="carousel-inner">
                     <!-- Single item -->
                     <div class="carousel-item active">
-                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp001.jpg" class="d-block w-100" alt="Hikal Properties"/>
+                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp001.jpg" class="d-block w-100" style="max-height: 90vh;" alt="Hikal Properties"/>
                     </div>
 
                     <!-- Single item -->
                     <div class="carousel-item">
-                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp002.jpg" class="d-block w-100" alt="Hikal Properties"/>
+                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp002.jpg" class="d-block w-100" style="max-height: 90vh;" alt="Hikal Properties"/>
                     </div>
 
                     <!-- Single item -->
                     <div class="carousel-item">
-                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp003.jpg" class="d-block w-100" alt="Hikal Properties"/>
+                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp003.jpg" class="d-block w-100" style="max-height: 90vh;" alt="Hikal Properties"/>
                     </div>
 
                     <!-- Single item -->
                     <div class="carousel-item">
-                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp004.jpg" class="d-block w-100" alt="Hikal Properties"/>
+                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp004.jpg" class="d-block w-100" style="max-height: 90vh;" alt="Hikal Properties"/>
                     </div>
                   </div>
                   <!-- Inner -->
