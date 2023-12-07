@@ -19,7 +19,7 @@
                                     <div class="sign-wrap">
                                         <h3 class="title-form pb-14">{{ get_phrase('Sign up') }}</h3>
                                         <p class="subtitle-form pb-30">
-                                        {{ get_phrase('Create account to start using Hikal Properties ') }}
+                                        {{ get_phrase('Create account') }}
                                         </p>
 
                                         <!-- Form -->

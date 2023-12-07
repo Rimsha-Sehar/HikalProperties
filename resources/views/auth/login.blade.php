@@ -20,7 +20,7 @@
                                     <div class="sign-wrap">
                                         <h3 class="title-form pb-14">{{ get_phrase('Login') }}</h3>
                                         <p class="subtitle-form pb-30">
-                                        {{ get_phrase('Sign into your account to start using Hikal Properties ') }}
+                                        {{ get_phrase('Sign into your account') }}
                                         </p>
                                         <!-- Form -->
                                         <form id="login_form" method="post" action="{{ route('login') }}">
