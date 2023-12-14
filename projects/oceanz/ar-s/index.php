@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include('../dbconfig/dbhybrid.php');
+include('../../dbconfig/dbhybrid.php');
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
@@ -35,7 +35,7 @@ $data = array(
     "page_url" => (string)$fullUrl, 
     "user_agent" => (string)$device,
     "hashed_ip_address" => (string)$hashed_ip,
-    "item_category" => "Reportage",
+    "item_category" => "Oceanz",
 );
 // print_r($data);
 
@@ -66,14 +66,14 @@ curl_close($ch);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hikal Real Estate Properties | Royal Park</title>
+    <title>Hikal Real Estate Properties | Oceanz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hikal Real Estate | Hikal Properties | Reportage Developments | Reportage Royal Park | Abu Dhabi">
+    <meta name="description" content="Hikal Real Estate | Hikal Properties | Danube Developers | Danube Oceanz">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400&family=Noto+Kufi+Arabic:wght@200;300;600&family=Lilita+One&family=Playfair+Display:ital@0;1&family=Raleway:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400&family=Noto+Kufi+Arabic:wght@200;300;600&family=Playfair+Display:ital@0;1&family=Raleway:wght@200;400;600;800&display=swap" rel="stylesheet">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -97,94 +97,10 @@ curl_close($ch);
 
     <!-- META PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
-
-    <style>
-        .gold-text {
-            color: #F5C21B;
-            background: -webkit-gradient(linear, left top, left bottom, from(#F5C21B), to(#D17000));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 13em;
-            font-weight: 900;
-            text-transform: uppercase;
-            position: relative;
-            /*top: 50% !important;*/
-            /*left: 50% !important;*/
-            /*transform: translate(-50%, -50%);*/
-        }
-        
-        .gold-text::before {
-            content: "%40";
-            -webkit-animation: flare 5s infinite;
-            -webkit-animation-timing-function: linear;
-            background-image: linear-gradient(65deg, transparent 20%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.3) 27%, transparent 27%, transparent 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: #FFF;
-            position: absolute;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%);
-        }
-
-        .gold-text::after {
-            color: #FFF;
-            content: "%40";
-            position: absolute;
-            background-position: -180px;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%);
-            text-shadow: 0 1px #6E4414, 0 2px #6E4414, 0 3px #6E4414, 0 4px #6E4414, 0 5px #6E4414, 0 6px #6E4414, 0 7px #6E4414, 0 8px #6E4414, 0 9px #6E4414, 0 10px #6E4414;
-            top: 0;
-            z-index: -1;
-        }
-        
-        .inner-gold::after, .inner-gold::before {
-            -webkit-animation: sparkle 4s infinite;
-            -webkit-animation-timing-function: linear;
-            background: #FFF;
-            border-radius: 100%;
-            box-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF, 0 0 25px #FFF, 0 0 30px #FFF, 0 0 35px #FFF;
-            content: "";
-            display: block;
-            height: 10px;
-            opacity: 0.7;
-            position: absolute;
-            width: 10px;
-        }
-
-        .inner-gold::before {
-            -webkit-animation-delay: 0.2s;
-            height: 7px;
-            left: 0.12em;
-            top: 0.8em;
-            width: 7px;
-        }
-
-        .inner-gold::after {
-            top: 0.32em;
-            right: -5px;
-        }
-        
-        @-webkit-keyframes flare {
-            0%   { background-position: -180px; }
-            30%  { background-position: 500px; }
-            100% { background-position: 500px; }
-        }
-
-        @-webkit-keyframes sparkle {
-            0%   { opacity: 0; }
-            30%  { opacity: 0; }
-            40%  { opacity: 0.8; }
-            60%  { opacity: 0; }
-            100% { opacity: 0; }
-        }
-    </style>
 </head>
 
 <body class="arabic" dir="rtl">
-    <?php include_once("../gtm/meta.php"); ?>
+    <?php include_once("../../gtm/meta.php"); ?>
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);
@@ -210,25 +126,16 @@ curl_close($ch);
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
                         <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                        سجل الأن 
+                            امتلك عقارك على الواجهة البحرية بخطة سداد على 7 سنوات!
                         </h1>
-                        <h1 style="text-align: center; line-height: 2rem; font-weight: 800;">
-                                                        وأحصل علي خصم
-                                                    </h1>
-
-                        <div style="position: relative;">
-                            <h1 class="gold-text py-2" style="text-align: center; line-height: 3rem; font-weight: 500; font-size: 4rem; font-family: 'Lilita One', sans-serif;">
-                                <span class="inner-gold">%40</span>
-                            </h1>
-                        </div>
-                        <h1 style="text-align: center; line-height: 2rem; font-weight: 800;">
-                                قبل الطرح
-                            </h1>
+                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem;">
+                            دفعة أولى 110,000 درهم وقسط شهري 1%!
+                        </h3>
                     </div>
                 </div>
             </div>
             <div class="row mobile">
-                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/abd/rp005.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/main-mobo.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
             <div class="container container-fluid">
                 <div class="row d-flex align-items-center">
@@ -245,7 +152,7 @@ curl_close($ch);
                                         ?>
                                         <!-- OTP FORM  -->
                                         <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
-                                            <form method="POST" action="../controllers/verify-otp.php">
+                                            <form method="POST" action="../../controllers/verify-otp.php">
                                                 <!-- action="../controllers/verify-otp.php" -->
                                                 <h5 class="gold-grad" style="text-align: center;">
                                                     OTP has been sent to 
@@ -292,14 +199,14 @@ curl_close($ch);
                                                 <form id="lead-form" onsubmit="return submitLeadForm();">
                                                     <!-- action="../controllers/add-lead-country-hybrid.php" -->
                                                     <div style="display: none">
-                                                        <input type="text" id="Project" name="Project" value="Reportage" />
-                                                        <input type="text" id="EnquiryType" name="EnquiryType" value="" />
+                                                        <input type="text" id="Project" name="Project" value="Oceanz" />
                                                         <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                                         <input type="text" id="Language" name="Language" value="Arabic" />
                                                         <input type="text" id="LeadSource" name="LeadSource" value="Campaign Snapchat" />
                                                         <input type="text" id="Country" name="Country" value="" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                                     </div>
+                                                    
                                                     <!-- NAME -->
                                                     <label class="gold-grad" style="margin-top: 0px;">الاسم</label>
                                                     <input type="text" name="LeadName1" id="LeadName1" required />
@@ -315,35 +222,42 @@ curl_close($ch);
                                                     <!-- HOW MANY BEDROOMS -->
                                                     <label class="gold-grad">كم عدد غرف النوم؟</label>
                                                     <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom Apartment" onchange="changeLeadType(this)" style="width: 20px;" required>
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            استوديو
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" style="width: 20px;" required>
                                                         <label for="EnquiryRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            <!-- غرفة نوم واحدة -->
-                                                            شقة بغرفة نوم واحدة
+                                                            غرفة نوم واحدة
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms Apartment" onchange="changeLeadType(this)" style="width: 20px;" required>
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
                                                         <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            <!-- غرفتين نوم -->
-                                                            شقة بغرفتي نوم
+                                                            غرفتين نوم
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="4 Bedrooms Apartment" onchange="changeLeadType(this)" style="width: 20px;" required>
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
                                                         <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            شقة بأربع غرف نوم
+                                                            ثلاث غرف نوم
+                                                        </label>
+                                                    </div>
+
+                                                    <!-- PRIVATE POOL -->
+                                                    <label class="gold-grad">مسبح خاص؟</label>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="PoolRadio" id="PoolRadio1" value=" with Private Pool" style="width: 20px;" required onchange="updateEnquiryRadioValue()">
+                                                        <label for="PoolRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            نعم
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="4 Bedrooms Penthouse" onchange="changeLeadType(this)" style="width: 20px;" required>
-                                                        <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            بنتهاوس بأربع غرف نوم
-                                                        </label>
-                                                    </div>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="4 Bedrooms Townhouse" onchange="changeLeadType(this)" style="width: 20px;" required>
-                                                        <label for="EnquiryRadio6" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            تاون هاوس بأربع غرف نوم
+                                                        <input class="mx-2" type="radio" name="PoolRadio" id="PoolRadio2" value="" style="width: 20px;" required onchange="updateEnquiryRadioValue()">
+                                                        <label for="PoolRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            لا
                                                         </label>
                                                     </div>
                                             
@@ -379,7 +293,7 @@ curl_close($ch);
                     </div>
                 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
-                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/abd/rp005.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/main-bg.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
                     </div>
                 </div>
             </div>
@@ -387,68 +301,229 @@ curl_close($ch);
     
         <!--CONTENT-->
         <div class="second_section">
-            <div class="container container-fluid p-5 my-3">
-                <!-- IMAGE GALLERY -->
-                <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel" data-mdb-carousel-init>
-                    <!-- Indicators -->
-                    <div class="carousel-indicators">
-                        <button
-                          type="button"
-                          data-mdb-target="#carouselBasicExample"
-                          data-mdb-slide-to="0"
-                          class="active"
-                          aria-current="true"
-                          aria-label="Slide 1"
-                        ></button>
-                        <button
-                          type="button"
-                          data-mdb-target="#carouselBasicExample"
-                          data-mdb-slide-to="1"
-                          aria-label="Slide 2"
-                        ></button>
-                        <button
-                          type="button"
-                          data-mdb-target="#carouselBasicExample"
-                          data-mdb-slide-to="2"
-                          aria-label="Slide 3"
-                        ></button>
-                        <button
-                          type="button"
-                          data-mdb-target="#carouselBasicExample"
-                          data-mdb-slide-to="3"
-                          aria-label="Slide 4"
-                        ></button>
+            <div class="container container-fluid py-3">
+                <div class="desktop">
+                    <div class="row my-4">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/living.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
+                            <div class="p-2">
+                                <h5 class="gold-grad">
+                                    الحياة على الواجهة البحرية، أعجوبة في دبي
+                                </h5>
+                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
+                                <h6>
+                                    يقع هذا المشروع السكني الاستثنائي الذي يبلغ ارتفاعه 50 طابقًا داخل مدينة دبي الملاحية المرموقة، مما يمثل علامة بارزة في الإنجاز المعماري. إنه يجسد نمط الحياة الفخم على الواجهة البحرية، ويضع معايير جديدة للفخامة والرقي. يتألف كل مسكن من مجموعة من المساكن، بدءًا من الاستوديوهات الأنيقة وحتى شقق البنتهاوس الفخمة، ويوفر مناظر شاملة للخليج العربي الساحر، مما يخلق تجربة معيشية هادئة ورائعة.
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-
-                  <!-- Inner -->
-                  <div class="carousel-inner">
-                    <!-- Single item -->
-                    <div class="carousel-item active">
-                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp001.jpg" class="d-block w-100" style="max-height: 90vh;" alt="Hikal Properties"/>
+                    <div class="row my-4">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
+                            <div class="p-2">
+                                <h5 class="gold-grad">
+                                    فخامة عصرية مع وسائل راحة متميزة
+                                </h5>
+                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
+                                <h6>
+                                    تتميز هذه الشقق بالهندسة المعمارية المعاصرة والتفاصيل عالية الجودة. إنها توفر مساحة واسعة وأجواء مريحة، بالإضافة إلى مجموعة متنوعة من وسائل الراحة، بما في ذلك مركز للياقة البدنية متطور وحمام سباحة وحدائق مصممة بشكل جميل.
+                                    <br>
+                                    علاوة على ذلك، يتمتع هذا المشروع بموقع استراتيجي، مع سهولة الوصول إلى المرافق الرئيسية مثل المدارس والمستشفيات ومراكز التسوق وخيارات تناول الطعام. كما أنها تتميز باتصال ممتاز بالمدينة الأوسع من خلال وسائل النقل العام.
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/cafe.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                        </div>
                     </div>
-
-                    <!-- Single item -->
-                    <div class="carousel-item">
-                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp002.jpg" class="d-block w-100" style="max-height: 90vh;" alt="Hikal Properties"/>
+                    <div class="row my-4">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/studio.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
+                            <div class="p-2">
+                                <h5 class="gold-grad">
+                                    دلائل المميزات
+                                </h5>
+                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
+                                <h6>
+                                    فيما يلي بعض المميزات الرئيسية:
+                                    <br>
+                                    <ul>
+                                        <li>مشروع سكني مكون من 50 طابقا</li>
+                                        <li>مجموعة متنوعة من الشقق، من الاستوديوهات إلى البنتهاوس</li>
+                                        <li>مناظر خلابة للخليج العربي</li>
+                                        <li>هندسة معمارية حديثة وتشطيبات متميزة</li>
+                                        <li>مركز للياقة البدنية على أحدث طراز</li>
+                                        <li>موقع متميز، قريب من جميع وسائل الراحة</li>
+                                        <li>متصل بشكل جيد ببقية المدينة عن طريق وسائل النقل العام</li>
+                                    </ul>
+                                </h6>
+                            </div>
+                        </div>
                     </div>
-
-                    <!-- Single item -->
-                    <div class="carousel-item">
-                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp003.jpg" class="d-block w-100" style="max-height: 90vh;" alt="Hikal Properties"/>
+                </div>
+                <div class="mobile">
+                    <div class="p-2">
+                        <h5 class="gold-grad">
+                            الحياة على الواجهة البحرية، أعجوبة في دبي
+                        </h5>
+                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
+                        <h6>
+                            يقع هذا المشروع السكني الاستثنائي الذي يبلغ ارتفاعه 50 طابقًا داخل مدينة دبي الملاحية المرموقة، مما يمثل علامة بارزة في الإنجاز المعماري. إنه يجسد نمط الحياة الفخم على الواجهة البحرية، ويضع معايير جديدة للفخامة والرقي. يتألف كل مسكن من مجموعة من المساكن، بدءًا من الاستوديوهات الأنيقة وحتى شقق البنتهاوس الفخمة، ويوفر مناظر شاملة للخليج العربي الساحر، مما يخلق تجربة معيشية هادئة ورائعة.
+                        </h6>
                     </div>
-
-                    <!-- Single item -->
-                    <div class="carousel-item">
-                      <img src="https://hikalproperties.com/projects/assets/images/projects/abd/rp004.jpg" class="d-block w-100" style="max-height: 90vh;" alt="Hikal Properties"/>
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/living.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <div class="p-2">
+                        <h5 class="gold-grad">
+                             فخامة عصرية مع وسائل راحة متميزة
+                        </h5>
+                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
+                        <h6>
+                            تتميز هذه الشقق بالهندسة المعمارية المعاصرة والتفاصيل عالية الجودة. إنها توفر مساحة واسعة وأجواء مريحة، بالإضافة إلى مجموعة متنوعة من وسائل الراحة، بما في ذلك مركز للياقة البدنية متطور وحمام سباحة وحدائق مصممة بشكل جميل.
+                            <br>
+                            علاوة على ذلك، يتمتع هذا المشروع بموقع استراتيجي، مع سهولة الوصول إلى المرافق الرئيسية مثل المدارس والمستشفيات ومراكز التسوق وخيارات تناول الطعام. كما أنها تتميز باتصال ممتاز بالمدينة الأوسع من خلال وسائل النقل العام.
+                        </h6>
                     </div>
-                  </div>
-                  <!-- Inner -->
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/cafe.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <div class="p-2">
+                        <h5 class="gold-grad">
+                            دلائل المميزات
+                        </h5>
+                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
+                        <h6>
+                            فيما يلي بعض المميزات الرئيسية:
+                            <br>
+                            <ul>
+                                <li>مشروع سكني مكون من 50 طابقا</li>
+                                <li>مجموعة متنوعة من الشقق، من الاستوديوهات إلى البنتهاوس</li>
+                                <li>مناظر خلابة للخليج العربي</li>
+                                <li>هندسة معمارية حديثة وتشطيبات متميزة</li>
+                                <li>مركز للياقة البدنية على أحدث طراز</li>
+                                <li>موقع متميز، قريب من جميع وسائل الراحة</li>
+                                <li>متصل بشكل جيد ببقية المدينة عن طريق وسائل النقل العام</li>
+                            </ul>
+                        </h6>
+                    </div>
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/studio.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                 </div>
             </div>
         </div>
         
+        <!--LOCATION-->
+        <div class="third_section mt-5">
+            <div class="container container-fluid py-5">
+                <div class="row" style="text-align: center;">
+                    <h4 class="gold-grad-anim">
+                        مميزات الموقع
+                    </h4>
+                </div>
+                <div class="row" style="justify-content: center;">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                2
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                محطة ميناء راشد للقوارب
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                8
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                شاطئ جميرا
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                10
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                 إطار دبي
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>07</b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                مطار دبي الدولي
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                15
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                برج العرب
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                15
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                برج خليفة ودبي مول
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--IMAGE-->
+        <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
+            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
+            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
+        </div>
+    
+        <!--AMENITIES-->
+        <div class="fourth_section my-5">
+            <?php include_once("../../components/amenities-ar.php"); ?>
+        </div>
+    
+        <!--WHY DUBAI-->
+        <div class="fifth_section my-5">
+            <?php include_once("../../components/whydubai-ar.php"); ?>
+        </div>
+        
         <footer style="background-color: #000000;">
-            <?php include_once("../components/footer-copyright.php"); ?>
+            <?php include_once("../../components/footer-copyright.php"); ?>
         </footer>
         
         <!--COUNTRY CODE-->
@@ -513,14 +588,11 @@ curl_close($ch);
                 var LeadType = document.getElementById('lead_type');
                 LeadType.value = $("#LeadType").val(); 
 
-                var EnquiryType = document.getElementById('enquiry_type');
-                EnquiryType.value = $("#EnquiryType").val(); 
-
                 var LeadSource = document.getElementById('lead_source');
                 LeadSource.value = $("#LeadSource").val(); 
 
-                // var EnquiryRadio1 = document.getElementById('enquiry_type');
-                // EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
+                var EnquiryRadio1 = document.getElementById('enquiry_type');
+                EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
 
                 var LeadForRadio1 = document.getElementById('lead_for');
                 LeadForRadio1.value = $("#LeadForRadio1").val(); 
@@ -533,7 +605,7 @@ curl_close($ch);
                 // console.log(formData);
 
                 $.ajax({
-                    url: "../controllers/add-lead-country-hybrid.php",
+                    url: "../../controllers/add-lead-country-hybrid.php",
                     method: "GET",
                     data: formData,
                     dataType: "json",
@@ -560,23 +632,15 @@ curl_close($ch);
             }
         </script>
 
-        <!-- CHANGE LEAD TYPE  -->
+        <!-- UPDATE ENQUIRY BY POOL -->
         <script>
-            function changeLeadType(radioButton) {
-                const selectedValue = radioButton.value;
-                const lastIndex = selectedValue.lastIndexOf(' ');
-                const commonPart = selectedValue.slice(0, lastIndex);
-                const specificPart = selectedValue.slice(lastIndex + 1);
-
-                document.getElementById('EnquiryType').value = commonPart;
-                document.getElementById('LeadType').value = specificPart;
-                // radioButton.value = commonPart;
+            function updateEnquiryRadioValue() {
+                const poolRadioValue = document.querySelector('input[name="PoolRadio"]:checked').value;
+                const enquiryRadio1 = document.querySelector('input[name="EnquiryRadio1"]:checked');
+                enquiryRadio1.value = enquiryRadio1.value + poolRadioValue;
             }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                document.getElementById('LeadType').value = "Apartment";
-            });
         </script>
+
         <?php
     }
     ?>
