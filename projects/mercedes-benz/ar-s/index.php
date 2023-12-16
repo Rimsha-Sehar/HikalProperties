@@ -117,6 +117,11 @@ curl_close($ch);
     }
     else {
         ?>
+        <!-- LOADING OVERLAY  -->
+        <div id="loadingOverlay" class="overlay" style="display: none;">
+            <?php include_once("../../components/loading-circle.php"); ?>
+        </div>
+
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
 
@@ -237,13 +242,13 @@ curl_close($ch);
                                     <div style="display: flex;" dir="rtl">
                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="4 Bedrooms" style="width: 20px;" required>
                                         <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            4 Bedrooms
+                                            أربع غرف نوم
                                         </label>
                                     </div>
                                     <div style="display: flex;" dir="rtl">
                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="5 Bedrooms" style="width: 20px;" required>
                                         <label for="EnquiryRadio6" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            5 Bedrooms
+                                            خمس غرف نوم
                                         </label>
                                     </div>
                             
@@ -281,10 +286,10 @@ curl_close($ch);
         <div class="header">
             <div class="text-center">
                 <h4 class="gold-grad-anim">
-                    MERCEDES-BENZ PLACES
+                    مرسيدس بنز أماكن
                 </h4>
-                <h5 style="font-family: 'Playfair Display', sans-serif;">
-                    An Iconic Collaboration of Elegance and Innovation
+                <h5>
+                    تعاون أسطوري بين الأناقة والابتكار
                 </h5>
             </div>   
         </div>
@@ -298,31 +303,31 @@ curl_close($ch);
         <div class="second_section">
             <div class="container container-fluid py-3">
                 <div class="desktop">
-                    <div class="row my-4">
+                    <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-out.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    Refined Luxury Living
+                                    معيشة فاخرة مصقولة
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    Enter a world of refined luxury at Mercedes-Benz Places, a collaborative masterpiece between Binghatti and Mercedes-Benz. This 71-story residence in Downtown Dubai, standing at 341 meters, seamlessly integrates smart home technologies and "intelligent mobility solutions," echoing Mercedes-Benz's design philosophy of "Sensual Purity." More than a residence, it signifies sophistication, setting a new standard of living with breathtaking views of the Burj Khalifa and vibrant Downtown Dubai.
+                                    انغمس في عالم الرفاهية المصقولة في أماكن مرسيدس بنز، تحفة تعاونية بين بنغهاتي ومرسيدس بنز. يقف هذا السكن الذي يمتد على ارتفاع 341 مترًا في وسط دبي، المكون من 71 طابقًا، ويدمج بسلاسة تكنولوجيا المنزل الذكي و "حلول الحركة الذكية"، مرددًا فلسفة تصميم مرسيدس بنز "النقاء الحسي". أكثر من مجرد إقامة، فإنه يرمز إلى الأناقة، ويضع معيارًا جديدًا للعيش مع إطلالات رائعة على برج خليفة ووسط دبي الحيوي.
                                 </h6>
                             </div>
                         </div>
                     </div>
-                    <div class="row my-4">
+                    <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    Distinctive Collaboration Unveiled
+                                    كشف عن تعاون مميز
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    In the heart of Downtown Dubai, Mercedes-Benz Places emerges as an extraordinary collaboration between visionary developer Binghatti and the iconic luxury brand Mercedes. Construction initiated in 2023 on plot 3450387 stands testament to a meticulously planned partnership revealed in December 2023. Inspired by Mercedes-Benz's "Sensual Purity" design philosophy, the tower transcends conventional living standards. Beyond a residence, it integrates smart home technologies and "intelligent mobility solutions," offering an unparalleled living experience. Every detail reflects a convergence of architectural brilliance and automotive-inspired luxury, setting a new paradigm for opulent living.
+                                    في قلب وسط مدينة دبي، يظهر ميرسيدس بنز بلاس كتعاون استثنائي بين المطور الرؤوي بينغهاتي والعلامة الفاخرة الأيقونية ميرسيدس. بدأ البناء في عام 2023 على القطعة 3450387 تشهد على شراكة مخطط لها بعناية تم الكشف عنها في ديسمبر 2023. مستوحاة من فلسفة تصميم "النقاء الحسي" لميرسيدس بنز، تتجاوز البرج معايير العيش التقليدية. بعيدًا عن أن تكون مجرد إقامة، فإنه يدمج تقنيات المنزل الذكي و"حلول الحركة الذكية"، مما يقدم تجربة حياة لا مثيل لها. كل تفصيل يعكس تلاقي براعة معمارية وفخامة مستوحاة من عالم السيارات، ويضع معيارًا جديدًا للعيش الفاخر.
                                 </h6>
                             </div>
                         </div>
@@ -330,18 +335,18 @@ curl_close($ch);
                             <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-benz.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                     </div>
-                    <div class="row my-4">
+                    <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-view.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    Seamless Urban Living
+                                    تجربة حضرية سلسة
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access—10 minutes to the Dubai Mall, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport and a 41-minute drive to Al Maktoum International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
+                                    استكشف تجربة حياة معرّفة من جديد في مراكز مرسيدس بنز، الموقعة بشكل استراتيجي في وسط مدينة دبي. مع وصول سريع - 10 دقائق إلى دبي مول، 22 دقيقة إلى نخلة جميرا، و20 دقيقة إلى برج العرب - تضمن هذه الإقامة راحة لا مثيل لها. بعيدًا عن كونها مسكنًا، إنها تتجاوز المجرد الجسدي، حيث تم وضعها استراتيجيًا لتكون على بُعد 16 دقيقة من مطار دبي الدولي و41 دقيقة بالسيارة من مطار آل مكتوم الدولي. إنها ليست مجرد منزل؛ إنها نمط حياة صمم بعناية لأولئك الذين يسعون إلى قمة الفخامة المعاصرة.
                                 </h6>
                             </div>
                         </div>
@@ -350,31 +355,31 @@ curl_close($ch);
                 <div class="mobile">
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            Refined Luxury Living
+                            معيشة فاخرة مصقولة
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            Enter a world of refined luxury at Mercedes-Benz Places, a collaborative masterpiece between Binghatti and Mercedes-Benz. This 71-story residence in Downtown Dubai, standing at 341 meters, seamlessly integrates smart home technologies and "intelligent mobility solutions," echoing Mercedes-Benz's design philosophy of "Sensual Purity." More than a residence, it signifies sophistication, setting a new standard of living with breathtaking views of the Burj Khalifa and vibrant Downtown Dubai.
+                            انغمس في عالم الرفاهية المصقولة في أماكن مرسيدس بنز، تحفة تعاونية بين بنغهاتي ومرسيدس بنز. يقف هذا السكن الذي يمتد على ارتفاع 341 مترًا في وسط دبي، المكون من 71 طابقًا، ويدمج بسلاسة تكنولوجيا المنزل الذكي و "حلول الحركة الذكية"، مرددًا فلسفة تصميم مرسيدس بنز "النقاء الحسي". أكثر من مجرد إقامة، فإنه يرمز إلى الأناقة، ويضع معيارًا جديدًا للعيش مع إطلالات رائعة على برج خليفة ووسط دبي الحيوي.
                         </h6>
                     </div>
                     <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-out.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            Distinctive Collaboration Unveiled
+                            كشف عن تعاون مميز
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            In the heart of Downtown Dubai, Mercedes-Benz Places emerges as an extraordinary collaboration between visionary developer Binghatti and the iconic luxury brand Mercedes. Construction initiated in 2023 on plot 3450387 stands testament to a meticulously planned partnership revealed in December 2023. Inspired by Mercedes-Benz's "Sensual Purity" design philosophy, the tower transcends conventional living standards. Beyond a residence, it integrates smart home technologies and "intelligent mobility solutions," offering an unparalleled living experience. Every detail reflects a convergence of architectural brilliance and automotive-inspired luxury, setting a new paradigm for opulent living.
+                            في قلب وسط مدينة دبي، يظهر ميرسيدس بنز بلاس كتعاون استثنائي بين المطور الرؤوي بينغهاتي والعلامة الفاخرة الأيقونية ميرسيدس. بدأ البناء في عام 2023 على القطعة 3450387 تشهد على شراكة مخطط لها بعناية تم الكشف عنها في ديسمبر 2023. مستوحاة من فلسفة تصميم "النقاء الحسي" لميرسيدس بنز، تتجاوز البرج معايير العيش التقليدية. بعيدًا عن أن تكون مجرد إقامة، فإنه يدمج تقنيات المنزل الذكي و"حلول الحركة الذكية"، مما يقدم تجربة حياة لا مثيل لها. كل تفصيل يعكس تلاقي براعة معمارية وفخامة مستوحاة من عالم السيارات، ويضع معيارًا جديدًا للعيش الفاخر.
                         </h6>
                     </div>
                     <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-benz.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            Seamless Urban Living
+                            تجربة حضرية سلسة
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access—10 minutes to the Dubai Mall, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport and a 41-minute drive to Al Maktoum International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
+                            استكشف تجربة حياة معرّفة من جديد في مراكز مرسيدس بنز، الموقعة بشكل استراتيجي في وسط مدينة دبي. مع وصول سريع - 10 دقائق إلى دبي مول، 22 دقيقة إلى نخلة جميرا، و20 دقيقة إلى برج العرب - تضمن هذه الإقامة راحة لا مثيل لها. بعيدًا عن كونها مسكنًا، إنها تتجاوز المجرد الجسدي، حيث تم وضعها استراتيجيًا لتكون على بُعد 16 دقيقة من مطار دبي الدولي و41 دقيقة بالسيارة من مطار آل مكتوم الدولي. إنها ليست مجرد منزل؛ إنها نمط حياة صمم بعناية لأولئك الذين يسعون إلى قمة الفخامة المعاصرة.
                         </h6>
                     </div>
                     <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-view.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
@@ -400,7 +405,7 @@ curl_close($ch);
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                The Dubai Mall
+                                برج خليفة ودبي مول
                             </p>
                             <br>
                         </div>
@@ -414,7 +419,7 @@ curl_close($ch);
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Dubai International Airport
+                                مطار دبي الدولي
                             </p>
                             <br>
                         </div>
@@ -428,7 +433,7 @@ curl_close($ch);
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Burj Al Arab
+                                برج العرب
                             </p>
                             <br>
                         </div>
@@ -442,7 +447,7 @@ curl_close($ch);
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Dubai Opera
+                                 دبي أوبرا
                             </p>
                             <br>
                         </div>
@@ -456,7 +461,7 @@ curl_close($ch);
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Palm Jumeirah
+                                نخلة جميرا
                             </p>
                             <br>
                         </div>
@@ -470,7 +475,7 @@ curl_close($ch);
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Al Maktoum International Airport
+                                مطار آل مكتوم الدولي
                             </p>
                             <br>
                         </div>
@@ -480,10 +485,6 @@ curl_close($ch);
         </div>
     
         <!--MAP-->
-        <!-- <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
-            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
-        </div> -->
         <div class="mapouter">
             <div class="gmap_canvas">
                 <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=mercedes-benz places by binghatti&t=k&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
@@ -560,6 +561,7 @@ curl_close($ch);
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                document.getElementById('loadingOverlay').style.display = 'flex';
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');
@@ -606,6 +608,7 @@ curl_close($ch);
                     dataType: "json",
                     success: function(response) {
                         if (response.otp) {
+                            document.getElementById('loadingOverlay').style.display = 'none';
                             // RENDER OTP FORM 
                             $("#lead-form").hide();
                             $("#otp-form").show();

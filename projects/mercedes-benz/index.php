@@ -46,7 +46,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
 </head>
 
-<body class="arabic" dir="rtl">
+<body class="english">
     <?php include_once("../gtm/meta.php"); ?>
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
@@ -55,257 +55,244 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         ?>
         <div class="d-flex justify-content-center align-items-center text-center p-5" style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع 
+                Some suspicious activities have been detected from your device! Please contact
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                للحصول على المساعدة الإضافية!
+                for further assistance!
             </h1>
         </div>
         <?php
     }
     else {
         ?>
+        <!-- LOADING OVERLAY  -->
+        <div id="loadingOverlay" class="overlay" style="display: none;">
+            <?php include_once("../components/loading-circle.php"); ?>
+        </div>
+
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
-        
-        <!--HEADINGS & FORM-->
-        <div class="first_section">
-            <div class="container container-fluid">
-                <div class="row text-center d-flex align-items-center py-2">
-                    <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            امتلك عقارك على الواجهة البحرية بخطة سداد على 7 سنوات!
-                        </h1>
-                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem;">
-                            دفعة أولى 110,000 درهم وقسط شهري 1%!
-                        </h3>
-                    </div>
+
+        <!-- SLIDER FORM  -->
+        <div class="slider_form" dir="ltr">
+            <div style="height: 100%;"  onClick="openLeadForm();">
+                <div class="d-flex flex-column align-items-center justify-content-center p-2 my-3" style="font-weight: bold; font-size: 0.9rem; text-shadow: 0 2px 2px rgba(250, 227, 133, 1);">
+                    <div>R</div>
+                    <div>E</div>
+                    <div>G</div>
+                    <div>I</div>
+                    <div>S</div>
+                    <div>T</div>
+                    <div>E</div>
+                    <div>R</div>
                 </div>
             </div>
-            <div class="row mobile">
-                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/main-mobo.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
-            </div>
-            <div class="container container-fluid">
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
-                        <div style="display: flex; align-items: center;">
-                            <!-- FORM -->
-                            <div style="width: 100%; min-height: 444px; z-index: 1; display: flex; justify-content: center;">
-                                <div class="containerform">
-                                    <div class="inputs" style="font-weight: 400;">
-                                        <?php
-                                        $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-                                        $parsedUrl = parse_url($url);
-                                        $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
-                                        ?>
-                                        <!-- OTP FORM  -->
-                                        <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
-                                            <form method="POST" action="../controllers/verify-otp.php">
-                                                <!-- action="../controllers/verify-otp.php" -->
-                                                <h5 class="gold-grad" style="text-align: center;">
-                                                    OTP has been sent to 
-                                                    <span id="phone_no"></span>
-                                                </h5>
-                                                <!-- <label class="gold-grad" style="text-align: center;">
-                                                    OTP
-                                                </label> -->
-                                                <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            <div id="leadForm" class="hidden-form">
+                <button type="button" class="close_slider_button" onclick="closeLeadForm()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="containerform_slider_form">
+                    <div class="inputs" style="font-weight: 400; overflow-y: scroll;">
+                        <?php
+                        $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                        $parsedUrl = parse_url($url);
+                        $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
+                        ?>
+                        <!-- OTP FORM  -->
+                        <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
+                            <form method="POST" action="../controllers/verify-otp.php">
+                                <!-- action="../controllers/verify-otp.php" -->
+                                <h5 class="gold-grad" style="text-align: center;">
+                                    OTP has been sent to 
+                                    <span id="phone_no"></span>
+                                </h5>
+                                <!-- <label class="gold-grad" style="text-align: center;">
+                                    OTP
+                                </label> -->
+                                <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 
-                                                <div style="display: none">
-                                                    <input type="text" name="phone_number" id="phone_number">
-                                                    <input type="text" name="lead_name" id="lead_name" >
-                                                    <input type="text" name="lead_email" id="lead_email" >
-                                                    <input type="text" name="lang" id="lang" >
-                                                    <input type="text" name="project_name" id="project_name" >
-                                                    <input type="text" name="lead_type" id="lead_type" >
-                                                    <input type="text" name="lead_source" id="lead_source" >
-                                                    <input type="text" name="enquiry_type" id="enquiry_type" >
-                                                    <input type="text" name="lead_for" id="lead_for" >
-                                                    <input type="text" name="country_name" id="country_name" >
-                                                    <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                                                </div>
-
-                                                <button type="submit" style="font-weight: bold;">
-                                                    تحقق من رمز التحقق
-                                                </button>
-                                            </form>
-                                        </div>
-                                        <?php
-                                        $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
-                                        $fetch = mysqli_fetch_array($query);
-                                        if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
-                                            ?>
-                                            <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
-                                                شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
-                                            </div>
-                                            <?php
-                                        }
-                                        else {
-                                            ?>
-                                            <!--NEW FORM-->
-                                            <div class="contact-form" dir="ltr">
-                                                <form id="lead-form" onsubmit="return submitLeadForm();">
-                                                    <!-- action="../controllers/add-lead-country-hybrid.php" -->
-                                                    <div style="display: none">
-                                                        <input type="text" id="Project" name="Project" value="Oceanz" />
-                                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
-                                                        <input type="text" id="Language" name="Language" value="Arabic" />
-                                                        <input type="text" id="LeadSource" name="LeadSource" value="Website" />
-                                                        <input type="text" id="Country" name="Country" value="" />
-                                                        <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
-                                                    </div>
-                                                    
-                                                    <!-- NAME -->
-                                                    <label class="gold-grad" style="margin-top: 0px;">الاسم</label>
-                                                    <input type="text" name="LeadName1" id="LeadName1" required />
-                                            
-                                                    <!-- CONTACT NUMBER -->
-                                                    <label class="gold-grad">رقم الاتصال</label>
-                                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
-                                                    
-                                                    <!--EMAIL-->
-                                                    <label class="gold-grad">عنوان البريد الإلكتروني</label>
-                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
-        
-                                                    <!-- HOW MANY BEDROOMS -->
-                                                    <label class="gold-grad">كم عدد غرف النوم؟</label>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" style="width: 20px;" required>
-                                                        <label for="EnquiryRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            استوديو
-                                                        </label>
-                                                    </div>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" style="width: 20px;" required>
-                                                        <label for="EnquiryRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            غرفة نوم واحدة
-                                                        </label>
-                                                    </div>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
-                                                        <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            غرفتين نوم
-                                                        </label>
-                                                    </div>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
-                                                        <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            ثلاث غرف نوم
-                                                        </label>
-                                                    </div>
-
-                                                    <!-- PRIVATE POOL -->
-                                                    <label class="gold-grad">مسبح خاص؟</label>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="PoolRadio" id="PoolRadio1" value=" with Private Pool" style="width: 20px;" required onchange="updateEnquiryRadioValue()">
-                                                        <label for="PoolRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            نعم
-                                                        </label>
-                                                    </div>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="PoolRadio" id="PoolRadio2" value="" style="width: 20px;" required onchange="updateEnquiryRadioValue()">
-                                                        <label for="PoolRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            لا
-                                                        </label>
-                                                    </div>
-                                            
-                                                    <!-- PURPOSE  -->
-                                                    <label class="gold-grad">غرض الاستفسار</label>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
-                                                        <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            استثمار
-                                                        </label>
-                                                    </div>
-                                                    <div style="display: flex;" dir="rtl">
-                                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user" style="width: 20px;" required>
-                                                        <label for="PurposeRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            سكني
-                                                        </label>
-                                                    </div>
-                                            
-                                                    <div id="FormButton" name="FormButton">
-                                                        <div class="form_button">
-                                                            <button type="submit" class="submit-click">إرسال</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <?php
-                                        }
-                                        ?>
-                                    </div>
+                                <div style="display: none">
+                                    <input type="text" name="phone_number" id="phone_number">
+                                    <input type="text" name="lead_name" id="lead_name" >
+                                    <input type="text" name="lead_email" id="lead_email" >
+                                    <input type="text" name="lang" id="lang" >
+                                    <input type="text" name="project_name" id="project_name" >
+                                    <input type="text" name="lead_type" id="lead_type" >
+                                    <input type="text" name="lead_source" id="lead_source" >
+                                    <input type="text" name="enquiry_type" id="enquiry_type" >
+                                    <input type="text" name="lead_for" id="lead_for" >
+                                    <input type="text" name="country_name" id="country_name" >
+                                    <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
                                 </div>
-                            </div>
+
+                                <button type="submit" style="font-weight: bold;">
+                                    VERIFY
+                                </button>
+                            </form>
                         </div>
-                    </div>
-                
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
-                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/main-bg.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                        <?php
+                        $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
+                        $fetch = mysqli_fetch_array($query);
+                        if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
+                            ?>
+                            <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
+                                Thank you for registering with us. Our professionals will contact you soon!
+                            </div>
+                            <?php
+                        }
+                        else {
+                            ?>
+                            <!--NEW FORM-->
+                            <div class="contact-form" dir="ltr">
+                                <form id="lead-form" onsubmit="return submitLeadForm();">
+                                    <div style="display: none">
+                                        <input type="text" id="Project" name="Project" value="Mercedes-Benz" />
+                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
+                                        <input type="text" id="Language" name="Language" value="English" />
+                                        <input type="text" id="LeadSource" name="LeadSource" value="Website" />
+                                        <input type="text" id="Country" name="Country" value="" />
+                                        <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
+                                    </div>
+                                    
+                                    <!-- NAME -->
+                                    <label class="gold-grad" style="margin-top: 0px;">NAME</label>
+                                    <input type="text" name="LeadName1" id="LeadName1" required />
+                            
+                                    <!-- CONTACT NUMBER -->
+                                    <label class="gold-grad">CONTACT NUMBER</label>
+                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
+                                    
+                                    <!--EMAIL-->
+                                    <label class="gold-grad">EMAIL ADDRESS</label>
+                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
+
+                                    <!-- HOW MANY BEDROOMS -->
+                                    <label class="gold-grad">HOW MANY BEDROOMS?</label>
+                                        <div class="d-flex align-items-center">
+                                            <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" style="width: 20px;" required>
+                                            <label for="EnquiryRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                1 Bedroom
+                                            </label>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
+                                        <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                            2 Bedrooms
+                                        </label>
+                                    </div>
+                                        <div class="d-flex align-items-center">
+                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
+                                        <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                            3 Bedrooms
+                                        </label>
+                                    </div>
+                                        <div class="d-flex align-items-center">
+                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="4 Bedrooms" style="width: 20px;" required>
+                                        <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                            4 Bedrooms
+                                        </label>
+                                    </div>
+                                        <div class="d-flex align-items-center">
+                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="5 Bedrooms" style="width: 20px;" required>
+                                        <label for="EnquiryRadio6" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                            5 Bedrooms
+                                        </label>
+                                    </div>
+                            
+                                    <!-- PURPOSE  -->
+                                    <label class="gold-grad">PURPOSE OF ENQUIRY</label>
+                                    <div class="d-flex align-items-center">
+                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
+                                        <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                            Investment
+                                        </label>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user" style="width: 20px;" required>
+                                        <label for="PurposeRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                            End-user
+                                        </label>
+                                    </div>
+                            
+                                    <div id="FormButton" name="FormButton">
+                                        <div class="form_button">
+                                            <button type="submit" class="submit-click">SUBMIT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- HEADER  -->
+        <div class="header">
+            <div class="text-center">
+                <h4 class="gold-grad-anim">
+                    MERCEDES-BENZ PLACES
+                </h4>
+                <h5 style="font-family: 'Playfair Display', sans-serif;">
+                    An Iconic Collaboration of Elegance and Innovation
+                </h5>
+            </div>   
+        </div>
+
+        <!-- BACKGROUND IMAGE  -->
+        <div class="image_section" style="background-image: url('../assets/images/projects/mercedes-benz/mb.webp');">
+            <!-- ONLY IMAGE NOW -->
         </div>
     
         <!--CONTENT-->
         <div class="second_section">
             <div class="container container-fluid py-3">
                 <div class="desktop">
-                    <div class="row my-4">
+                    <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/living.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-out.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    الحياة على الواجهة البحرية، أعجوبة في دبي
+                                    Refined Luxury Living
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    يقع هذا المشروع السكني الاستثنائي الذي يبلغ ارتفاعه 50 طابقًا داخل مدينة دبي الملاحية المرموقة، مما يمثل علامة بارزة في الإنجاز المعماري. إنه يجسد نمط الحياة الفخم على الواجهة البحرية، ويضع معايير جديدة للفخامة والرقي. يتألف كل مسكن من مجموعة من المساكن، بدءًا من الاستوديوهات الأنيقة وحتى شقق البنتهاوس الفخمة، ويوفر مناظر شاملة للخليج العربي الساحر، مما يخلق تجربة معيشية هادئة ورائعة.
+                                    Enter a world of refined luxury at Mercedes-Benz Places, a collaborative masterpiece between Binghatti and Mercedes-Benz. This 71-story residence in Downtown Dubai, standing at 341 meters, seamlessly integrates smart home technologies and "intelligent mobility solutions," echoing Mercedes-Benz's design philosophy of "Sensual Purity." More than a residence, it signifies sophistication, setting a new standard of living with breathtaking views of the Burj Khalifa and vibrant Downtown Dubai.
                                 </h6>
                             </div>
                         </div>
                     </div>
-                    <div class="row my-4">
+                    <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    فخامة عصرية مع وسائل راحة متميزة
+                                    Distinctive Collaboration Unveiled
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    تتميز هذه الشقق بالهندسة المعمارية المعاصرة والتفاصيل عالية الجودة. إنها توفر مساحة واسعة وأجواء مريحة، بالإضافة إلى مجموعة متنوعة من وسائل الراحة، بما في ذلك مركز للياقة البدنية متطور وحمام سباحة وحدائق مصممة بشكل جميل.
-                                    <br>
-                                    علاوة على ذلك، يتمتع هذا المشروع بموقع استراتيجي، مع سهولة الوصول إلى المرافق الرئيسية مثل المدارس والمستشفيات ومراكز التسوق وخيارات تناول الطعام. كما أنها تتميز باتصال ممتاز بالمدينة الأوسع من خلال وسائل النقل العام.
+                                    In the heart of Downtown Dubai, Mercedes-Benz Places emerges as an extraordinary collaboration between visionary developer Binghatti and the iconic luxury brand Mercedes. Construction initiated in 2023 on plot 3450387 stands testament to a meticulously planned partnership revealed in December 2023. Inspired by Mercedes-Benz's "Sensual Purity" design philosophy, the tower transcends conventional living standards. Beyond a residence, it integrates smart home technologies and "intelligent mobility solutions," offering an unparalleled living experience. Every detail reflects a convergence of architectural brilliance and automotive-inspired luxury, setting a new paradigm for opulent living.
                                 </h6>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/cafe.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-benz.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                     </div>
-                    <div class="row my-4">
+                    <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/studio.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-view.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    دلائل المميزات
+                                    Seamless Urban Living
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    فيما يلي بعض المميزات الرئيسية:
-                                    <br>
-                                    <ul>
-                                        <li>مشروع سكني مكون من 50 طابقا</li>
-                                        <li>مجموعة متنوعة من الشقق، من الاستوديوهات إلى البنتهاوس</li>
-                                        <li>مناظر خلابة للخليج العربي</li>
-                                        <li>هندسة معمارية حديثة وتشطيبات متميزة</li>
-                                        <li>مركز للياقة البدنية على أحدث طراز</li>
-                                        <li>موقع متميز، قريب من جميع وسائل الراحة</li>
-                                        <li>متصل بشكل جيد ببقية المدينة عن طريق وسائل النقل العام</li>
-                                    </ul>
+                                    Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access—10 minutes to the Dubai Mall, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport and a 41-minute drive to Al Maktoum International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
                                 </h6>
                             </div>
                         </div>
@@ -314,46 +301,34 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 <div class="mobile">
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            الحياة على الواجهة البحرية، أعجوبة في دبي
+                            Refined Luxury Living
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            يقع هذا المشروع السكني الاستثنائي الذي يبلغ ارتفاعه 50 طابقًا داخل مدينة دبي الملاحية المرموقة، مما يمثل علامة بارزة في الإنجاز المعماري. إنه يجسد نمط الحياة الفخم على الواجهة البحرية، ويضع معايير جديدة للفخامة والرقي. يتألف كل مسكن من مجموعة من المساكن، بدءًا من الاستوديوهات الأنيقة وحتى شقق البنتهاوس الفخمة، ويوفر مناظر شاملة للخليج العربي الساحر، مما يخلق تجربة معيشية هادئة ورائعة.
+                            Enter a world of refined luxury at Mercedes-Benz Places, a collaborative masterpiece between Binghatti and Mercedes-Benz. This 71-story residence in Downtown Dubai, standing at 341 meters, seamlessly integrates smart home technologies and "intelligent mobility solutions," echoing Mercedes-Benz's design philosophy of "Sensual Purity." More than a residence, it signifies sophistication, setting a new standard of living with breathtaking views of the Burj Khalifa and vibrant Downtown Dubai.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/living.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-out.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                             فخامة عصرية مع وسائل راحة متميزة
+                            Distinctive Collaboration Unveiled
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            تتميز هذه الشقق بالهندسة المعمارية المعاصرة والتفاصيل عالية الجودة. إنها توفر مساحة واسعة وأجواء مريحة، بالإضافة إلى مجموعة متنوعة من وسائل الراحة، بما في ذلك مركز للياقة البدنية متطور وحمام سباحة وحدائق مصممة بشكل جميل.
-                            <br>
-                            علاوة على ذلك، يتمتع هذا المشروع بموقع استراتيجي، مع سهولة الوصول إلى المرافق الرئيسية مثل المدارس والمستشفيات ومراكز التسوق وخيارات تناول الطعام. كما أنها تتميز باتصال ممتاز بالمدينة الأوسع من خلال وسائل النقل العام.
+                            In the heart of Downtown Dubai, Mercedes-Benz Places emerges as an extraordinary collaboration between visionary developer Binghatti and the iconic luxury brand Mercedes. Construction initiated in 2023 on plot 3450387 stands testament to a meticulously planned partnership revealed in December 2023. Inspired by Mercedes-Benz's "Sensual Purity" design philosophy, the tower transcends conventional living standards. Beyond a residence, it integrates smart home technologies and "intelligent mobility solutions," offering an unparalleled living experience. Every detail reflects a convergence of architectural brilliance and automotive-inspired luxury, setting a new paradigm for opulent living.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/cafe.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-benz.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            دلائل المميزات
+                            Seamless Urban Living
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            فيما يلي بعض المميزات الرئيسية:
-                            <br>
-                            <ul>
-                                <li>مشروع سكني مكون من 50 طابقا</li>
-                                <li>مجموعة متنوعة من الشقق، من الاستوديوهات إلى البنتهاوس</li>
-                                <li>مناظر خلابة للخليج العربي</li>
-                                <li>هندسة معمارية حديثة وتشطيبات متميزة</li>
-                                <li>مركز للياقة البدنية على أحدث طراز</li>
-                                <li>موقع متميز، قريب من جميع وسائل الراحة</li>
-                                <li>متصل بشكل جيد ببقية المدينة عن طريق وسائل النقل العام</li>
-                            </ul>
+                            Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access—10 minutes to the Dubai Mall, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport and a 41-minute drive to Al Maktoum International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/studio.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-view.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                 </div>
             </div>
         </div>
@@ -363,60 +338,20 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             <div class="container container-fluid py-5">
                 <div class="row" style="text-align: center;">
                     <h4 class="gold-grad-anim">
-                        مميزات الموقع
+                        LOCATION BENEFITS
                     </h4>
                 </div>
                 <div class="row" style="justify-content: center;">
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                2
-                            </b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                محطة ميناء راشد للقوارب
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                8
-                            </b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                شاطئ جميرا
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                 10
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
+                                MINUTES
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                 إطار دبي
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>07</b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                مطار دبي الدولي
+                                The Dubai Mall
                             </p>
                             <br>
                         </div>
@@ -424,13 +359,13 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                15
+                                16
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
+                                MINUTES
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                برج العرب
+                                Dubai International Airport
                             </p>
                             <br>
                         </div>
@@ -438,13 +373,55 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                15
+                                20
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
+                                MINUTES
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                برج خليفة ودبي مول
+                                Burj Al Arab
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                20
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                MINUTES
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                Dubai Opera
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                22
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                MINUTES
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                Palm Jumeirah
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                41
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                MINUTES
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                Al Maktoum International Airport
                             </p>
                             <br>
                         </div>
@@ -453,20 +430,38 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             </div>
         </div>
     
-        <!--IMAGE-->
-        <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
-            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/oceanz/map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
+        <!--MAP-->
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=mercedes-benz places by binghatti&t=k&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        width: 100%;
+                    }
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none!important;
+                        height: 100%;
+                        width: 100%;
+                    }
+                    iframe {
+                        min-height: 40vh;
+                        max-height: 100vh;
+                    }
+                </style>
+            </div>
         </div>
     
         <!--AMENITIES-->
         <div class="fourth_section my-5">
-            <?php include_once("../components/amenities-ar.php"); ?>
+            <?php include_once("../components/amenities-en.php"); ?>
         </div>
     
         <!--WHY DUBAI-->
         <div class="fifth_section my-5">
-            <?php include_once("../components/whydubai-ar.php"); ?>
+            <?php include_once("../components/whydubai-en.php"); ?>
         </div>
         
         <footer style="background-color: #000000;">
@@ -512,6 +507,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                document.getElementById('loadingOverlay').style.display = 'flex';
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');
@@ -558,6 +554,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     dataType: "json",
                     success: function(response) {
                         if (response.otp) {
+                            document.getElementById('loadingOverlay').style.display = 'none';
                             // RENDER OTP FORM 
                             $("#lead-form").hide();
                             $("#otp-form").show();
@@ -579,15 +576,31 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             }
         </script>
 
-        <!-- UPDATE ENQUIRY BY POOL -->
+        <!-- SLIDER FORM -->
         <script>
-            function updateEnquiryRadioValue() {
-                const poolRadioValue = document.querySelector('input[name="PoolRadio"]:checked').value;
-                const enquiryRadio1 = document.querySelector('input[name="EnquiryRadio1"]:checked');
-                enquiryRadio1.value = enquiryRadio1.value + poolRadioValue;
-            }
-        </script>
+            // OPEN LEAD FORM 
+            const leadForm = document.getElementById('leadForm');
 
+            function openLeadForm() {
+                leadForm.classList.remove("hidden-form");
+                leadForm.classList.add("visible-form");
+            }
+
+            // CLOSE SLIDER
+            function closeLeadForm() {
+                console.log(leadForm);
+                leadForm.classList.remove("visible-form");
+                leadForm.classList.add("hidden-form");
+                leadForm.addEventListener('animationend', handleAnimationEnd);
+            }
+
+            function handleAnimationEnd() {
+                leadForm.removeEventListener('animationend', handleAnimationEnd);
+                console.log("Form closed");
+            }
+
+            setTimeout(openLeadForm, 5000);
+        </script>
         <?php
     }
     ?>
