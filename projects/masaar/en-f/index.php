@@ -77,11 +77,11 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     MASAAR
                 </div>
                 <div class="d-flex align-items-center">
-                    <div class="px-2">
+                    <div class="px-2 gold-grad">
                         EN
                     </div>
                     <a href="https://hikalproperties.com/projects/masaar/ar-f">
-                        <div class="px-2 gold-grad">
+                        <div class="px-2 white">
                             AR
                         </div>
                     </a>

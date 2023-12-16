@@ -131,11 +131,11 @@ curl_close($ch);
                 </div>
                 <div class="d-flex align-items-center">
                     <a href="https://hikalproperties.com/projects/masaar/en-s">
-                        <div class="px-2 gold-grad">
+                        <div class="px-2 white">
                             EN
                         </div>
                     </a>
-                    <div class="px-2">
+                    <div class="px-2 gold-grad">
                         AR
                     </div>
                 </div>
