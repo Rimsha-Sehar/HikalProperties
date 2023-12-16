@@ -157,6 +157,36 @@ h6 {
     border-bottom: 0.11em solid #9c7625;
 }
 
+.containerform_slider_form {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #000000;
+    /*box-shadow: 5px 5px 10px #294464, -5px -5px 10px #394C67;*/
+    border-top: 0.11em solid #fadc88;
+    border-left: 0.11em solid #9c7625;
+    border-right: 0.11em solid #9c7625;
+    border-bottom: 0.11em solid #9c7625;
+    overflow-y: scroll; 
+    min-height: 60vh; 
+    max-height: 90vh;
+}
+
+.containerform_slider_form::-webkit-scrollbar {
+  width: 1px;
+}
+
+.containerform_slider_form::-webkit-scrollbar-track {
+  background: #000;
+}
+
+..containerform_slider_form::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom right, #a2682a 0%, #faf0a0 50%, #b17b32 77%, #d4a245 88%, #a4692a 100%);
+  border-radius: 10px;
+}
+
 
 /* NUMBER TEXT FIELD */
 .iti {
@@ -366,4 +396,141 @@ button:hover {
     max-height: 90% !important;
     min-width: 30% !important;
     max-width: 90% !important;
+}
+
+/*HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    background-color: #000000;
+    width: 100%;
+    min-height: 50px;
+    z-index: 101;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0 3px 6px rgba(110,80,20,.5);
+}
+
+/*IMAGE SECTION */
+.image_section {
+    margin-top: 50px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 95vh;
+}
+
+/*SLIDER FORM */
+.slider_form {
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(110,80,20,.4), inset 0 -2px 5px 1px rgba(139,66,8,1), inset 0 -1px 1px 3px rgba(250,227,133,1);
+    background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
+    border: 1px solid #a55d07;
+    border-right: none;
+    color: rgb(120,50,5);
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background-size: 100% 100%;
+    background-position:center;
+    position: fixed;
+    right: 0;
+    top: 5vh;
+    min-height: 30vh;
+    max-height: 100vh;
+    z-index: 1001;
+    border-radius: 20px 0px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    max-width: 90%;
+}
+
+.slider_form:hover {
+    background-size: 150% 150%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23),
+    inset 0 -2px 5px 1px #b17d10,inset 0 -1px 1px 3px rgba(250,227,133,1);
+    border: 1px solid rgba(165,93,7,.6);color:rgba(120,50,5,.8)
+}
+
+/*CLOSE SLIDER BUTTON*/
+.close_slider_button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: auto;
+    color: rgb(120,50,5);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background-size: 100% 100%;
+    background-position:center;
+    margin-left: -15px;
+    z-index: 1002;
+}
+
+/*HIDDEN FORM */
+.hidden-form {
+    display: none;
+    animation: slideOut 0.5s ease-in-out;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/*VISIBLE FORM */
+.visible-form {
+    display: block;
+    animation: slideIn 0.5s ease-in-out;
+    padding: 5px 0px 5px 5px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/*FORM FOR SLIDER FORM */
+.containerform_slider_form {
+    position: relative;
+    width: 100%;
+    border-radius: 20px 0 0 20px;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #000000;
+    /*box-shadow: 5px 5px 10px #294464, -5px -5px 10px #394C67;*/
+    border-top: 0.11em solid #fadc88;
+    border-left: 0.11em solid #9c7625;
+    border-right: 0.11em solid #9c7625;
+    border-bottom: 0.11em solid #9c7625;
+    overflow-y: scroll; 
+    min-height: 60vh; 
+    max-height: 90vh;
+    transition: transform 0.5s ease-in-out;
+}
+.containerform_slider_form::-webkit-scrollbar {
+    width: 3px;
+}
+
+.containerform_slider_form::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.containerform_slider_form::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom right, #a2682a 0%, #faf0a0 50%, #b17b32 77%, #d4a245 88%, #a4692a 100%);
+    border-radius: 10px;
 }
