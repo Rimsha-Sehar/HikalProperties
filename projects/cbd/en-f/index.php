@@ -80,7 +80,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     <div class="px-2 gold-grad">
                         EN
                     </div>
-                    <a href="https://hikalproperties.com/projects/masaar/ar-f">
+                    <a href="https://hikalproperties.com/projects/cbd/ar-f">
                         <div class="px-2 white">
                             AR
                         </div>

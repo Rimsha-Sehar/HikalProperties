@@ -77,7 +77,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     CBD
                 </div>
                 <div class="d-flex align-items-center">
-                    <a href="https://hikalproperties.com/projects/masaar/en-t">
+                    <a href="https://hikalproperties.com/projects/cbd/en-t">
                         <div class="px-2 white">
                             EN
                         </div>

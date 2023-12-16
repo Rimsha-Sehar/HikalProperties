@@ -130,7 +130,7 @@ curl_close($ch);
                     CBD
                 </div>
                 <div class="d-flex align-items-center">
-                    <a href="https://hikalproperties.com/projects/masaar/en-s">
+                    <a href="https://hikalproperties.com/projects/cbd/en-s">
                         <div class="px-2 white">
                             EN
                         </div>

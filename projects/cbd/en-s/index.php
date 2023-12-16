@@ -133,7 +133,7 @@ curl_close($ch);
                     <div class="px-2 gold-grad">
                         EN
                     </div>
-                    <a href="https://hikalproperties.com/projects/masaar/ar-s">
+                    <a href="https://hikalproperties.com/projects/cbd/ar-s">
                         <div class="px-2 white">
                             AR
                         </div>
