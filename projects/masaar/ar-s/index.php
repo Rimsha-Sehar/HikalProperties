@@ -130,10 +130,17 @@ curl_close($ch);
                     MASAAR
                 </div>
                 <div class="d-flex align-items-center">
+                    <div class="px-2 white d-flex align-items-center">
                     <a href="https://hikalproperties.com/projects/masaar/en-s">
-                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
+                        <div class="px-2 white d-flex align-items-center">
+                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
+                            EN
+                        </div>
                     </a>
-                    <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
+                    <div class="px-2 gold-grad d-flex align-items-center">
+                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
+                        AR
+                    </div>
                 </div>
             </div>   
         </div>
