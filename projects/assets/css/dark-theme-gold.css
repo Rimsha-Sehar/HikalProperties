@@ -525,3 +525,11 @@ button:hover {
     font-weight: bold; 
     box-shadow: 0 2px 5px rgba(110,80,20,.5);
 }
+
+/*LANGUAGE FLAG */
+.lang-flag {
+    height: 20px;
+    width: auto;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+}

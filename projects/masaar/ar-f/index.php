@@ -78,13 +78,9 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 </div>
                 <div class="d-flex align-items-center">
                     <a href="https://hikalproperties.com/projects/masaar/en-f">
-                        <div class="px-2 white">
-                            EN
-                        </div>
+                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
                     </a>
-                    <div class="px-2 gold-grad">
-                        AR
-                    </div>
+                    <img class="gold-grad lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
                 </div>
             </div>   
         </div>

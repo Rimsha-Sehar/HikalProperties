@@ -130,13 +130,9 @@ curl_close($ch);
                     MASAAR
                 </div>
                 <div class="d-flex align-items-center">
-                    <div class="px-2 gold-grad">
-                        EN
-                    </div>
+                    <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
                     <a href="https://hikalproperties.com/projects/masaar/ar-s">
-                        <div class="px-2 white">
-                            AR
-                        </div>
+                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
                     </a>
                 </div>
             </div>   
