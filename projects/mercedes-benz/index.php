@@ -229,7 +229,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         </div>
 
         <!-- BACKGROUND IMAGE  -->
-        <div class="image_section" style="background-image: url('../assets/images/projects/mercedes-benz/mb.webp');">
+        <div class="image_section" style="background-image: url('../assets/images/projects/mercedes-benz/mb-bg.jpg');">
             <!-- ONLY IMAGE NOW -->
         </div>
     
