@@ -19,7 +19,7 @@
             <div style="display: block; text-align: center;">
                 <img src="https://hikalproperties.com/projects/assets/images/iconimg/valetWhite.png" height="44" style="" />
                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                    سائق ركن السيارات
+                    خدمه صف السيارات
                 </p>
                 <br>
             </div>
