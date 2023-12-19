@@ -168,13 +168,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
                                     <!-- HOW MANY BEDROOMS -->
                                     <label class="gold-grad">كم عدد غرف النوم؟</label>
-                                        <div style="display: flex;" dir="rtl">
-                                            <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" style="width: 20px;" required>
-                                            <label for="EnquiryRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                غرفة نوم واحدة
-                                            </label>
-                                        </div>
-                                        <div style="display: flex;" dir="rtl">
+                                    <div style="display: flex;" dir="rtl">
                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
                                         <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
                                             غرفتين نوم
@@ -190,12 +184,6 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="4 Bedrooms" style="width: 20px;" required>
                                         <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
                                             أربع غرف نوم
-                                        </label>
-                                    </div>
-                                    <div style="display: flex;" dir="rtl">
-                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="5 Bedrooms" style="width: 20px;" required>
-                                        <label for="EnquiryRadio6" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            خمس غرف نوم
                                         </label>
                                     </div>
                             
@@ -231,14 +219,30 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
         <!-- HEADER  -->
         <div class="header">
-            <div class="text-center">
-                <h4 class="gold-grad-anim">
-                    مرسيدس بنز أماكن
-                </h4>
-                <h5>
-                    تعاون أسطوري بين الأناقة والابتكار
-                </h5>
-            </div>   
+            <div style="width: 100%;">
+                <div class="container container-fluid pb-2 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <a href="https://hikalproperties.com/projects/mercedes-benz/en-t/">
+                            <div class="px-2 white d-flex align-items-center">
+                                <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
+                                EN
+                            </div>
+                        </a>
+                        <div class="px-2 gold-grad d-flex align-items-center">
+                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
+                            AR
+                        </div>
+                    </div>
+                </div> 
+                <div class="text-center">
+                    <h4 class="gold-grad-anim">
+                        مرسيدس بنز أماكن
+                    </h4>
+                    <h5>
+                        تعاون أسطوري بين الأناقة والابتكار
+                    </h5>
+                </div>   
+            </div>
         </div>
 
         <!-- BACKGROUND IMAGE  -->
@@ -252,7 +256,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 <div class="desktop">
                     <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-out.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb001.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
@@ -284,7 +288,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     </div>
                     <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-view.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb003.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
@@ -309,7 +313,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             انغمس في عالم الرفاهية المصقولة في أماكن مرسيدس بنز، تحفة تعاونية بين بنغهاتي ومرسيدس بنز. يقف هذا السكن الذي يمتد على ارتفاع 341 مترًا في وسط دبي، المكون من 71 طابقًا، ويدمج بسلاسة تكنولوجيا المنزل الذكي و "حلول الحركة الذكية"، مرددًا فلسفة تصميم مرسيدس بنز "النقاء الحسي". أكثر من مجرد إقامة، فإنه يرمز إلى الأناقة، ويضع معيارًا جديدًا للعيش مع إطلالات رائعة على برج خليفة ووسط دبي الحيوي.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-out.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb001.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
                             كشف عن تعاون مميز
@@ -329,7 +333,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             استكشف تجربة حياة معرّفة من جديد في مراكز مرسيدس بنز، الموقعة بشكل استراتيجي في وسط مدينة دبي. مع وصول سريع - 10 دقائق إلى دبي مول، 22 دقيقة إلى نخلة جميرا، و20 دقيقة إلى برج العرب - تضمن هذه الإقامة راحة لا مثيل لها. بعيدًا عن كونها مسكنًا، إنها تتجاوز المجرد الجسدي، حيث تم وضعها استراتيجيًا لتكون على بُعد 16 دقيقة من مطار دبي الدولي و41 دقيقة بالسيارة من مطار آل مكتوم الدولي. إنها ليست مجرد منزل؛ إنها نمط حياة صمم بعناية لأولئك الذين يسعون إلى قمة الفخامة المعاصرة.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-view.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb003.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                 </div>
             </div>
         </div>

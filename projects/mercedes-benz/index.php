@@ -167,34 +167,22 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
                                     <!-- HOW MANY BEDROOMS -->
                                     <label class="gold-grad">HOW MANY BEDROOMS?</label>
-                                        <div class="d-flex align-items-center">
-                                            <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" style="width: 20px;" required>
-                                            <label for="EnquiryRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                1 Bedroom
-                                            </label>
-                                        </div>
-                                        <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
                                         <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
                                             2 Bedrooms
                                         </label>
                                     </div>
-                                        <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
                                         <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
                                             3 Bedrooms
                                         </label>
                                     </div>
-                                        <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="4 Bedrooms" style="width: 20px;" required>
                                         <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
                                             4 Bedrooms
-                                        </label>
-                                    </div>
-                                        <div class="d-flex align-items-center">
-                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="5 Bedrooms" style="width: 20px;" required>
-                                        <label for="EnquiryRadio6" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            5 Bedrooms
                                         </label>
                                     </div>
                             
@@ -251,7 +239,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                 <div class="desktop">
                     <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-out.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb001.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
@@ -283,7 +271,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     </div>
                     <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-view.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb003.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
@@ -308,7 +296,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             Enter a world of refined luxury at Mercedes-Benz Places, a collaborative masterpiece between Binghatti and Mercedes-Benz. This 71-story residence in Downtown Dubai, standing at 341 meters, seamlessly integrates smart home technologies and "intelligent mobility solutions," echoing Mercedes-Benz's design philosophy of "Sensual Purity." More than a residence, it signifies sophistication, setting a new standard of living with breathtaking views of the Burj Khalifa and vibrant Downtown Dubai.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-out.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb001.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
                             Distinctive Collaboration Unveiled
@@ -328,7 +316,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access—10 minutes to the Dubai Mall, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport and a 41-minute drive to Al Maktoum International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-view.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb003.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                 </div>
             </div>
         </div>
