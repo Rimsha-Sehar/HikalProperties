@@ -349,7 +349,7 @@ curl_close($ch);
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access—10 minutes to the Dubai Mall, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport and a 41-minute drive to Al Maktoum International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
+                                    Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access 5 minutes to the Dubai Mall , Dubai Opera  & the Iconic Burj Khalifa, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
                                 </h6>
                             </div>
                         </div>
@@ -382,7 +382,7 @@ curl_close($ch);
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access—10 minutes to the Dubai Mall, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport and a 41-minute drive to Al Maktoum International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
+                            Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access 5 minutes to the Dubai Mall , Dubai Opera  & the Iconic Burj Khalifa, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
                         </h6>
                     </div>
                     <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb003.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
@@ -480,7 +480,7 @@ curl_close($ch);
     
         <!--AMENITIES-->
         <div class="fourth_section my-5">
-            <?php include_once("../../components/amenities-en.php"); ?>
+            <?php include_once("../../components/premium-amenities-en.php"); ?>
         </div>
     
         <!--WHY DUBAI-->
