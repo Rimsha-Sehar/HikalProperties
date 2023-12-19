@@ -422,27 +422,8 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         </div>
     
         <!--MAP-->
-        <div class="mapouter">
-            <div class="gmap_canvas">
-                <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=mercedes-benz places by binghatti&t=k&z=14&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                <style>
-                    .mapouter {
-                        position: relative;
-                        text-align: right;
-                        width: 100%;
-                    }
-                    .gmap_canvas {
-                        overflow: hidden;
-                        background: none!important;
-                        height: 100%;
-                        width: 100%;
-                    }
-                    iframe {
-                        min-height: 40vh;
-                        max-height: 100vh;
-                    }
-                </style>
-            </div>
+        <div style="width: 100%; height: 60vh;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.436890565956!2d55.27740827538159!3d25.188484977716605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6918ae62e4e1%3A0x3cb292fbea11cdd2!2sMercedes%20Benz%20Places%20by%20Binghatti!5e0!3m2!1sen!2sae!4v1702977157480!5m2!1sen!2sae" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     
         <!--AMENITIES-->
