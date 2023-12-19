@@ -403,7 +403,7 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                10
+                                05
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
@@ -445,7 +445,7 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                20
+                                05
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
@@ -466,20 +466,6 @@ curl_close($ch);
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 نخلة جميرا
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                41
-                            </b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                مطار آل مكتوم الدولي
                             </p>
                             <br>
                         </div>

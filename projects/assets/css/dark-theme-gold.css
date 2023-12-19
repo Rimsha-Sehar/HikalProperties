@@ -391,6 +391,16 @@ button:hover {
     min-height: 95vh;
 }
 
+@media screen and (max-width: 800px) {
+    .image_section {
+        margin-top: 60px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 60vh;
+    }
+}
+
 /*SLIDER FORM */
 .slider_form {
     box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(110,80,20,.4), inset 0 -2px 5px 1px rgba(139,66,8,1), inset 0 -1px 1px 3px rgba(250,227,133,1);
