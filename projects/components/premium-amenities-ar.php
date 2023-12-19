@@ -28,7 +28,7 @@
             <div style="display: block; text-align: center;">
                 <img src="https://hikalproperties.com/projects/assets/images/iconimg/bodyguardWhite.png" height="44" style="" />
                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                    حراسة المبنى
+                    حارس شخصي
                 </p>
                 <br>
             </div>
@@ -82,7 +82,7 @@
             <div style="display: block; text-align: center;">
                 <img src="https://hikalproperties.com/projects/assets/images/iconimg/poolWhite.png" height="44" style="" />
                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                    حمامات سباحة لا متناهية
+                    مسابح داخل الوحدات
                 </p>
                 <br>
             </div>
