@@ -291,7 +291,7 @@ curl_close($ch);
                         MERCEDES-BENZ PLACES
                     </h4>
                     <h5 style="font-family: 'Playfair Display', sans-serif;">
-                        An Iconic Collaboration of Elegance and Innovation
+                        An Legendary Collaboration between Elegance and Innovation
                     </h5>
                 </div>   
             </div>
@@ -313,11 +313,11 @@ curl_close($ch);
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    Refined Luxury Living
+                                    LUXURIOUS LIFE WITH A NEW CONCEPT
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    Enter a world of refined luxury at Mercedes-Benz Places, a collaborative masterpiece between Binghatti and Mercedes-Benz. This 71-story residence in Downtown Dubai, standing at 341 meters, seamlessly integrates smart home technologies and "intelligent mobility solutions," echoing Mercedes-Benz's design philosophy of "Sensual Purity." More than a residence, it signifies sophistication, setting a new standard of living with breathtaking views of the Burj Khalifa and vibrant Downtown Dubai.
+                                    Live in a world of absolute luxury at Mercedes-Benz Places, an architectural masterpiece launched to the world after a strategic partnership between Binghatti Development Company and Mercedes-Benz. This architectural edifice, which extends to a height of 341 meters, is located in the heart of Dubai, consisting of 65 storey, with the integration of modern smart home technology and “smart movement solutions”, inspired by the slogan of Mercedes-Benz’s design philosophy, “Sensual Purity”. It is more than just a home residence, but rather a world full of luxury, which adds a new lifestyle. It symbolizes elegance, and sets a new standard for living amidst the most important and most beautiful breathtaking views of the iconic Burj Khalifa, in the middle of those high-rise towers surrounding it, to give you a unique view from your unit to see the most beautiful. A luminous architectural painting in the world.
                                 </h6>
                             </div>
                         </div>
@@ -326,11 +326,11 @@ curl_close($ch);
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    Distinctive Collaboration Unveiled
+                                    UNCOVER UNIQUE COLLABORATION
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    In the heart of Downtown Dubai, Mercedes-Benz Places emerges as an extraordinary collaboration between visionary developer Binghatti and the iconic luxury brand Mercedes. Construction initiated in 2023 on plot 3450387 stands testament to a meticulously planned partnership revealed in December 2023. Inspired by Mercedes-Benz's "Sensual Purity" design philosophy, the tower transcends conventional living standards. Beyond a residence, it integrates smart home technologies and "intelligent mobility solutions," offering an unparalleled living experience. Every detail reflects a convergence of architectural brilliance and automotive-inspired luxury, setting a new paradigm for opulent living.
+                                    An exceptional collaboration between the developer with the unique development vision Binghatti and the iconic brand Mercedes. The cooperation began at the beginning of 2023 to witness a carefully planned partnership that was unveiled in December 2023. An architectural icon inspired by the design philosophy of Mercedes-Benz, which carries the slogan “sensual purity,” to exceed the standards of traditional leisure living. Far from being just a residence, it integrates smart home technologies and “smart mobility solutions”, offering a unique and unparalleled experience. Every detail inside your unit reflects the convergence of architectural ingenuity and luxury inspired by the world of cars, setting a new standard for upscale living.
                                 </h6>
                             </div>
                         </div>
@@ -345,11 +345,11 @@ curl_close($ch);
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    Seamless Urban Living
+                                    A COMPLETE LIVING EXPERIENCE
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access 5 minutes to the Dubai Mall , Dubai Opera  & the Iconic Burj Khalifa, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
+                                    Discover the experience of living at Mercedes Places, as it's strategically located in the heart of Dubai. With quick access to Dubai Mall, Burj Khalifa and Dubai Opera in 5 minutes, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab & 16 minutes to Dubai International Airport. It's not just staying in a house; Rather, it is a lifestyle carefully designed for those who seek the pinnacle of contemporary luxury.
                                 </h6>
                             </div>
                         </div>
@@ -358,31 +358,31 @@ curl_close($ch);
                 <div class="mobile">
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            Refined Luxury Living
+                            LUXURIOUS LIFE WITH A NEW CONCEPT
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            Enter a world of refined luxury at Mercedes-Benz Places, a collaborative masterpiece between Binghatti and Mercedes-Benz. This 71-story residence in Downtown Dubai, standing at 341 meters, seamlessly integrates smart home technologies and "intelligent mobility solutions," echoing Mercedes-Benz's design philosophy of "Sensual Purity." More than a residence, it signifies sophistication, setting a new standard of living with breathtaking views of the Burj Khalifa and vibrant Downtown Dubai.
+                            Live in a world of absolute luxury at Mercedes-Benz Places, an architectural masterpiece launched to the world after a strategic partnership between Binghatti Development Company and Mercedes-Benz. This architectural edifice, which extends to a height of 341 meters, is located in the heart of Dubai, consisting of 65 storey, with the integration of modern smart home technology and “smart movement solutions”, inspired by the slogan of Mercedes-Benz’s design philosophy, “Sensual Purity”. It is more than just a home residence, but rather a world full of luxury, which adds a new lifestyle. It symbolizes elegance, and sets a new standard for living amidst the most important and most beautiful breathtaking views of the iconic Burj Khalifa, in the middle of those high-rise towers surrounding it, to give you a unique view from your unit to see the most beautiful. A luminous architectural painting in the world.
                         </h6>
                     </div>
                     <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb001.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            Distinctive Collaboration Unveiled
+                            UNCOVER UNIQUE COLLABORATION
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            In the heart of Downtown Dubai, Mercedes-Benz Places emerges as an extraordinary collaboration between visionary developer Binghatti and the iconic luxury brand Mercedes. Construction initiated in 2023 on plot 3450387 stands testament to a meticulously planned partnership revealed in December 2023. Inspired by Mercedes-Benz's "Sensual Purity" design philosophy, the tower transcends conventional living standards. Beyond a residence, it integrates smart home technologies and "intelligent mobility solutions," offering an unparalleled living experience. Every detail reflects a convergence of architectural brilliance and automotive-inspired luxury, setting a new paradigm for opulent living.
+                            An exceptional collaboration between the developer with the unique development vision Binghatti and the iconic brand Mercedes. The cooperation began at the beginning of 2023 to witness a carefully planned partnership that was unveiled in December 2023. An architectural icon inspired by the design philosophy of Mercedes-Benz, which carries the slogan “sensual purity,” to exceed the standards of traditional leisure living. Far from being just a residence, it integrates smart home technologies and “smart mobility solutions”, offering a unique and unparalleled experience. Every detail inside your unit reflects the convergence of architectural ingenuity and luxury inspired by the world of cars, setting a new standard for upscale living.
                         </h6>
                     </div>
                     <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-benz.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            Seamless Urban Living
+                            A COMPLETE LIVING EXPERIENCE
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            Explore a redefined living experience at Mercedes-Benz Places, strategically located in Downtown Dubai. With swift access 5 minutes to the Dubai Mall , Dubai Opera  & the Iconic Burj Khalifa, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab—this residence ensures unparalleled convenience. Beyond a dwelling, it transcends mere physicality, strategically positioned for a 16-minute reach to Dubai International Airport. It's not just a home; it's a lifestyle meticulously crafted for those pursuing the epitome of contemporary luxury.
+                            Discover the experience of living at Mercedes Places, as it's strategically located in the heart of Dubai. With quick access to Dubai Mall, Burj Khalifa and Dubai Opera in 5 minutes, 22 minutes to Palm Jumeirah, and 20 minutes to Burj Al Arab & 16 minutes to Dubai International Airport. It's not just staying in a house; Rather, it is a lifestyle carefully designed for those who seek the pinnacle of contemporary luxury.
                         </h6>
                     </div>
                     <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb003.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
