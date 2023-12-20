@@ -238,7 +238,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                         MERCEDES-BENZ PLACES
                     </h4>
                     <h5 style="font-family: 'Playfair Display', sans-serif;">
-                        An Legendary Collaboration between Elegance and Innovation
+                        A Legendary Collaboration between Elegance and Innovation
                     </h5>
                 </div> 
             </div>    
