@@ -347,7 +347,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                05
+                                03
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 MINUTES
@@ -361,13 +361,13 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                16
+                                03
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 MINUTES
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Dubai International Airport
+                                Burj Khalifa
                             </p>
                             <br>
                         </div>
@@ -375,21 +375,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                20
-                            </b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Burj Al Arab
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                05
+                                03
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 MINUTES
@@ -403,13 +389,41 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                22
+                                09
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                MINUTES
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                Dubai International Airport
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                18
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 MINUTES
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 Palm Jumeirah
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                19
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                MINUTES
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                Burj Al Arab
                             </p>
                             <br>
                         </div>
