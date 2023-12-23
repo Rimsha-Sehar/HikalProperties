@@ -125,182 +125,180 @@ curl_close($ch);
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
 
-        <!-- SLIDER FORM  -->
-        <div class="slider_form" dir="ltr">
-            <div style="height: 100%;"  onClick="openLeadForm();">
-                <div class="d-flex flex-column align-items-center justify-content-center p-2 my-3" style="font-weight: bold; font-size: 0.9rem; text-shadow: 0 2px 2px rgba(250, 227, 133, 1);">
-                    <div>R</div>
-                    <div>E</div>
-                    <div>G</div>
-                    <div>I</div>
-                    <div>S</div>
-                    <div>T</div>
-                    <div>E</div>
-                    <div>R</div>
-                </div>
-            </div>
-            <div id="leadForm" class="hidden-form">
-                <button type="button" class="close_slider_button" onclick="closeLeadForm()">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="containerform_slider_form">
-                    <div class="inputs" style="font-weight: 400; overflow-y: scroll;">
-                        <?php
-                        $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-                        $parsedUrl = parse_url($url);
-                        $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
-                        ?>
-                        <!-- OTP FORM  -->
-                        <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
-                            <form method="POST" action="../../controllers/verify-otp.php">
-                                <!-- action="../controllers/verify-otp.php" -->
-                                <h5 class="gold-grad" style="text-align: center;">
-                                    OTP has been sent to 
-                                    <span id="phone_no"></span>
-                                </h5>
-                                <!-- <label class="gold-grad" style="text-align: center;">
-                                    OTP
-                                </label> -->
-                                <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-
-                                <div style="display: none">
-                                    <input type="text" name="phone_number" id="phone_number">
-                                    <input type="text" name="lead_name" id="lead_name" >
-                                    <input type="text" name="lead_email" id="lead_email" >
-                                    <input type="text" name="lang" id="lang" >
-                                    <input type="text" name="project_name" id="project_name" >
-                                    <input type="text" name="lead_type" id="lead_type" >
-                                    <input type="text" name="lead_source" id="lead_source" >
-                                    <input type="text" name="enquiry_type" id="enquiry_type" >
-                                    <input type="text" name="lead_for" id="lead_for" >
-                                    <input type="text" name="country_name" id="country_name" >
-                                    <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                                </div>
-
-                                <button type="submit" style="font-weight: bold;">
-                                    تحقق من رمز التحقق
-                                </button>
-                            </form>
-                        </div>
-                        <?php
-                        $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
-                        $fetch = mysqli_fetch_array($query);
-                        if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
-                            ?>
-                            <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
-                                شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
-                            </div>
-                            <?php
-                        }
-                        else {
-                            ?>
-                            <!--NEW FORM-->
-                            <div class="contact-form" dir="ltr">
-                                <form id="lead-form" onsubmit="return submitLeadForm();">
-                                    <!-- action="../controllers/add-lead-country-hybrid.php" -->
-                                    <div style="display: none">
-                                        <input type="text" id="Project" name="Project" value="Mercedes-Benz" />
-                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
-                                        <input type="text" id="Language" name="Language" value="Arabic" />
-                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign Snapchat" />
-                                        <input type="text" id="Country" name="Country" value="" />
-                                        <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
-                                    </div>
-                                    
-                                    <!-- NAME -->
-                                    <label class="gold-grad" style="margin-top: 0px;">الاسم</label>
-                                    <input type="text" name="LeadName1" id="LeadName1" required />
-                            
-                                    <!-- CONTACT NUMBER -->
-                                    <label class="gold-grad">رقم الاتصال</label>
-                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
-                                    
-                                    <!--EMAIL-->
-                                    <label class="gold-grad">عنوان البريد الإلكتروني</label>
-                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
-
-                                    <!-- HOW MANY BEDROOMS -->
-                                    <label class="gold-grad">كم عدد غرف النوم؟</label>
-                                    <div style="display: flex;" dir="rtl">
-                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
-                                        <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            غرفتين نوم
-                                        </label>
-                                    </div>
-                                    <div style="display: flex;" dir="rtl">
-                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
-                                        <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            ثلاث غرف نوم
-                                        </label>
-                                    </div>
-                                    <div style="display: flex;" dir="rtl">
-                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="4 Bedrooms" style="width: 20px;" required>
-                                        <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            أربع غرف نوم
-                                        </label>
-                                    </div>
-                            
-                                    <!-- PURPOSE  -->
-                                    <label class="gold-grad">غرض الاستفسار</label>
-                                    <div style="display: flex;" dir="rtl">
-                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
-                                        <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            استثمار
-                                        </label>
-                                    </div>
-                                    <div style="display: flex;" dir="rtl">
-                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user" style="width: 20px;" required>
-                                        <label for="PurposeRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            سكني
-                                        </label>
-                                    </div>
-                            
-                                    <div id="FormButton" name="FormButton">
-                                        <div class="form_button">
-                                            <button type="submit" class="submit-click">إرسال</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- HEADER  -->
-        <div class="header">
-            <div style="width: 100%;">
-                <div class="container container-fluid pb-2 d-flex justify-content-between align-items-center">
-                    <div class="d-flex align-items-center">
-                        <a href="https://hikalproperties.com/projects/mercedes-benz/en-s/">
-                            <div class="px-2 white d-flex align-items-center">
-                                <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
-                                EN
-                            </div>
-                        </a>
-                        <div class="px-2 gold-grad d-flex align-items-center">
-                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
-                            AR
+        <div class="language_header">
+            <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <a href="https://hikalproperties.com/projects/mercedes-benz/en-s/">
+                        <div class="px-2 white d-flex align-items-center">
+                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
+                            EN
                         </div>
+                    </a>
+                    <div class="px-2 gold-grad d-flex align-items-center">
+                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
+                        AR
                     </div>
-                </div> 
-                <div class="text-center">
-                    <h4 class="gold-grad-anim">
-                        مرسيدس بنز بليسز
-                    </h4>
-                    <h5>
-                        تعاون أسطوري بين الأناقة والابتكار
-                    </h5>
-                </div>   
-            </div>
+                </div>
+            </div> 
         </div>
 
-        <!-- BACKGROUND IMAGE  -->
-        <div class="image_section" style="background-image: url('../../assets/images/projects/mercedes-benz/mb-bg.jpg');">
-            <!-- ONLY IMAGE NOW -->
+        <!--HEADINGS & FORM-->
+        <div class="first_section">
+            <div class="container container-fluid">
+                <div class="row text-center d-flex align-items-center py-2">
+                    <div class="col-12">
+                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
+                            مرسيدس بنز بليسز
+                        </h1>
+                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
+                            تعاون أسطوري بين الأناقة والابتكار
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row mobile">
+                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb-bg-sq.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+            </div>
+            <div class="container container-fluid">
+                <div class="row d-flex align-items-center">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
+                        <div style="display: flex; align-items: center;">
+                            <!-- FORM -->
+                            <div style="width: 100%; z-index: 1; display: flex; justify-content: center;">
+                                <div class="containerform">
+                                    <div class="inputs" style="font-weight: 400; overflow-y: scroll;">
+                                        <?php
+                                        $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                                        $parsedUrl = parse_url($url);
+                                        $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
+                                        ?>
+                                        <!-- OTP FORM  -->
+                                        <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
+                                            <form method="POST" action="../../controllers/verify-otp.php">
+                                                <!-- action="../controllers/verify-otp.php" -->
+                                                <h5 class="gold-grad" style="text-align: center;">
+                                                    OTP has been sent to 
+                                                    <span id="phone_no"></span>
+                                                </h5>
+                                                <!-- <label class="gold-grad" style="text-align: center;">
+                                                    OTP
+                                                </label> -->
+                                                <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+
+                                                <div style="display: none">
+                                                    <input type="text" name="phone_number" id="phone_number">
+                                                    <input type="text" name="lead_name" id="lead_name" >
+                                                    <input type="text" name="lead_email" id="lead_email" >
+                                                    <input type="text" name="lang" id="lang" >
+                                                    <input type="text" name="project_name" id="project_name" >
+                                                    <input type="text" name="lead_type" id="lead_type" >
+                                                    <input type="text" name="lead_source" id="lead_source" >
+                                                    <input type="text" name="enquiry_type" id="enquiry_type" >
+                                                    <input type="text" name="lead_for" id="lead_for" >
+                                                    <input type="text" name="country_name" id="country_name" >
+                                                    <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
+                                                </div>
+
+                                                <button type="submit" style="font-weight: bold;">
+                                                    تحقق من رمز التحقق
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <?php
+                                        $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
+                                        $fetch = mysqli_fetch_array($query);
+                                        if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
+                                            ?>
+                                            <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
+                                                شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
+                                            </div>
+                                            <?php
+                                        }
+                                        else {
+                                            ?>
+                                            <!--NEW FORM-->
+                                            <div class="contact-form" dir="ltr">
+                                                <form id="lead-form" onsubmit="return submitLeadForm();">
+                                                    <!-- action="../controllers/add-lead-country-hybrid.php" -->
+                                                    <div style="display: none">
+                                                        <input type="text" id="Project" name="Project" value="Mercedes-Benz" />
+                                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
+                                                        <input type="text" id="Language" name="Language" value="Arabic" />
+                                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign Snapchat" />
+                                                        <input type="text" id="Country" name="Country" value="" />
+                                                        <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
+                                                    </div>
+                                                    
+                                                    <!-- NAME -->
+                                                    <label class="gold-grad" style="margin-top: 0px;">الاسم</label>
+                                                    <input type="text" name="LeadName1" id="LeadName1" required />
+                                            
+                                                    <!-- CONTACT NUMBER -->
+                                                    <label class="gold-grad">رقم الاتصال</label>
+                                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
+                                                    
+                                                    <!--EMAIL-->
+                                                    <label class="gold-grad">عنوان البريد الإلكتروني</label>
+                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
+
+                                                    <!-- HOW MANY BEDROOMS -->
+                                                    <label class="gold-grad">كم عدد غرف النوم؟</label>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            غرفتين نوم
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            ثلاث غرف نوم
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="4 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            أربع غرف نوم
+                                                        </label>
+                                                    </div>
+                                            
+                                                    <!-- PURPOSE  -->
+                                                    <label class="gold-grad">غرض الاستفسار</label>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
+                                                        <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            استثمار
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user" style="width: 20px;" required>
+                                                        <label for="PurposeRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            سكني
+                                                        </label>
+                                                    </div>
+                                            
+                                                    <div id="FormButton" name="FormButton">
+                                                        <div class="form_button">
+                                                            <button type="submit" class="submit-click">إرسال</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
+                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb-bg-sq.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                    </div>
+                </div>
+            </div>
         </div>
     
         <!--CONTENT-->
