@@ -72,6 +72,12 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
 
+        <!-- WHATSAPP  -->
+        <?php 
+        $project = "Mercedes-Benz";
+        include_once("../../components/whatsapp-brand.php");
+        ?>
+
         <!-- HEADER  -->
         <div class="language_header">
             <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">

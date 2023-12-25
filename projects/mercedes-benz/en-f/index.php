@@ -72,149 +72,11 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
 
-        <!-- SLIDER FORM  -->
-        <div class="slider_form" dir="ltr">
-            <div style="height: 100%;"  onClick="openLeadForm();">
-                <div class="d-flex flex-column align-items-center justify-content-center p-2 my-3" style="font-weight: bold; font-size: 0.9rem; text-shadow: 0 2px 2px rgba(250, 227, 133, 1);">
-                    <div>R</div>
-                    <div>E</div>
-                    <div>G</div>
-                    <div>I</div>
-                    <div>S</div>
-                    <div>T</div>
-                    <div>E</div>
-                    <div>R</div>
-                </div>
-            </div>
-            <div id="leadForm" class="hidden-form">
-                <button type="button" class="close_slider_button" onclick="closeLeadForm()">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="containerform_slider_form">
-                    <div class="inputs" style="font-weight: 400; overflow-y: scroll;">
-                        <?php
-                        $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-                        $parsedUrl = parse_url($url);
-                        $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
-                        ?>
-                        <!-- OTP FORM  -->
-                        <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
-                            <form method="POST" action="../controllers/verify-otp.php">
-                                <!-- action="../../controllers/verify-otp.php" -->
-                                <h5 class="gold-grad" style="text-align: center;">
-                                    OTP has been sent to 
-                                    <span id="phone_no"></span>
-                                </h5>
-                                <!-- <label class="gold-grad" style="text-align: center;">
-                                    OTP
-                                </label> -->
-                                <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-
-                                <div style="display: none">
-                                    <input type="text" name="phone_number" id="phone_number">
-                                    <input type="text" name="lead_name" id="lead_name" >
-                                    <input type="text" name="lead_email" id="lead_email" >
-                                    <input type="text" name="lang" id="lang" >
-                                    <input type="text" name="project_name" id="project_name" >
-                                    <input type="text" name="lead_type" id="lead_type" >
-                                    <input type="text" name="lead_source" id="lead_source" >
-                                    <input type="text" name="enquiry_type" id="enquiry_type" >
-                                    <input type="text" name="lead_for" id="lead_for" >
-                                    <input type="text" name="country_name" id="country_name" >
-                                    <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                                </div>
-
-                                <button type="submit" style="font-weight: bold;">
-                                    VERIFY
-                                </button>
-                            </form>
-                        </div>
-                        <?php
-                        $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
-                        $fetch = mysqli_fetch_array($query);
-                        if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
-                            ?>
-                            <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
-                                Thank you for registering with us. Our professionals will contact you soon!
-                            </div>
-                            <?php
-                        }
-                        else {
-                            ?>
-                            <!--NEW FORM-->
-                            <div class="contact-form" dir="ltr">
-                                <form id="lead-form" onsubmit="return submitLeadForm();">
-                                    <div style="display: none">
-                                        <input type="text" id="Project" name="Project" value="Mercedes-Benz" />
-                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
-                                        <input type="text" id="Language" name="Language" value="English" />
-                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
-                                        <input type="text" id="Country" name="Country" value="" />
-                                        <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
-                                    </div>
-                                    
-                                    <!-- NAME -->
-                                    <label class="gold-grad" style="margin-top: 0px;">NAME</label>
-                                    <input type="text" name="LeadName1" id="LeadName1" required />
-                            
-                                    <!-- CONTACT NUMBER -->
-                                    <label class="gold-grad">CONTACT NUMBER</label>
-                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
-                                    
-                                    <!--EMAIL-->
-                                    <label class="gold-grad">EMAIL ADDRESS</label>
-                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
-
-                                    <!-- HOW MANY BEDROOMS -->
-                                    <label class="gold-grad">HOW MANY BEDROOMS?</label>
-                                    <div class="d-flex align-items-center">
-                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
-                                        <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            2 Bedrooms
-                                        </label>
-                                    </div>
-                                        <div class="d-flex align-items-center">
-                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
-                                        <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            3 Bedrooms
-                                        </label>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="4 Bedrooms" style="width: 20px;" required>
-                                        <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            4 Bedrooms
-                                        </label>
-                                    </div>
-                            
-                                    <!-- PURPOSE  -->
-                                    <label class="gold-grad">PURPOSE OF ENQUIRY</label>
-                                    <div class="d-flex align-items-center">
-                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
-                                        <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            Investment
-                                        </label>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user" style="width: 20px;" required>
-                                        <label for="PurposeRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                            End-user
-                                        </label>
-                                    </div>
-                            
-                                    <div id="FormButton" name="FormButton">
-                                        <div class="form_button">
-                                            <button type="submit" class="submit-click">SUBMIT</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- WHATSAPP  -->
+        <?php 
+        $project = "Mercedes-Benz";
+        include_once("../../components/whatsapp-brand.php");
+        ?>
 
         <!-- HEADER  -->
         <div class="language_header">
@@ -242,6 +104,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                         <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
                             MERCEDES-BENZ PLACES
                         </h1>
+                        <img src="../../assets/images/projects/mercedes-benz/mercedes-logo.png" style="width: 50px;" />
                         <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
                             A Legendary Collaboration between Elegance and Innovation
                         </h3>
@@ -704,7 +567,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         </script>
 
         <!-- SLIDER FORM -->
-        <script>
+        <!-- <script>
             // OPEN LEAD FORM 
             const leadForm = document.getElementById('leadForm');
 
@@ -727,7 +590,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             }
 
             setTimeout(openLeadForm, 5000);
-        </script>
+        </script> -->
         <?php
     }
     ?>
