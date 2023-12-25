@@ -95,27 +95,28 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     </a>
                 </div>
             </div>
-        </div>
-
-        <!--HEADINGS & FORM-->
-        <div class="first_section">
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
+                        <h1 class="gold-grad-anim my-2" style="text-align: center; line-height: 2rem; font-weight: 800;">
                             MERCEDES-BENZ PLACES
                         </h1>
-                        <img src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-logo.png" style="width: 50px;" />
-                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
+                        <!-- <img class="brandLogoHeading" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-logo.png" style="width: 50px;" /> -->
+                        <img src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-logo-anim.gif" style="width: 60px;" />
+                        <h3 class="mt-2" style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
                             A Legendary Collaboration between Elegance and Innovation
                         </h3>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!--HEADINGS & FORM-->
+        <div class="first_section">
             <div class="row mobile">
                 <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb-bg-sq.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
-            <div class="container container-fluid">
+            <div class="container container-fluid py-4">
                 <div class="row d-flex align-items-center">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
                         <div style="display: flex; align-items: center;">

@@ -549,3 +549,16 @@ iframe {
     height: 60vh;
 }
 
+/*BRAND LOGO ANIMATION */
+.brandLogoHeading {
+    animation: spinAndExpand 8s linear infinite;
+}
+
+@keyframes spinAndExpand {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.5);
+    }
+}

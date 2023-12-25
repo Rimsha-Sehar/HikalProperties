@@ -14,13 +14,14 @@
     }
 
     .whatsappBtn img {
-        animation: spinLogo 4s linear infinite;
+        animation: spinAndExpand 4s linear infinite;
     }
 
     @keyframes spinLogo {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
+}
 </style>
 
 <a href="https://wa.me/971585556605?text=Hello%20I%20am%20interested%20in%20inquiring%20about%20<?php echo $wa_project; ?>" class="whatsappBtn d-flex flex-column align-items-center justify-content-center" title="WhatsApp" style="width: 90px; height: 80px;">
