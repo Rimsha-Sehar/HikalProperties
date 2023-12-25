@@ -30,7 +30,7 @@
             echo "Contact us";
         }
         elseif ($wa_lang == "Arabic") {
-            echo "اتصل بنا";
+            echo "تواصل معنا";
         }
         else {
             echo "Contact us";
