@@ -104,6 +104,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                         <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
                             مرسيدس بنز بليسز
                         </h1>
+                        <img src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-logo.png" style="width: 50px;" />
                         <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
                             تعاون أسطوري بين الأناقة والابتكار
                         </h3>
