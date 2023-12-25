@@ -25,7 +25,7 @@
 </style>
 
 <a href="https://wa.me/971585556605?text=Hello%20I%20am%20interested%20in%20inquiring%20about%20<?php echo $wa_project; ?>" class="whatsappBtn d-flex flex-column align-items-center justify-content-center" title="WhatsApp" style="width: 90px; height: 80px;">
-    <div class="gold-grad" style="font-size: 0.9rem;">
+    <div class="gold-grad" style="font-size: 0.9rem; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);">
         <?php
         if ($wa_lang == "English") {
             echo "Contact us";
