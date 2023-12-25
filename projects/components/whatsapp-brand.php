@@ -14,7 +14,7 @@
     }
 
     .whatsappBtn img {
-        animation: spinAndExpand 4s linear infinite;
+        animation: spinLogo 4s linear infinite;
     }
 
     @keyframes spinLogo {

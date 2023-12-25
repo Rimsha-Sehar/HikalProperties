@@ -165,7 +165,7 @@ curl_close($ch);
 
         <!--HEADINGS & FORM-->
         <div class="first_section">
-            <div class="row mobile">
+            <div class="mobile">
                 <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb-bg-sq.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
             <div class="container container-fluid">
