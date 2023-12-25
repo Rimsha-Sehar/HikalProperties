@@ -74,7 +74,8 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
         <!-- WHATSAPP  -->
         <?php 
-        $project = "Mercedes-Benz";
+        $wa_project = "Mercedes-Benz";
+        $wa_lang = "English";
         include_once("../components/whatsapp-brand.php");
         ?>
 

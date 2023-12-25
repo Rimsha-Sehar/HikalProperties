@@ -127,7 +127,8 @@ curl_close($ch);
 
         <!-- WHATSAPP  -->
         <?php 
-        $project = "Mercedes-Benz";
+        $wa_project = "Mercedes-Benz";
+        $wa_lang = "Arabic";
         include_once("../../components/whatsapp-brand.php");
         ?>
 
