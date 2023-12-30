@@ -96,8 +96,12 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            امتلك مكتبك بعائد استثماري 8%مضمون لمدة 10 سنوات وموثق بالعقد
+                        <h1 style="text-align: center; line-height: 2.2rem; font-weight: 800;">
+                            <span class="gold-grad-anim">امتلك مكتبك بعائد استثماري </span>
+                            <span class="text-glow">8%</span>
+                            <span class="gold-grad-anim">مضمون لمدة </span>
+                            <span class="text-glow">10</span>
+                            <span class="gold-grad-anim"> سنوات وموثق بالعقد</span>
                         </h1>
                         <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
                             سجل بياناتك لإرسال التفاصيل
@@ -236,13 +240,14 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 style="text-align: center; line-height: 2.2rem; font-weight: 500; font-size: 1.5rem;">
+                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem;">
                             صاحب السمو حاكم الشارقة 
-                            <br />
-                            <span class="gold-grad-anim" style="font-size: 2rem; font-weight: bold;">الشيخ سلطان بن محمد القاسمي</span>
-                            <br />
-                            يزور مشروع الجادة
+                        </h3>
+                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 1.5rem; font-weight: 800;">الشيخ سلطان بن محمد القاسمي
                         </h1>
+                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem;">
+                            يزور مشروع الجادة
+                        </h3>
                     </div>
                 </div>
             </div>
