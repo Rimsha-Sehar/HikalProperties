@@ -101,7 +101,9 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                             <br />
                             <span class="gold-grad-anim">تملك فيلا فاخرة بقلب الشارقة </span>
                             <br />
-                            <span class="gold-grad-anim">مع مقدم </span><span style="font-size: 2.2rem; color: #FFFFFF; text-shadow: 2px 2px 2px gold;">190</span><span class="gold-grad-anim"> ألف درهم فقط </span>
+                            <span class="gold-grad-anim">مع مقدم </span>
+                            <span class="text-glow">190</span>
+                            <span class="gold-grad-anim"> ألف درهم فقط </span>
                         </h1>
                         <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
                             تملك حر لكل الجنسيات وتوريث مضمون
