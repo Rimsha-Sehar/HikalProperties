@@ -590,7 +590,7 @@ iframe {
     }
 }
 
-@media screena nd (max-width: 800px) {   
+@media screen and (max-width: 800px) {   
     .text-glow {
         font-size: 1.4rem;
     }
