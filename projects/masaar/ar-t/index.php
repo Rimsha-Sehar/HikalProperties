@@ -74,7 +74,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         <div class="language_header">
             <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
                 <div class="gold-grad">
-                    MASAAR
+                    
                 </div>
                 <div class="d-flex align-items-center">
                     <a href="https://hikalproperties.com/projects/masaar/en-t">
@@ -96,11 +96,15 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            تملك تاون هاوس بمقدم 85 ألف درهم
+                        <h1 style="text-align: center; line-height: 2.2rem; font-weight: 800;">
+                            <span class="gold-grad-anim">فرصتك الذهبية</span>
+                            <br />
+                            <span class="gold-grad-anim">تملك فيلا فاخرة بقلب الشارقة </span>
+                            <br />
+                            <span class="gold-grad-anim">مع مقدم </span><span style="font-size: 2.2rem; color: #FFFFFF; text-shadow: 2px 2px 2px gold;">190</span><span class="gold-grad-anim"> ألف درهم فقط </span>
                         </h1>
                         <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
-                            التملك الحر لجميع الجنسيات!
+                            تملك حر لكل الجنسيات وتوريث مضمون
                         </h3>
                     </div>
                 </div>

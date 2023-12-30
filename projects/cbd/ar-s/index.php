@@ -127,7 +127,7 @@ curl_close($ch);
         <div class="language_header">
             <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
                 <div class="gold-grad">
-                    CBD
+                    
                 </div>
                 <div class="d-flex align-items-center">
                     <a href="https://hikalproperties.com/projects/cbd/en-s">
@@ -150,10 +150,10 @@ curl_close($ch);
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
                         <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            إعادة تعريف التميز التجاري في وجهة رئيسية للأعمال
+                            امتلك مكتبك بعائد استثماري 8%مضمون لمدة 10 سنوات وموثق بالعقد
                         </h1>
                         <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
-                            اكتشف عصرًا جديدًا من التميز في مساحات العمل في قلب الشارقة الجديدة
+                            سجل بياناتك لإرسال التفاصيل
                         </h3>
                     </div>
                 </div>
@@ -166,7 +166,7 @@ curl_close($ch);
                     <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
                         <div style="display: flex; align-items: center;">
                             <!-- FORM -->
-                            <div style="width: 100%; min-height: 444px; z-index: 1; display: flex; justify-content: center;">
+                            <div style="width: 100%; z-index: 1; display: flex; justify-content: center;">
                                 <div class="containerform">
                                     <div class="inputs" style="font-weight: 400;">
                                         <?php
@@ -224,13 +224,14 @@ curl_close($ch);
                                                 <form id="lead-form" onsubmit="return submitLeadForm();">
                                                     <!-- action="../controllers/add-lead-country-hybrid.php" -->
                                                     <div style="display: none">
-                                                        <input type="text" id="Project" name="Project" value="Central Business District" />
+                                                        <input type="text" id="Project" name="Project" value="Aljada" />
                                                         <input type="text" id="EnquiryRadio1" name="EnquiryRadio1" value="Retail" />
                                                         <input type="text" id="LeadType" name="LeadType" value="Commercial" />
                                                         <input type="text" id="Language" name="Language" value="Arabic" />
                                                         <input type="text" id="LeadSource" name="LeadSource" value="Campaign Snapchat" />
                                                         <input type="text" id="Country" name="Country" value="" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
+                                                        <input type="text" id="LeadForRadio1" name="LeadForRadio1" value="Investment" />
                                                     </div>
                                                     
                                                     <!-- NAME -->
@@ -246,7 +247,7 @@ curl_close($ch);
                                                     <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
                                             
                                                     <!-- PURPOSE  -->
-                                                    <label class="gold-grad">غرض الاستفسار</label>
+                                                    <!-- <label class="gold-grad">غرض الاستفسار</label>
                                                     <div class="d-flex align-items-center" dir="rtl">
                                                         <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
                                                         <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
@@ -258,7 +259,7 @@ curl_close($ch);
                                                         <label for="PurposeRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
                                                             سكني
                                                         </label>
-                                                    </div>
+                                                    </div> -->
                                             
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
@@ -280,6 +281,29 @@ curl_close($ch);
                         <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd1.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- VIDEO  -->
+        <div class="video_section my-5">
+            <div class="container container-fluid">
+                <div class="row text-center d-flex align-items-center py-2">
+                    <div class="col-12">
+                        <h1 style="text-align: center; line-height: 2.2rem; font-weight: 500; font-size: 1.5rem;">
+                            صاحب السمو حاكم الشارقة 
+                            <br />
+                            <span class="gold-grad-anim" style="font-size: 2rem; font-weight: bold;">الشيخ سلطان بن محمد القاسمي</span>
+                            <br />
+                            يزور مشروع الجادة
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container container-fluid desktop">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_k_2n06Wl_A?si=Sss86zGn8yO6OdjO" title="Arada CDB Aljada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="mobile">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_k_2n06Wl_A?si=Sss86zGn8yO6OdjO" title="Arada CBD Aljada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
     
