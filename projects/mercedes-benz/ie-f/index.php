@@ -191,7 +191,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                         
                                                 <!-- CONTACT NUMBER -->
                                                 <label class="gold-grad">CONTACT NUMBER</label>
-                                                <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
+                                                <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" required />
                                                 
                                                 <!--EMAIL-->
                                                 <label class="gold-grad">EMAIL ADDRESS</label>
