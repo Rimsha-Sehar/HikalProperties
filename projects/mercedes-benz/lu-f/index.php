@@ -465,7 +465,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             var minput = document.querySelector("#mobile");
             var phone_number = window.intlTelInput(minput, {
                 separateDialCode: true,
-                preferredCountries: ["lu", "ie", "mo", "hk", "sg", "ae"],
+                preferredCountries: ["lu", "ie", "nl", "mo", "hk", "sg", "ae"],
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });

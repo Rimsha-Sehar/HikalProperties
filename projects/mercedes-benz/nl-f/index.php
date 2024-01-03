@@ -15,7 +15,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hikal Real Estate Properties | Mercedes-Benz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hikal Real Estate | Hikal Properties | Binghatti Developers | Mercedes-Benz Places by Binghatti | Hong Kong">
+    <meta name="description" content="Hikal Real Estate | Hikal Properties | Binghatti Developers | Mercedes-Benz Places by Binghatti">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -181,7 +181,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                                     <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                                     <input type="text" id="Language" name="Language" value="English" />
                                                     <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
-                                                    <input type="text" id="Country" name="Country" value="Hong Kong" />
+                                                    <input type="text" id="Country" name="Country" value="Netherlands" />
                                                     <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                                 </div>
                                                 
@@ -191,7 +191,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                                         
                                                 <!-- CONTACT NUMBER -->
                                                 <label class="gold-grad">CONTACT NUMBER</label>
-                                                <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" required />
+                                                <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
                                                 
                                                 <!--EMAIL-->
                                                 <label class="gold-grad">EMAIL ADDRESS</label>
@@ -465,7 +465,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
             var minput = document.querySelector("#mobile");
             var phone_number = window.intlTelInput(minput, {
                 separateDialCode: true,
-                preferredCountries: ["hk", "sg", "ie", "nl", "lu", "mo", "ae"],
+                preferredCountries: ["nl", "lu", "ie", "mo", "hk", "sg", "ae"],
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });
