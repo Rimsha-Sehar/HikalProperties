@@ -35,7 +35,7 @@ $data = array(
     "page_url" => (string)$fullUrl, 
     "user_agent" => (string)$device,
     "hashed_ip_address" => (string)$hashed_ip,
-    "item_category" => "Arada CBD",
+    "item_category" => "Aljada",
 );
 // print_r($data);
 
@@ -97,6 +97,8 @@ curl_close($ch);
 
     <!-- META PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- TIKTOK PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
 </head>
 
 <body class="english">
@@ -552,6 +554,11 @@ curl_close($ch);
 
                 var LeadSource = document.getElementById('lead_source');
                 LeadSource.value = $("#LeadSource").val(); 
+
+                // TIKTOK SUBMIT FORM
+                if (LeadSource.value == "Campaign TikTok") {
+                    ttq.track('SubmitForm');
+                }
 
                 var LeadForRadio1 = document.getElementById('lead_for');
                 LeadForRadio1.value = $("#LeadForRadio1").val(); 
