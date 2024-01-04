@@ -86,9 +86,9 @@ if ($_SESSION['leadSource'] == "Campaign Snapchat") {
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
     <!-- META PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- <script src="https://hikalproperties.com/projects/gtm/meta.js"></script>  -->
     <!-- TIKTOK PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
+    <!-- <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script> -->
 
     <!-- TIKTOK PIXEL  -->
     <?php
