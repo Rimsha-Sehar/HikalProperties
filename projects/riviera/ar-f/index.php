@@ -117,6 +117,11 @@ curl_close($ch);
     }
     else {
         ?>
+        <!-- LOADING OVERLAY  -->
+        <div id="loadingOverlay" class="overlay" style="display: none;">
+            <?php include_once("../../components/loading-circle.php"); ?>
+        </div>
+        
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
         
@@ -206,6 +211,7 @@ curl_close($ch);
                                                         <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
                                                         <input type="text" id="Country" name="Country" value="" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
+                                                        <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                                     </div>
                                                     
                                                     <!-- NAME -->
@@ -541,6 +547,7 @@ curl_close($ch);
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                document.getElementById('loadingOverlay').style.display = 'flex';
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');

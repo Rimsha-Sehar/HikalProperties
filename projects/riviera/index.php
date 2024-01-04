@@ -65,6 +65,11 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     }
     else {
         ?>
+        <!-- LOADING OVERLAY  -->
+        <div id="loadingOverlay" class="overlay" style="display: none;">
+            <?php include_once("../components/loading-circle.php"); ?>
+        </div>
+
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
         
@@ -489,6 +494,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                document.getElementById('loadingOverlay').style.display = 'flex';
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');
