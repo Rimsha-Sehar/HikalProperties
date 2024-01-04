@@ -92,7 +92,7 @@ if ($_SESSION['leadSource'] == "Campaign Snapchat") {
 
     <!-- TIKTOK PIXEL  -->
     <?php
-    if ($_SESSION['leadSource'] == "Campaign Snapchat") {
+    if ($_SESSION['leadSource'] == "Campaign TikTok") {
         ?>
         <script>
             ttq.track('CompleteRegistration');
