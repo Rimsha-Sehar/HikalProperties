@@ -35,7 +35,7 @@ $data = array(
     "page_url" => (string)$fullUrl, 
     "user_agent" => (string)$device,
     "hashed_ip_address" => (string)$hashed_ip,
-    "item_category" => "Oceanz",
+    "item_category" => "Mercedes-Benz",
 );
 // print_r($data);
 
@@ -97,6 +97,8 @@ curl_close($ch);
 
     <!-- META PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- TIKTOK PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
 </head>
 
 <body class="english">
@@ -531,7 +533,13 @@ curl_close($ch);
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                // TIKTOK SUBMIT FORM
+                ttq.track('SubmitForm');
+                
+                // LOADING OVERLAY 
                 document.getElementById('loadingOverlay').style.display = 'flex';
+
+                // REGISTER LEAD 
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');

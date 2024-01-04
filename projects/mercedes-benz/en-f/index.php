@@ -7,6 +7,59 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
 ?>
 
+<?php
+
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+$host = $_SERVER['HTTP_HOST'];
+$uri = $_SERVER['REQUEST_URI'];
+$fullUrl = $protocol . $host . $uri;
+
+$_SESSION["page_url"] = $fullUrl;
+
+
+date_default_timezone_set('Asia/Dubai');
+$cur_time = time();
+
+$hashed_ip = hash('sha256', $ip);
+?>
+
+<?php
+$url = 'https://staging.hikalcrm.com/api/validate-snap';
+
+$data = array(
+    "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
+    "event_type" => "PAGE_VIEW",
+    "timestamp" => (string)$cur_time,
+    "event_conversion_type" => "WEB",
+    "event_tag" => "Hikal Properties",
+    "page_url" => (string)$fullUrl, 
+    "user_agent" => (string)$device,
+    "hashed_ip_address" => (string)$hashed_ip,
+    "item_category" => "Mercedes-Benz",
+);
+// print_r($data);
+
+$token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
+
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . $token
+));
+
+$response = curl_exec($ch);
+
+if(curl_errno($ch)){
+    // echo 'Error: ' . curl_error($ch);
+}
+
+curl_close($ch);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -44,6 +97,8 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
     <!-- META PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- TIKTOK PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
 </head>
 
 <body class="english">
@@ -525,6 +580,11 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
                 var LeadSource = document.getElementById('lead_source');
                 LeadSource.value = $("#LeadSource").val(); 
+
+                // TIKTOK SUBMIT FORM
+                if (LeadSource.value == "Campaign TikTok") {
+                    ttq.track('SubmitForm');
+                }
 
                 var EnquiryRadio1 = document.getElementById('enquiry_type');
                 EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
