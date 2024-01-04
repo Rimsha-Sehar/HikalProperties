@@ -7,68 +7,15 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
 ?>
 
-<?php
-
-$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
-$host = $_SERVER['HTTP_HOST'];
-$uri = $_SERVER['REQUEST_URI'];
-$fullUrl = $protocol . $host . $uri;
-
-$_SESSION["page_url"] = $fullUrl;
-
-
-date_default_timezone_set('Asia/Dubai');
-$cur_time = time();
-
-$hashed_ip = hash('sha256', $ip);
-?>
-
-<?php
-$url = 'https://staging.hikalcrm.com/api/validate-snap';
-
-$data = array(
-    "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
-    "event_type" => "PAGE_VIEW",
-    "timestamp" => (string)$cur_time,
-    "event_conversion_type" => "WEB",
-    "event_tag" => "Hikal Properties",
-    "page_url" => (string)$fullUrl, 
-    "user_agent" => (string)$device,
-    "hashed_ip_address" => (string)$hashed_ip,
-    "item_category" => "Riviera",
-);
-// print_r($data);
-
-$token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
-
-$ch = curl_init($url);
-
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . $token
-));
-
-$response = curl_exec($ch);
-
-if(curl_errno($ch)){
-    // echo 'Error: ' . curl_error($ch);
-}
-
-curl_close($ch);
-?>
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hikal Real Estate Properties | Riviera</title>
+    <title>Hikal Real Estate Properties | Venice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hikal Real Estate | Hikal Properties | Azizi Developments | Azizi Riviera">
+    <meta name="description" content="Hikal Real Estate | Hikal Properties | Azizi Developments | Azizi Venice">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,16 +38,13 @@ curl_close($ch);
     
     <!-- ICON -->
     <link rel="icon" type="image/png" href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
+    <!-- https://hikalproperties.com/projects/ -->
     <!-- STYLES -->
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
-
-    <!-- META PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
 </head>
 
-<body class="arabic" dir="rtl">
-    <?php include_once("../../gtm/meta.php"); ?>
+<body class="arabic" dir="rtl">    
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);
@@ -125,24 +69,20 @@ curl_close($ch);
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            احصل علي خصم 32.5% لفترة محدودة
-                        </h1>
-                        <!-- <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
-                        سجل بياناتك الحين للمزيد من التفاصيل
-                        </h3> -->
+                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">فرصتك قبل الطرح أحصل علي كوبون فرش لشقتك مجانا</h1>
+                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">سجل بياناتك الحين للمزيد من التفاصيل</h3>
                     </div>
                 </div>
             </div>
-            <div class="mobile">
-                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/5.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+            <div class="row mobile">
+                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v6.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
             <div class="container container-fluid">
                 <div class="row d-flex align-items-center">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
                         <div style="display: flex; align-items: center;">
                             <!-- FORM -->
-                            <div style="width: 100%; z-index: 1; display: flex; justify-content: center;">
+                            <div style="width: 100%; min-height: 444px; z-index: 1; display: flex; justify-content: center;">
                                 <div class="containerform">
                                     <div class="inputs" style="font-weight: 400;">
                                         <?php
@@ -153,7 +93,7 @@ curl_close($ch);
                                         <!-- OTP FORM  -->
                                         <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
                                             <form method="POST" action="../../controllers/verify-otp.php">
-                                                <!-- action="../../controllers/verify-otp.php" -->
+                                                <!-- action="../controllers/verify-otp.php" -->
                                                 <h5 class="gold-grad" style="text-align: center;">
                                                     OTP has been sent to 
                                                     <span id="phone_no"></span>
@@ -197,9 +137,9 @@ curl_close($ch);
                                             <!--NEW FORM-->
                                             <div class="contact-form" dir="ltr">
                                                 <form id="lead-form" onsubmit="return submitLeadForm();">
-                                                    <!-- action="../../controllers/add-lead-country-hybrid.php" -->
+                                                    <!-- action="../controllers/add-lead-country-hybrid.php" -->
                                                     <div style="display: none">
-                                                        <input type="text" id="Project" name="Project" value="Riviera" />
+                                                        <input type="text" id="Project" name="Project" value="Venice" />
                                                         <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                                         <input type="text" id="Language" name="Language" value="Arabic" />
                                                         <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
@@ -278,7 +218,7 @@ curl_close($ch);
                     </div>
                 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
-                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/4.webp" alt="HIKAL PROPERTIES" style="width: 100%" />
+                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v6.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
                     </div>
                 </div>
             </div>
@@ -290,16 +230,16 @@ curl_close($ch);
                 <div class="desktop">
                     <div class="row my-4">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/bgbg.webp" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    في قلب دبي
+                                    فخمة ملاذ سكني في دبي الجنوب
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    مرحبًا بكم في عزيزي ريفيرا - إحدى أفخم الوجهات في دبي. يمكنك الاستيقاظ على مناظر خلابة للبحيرة الكريستالية ، وقضاء أيامك في التجول على طول شارع مستوحى من الريفيرا الفرنسية والاختلاط بالسكان أولئك الذين يقدرون أرقى الأشياء في الحياة. بفضل ثلاثة أبراج سكنية وفندق 5 نجوم ومركز أعمال تنفيذي ، فإن هذه الوجهة تقدم كل شيء حقًا
+                                    انطلق في رحلة من الفخامة مع مشروع مصمم بعناية. استكشف مجموعة من الاستوديوهات والشقق بغرفة واحدة واثنتين وثلاث غرف نوم، بالإضافة إلى الفلل الاستثنائية، وكلها تقع على واجهة المياه. يعكس هذا العمل المعماري الرائع الأسلوب المعاصر والأناقة الخالدة. مع أبراج تتراوح بين الطابق الأرضي + 10 إلى الطابق الأرضي + 22، يضع هذا المشروع معايير جديدة للعيش الرفيع، مقدماً تجربة لا مثيل لها في نمط الحياة.
                                 </h6>
                             </div>
                         </div>
@@ -308,30 +248,30 @@ curl_close($ch);
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    صممت لإثراء الحياة
+                                    موقع متميز واتصالات لا مثيل لها
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    يجلب لك ريفييرا ريف أفضل ما في الحياة على شاطئ البحر والترفيه والتسلية ، وهو يكمل أسلوب حياتك المميز بالفعل. مستوحاة معماريًا من حركة المياه عبر البحيرة ، تم بناء الأبراج الثلاثة بألواح شمسية ومساحات خضراء عمودية لتحقيق قدر أكبر من الاستدامة ونقاء الهواء. تطور فريد ونادر مثلك. حلق مباشرة إلى شقتك في مصاعدنا الزجاجية الفاخرة بالكامل. عند الصعود ، تأمل المناظر الخلابة المطلة على المجتمع والطبيعة الخضراء الخلابة - كل ذلك من منظور بانورامي
+                                    يقع هذا المشروع في قلب دبي الجنوب، حيث يتمتع بموقع استراتيجي يجاور مطار المكتوم الدولي ويقع بالقرب من مشروع إعمار الجنوب الراقي. ويتزايد جاذبيته بفضل قربه من محطة المترو المخطط لها، مما يضمن للسكان تجربة استثنائية في الاتصال وسهولة الوصول. ابحث عن إقامة تجمع بين الراحة والملاءمة.
                                 </h6>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/slider2.webp" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                     </div>
                     <div class="row my-4">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/lpr009.webp" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    الموقع الرائع للمشروع
+                                    واحة من الفخامة على واجهة المياه
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    إلى جانب الممرات المرصوفة الممتعة وإطلالات غروب الشمس على المرسى، يعجب العديد من السكان بمجتمع عزيزي ريفيرا المرحلة 2 المذهل. ميزة أخرى لهذه المنطقة هي أن هذا المكان متصل بالطرق الرئيسية في دبي مثل الخليج التجاري وشارع الشيخ زايد وشارع الخيل وشارع ميدان. وستصل إلى مرافق رائعة مثل للأنشطة العائلية، وتناول الطعام في الهواء الطلق، والمقاهي والحانات الصغيرة، ودور السينما، ومحلات التجزئة الفاخرة، وغيرها من العناصر الضرورية مثل المدارس والمستشفيات ودور السينما والمحلات التجارية ومراكز التسوق. أفضل جزء هو مشروع خط المترو المقترح الذي سيبدأ في هذا المجتمع قريبًا. ويقع الكورنيش السابع والكورنيش الحادي عشر والكورنيش العاشر في المركز في المرحلة الأولى من المشروع
+                                    هذا المكان الاستثنائي ليس مجرد مسكن؛ بل هو ملاذ من الفرح على واجهة المياه. ومع 23% من مساحته مغطاة بالمياه، يتميز هذا المكان بوجود بحيرة بطول 18 كيلومتراً، مع موجات صناعية ومياه عذبة. هنا، يمكن للسكان الاستمتاع بجمال البحر عن كثب. القلب النابض لهذه المجتمع، بوليفارد بطول 700 متر، يضمن توفر متاجر متنوعة، مما يضمن توفير جميع الضروريات على مقربة من الجميع. علاوة على ذلك، يوفر المجتمع أماكن ثقافية ومدارس ومستشفيات وفنادق فاخرة، مما يخلق أجواء حيوية ومليئة بالإثراء.
                                 </h6>
                             </div>
                         </div>
@@ -340,34 +280,34 @@ curl_close($ch);
                 <div class="mobile">
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            في قلب دبي
+                            فخمة ملاذ سكني في دبي الجنوب
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            مرحبًا بكم في عزيزي ريفيرا - إحدى أفخم الوجهات في دبي. يمكنك الاستيقاظ على مناظر خلابة للبحيرة الكريستالية ، وقضاء أيامك في التجول على طول شارع مستوحى من الريفيرا الفرنسية والاختلاط بالسكان أولئك الذين يقدرون أرقى الأشياء في الحياة. بفضل ثلاثة أبراج سكنية وفندق 5 نجوم ومركز أعمال تنفيذي ، فإن هذه الوجهة تقدم كل شيء حقًا
+                            انطلق في رحلة من الفخامة مع مشروع مصمم بعناية. استكشف مجموعة من الاستوديوهات والشقق بغرفة واحدة واثنتين وثلاث غرف نوم، بالإضافة إلى الفلل الاستثنائية، وكلها تقع على واجهة المياه. يعكس هذا العمل المعماري الرائع الأسلوب المعاصر والأناقة الخالدة. مع أبراج تتراوح بين الطابق الأرضي + 10 إلى الطابق الأرضي + 22، يضع هذا المشروع معايير جديدة للعيش الرفيع، مقدماً تجربة لا مثيل لها في نمط الحياة.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/bgbg.webp" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            صممت لإثراء الحياة
+                            موقع متميز واتصالات لا مثيل لها
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            يجلب لك ريفييرا ريف أفضل ما في الحياة على شاطئ البحر والترفيه والتسلية ، وهو يكمل أسلوب حياتك المميز بالفعل. مستوحاة معماريًا من حركة المياه عبر البحيرة ، تم بناء الأبراج الثلاثة بألواح شمسية ومساحات خضراء عمودية لتحقيق قدر أكبر من الاستدامة ونقاء الهواء. تطور فريد ونادر مثلك. حلق مباشرة إلى شقتك في مصاعدنا الزجاجية الفاخرة بالكامل. عند الصعود ، تأمل المناظر الخلابة المطلة على المجتمع والطبيعة الخضراء الخلابة - كل ذلك من منظور بانورامي
+                            يقع هذا المشروع في قلب دبي الجنوب، حيث يتمتع بموقع استراتيجي يجاور مطار المكتوم الدولي ويقع بالقرب من مشروع إعمار الجنوب الراقي. ويتزايد جاذبيته بفضل قربه من محطة المترو المخطط لها، مما يضمن للسكان تجربة استثنائية في الاتصال وسهولة الوصول. ابحث عن إقامة تجمع بين الراحة والملاءمة.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/slider2.webp" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            الموقع الرائع للمشروع
+                            واحة من الفخامة على واجهة المياه
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            إلى جانب الممرات المرصوفة الممتعة وإطلالات غروب الشمس على المرسى، يعجب العديد من السكان بمجتمع عزيزي ريفيرا المرحلة 2 المذهل. ميزة أخرى لهذه المنطقة هي أن هذا المكان متصل بالطرق الرئيسية في دبي مثل الخليج التجاري وشارع الشيخ زايد وشارع الخيل وشارع ميدان. وستصل إلى مرافق رائعة مثل للأنشطة العائلية، وتناول الطعام في الهواء الطلق، والمقاهي والحانات الصغيرة، ودور السينما، ومحلات التجزئة الفاخرة، وغيرها من العناصر الضرورية مثل المدارس والمستشفيات ودور السينما والمحلات التجارية ومراكز التسوق. أفضل جزء هو مشروع خط المترو المقترح الذي سيبدأ في هذا المجتمع قريبًا. ويقع الكورنيش السابع والكورنيش الحادي عشر والكورنيش العاشر في المركز في المرحلة الأولى من المشروع
+                            هذا المكان الاستثنائي ليس مجرد مسكن؛ بل هو ملاذ من الفرح على واجهة المياه. ومع 23% من مساحته مغطاة بالمياه، يتميز هذا المكان بوجود بحيرة بطول 18 كيلومتراً، مع موجات صناعية ومياه عذبة. هنا، يمكن للسكان الاستمتاع بجمال البحر عن كثب. القلب النابض لهذه المجتمع، بوليفارد بطول 700 متر، يضمن توفر متاجر متنوعة، مما يضمن توفير جميع الضروريات على مقربة من الجميع. علاوة على ذلك، يوفر المجتمع أماكن ثقافية ومدارس ومستشفيات وفنادق فاخرة، مما يخلق أجواء حيوية ومليئة بالإثراء.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/lpr009.webp" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                 </div>
             </div>
         </div>
@@ -383,96 +323,48 @@ curl_close($ch);
                 <div class="row" style="justify-content: center;">
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>01</b></div>
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>07</b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقيقة
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                طريق الخيل
+                                مطار آل مكتوم الدولي
                             </p>
                             <br>
                         </div>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>02</b></div>
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>15</b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                مضمار ميدان
+                                نخلة جبل علي
                             </p>
                             <br>
                         </div>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>03</b></div>
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>20</b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                ميدان ون مول/برج ميدان
+                                عالم صورة للمغامرات
                             </p>
                             <br>
                         </div>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>05</b></div>
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>23</b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                مطار دبي الدولي
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>10</b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                فستيفال ستي/ ايكيا  
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>10</b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                وسط مدينة دبي
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>10</b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                دبي كريك و طريق الخيل   
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>16</b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                دقائق
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                شاطئ الخيل و نخلة جميرة
+                                نخلة جميرا
                             </p>
                             <br>
                         </div>
@@ -483,8 +375,8 @@ curl_close($ch);
     
         <!--IMAGE-->
         <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/map.webp" alt="HIKAL PROPERTIES" style="width: 60%" />
-            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/map.webp" alt="HIKAL PROPERTIES" style="width: 100%" />
+            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 60%" />
+            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 100%" />
         </div>
     
         <!--AMENITIES-->
@@ -589,9 +481,6 @@ curl_close($ch);
                             // RENDER OTP FORM 
                             $("#lead-form").hide();
                             $("#otp-form").show();
-                        }
-                        else if (response.thankyou) {
-                            window.location.href = response.redirectUrl;
                         }
                         else {
                             console.log("Error: ", response);

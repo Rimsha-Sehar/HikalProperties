@@ -90,7 +90,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
                     <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
                         <div style="display: flex; align-items: center;">
                             <!-- FORM -->
-                            <div style="width: 100%; min-height: 444px; z-index: 1; display: flex; justify-content: center;">
+                            <div style="width: 100%; z-index: 1; display: flex; justify-content: center;">
                                 <div class="containerform">
                                     <div class="inputs" style="font-weight: 400;">
                                         <?php
