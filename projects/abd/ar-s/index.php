@@ -97,6 +97,8 @@ curl_close($ch);
 
     <!-- META PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- TIKTOK PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
 
     <style>
         .gold-text {
@@ -201,6 +203,11 @@ curl_close($ch);
     }
     else {
         ?>
+        <!-- LOADING OVERLAY  -->
+        <div id="loadingOverlay" class="overlay" style="display: none;">
+            <?php include_once("../../components/loading-circle.php"); ?>
+        </div>
+
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
         
@@ -490,6 +497,10 @@ curl_close($ch);
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                // LOADING OVERLAY 
+                document.getElementById('loadingOverlay').style.display = 'flex';
+
+                // REGISTER LEAD 
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');
@@ -518,6 +529,11 @@ curl_close($ch);
 
                 var LeadSource = document.getElementById('lead_source');
                 LeadSource.value = $("#LeadSource").val(); 
+
+                // TIKTOK SUBMIT FORM
+                if (LeadSource.value == "Campaign TikTok") {
+                    ttq.track('SubmitForm');
+                }
 
                 // var EnquiryRadio1 = document.getElementById('enquiry_type');
                 // EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
