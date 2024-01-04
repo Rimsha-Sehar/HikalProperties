@@ -140,7 +140,7 @@ curl_close($ch);
                     </div>
                 </div>
             </div>
-            <div class="row mobile">
+            <div class="mobile">
                 <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/masaar/sequoia-mobo.jpeg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
             <div class="container container-fluid">
