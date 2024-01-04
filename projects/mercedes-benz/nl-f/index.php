@@ -44,6 +44,74 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
     <!-- META PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- TIKTOK PIXEL -->
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t;
+            var ttq = w[t] = w[t] || [];
+            ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"],
+            ttq.setAndDefer = function(t, e) {
+                t[e] = function() {
+                    t.push([e].concat(Array.prototype.slice.call(arguments,0)))
+                }
+            };
+            for(var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]);
+                ttq.instance = function(t) {
+                for(var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)ttq.setAndDefer(e, ttq.methods[n]);
+                    return e
+            },
+            ttq.load = function(e, n) {
+                var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = i, ttq._t = ttq._t || {}, ttq._t[e] =+ new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+                var o = document.createElement("script");
+                o.type = "text/javascript", o.async =! 0, o.src = i + "?sdkid=" + e + "&lib=" + t;
+                var a = document.getElementsByTagName("script")[0];
+                a.parentNode.insertBefore(o, a)
+            };
+
+            ttq.load('CMB6ABRC77UDBRR1OQL0');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+
+    <?php
+
+// $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+// $host = $_SERVER['HTTP_HOST'];
+// $uri = $_SERVER['REQUEST_URI'];
+// $fullUrl = $protocol . $host . $uri;
+
+// $_SESSION["page_url"] = $fullUrl;
+
+
+// date_default_timezone_set('Asia/Dubai');
+// $cur_time = time();
+
+// $hashed_ip = hash('sha256', $ip);
+
+// $url = 'https://staging.hikalcrm.com/api/validate-snap';
+
+// $data = array(
+//     "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
+//     "event_type" => "PAGE_VIEW",
+//     "timestamp" => (string)$cur_time,
+//     "event_conversion_type" => "WEB",
+//     "event_tag" => "Hikal Properties",
+//     "page_url" => (string)$fullUrl, 
+//     "user_agent" => (string)$device,
+//     "hashed_ip_address" => (string)$hashed_ip,
+//     "item_category" => "Oceanz",
+// );
+?>
+
+    <!-- TIKTOK TRACKING CODES  -->
+    <script>
+        // PAGE VIEW (AUTO)
+        // SUBMIT FORM (FORM BUTTON CLICK)
+
+        // COMPLETE REGISTRATION (THANK YOU)
+        // CONTACT (WHATSAPP)
+    </script>
 </head>
 
 <body class="english">
@@ -499,6 +567,59 @@ $device = $_SERVER['HTTP_USER_AGENT'];
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                // TIKTOK IDENTIFY USER
+                // ttq.identify({
+                //   "email": "<hashed_email_address>",
+                //   "phone_number": "<hashed_phone_number>",
+                //   // "external_id": "<hashed_extenal_id>"
+                // })
+                // // TIKTOK SUBMIT FORM 
+                // ttq.track('SubmitForm', {
+                //     "value": "<content_value>", // number. Value of the order or items sold. Example: 100.
+                //     "currency": "<content_currency>", // string. The 4217 currency code. Example: "USD".
+                //     "contents": [
+                //         {
+                //             "content_id": "<content_identifier>",
+                //             "content_type": "<content_type>",
+                //             "content_name": "Mercedes-Benz",
+                //         }
+                //     ],
+
+                //     "pixel_code": "CMB6ABRC77UDBRR1OQL0",
+                //     "event": "SubmitForm",
+
+                //     // USER CONTEXT OBJECT PARAMETERS
+                //     "context": [
+                //         "ad": [
+                //             "callback": "" //ttcid
+                //         ],
+                //         "page": [
+                //             "url": "" //url
+                //         ],
+                //         "user": [
+                //             {
+                //                 "email": "", //hashed_email
+                //                 "phone_number": "", //hashed_phone with +971563110950
+                //                 "ip": "", //non-hashed_ip
+                //                 "user_agent": "" //non-hashed_user-agent
+
+                //             }
+                //         ]
+                //     ], 
+                //     // PROPERTIES OBJECT PARAMETERS
+                //     "properties": [ 
+                //         "content_type": "Mercedes-Benz",
+                //         "contents": [
+                //             {
+                //                 "content_id": "Netherlands",
+                //                 "content_category": "Facebook",
+                //                 "brand": "Mercedes-Benz",
+                //             }
+                //         ],  
+                //     ], 
+                // })
+
+                // REGISTER LEAD 
                 document.getElementById('loadingOverlay').style.display = 'flex';
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
