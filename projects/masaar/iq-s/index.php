@@ -97,6 +97,8 @@ curl_close($ch);
 
     <!-- META PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- TIKTOK PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
 </head>
 
 <body class="arabic" dir="rtl">
@@ -165,7 +167,7 @@ curl_close($ch);
                     </div>
                 </div>
             </div>
-            <div class="row mobile">
+            <div class="mobile">
                 <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/masaar/sequoia-mobo.jpeg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
             <div class="container container-fluid">
@@ -597,6 +599,11 @@ curl_close($ch);
 
                 var LeadSource = document.getElementById('lead_source');
                 LeadSource.value = $("#LeadSource").val(); 
+
+                // TIKTOK SUBMIT FORM
+                if (LeadSource.value == "Campaign TikTok") {
+                    ttq.track('SubmitForm');
+                }
 
                 // var EnquiryRadio1 = document.getElementById('enquiry_type');
                 // EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
