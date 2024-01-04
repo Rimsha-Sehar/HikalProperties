@@ -175,6 +175,7 @@ curl_close($ch);
                                                     <input type="text" name="lead_for" id="lead_for" >
                                                     <input type="text" name="country_name" id="country_name" >
                                                     <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
+                                                    <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                                 </div>
 
                                                 <button type="submit" style="font-weight: bold;">
@@ -216,8 +217,8 @@ curl_close($ch);
                                                     <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
                                                     
                                                     <!--EMAIL-->
-                                                    <label class="gold-grad">عنوان البريد الإلكتروني</label>
-                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
+                                                    <!-- <label class="gold-grad">عنوان البريد الإلكتروني</label>
+                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" /> -->
         
                                                     <!-- HOW MANY BEDROOMS -->
                                                     <label class="gold-grad">كم عدد غرف النوم؟</label>
