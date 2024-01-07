@@ -100,13 +100,7 @@ curl_close($ch);
     <!-- TIKTOK PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
     <!-- TWITTER PIXEL -->
-    <!-- <script src="https://hikalproperties.com/projects/gtm/twitter.js"></script> -->
-    <script>
-        !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-twq('config','ohu9a');
-    </script>
+    <script src="https://hikalproperties.com/projects/gtm/twitter.js"></script>
 </head>
 
 <body class="english">
@@ -567,6 +561,12 @@ twq('config','ohu9a');
                 if (LeadSource.value == "Campaign TikTok") {
                     ttq.track('SubmitForm');
                 }
+                // TWITTER SUBMIT FORM 
+                // if (LeadSource.value == "Campaign Twitter") {
+                //     twq('event', 'ohu9a', {
+                //         phone_number: encodeURIComponent(full_number)
+                //     });
+                // }
 
                 var LeadForRadio1 = document.getElementById('lead_for');
                 LeadForRadio1.value = $("#LeadForRadio1").val(); 
