@@ -99,6 +99,8 @@ curl_close($ch);
     <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
     <!-- TIKTOK PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
+    <!-- TWITTER PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/twitter.js"></script>
 </head>
 
 <body class="arabic" dir="rtl">
@@ -129,9 +131,9 @@ curl_close($ch);
 
         <!-- WHATSAPP  -->
         <?php 
-        $wa_project = "Mercedes-Benz";
-        $wa_lang = "Arabic";
-        include_once("../../components/whatsapp-brand.php");
+        // $wa_project = "Mercedes-Benz";
+        // $wa_lang = "Arabic";
+        // include_once("../../components/whatsapp-brand.php");
         ?>
 
         <!-- HEADER  -->
@@ -586,6 +588,12 @@ curl_close($ch);
                 if (LeadSource.value == "Campaign TikTok") {
                     ttq.track('SubmitForm');
                 }
+                // TWITTER SUBMIT FORM
+                if (LeadSource.value == "Campaign Twitter") {
+                    twq('event', 'tw-ohu9a-oivb1', {
+                        phone_number: encodeURIComponent(full_number)
+                    });
+                }
 
                 var EnquiryRadio1 = document.getElementById('enquiry_type');
                 EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
@@ -630,7 +638,7 @@ curl_close($ch);
         </script>
 
         <!-- SLIDER FORM -->
-        <script>
+        <!-- <script>
             // OPEN LEAD FORM 
             const leadForm = document.getElementById('leadForm');
 
@@ -653,7 +661,7 @@ curl_close($ch);
             }
 
             setTimeout(openLeadForm, 5000);
-        </script>
+        </script> -->
         <?php
     }
     ?>

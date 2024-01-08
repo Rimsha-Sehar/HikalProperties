@@ -138,26 +138,27 @@ curl_close($ch);
 
         <!-- HEADER  -->
         <div class="language_header">
-            <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
+            <!-- <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
                     <div class="px-2 gold-grad d-flex align-items-center">
                         <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
                         EN
                     </div>
-                    <a href="https://hikalproperties.com/projects/mercedes-benz/ar-s/">
+                    <a href="https://hikalproperties.com/projects/mercedes-benz/ar-f/">
                         <div class="px-2 white d-flex align-items-center">
                             <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
                             AR
                         </div>
                     </a>
                 </div>
-            </div> 
+            </div> -->
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
                         <h1 class="gold-grad-anim my-2" style="text-align: center; line-height: 2rem; font-weight: 800;">
                             MERCEDES-BENZ PLACES
                         </h1>
+                        <!-- <img class="brandLogoHeading" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-logo.png" style="width: 50px;" /> -->
                         <img src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mercedes-logo-anim.gif" style="width: 60px;" />
                         <h3 class="mt-2" style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
                             A Legendary Collaboration between Elegance and Innovation
@@ -172,7 +173,7 @@ curl_close($ch);
             <div class="mobile">
                 <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/mercedes-benz/mb-bg-sq.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
-            <div class="container container-fluid">
+            <div class="container container-fluid py-4">
                 <div class="row d-flex align-items-center">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
                         <div style="display: flex; align-items: center;">
@@ -236,8 +237,8 @@ curl_close($ch);
                                                     <input type="text" id="Project" name="Project" value="Mercedes-Benz" />
                                                     <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                                     <input type="text" id="Language" name="Language" value="English" />
-                                                    <input type="text" id="LeadSource" name="LeadSource" value="Campaign Twitter" />
-                                                    <input type="text" id="Country" name="Country" value="" />
+                                                    <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
+                                                    <input type="text" id="Country" name="Country" value="Australia" />
                                                     <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                                 </div>
                                                 
@@ -521,7 +522,7 @@ curl_close($ch);
             var minput = document.querySelector("#mobile");
             var phone_number = window.intlTelInput(minput, {
                 separateDialCode: true,
-                preferredCountries: ["ae", "sa", "qa", "om", "kw", "iq"],
+                preferredCountries: ["au", "nl", "lu", "ie", "mo", "hk", "sg", "ae"],
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });
@@ -555,7 +556,10 @@ curl_close($ch);
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                // LOADING OVERLAY 
                 document.getElementById('loadingOverlay').style.display = 'flex';
+
+                // REGISTER LEAD 
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');

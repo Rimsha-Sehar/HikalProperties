@@ -590,6 +590,12 @@ curl_close($ch);
                 if (LeadSource.value == "Campaign TikTok") {
                     ttq.track('SubmitForm');
                 }
+                // TWITTER SUBMIT FORM
+                if (LeadSource.value == "Campaign Twitter") {
+                    twq('event', 'tw-ohu9a-oivb1', {
+                        phone_number: encodeURIComponent(full_number)
+                    });
+                }
 
                 var LeadForRadio1 = document.getElementById('lead_for');
                 LeadForRadio1.value = $("#LeadForRadio1").val(); 
