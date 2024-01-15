@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include('../../dbconfig/dbhybrid.php');
+include('../dbconfig/dbhybrid.php');
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
@@ -35,7 +35,7 @@ $data = array(
     "page_url" => (string)$fullUrl, 
     "user_agent" => (string)$device,
     "hashed_ip_address" => (string)$hashed_ip,
-    "item_category" => "Aljada",
+    "item_category" => "Empire",
 );
 // print_r($data);
 
@@ -66,9 +66,9 @@ curl_close($ch);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hikal Real Estate Properties | Arada Central Business District</title>
+    <title>Hikal Real Estate Properties | Empire Estates</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hikal Real Estate | Hikal Properties | Arada Developments | Arada Central Business District | Sharjah">
+    <meta name="description" content="Hikal Real Estate | Hikal Properties | Empire Developments | Empire Estates by Empire Developments">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@ curl_close($ch);
 </head>
 
 <body class="english">
-    <?php include_once("../../gtm/meta.php"); ?>
+    <?php include_once("../gtm/meta.php"); ?>
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);
@@ -120,59 +120,50 @@ curl_close($ch);
         <?php
     }
     else {
-        ?><!-- LOADING OVERLAY  -->
+        ?>
+        <!-- LOADING OVERLAY  -->
         <div id="loadingOverlay" class="overlay" style="display: none;">
-            <?php include_once("../../components/loading-circle.php"); ?>
+            <?php include_once("../components/loading-circle.php"); ?>
         </div>
 
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
 
-        <div class="language_header">
-            <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
-                <div class="gold-grad">
-                    CBD
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="px-2 gold-grad d-flex align-items-center">
-                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
-                        EN
-                    </div>
-                    <a href="https://hikalproperties.com/projects/cbd/ar-s">
-                        <div class="px-2 white d-flex align-items-center">
-                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
-                            AR
-                        </div>
-                    </a>
-                </div>
-            </div>   
-        </div>
-        
+        <!-- WHATSAPP  -->
+        <?php 
+        // $wa_project = "Mercedes-Benz";
+        // $wa_lang = "English";
+        // include_once("../components/whatsapp-brand.php");
+        ?>
+
+        <!-- <div class="language_header">
+            <div class="container container-fluid">
+            </div>
+        </div> -->
+
         <!--HEADINGS & FORM-->
         <div class="first_section">
+            <div class="mobile">
+                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-main.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+            </div>
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            Redefining Commercial Excellence in Premiere Business Destination
+                        <h1 class="gold-grad-anim my-2" style="text-align: center; line-height: 2rem; font-weight: 800;">
+                            Legacy of Timeless Elegance
                         </h1>
-                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
-                            Discover a New Era of Workspace Excellence in the Heart of New Sharjah
+                        <h3 class="mt-2" style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
+                            Elevate Your Lifestyle at Arjan's Finest Residences
                         </h3>
                     </div>
                 </div>
-            </div>
-            <div class="mobile">
-                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd1.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
-            </div>
-            <div class="container container-fluid">
                 <div class="row d-flex align-items-center">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
                         <div style="display: flex; align-items: center;">
                             <!-- FORM -->
-                            <div style="width: 100%; min-height: 444px; z-index: 1; display: flex; justify-content: center;">
+                            <div style="width: 100%; z-index: 1; display: flex; justify-content: center;">
                                 <div class="containerform">
-                                    <div class="inputs" style="font-weight: 400;">
+                                    <div class="inputs">
                                         <?php
                                         $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                                         $parsedUrl = parse_url($url);
@@ -180,7 +171,7 @@ curl_close($ch);
                                         ?>
                                         <!-- OTP FORM  -->
                                         <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
-                                            <form method="POST" action="../../controllers/verify-otp.php">
+                                            <form method="POST" action="../controllers/verify-otp.php">
                                                 <!-- action="../controllers/verify-otp.php" -->
                                                 <h5 class="gold-grad" style="text-align: center;">
                                                     OTP has been sent to 
@@ -198,7 +189,6 @@ curl_close($ch);
                                                     <input type="text" name="lang" id="lang" >
                                                     <input type="text" name="project_name" id="project_name" >
                                                     <input type="text" name="lead_type" id="lead_type" >
-                                                    <input type="text" name="enquiry_type" id="enquiry_type" >
                                                     <input type="text" name="lead_source" id="lead_source" >
                                                     <input type="text" name="enquiry_type" id="enquiry_type" >
                                                     <input type="text" name="lead_for" id="lead_for" >
@@ -207,7 +197,7 @@ curl_close($ch);
                                                 </div>
 
                                                 <button type="submit" style="font-weight: bold;">
-                                                    تحقق من رمز التحقق
+                                                    VERIFY
                                                 </button>
                                             </form>
                                         </div>
@@ -226,13 +216,11 @@ curl_close($ch);
                                             <!--NEW FORM-->
                                             <div class="contact-form" dir="ltr">
                                                 <form id="lead-form" onsubmit="return submitLeadForm();">
-                                                    <!-- action="../controllers/add-lead-country-hybrid.php" -->
                                                     <div style="display: none">
-                                                        <input type="text" id="Project" name="Project" value="Aljada" />
-                                                        <input type="text" id="EnquiryRadio1" name="EnquiryRadio1" value="Retail" />
-                                                        <input type="text" id="LeadType" name="LeadType" value="Commercial" />
+                                                        <input type="text" id="Project" name="Project" value="Empire Estates" />
+                                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                                         <input type="text" id="Language" name="Language" value="English" />
-                                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign Twitter" />
+                                                        <input type="text" id="LeadSource" name="LeadSource" value="Website" />
                                                         <input type="text" id="Country" name="Country" value="" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                                     </div>
@@ -248,6 +236,33 @@ curl_close($ch);
                                                     <!--EMAIL-->
                                                     <label class="gold-grad">EMAIL ADDRESS</label>
                                                     <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
+
+                                                    <!-- HOW MANY BEDROOMS -->
+                                                    <label class="gold-grad">HOW MANY BEDROOMS?</label>
+                                                    <div class="d-flex align-items-center">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="Studio" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            Studio
+                                                        </label>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="1 Bedroom" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            1 Bedroom
+                                                        </label>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="2 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            2 Bedrooms
+                                                        </label>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="3 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio6" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            3 Bedrooms
+                                                        </label>
+                                                    </div>
                                             
                                                     <!-- PURPOSE  -->
                                                     <label class="gold-grad">PURPOSE OF ENQUIRY</label>
@@ -266,7 +281,7 @@ curl_close($ch);
                                             
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
-                                                            <button type="submit" class="submit-click" style="font-weight: bold;">SUBMIT</button>
+                                                            <button type="submit" class="submit-click">SUBMIT</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -281,7 +296,7 @@ curl_close($ch);
                     </div>
                 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
-                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd1.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-main.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
                     </div>
                 </div>
             </div>
@@ -293,16 +308,16 @@ curl_close($ch);
                 <div class="desktop">
                     <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd2.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-pool.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    THE DOWNTOWN OF NEW SHARJAH
+                                    LUXURIOUS LIVING AT ARJAN
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    Experience a revolution in commercial spaces at the Central Business District (CBD) in Aljada, Sharjah. This dynamic development is poised to redefine the way businesses thrive, offering meticulously designed office spaces and cutting-edge facilities that set the stage for unparalleled success in the region.
+                                    Experience luxury at its finest with the distinguished residential project in Arjan. This high-rise development stands as a community landmark, boasting a grand structure and a strong dedication to luxurious living. Beyond the ordinary, the developer has crafted an exceptional living experience by offering top-notch amenities like a fitness center, beautiful landscaped parks, cutting-edge technology, and home automation. Each apartment is designed with exquisite interiors, showcasing an unwavering commitment to excellence. With each new project, we raise the bar for luxury living, ensuring residents enjoy an unparalleled level of opulence and sophistication.
                                 </h6>
                             </div>
                         </div>
@@ -311,30 +326,30 @@ curl_close($ch);
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    INSPIRED WORKSPACES FOR EVERY BUSINESS
+                                    PRIME LOCATION FOR URBAN CONVENIENCE
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    The CBD introduces a new standard of modern workplaces, with eight impeccably designed buildings offering a staggering 812,000 square feet of Grade A and Grade B leasable space. Whether you're an ambitious start-up or an established corporation, this environment is designed to foster growth, innovation, and success.
+                                    Located in Arjan, our community seamlessly combines tranquility with urban convenience. Residents experience easy access to various destinations, ensuring effortless travel anytime. The neighborhood boasts leisure amenities, entertainment zones, schools, hospitals, and all essentials for a luxurious and convenient lifestyle. Our location not only offers opulent living spaces but also positions residents in a prime area where urban conveniences harmonize with peaceful surroundings.
                                 </h6>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd3.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-whole.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                     </div>
                     <div class="row my-4 d-flex align-items-center">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd4.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    A SANCTUARY FOR INSPIRED MINDS
+                                    ELEVATING LUXURY LIVING STANDARDS
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    At the CBD, every inch is meticulously crafted for inspired work. The architectural marvels blend aesthetics with functionality, offering an atmosphere of creativity and productivity. With 76,400 square feet of landscaped green space, it provides a serene oasis amidst the demands of the business world—a place to recharge, find inspiration, and experience tranquility.
+                                    The Arjan project upholds a legacy of enhancing luxury living standards. The developer's dedication to excellence is clear in the careful planning and execution of each project, ensuring residents enjoy the pinnacle of sophistication and comfort. With impressive structures and state-of-the-art amenities, the project aims to redefine opulence, creating living spaces that showcase their commitment to providing an elevated lifestyle in every project.
                                 </h6>
                             </div>
                         </div>
@@ -343,34 +358,35 @@ curl_close($ch);
                 <div class="mobile">
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            THE DOWNTOWN OF NEW SHARJAH
+                            LUXURIOUS LIVING AT ARJAN
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            Experience a revolution in commercial spaces at the Central Business District (CBD) in Aljada, Sharjah. This dynamic development is poised to redefine the way businesses thrive, offering meticulously designed office spaces and cutting-edge facilities that set the stage for unparalleled success in the region.
+                            Experience luxury at its finest with the distinguished residential project in Arjan. This high-rise development stands as a community landmark, boasting a grand structure and a strong dedication to luxurious living. Beyond the ordinary, the developer has crafted an exceptional living experience by offering top-notch amenities like a fitness center, beautiful landscaped parks, cutting-edge technology, and home automation. Each apartment is designed with exquisite interiors, showcasing an unwavering commitment to excellence. With each new project, we raise the bar for luxury living, ensuring residents enjoy an unparalleled level of opulence and sophistication.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd2.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-pool.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            INSPIRED WORKSPACES FOR EVERY BUSINESS
+                            PRIME LOCATION FOR URBAN CONVENIENCE
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            The CBD introduces a new standard of modern workplaces, with eight impeccably designed buildings offering a staggering 812,000 square feet of Grade A and Grade B leasable space. Whether you're an ambitious start-up or an established corporation, this environment is designed to foster growth, innovation, and success.
+                            Located in Arjan, our community seamlessly combines tranquility with urban convenience. Residents experience easy access to various destinations, ensuring effortless travel anytime. The neighborhood boasts leisure amenities, entertainment zones, schools, hospitals, and all essentials for a luxurious and convenient lifestyle. Our location not only offers opulent living spaces but also positions residents in a prime area where urban conveniences harmonize with peaceful surroundings.
+
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd3.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-whole.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            A SANCTUARY FOR INSPIRED MINDS
+                            ELEVATING LUXURY LIVING STANDARDS
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            At the CBD, every inch is meticulously crafted for inspired work. The architectural marvels blend aesthetics with functionality, offering an atmosphere of creativity and productivity. With 76,400 square feet of landscaped green space, it provides a serene oasis amidst the demands of the business world—a place to recharge, find inspiration, and experience tranquility.
+                            The Arjan project upholds a legacy of enhancing luxury living standards. The developer's dedication to excellence is clear in the careful planning and execution of each project, ensuring residents enjoy the pinnacle of sophistication and comfort. With impressive structures and state-of-the-art amenities, the project aims to redefine opulence, creating living spaces that showcase their commitment to providing an elevated lifestyle in every project.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd4.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                 </div>
             </div>
         </div>
@@ -387,41 +403,13 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                02
-                            </b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                City Centre Al Zahia
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                03
-                            </b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                University City
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                 05
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 MINUTES
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Madar
+                                Dubai Miracle Garden
                             </p>
                             <br>
                         </div>
@@ -435,7 +423,35 @@ curl_close($ch);
                                 MINUTES
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Sharjah International Airport
+                                Mall of the Emirates
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                25
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                MINUTES
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                Burj Khalifa
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                25
+                            </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                MINUTES
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
+                                Palm Jumeirah
                             </p>
                             <br>
                         </div>
@@ -457,13 +473,13 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                30
+                                25
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 MINUTES
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Downtown Dubai
+                                Al Maktoum International Airport
                             </p>
                             <br>
                         </div>
@@ -472,19 +488,24 @@ curl_close($ch);
             </div>
         </div>
     
-        <!--MAP-->
+        <!--IMAGE-->
         <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd-map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
-            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd-map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
+            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
+            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
         </div>
     
         <!--AMENITIES-->
         <div class="fourth_section my-5">
-            <?php include_once("../../components/amenities-en.php"); ?>
+            <?php include_once("../components/amenities-en.php"); ?>
+        </div>
+    
+        <!--WHY DUBAI-->
+        <div class="fifth_section my-5">
+            <?php include_once("../components/whydubai-en.php"); ?>
         </div>
         
         <footer style="background-color: #000000;">
-            <?php include_once("../../components/footer-copyright.php"); ?>
+            <?php include_once("../components/footer-copyright.php"); ?>
         </footer>
         
         <!--COUNTRY CODE-->
@@ -527,7 +548,6 @@ curl_close($ch);
         <script>
             function submitLeadForm() {
                 document.getElementById('loadingOverlay').style.display = 'flex';
-
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');
@@ -551,9 +571,6 @@ curl_close($ch);
                 var LeadType = document.getElementById('lead_type');
                 LeadType.value = $("#LeadType").val(); 
 
-                var EnquiryRadio1 = document.getElementById('enquiry_type');
-                EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
-
                 var LeadSource = document.getElementById('lead_source');
                 LeadSource.value = $("#LeadSource").val(); 
 
@@ -568,6 +585,9 @@ curl_close($ch);
                     });
                 }
 
+                var EnquiryRadio1 = document.getElementById('enquiry_type');
+                EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
+
                 var LeadForRadio1 = document.getElementById('lead_for');
                 LeadForRadio1.value = $("#LeadForRadio1").val(); 
 
@@ -579,7 +599,7 @@ curl_close($ch);
                 // console.log(formData);
 
                 $.ajax({
-                    url: "../../controllers/add-lead-country-hybrid.php",
+                    url: "../controllers/add-lead-country-hybrid.php",
                     method: "GET",
                     data: formData,
                     dataType: "json",
@@ -606,7 +626,6 @@ curl_close($ch);
                 return false;
             }
         </script>
-
         <?php
     }
     ?>

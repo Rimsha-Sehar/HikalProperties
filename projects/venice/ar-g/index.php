@@ -35,7 +35,7 @@ $data = array(
     "page_url" => (string)$fullUrl, 
     "user_agent" => (string)$device,
     "hashed_ip_address" => (string)$hashed_ip,
-    "item_category" => "Aljada",
+    "item_category" => "Venice",
 );
 // print_r($data);
 
@@ -66,9 +66,9 @@ curl_close($ch);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hikal Real Estate Properties | Arada Central Business District</title>
+    <title>Hikal Real Estate Properties | Venice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hikal Real Estate | Hikal Properties | Arada Developments | Arada Central Business District | Sharjah">
+    <meta name="description" content="Hikal Real Estate | Hikal Properties | Azizi Developments | Azizi Venice">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,7 +103,7 @@ curl_close($ch);
     <script src="https://hikalproperties.com/projects/gtm/twitter.js"></script>
 </head>
 
-<body class="english">
+<body class="arabic" dir="rtl">
     <?php include_once("../../gtm/meta.php"); ?>
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
@@ -112,58 +112,35 @@ curl_close($ch);
         ?>
         <div class="d-flex justify-content-center align-items-center text-center p-5" style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                Some suspicious activities have been detected from your device! Please contact
+                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع 
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                for further assistance!
+                للحصول على المساعدة الإضافية!
             </h1>
         </div>
         <?php
     }
     else {
-        ?><!-- LOADING OVERLAY  -->
+        ?>
+        <!-- LOADING OVERLAY  -->
         <div id="loadingOverlay" class="overlay" style="display: none;">
             <?php include_once("../../components/loading-circle.php"); ?>
         </div>
 
         <!-- TOP SCROLL -->
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
-
-        <div class="language_header">
-            <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
-                <div class="gold-grad">
-                    CBD
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="px-2 gold-grad d-flex align-items-center">
-                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
-                        EN
-                    </div>
-                    <a href="https://hikalproperties.com/projects/cbd/ar-s">
-                        <div class="px-2 white d-flex align-items-center">
-                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
-                            AR
-                        </div>
-                    </a>
-                </div>
-            </div>   
-        </div>
         
         <!--HEADINGS & FORM-->
         <div class="first_section">
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            Redefining Commercial Excellence in Premiere Business Destination
-                        </h1>
-                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
-                            Discover a New Era of Workspace Excellence in the Heart of New Sharjah
-                        </h3>
+                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">فرصتك قبل الطرح أحصل علي كوبون فرش لشقتك مجانا</h1>
+                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">سجل بياناتك الحين للمزيد من التفاصيل</h3>
                     </div>
                 </div>
             </div>
-            <div class="mobile">
-                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd1.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+            <div class="row mobile">
+                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v6.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
             </div>
             <div class="container container-fluid">
                 <div class="row d-flex align-items-center">
@@ -198,7 +175,6 @@ curl_close($ch);
                                                     <input type="text" name="lang" id="lang" >
                                                     <input type="text" name="project_name" id="project_name" >
                                                     <input type="text" name="lead_type" id="lead_type" >
-                                                    <input type="text" name="enquiry_type" id="enquiry_type" >
                                                     <input type="text" name="lead_source" id="lead_source" >
                                                     <input type="text" name="enquiry_type" id="enquiry_type" >
                                                     <input type="text" name="lead_for" id="lead_for" >
@@ -217,7 +193,7 @@ curl_close($ch);
                                         if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
                                             ?>
                                             <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
-                                                Thank you for registering with us. Our professionals will contact you soon!
+                                                شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
                                             </div>
                                             <?php
                                         }
@@ -228,45 +204,71 @@ curl_close($ch);
                                                 <form id="lead-form" onsubmit="return submitLeadForm();">
                                                     <!-- action="../controllers/add-lead-country-hybrid.php" -->
                                                     <div style="display: none">
-                                                        <input type="text" id="Project" name="Project" value="Aljada" />
-                                                        <input type="text" id="EnquiryRadio1" name="EnquiryRadio1" value="Retail" />
-                                                        <input type="text" id="LeadType" name="LeadType" value="Commercial" />
-                                                        <input type="text" id="Language" name="Language" value="English" />
-                                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign Twitter" />
+                                                        <input type="text" id="Project" name="Project" value="Venice" />
+                                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
+                                                        <input type="text" id="Language" name="Language" value="Arabic" />
+                                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign GoogleAds" />
                                                         <input type="text" id="Country" name="Country" value="" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                                     </div>
                                                     
                                                     <!-- NAME -->
-                                                    <label class="gold-grad" style="margin-top: 0px;">NAME</label>
+                                                    <label class="gold-grad" style="margin-top: 0px;">الاسم</label>
                                                     <input type="text" name="LeadName1" id="LeadName1" required />
                                             
                                                     <!-- CONTACT NUMBER -->
-                                                    <label class="gold-grad">CONTACT NUMBER</label>
+                                                    <label class="gold-grad">رقم الاتصال</label>
                                                     <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
                                                     
                                                     <!--EMAIL-->
-                                                    <label class="gold-grad">EMAIL ADDRESS</label>
+                                                    <label class="gold-grad">عنوان البريد الإلكتروني</label>
                                                     <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
-                                            
-                                                    <!-- PURPOSE  -->
-                                                    <label class="gold-grad">PURPOSE OF ENQUIRY</label>
-                                                    <div class="d-flex align-items-center">
-                                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
-                                                        <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            Investment
+        
+                                                    <!-- HOW MANY BEDROOMS -->
+                                                    <label class="gold-grad">كم عدد غرف النوم؟</label>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            استوديو
                                                         </label>
                                                     </div>
-                                                    <div class="d-flex align-items-center">
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            غرفة نوم واحدة
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            غرفتين نوم
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            ثلاث غرف نوم
+                                                        </label>
+                                                    </div>
+                                            
+                                                    <!-- PURPOSE  -->
+                                                    <label class="gold-grad">غرض الاستفسار</label>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
+                                                        <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            استثمار
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user" style="width: 20px;" required>
                                                         <label for="PurposeRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            End-user
+                                                            سكني
                                                         </label>
                                                     </div>
                                             
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
-                                                            <button type="submit" class="submit-click" style="font-weight: bold;">SUBMIT</button>
+                                                            <button type="submit" class="submit-click">إرسال</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -281,7 +283,7 @@ curl_close($ch);
                     </div>
                 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
-                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd1.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v6.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
                     </div>
                 </div>
             </div>
@@ -291,50 +293,50 @@ curl_close($ch);
         <div class="second_section">
             <div class="container container-fluid py-3">
                 <div class="desktop">
-                    <div class="row my-4 d-flex align-items-center">
+                    <div class="row my-4">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd2.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    THE DOWNTOWN OF NEW SHARJAH
+                                    فخمة ملاذ سكني في دبي الجنوب
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    Experience a revolution in commercial spaces at the Central Business District (CBD) in Aljada, Sharjah. This dynamic development is poised to redefine the way businesses thrive, offering meticulously designed office spaces and cutting-edge facilities that set the stage for unparalleled success in the region.
+                                    انطلق في رحلة من الفخامة مع مشروع مصمم بعناية. استكشف مجموعة من الاستوديوهات والشقق بغرفة واحدة واثنتين وثلاث غرف نوم، بالإضافة إلى الفلل الاستثنائية، وكلها تقع على واجهة المياه. يعكس هذا العمل المعماري الرائع الأسلوب المعاصر والأناقة الخالدة. مع أبراج تتراوح بين الطابق الأرضي + 10 إلى الطابق الأرضي + 22، يضع هذا المشروع معايير جديدة للعيش الرفيع، مقدماً تجربة لا مثيل لها في نمط الحياة.
                                 </h6>
                             </div>
                         </div>
                     </div>
-                    <div class="row my-4 d-flex align-items-center">
+                    <div class="row my-4">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    INSPIRED WORKSPACES FOR EVERY BUSINESS
+                                    موقع متميز واتصالات لا مثيل لها
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    The CBD introduces a new standard of modern workplaces, with eight impeccably designed buildings offering a staggering 812,000 square feet of Grade A and Grade B leasable space. Whether you're an ambitious start-up or an established corporation, this environment is designed to foster growth, innovation, and success.
+                                    يقع هذا المشروع في قلب دبي الجنوب، حيث يتمتع بموقع استراتيجي يجاور مطار المكتوم الدولي ويقع بالقرب من مشروع إعمار الجنوب الراقي. ويتزايد جاذبيته بفضل قربه من محطة المترو المخطط لها، مما يضمن للسكان تجربة استثنائية في الاتصال وسهولة الوصول. ابحث عن إقامة تجمع بين الراحة والملاءمة.
                                 </h6>
                             </div>
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd3.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                     </div>
-                    <div class="row my-4 d-flex align-items-center">
+                    <div class="row my-4">
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd4.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                         </div>
                         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
                             <div class="p-2">
                                 <h5 class="gold-grad">
-                                    A SANCTUARY FOR INSPIRED MINDS
+                                    واحة من الفخامة على واجهة المياه
                                 </h5>
                                 <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                                 <h6>
-                                    At the CBD, every inch is meticulously crafted for inspired work. The architectural marvels blend aesthetics with functionality, offering an atmosphere of creativity and productivity. With 76,400 square feet of landscaped green space, it provides a serene oasis amidst the demands of the business world—a place to recharge, find inspiration, and experience tranquility.
+                                    هذا المكان الاستثنائي ليس مجرد مسكن؛ بل هو ملاذ من الفرح على واجهة المياه. ومع 23% من مساحته مغطاة بالمياه، يتميز هذا المكان بوجود بحيرة بطول 18 كيلومتراً، مع موجات صناعية ومياه عذبة. هنا، يمكن للسكان الاستمتاع بجمال البحر عن كثب. القلب النابض لهذه المجتمع، بوليفارد بطول 700 متر، يضمن توفر متاجر متنوعة، مما يضمن توفير جميع الضروريات على مقربة من الجميع. علاوة على ذلك، يوفر المجتمع أماكن ثقافية ومدارس ومستشفيات وفنادق فاخرة، مما يخلق أجواء حيوية ومليئة بالإثراء.
                                 </h6>
                             </div>
                         </div>
@@ -343,34 +345,34 @@ curl_close($ch);
                 <div class="mobile">
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            THE DOWNTOWN OF NEW SHARJAH
+                            فخمة ملاذ سكني في دبي الجنوب
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            Experience a revolution in commercial spaces at the Central Business District (CBD) in Aljada, Sharjah. This dynamic development is poised to redefine the way businesses thrive, offering meticulously designed office spaces and cutting-edge facilities that set the stage for unparalleled success in the region.
+                            انطلق في رحلة من الفخامة مع مشروع مصمم بعناية. استكشف مجموعة من الاستوديوهات والشقق بغرفة واحدة واثنتين وثلاث غرف نوم، بالإضافة إلى الفلل الاستثنائية، وكلها تقع على واجهة المياه. يعكس هذا العمل المعماري الرائع الأسلوب المعاصر والأناقة الخالدة. مع أبراج تتراوح بين الطابق الأرضي + 10 إلى الطابق الأرضي + 22، يضع هذا المشروع معايير جديدة للعيش الرفيع، مقدماً تجربة لا مثيل لها في نمط الحياة.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd2.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            INSPIRED WORKSPACES FOR EVERY BUSINESS
+                            موقع متميز واتصالات لا مثيل لها
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            The CBD introduces a new standard of modern workplaces, with eight impeccably designed buildings offering a staggering 812,000 square feet of Grade A and Grade B leasable space. Whether you're an ambitious start-up or an established corporation, this environment is designed to foster growth, innovation, and success.
+                            يقع هذا المشروع في قلب دبي الجنوب، حيث يتمتع بموقع استراتيجي يجاور مطار المكتوم الدولي ويقع بالقرب من مشروع إعمار الجنوب الراقي. ويتزايد جاذبيته بفضل قربه من محطة المترو المخطط لها، مما يضمن للسكان تجربة استثنائية في الاتصال وسهولة الوصول. ابحث عن إقامة تجمع بين الراحة والملاءمة.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd3.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                     <div class="p-2">
                         <h5 class="gold-grad">
-                            A SANCTUARY FOR INSPIRED MINDS
+                            واحة من الفخامة على واجهة المياه
                         </h5>
                         <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
                         <h6>
-                            At the CBD, every inch is meticulously crafted for inspired work. The architectural marvels blend aesthetics with functionality, offering an atmosphere of creativity and productivity. With 76,400 square feet of landscaped green space, it provides a serene oasis amidst the demands of the business world—a place to recharge, find inspiration, and experience tranquility.
+                            هذا المكان الاستثنائي ليس مجرد مسكن؛ بل هو ملاذ من الفرح على واجهة المياه. ومع 23% من مساحته مغطاة بالمياه، يتميز هذا المكان بوجود بحيرة بطول 18 كيلومتراً، مع موجات صناعية ومياه عذبة. هنا، يمكن للسكان الاستمتاع بجمال البحر عن كثب. القلب النابض لهذه المجتمع، بوليفارد بطول 700 متر، يضمن توفر متاجر متنوعة، مما يضمن توفير جميع الضروريات على مقربة من الجميع. علاوة على ذلك، يوفر المجتمع أماكن ثقافية ومدارس ومستشفيات وفنادق فاخرة، مما يخلق أجواء حيوية ومليئة بالإثراء.
                         </h6>
                     </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd4.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
+                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
                 </div>
             </div>
         </div>
@@ -380,90 +382,54 @@ curl_close($ch);
             <div class="container container-fluid py-5">
                 <div class="row" style="text-align: center;">
                     <h4 class="gold-grad-anim">
-                        LOCATION BENEFITS
+                        مميزات الموقع
                     </h4>
                 </div>
                 <div class="row" style="justify-content: center;">
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                02
-                            </b></div>
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>07</b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                City Centre Al Zahia
+                                مطار آل مكتوم الدولي
                             </p>
                             <br>
                         </div>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                03
-                            </b></div>
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>15</b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                University City
+                                نخلة جبل علي
                             </p>
                             <br>
                         </div>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                05
-                            </b></div>
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>20</b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Madar
+                                عالم صورة للمغامرات
                             </p>
                             <br>
                         </div>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                10
-                            </b></div>
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>23</b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Sharjah International Airport
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                25
-                            </b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Dubai International Airport
-                            </p>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
-                        <div style="display: block; text-align: center;">
-                            <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                30
-                            </b></div>
-                            <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
-                            </p>
-                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Downtown Dubai
+                                نخلة جميرا
                             </p>
                             <br>
                         </div>
@@ -472,15 +438,20 @@ curl_close($ch);
             </div>
         </div>
     
-        <!--MAP-->
+        <!--IMAGE-->
         <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd-map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
-            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/cbd/cbd-map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
+            <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 60%" />
+            <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 100%" />
         </div>
     
         <!--AMENITIES-->
         <div class="fourth_section my-5">
-            <?php include_once("../../components/amenities-en.php"); ?>
+            <?php include_once("../../components/amenities-ar.php"); ?>
+        </div>
+    
+        <!--WHY DUBAI-->
+        <div class="fifth_section my-5">
+            <?php include_once("../../components/whydubai-ar.php"); ?>
         </div>
         
         <footer style="background-color: #000000;">
@@ -526,8 +497,10 @@ curl_close($ch);
         <!-- SUBMIT LEAD FORM -->
         <script>
             function submitLeadForm() {
+                // LOADING OVERLAY 
                 document.getElementById('loadingOverlay').style.display = 'flex';
 
+                // REGISTER LEAD 
                 var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
 
                 var phoneOTP = document.getElementById('phone_number');
@@ -551,9 +524,6 @@ curl_close($ch);
                 var LeadType = document.getElementById('lead_type');
                 LeadType.value = $("#LeadType").val(); 
 
-                var EnquiryRadio1 = document.getElementById('enquiry_type');
-                EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
-
                 var LeadSource = document.getElementById('lead_source');
                 LeadSource.value = $("#LeadSource").val(); 
 
@@ -567,6 +537,9 @@ curl_close($ch);
                         phone_number: encodeURIComponent(full_number)
                     });
                 }
+
+                var EnquiryRadio1 = document.getElementById('enquiry_type');
+                EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
 
                 var LeadForRadio1 = document.getElementById('lead_for');
                 LeadForRadio1.value = $("#LeadForRadio1").val(); 
@@ -585,7 +558,6 @@ curl_close($ch);
                     dataType: "json",
                     success: function(response) {
                         if (response.otp) {
-                            document.getElementById('loadingOverlay').style.display = 'none';
                             // RENDER OTP FORM 
                             $("#lead-form").hide();
                             $("#otp-form").show();
