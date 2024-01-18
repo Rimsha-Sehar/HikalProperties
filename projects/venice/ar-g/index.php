@@ -96,11 +96,14 @@ curl_close($ch);
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
     <!-- META PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- <script src="https://hikalproperties.com/projects/gtm/meta.js"></script>  -->
     <!-- TIKTOK PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
+    <!-- <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script> -->
     <!-- TWITTER PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/twitter.js"></script>
+    <!-- <script src="https://hikalproperties.com/projects/gtm/twitter.js"></script> -->
+
+    <!-- GOOGLE ADS  -->
+    <script src="https://hikalproperties.com/projects/gtm/googleads-gtm.js"></script>
 </head>
 
 <body class="arabic" dir="rtl">

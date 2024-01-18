@@ -101,6 +101,16 @@ if ($_SESSION['leadSource'] == "Campaign Snapchat") {
     }
     ?>
     <!-- TIKTOK PIXEL END  -->
+
+    <!-- GOOGLEADS GTM - HESHAM -->
+    <?php
+    if ($_SESSION['leadSource'] == "Campaign GoogleAds") {
+        ?>
+        <script src="https://hikalproperties.com/projects/gtm/googleads-gtm.js"></script>
+        <?php
+    }
+    ?>
+    <!-- GOOGLEADS GTM END -->
 </head>
 
 <body class="english">
