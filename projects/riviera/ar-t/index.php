@@ -173,18 +173,17 @@ curl_close($ch);
                                                 <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 
                                                 <div style="display: none">
-                                                    <input type="text" name="phone_number" id="phone_number">
-                                                    <input type="text" name="lead_name" id="lead_name" >
-                                                    <input type="text" name="lead_email" id="lead_email" >
-                                                    <input type="text" name="lang" id="lang" >
-                                                    <input type="text" name="project_name" id="project_name" >
-                                                    <input type="text" name="lead_type" id="lead_type" >
-                                                    <input type="text" name="lead_source" id="lead_source" >
-                                                    <input type="text" name="enquiry_type" id="enquiry_type" >
-                                                    <input type="text" name="lead_for" id="lead_for" >
-                                                    <input type="text" name="country_name" id="country_name" >
-                                                    <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                                                    <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
+                                                    <input type="text" name="phone_number" id="phone_number" />
+                                                    <input type="text" name="lead_name" id="lead_name" />
+                                                    <input type="text" name="lead_email" id="lead_email" />
+                                                    <input type="text" name="lang" id="lang" />
+                                                    <input type="text" name="project_name" id="project_name" />
+                                                    <input type="text" name="lead_type" id="lead_type" />
+                                                    <input type="text" name="lead_source" id="lead_source" />
+                                                    <input type="text" name="enquiry_type" id="enquiry_type" />
+                                                    <input type="text" name="lead_for" id="lead_for" />
+                                                    <input type="text" name="country_name" id="country_name" />
+                                                    <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>" />
                                                 </div>
 
                                                 <button type="submit" style="font-weight: bold;">

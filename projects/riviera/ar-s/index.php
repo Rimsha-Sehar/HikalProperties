@@ -184,7 +184,6 @@ curl_close($ch);
                                                     <input type="text" name="lead_for" id="lead_for" >
                                                     <input type="text" name="country_name" id="country_name" >
                                                     <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                                                    <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                                 </div>
 
                                                 <button type="submit" style="font-weight: bold;">

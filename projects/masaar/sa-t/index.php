@@ -241,6 +241,7 @@ curl_close($ch);
                                                         <input type="text" id="LeadSource" name="LeadSource" value="Campaign TikTok" />
                                                         <input type="text" id="Country" name="Country" value="Saudi Arabia" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
+                                                        <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                                     </div>
                                                     
                                                     <!-- NAME -->
@@ -252,8 +253,8 @@ curl_close($ch);
                                                     <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
                                                     
                                                     <!--EMAIL-->
-                                                    <label class="gold-grad">عنوان البريد الإلكتروني</label>
-                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
+                                                    <!-- <label class="gold-grad">عنوان البريد الإلكتروني</label>
+                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" /> -->
         
                                                     <!-- HOW MANY BEDROOMS -->
                                                     <label class="gold-grad">كم عدد غرف النوم؟</label>

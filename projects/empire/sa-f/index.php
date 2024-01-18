@@ -141,11 +141,18 @@ curl_close($ch);
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim my-2" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            تراث الأناقة الخالدة
+                        <h1 class="my-2" style="text-align: center; line-height: 2rem; font-weight: 800;">
+                            <span class="gold-grad-anim">تملك بأقساط </span>
+                            <span class="num-glow">1%</span>
+                            <span class="gold-grad-anim"> شهريا لمدة </span>
+                            <span class="num-glow">80</span> 
+                            <span class="gold-grad-anim">شهر</span>
                         </h1>
+                        <h3 class="text-expand mt-2" style="text-align: center; line-height: 1.5rem; font-size: 1rem; ">
+                            وفرصتك قبل الطرح
+                        </h3>
                         <h3 class="mt-2" style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
-                            رفع مستوى أسلوب حياتك في أرجان - أجمل الإقامات
+                            أحصل علي آلمطبخ مجهّز بالكامل
                         </h3>
                     </div>
                 </div>
@@ -210,12 +217,13 @@ curl_close($ch);
                                             <div class="contact-form" dir="ltr">
                                                 <form id="lead-form" onsubmit="return submitLeadForm();">
                                                     <div style="display: none">
-                                                        <input type="text" id="Project" name="Project" value="Empire Estates" />
+                                                        <input type="text" id="Project" name="Project" value="Empire Estates (Private Pool)" />
                                                         <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                                         <input type="text" id="Language" name="Language" value="Arabic" />
                                                         <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
                                                         <input type="text" id="Country" name="Country" value="Saudi Arabia" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
+                                                        <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                                     </div>
                                                     
                                                     <!-- NAME -->
@@ -227,33 +235,33 @@ curl_close($ch);
                                                     <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
                                                     
                                                     <!--EMAIL-->
-                                                    <label class="gold-grad">عنوان البريد الإلكتروني</label>
-                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
+                                                    <!-- <label class="gold-grad">عنوان البريد الإلكتروني</label>
+                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" /> -->
 
                                                     <!-- HOW MANY BEDROOMS -->
                                                     <label class="gold-grad">كم عدد غرف النوم؟</label>
                                                     <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" style="width: 20px;" required>
                                                         <label for="EnquiryRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            استوديو
+                                                            استوديو + حمام سباحة
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" style="width: 20px;" required>
                                                         <label for="EnquiryRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            غرفة نوم واحدة
+                                                            غرفة نوم + حمام سباحة
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
                                                         <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            غرفتين نوم
+                                                            غرفتين نوم + حمام سباحة
                                                         </label>
                                                     </div>
                                                     <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
                                                         <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            ثلاث غرف نوم
+                                                            ثلاث غرف نوم + حمام سباحة
                                                         </label>
                                                     </div>
                                             
