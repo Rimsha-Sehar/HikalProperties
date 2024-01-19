@@ -95,8 +95,10 @@ curl_close($ch);
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
-    <!-- PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/gtm.js"></script>
+<!--     <!-- PIXEL -->
+<!--     <script src="https://hikalproperties.com/projects/gtm/gtm.js"></script> --> -->
+        <!-- PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script> 
 </head>
 
 <body class="arabic" dir="rtl">
