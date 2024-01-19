@@ -60,12 +60,13 @@ if (isset($start_time) && (time() - $start_time > 7200)) {
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
     
-    <!-- META PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script> 
 </head>
 
 <body class="arabic" dir="rtl" style="background: #0E0E0E;">
-    <?php include_once("../../../gtm/meta.php"); ?>
+    <?php include_once("../../../gtm/pixel.php"); ?>
+    
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);

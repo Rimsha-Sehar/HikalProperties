@@ -96,19 +96,16 @@ curl_close($ch);
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
     <!-- META PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
-    <!-- TIKTOK PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
-    <!-- TWITTER PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/twitter.js"></script>
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script> 
 
     <!-- GOOGLE ADS  -->
     <script src="https://hikalproperties.com/projects/gtm/googleads-gtm.js"></script>
 </head>
 
 <body class="arabic" dir="rtl">
+    <?php include_once("../../gtm/pixel.php"); ?>
     <?php include_once("../../gtm/googleads-gtm.php"); ?>
-    <?php include_once("../../gtm/meta.php"); ?>
+    
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);

@@ -85,10 +85,8 @@ if ($_SESSION['leadSource'] == "Campaign Snapchat") {
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
-    <!-- META PIXEL -->
-    <!-- <script src="https://hikalproperties.com/projects/gtm/meta.js"></script>  -->
-    <!-- TIKTOK PIXEL -->
-    <!-- <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script> -->
+    <!-- PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script> 
 
     <!-- TIKTOK PIXEL  -->
     <?php
@@ -114,6 +112,8 @@ if ($_SESSION['leadSource'] == "Campaign Snapchat") {
 </head>
 
 <body class="english">
+    <?php include_once("../../gtm/pixel.php"); ?>
+    
     <div class="d-flex flex-column justify-content-between" style="width: 100%; min-height: 100vh;">
         <?php
             include_once("../components/header-dark.php");

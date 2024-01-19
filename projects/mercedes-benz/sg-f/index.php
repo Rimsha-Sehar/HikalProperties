@@ -95,16 +95,13 @@ curl_close($ch);
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
-    <!-- META PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
-    <!-- TIKTOK PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/tiktok.js"></script>
-    <!-- TWITTER PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/twitter.js"></script>
+    <!-- PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script> 
 </head>
 
 <body class="english">
-    <?php include_once("../../gtm/meta.php"); ?>
+    <?php include_once("../../gtm/pixel.php"); ?>
+
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);
@@ -240,6 +237,7 @@ curl_close($ch);
                                                     <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
                                                     <input type="text" id="Country" name="Country" value="Singapore" />
                                                     <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
+                                                    <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                                 </div>
                                                 
                                                 <!-- NAME -->
@@ -251,8 +249,8 @@ curl_close($ch);
                                                 <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" required />
                                                 
                                                 <!--EMAIL-->
-                                                <label class="gold-grad">EMAIL ADDRESS</label>
-                                                <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" />
+                                                <!-- <label class="gold-grad">EMAIL ADDRESS</label>
+                                                <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" /> -->
 
                                                 <!-- HOW MANY BEDROOMS -->
                                                 <label class="gold-grad">HOW MANY BEDROOMS?</label>

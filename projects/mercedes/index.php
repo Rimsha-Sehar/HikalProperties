@@ -42,12 +42,13 @@ $device = $_SERVER['HTTP_USER_AGENT'];
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
-    <!-- META PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/meta.js"></script> 
+    <!-- PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script> 
 </head>
 
 <body class="english">
-    <?php include_once("../gtm/meta.php"); ?>
+    <?php include_once("../gtm/pixel.php"); ?>
+    
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);
