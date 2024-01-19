@@ -9,7 +9,13 @@
     @include('global.seo')
 
     @include('global.include_top')
-
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMK8LXSJ');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <style>
     .hidden-text {
@@ -25,7 +31,12 @@
     }
 
 @endphp
+<body>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMK8LXSJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 <div class="entry_header_control" style="background-image: url({{ $banner_image }}); ">
     <!-- Header Top Area Start -->
     <div class="header_new">
