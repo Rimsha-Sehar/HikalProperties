@@ -89,7 +89,8 @@ curl_close($ch);
 
     <!-- ICON -->
     <link rel="icon" type="image/png" href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
-
+  <!-- PIXEL -->
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script> 
     <style>
         body {
 /*            background: linear-gradient(to bottom right, #1F1C1D, #282426);*/
@@ -487,7 +488,7 @@ curl_close($ch);
 </head>
 
 <body style="font-size: small; color: #FFFFFF;" dir="rtl">
-
+ <?php include_once("../../gtm/pixel.php"); ?>
     <!-- TOP SCROLL -->
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up"></i></button>
 
