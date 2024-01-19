@@ -15,8 +15,13 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!-- GTM -->
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js" ></script>
 </head>
 <body>
+    <?php iclude_once("../../../projects/gtm/pixel.php"); ?>
+    
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
