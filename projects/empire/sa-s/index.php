@@ -276,6 +276,13 @@ curl_close($ch);
                                                             سكني
                                                         </label>
                                                     </div>
+                                                    <!-- TIME  -->
+                                                     <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="time" name="time" id="time" value="time" style="width: 20px;" required>
+                                                        <label for="time" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            ماهو الموعد المناسب للاتصال ؟
+                                                        </label>
+                                                    </div>
                                             
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
