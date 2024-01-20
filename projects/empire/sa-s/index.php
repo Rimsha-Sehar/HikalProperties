@@ -279,7 +279,7 @@ curl_close($ch);
                                                     
                                                     <!-- TIME  -->
                                                     <label class="gold-grad" style="margin-top: 0px;">ماهو الموعد المناسب للاتصال ؟</label>
-                                                    <input type="time" name="time" id="time" required />
+                                                    <input type="time" name="time" id="time" />
                                                     
                                             
                                                     <div id="FormButton" name="FormButton">
