@@ -18,14 +18,14 @@ $primaryConnection = establishConnection("34.234.40.81", "laravelappuser", "NjPJ
 
 // If primary connection failed, attempt secondary connection
 if (!$primaryConnection) {
-    $secondaryConnection = establishConnection("localhost", "puxqglmy_hikalcrmbluehost_user", "hikal@2704", "puxqglmy_hikalcrmbluehost");
+    $secondaryConnection = establishConnection("34.234.40.81", "laravelappuser", "NjPJvbWETDDZ", "laravelapp");
 
     if ($secondaryConnection) {
         // Secondary connection succeeded, set constants
-        define('DB_HOST', 'localhost');
-        define('DB_USER', 'puxqglmy_hikalcrmbluehost_user');
-        define('DB_PASS', 'hikal@2704');
-        define('DB_NAME', 'puxqglmy_hikalcrmbluehost');
+        define('DB_HOST', '34.234.40.81');
+        define('DB_USER', 'laravelappuser');
+        define('DB_PASS', 'NjPJvbWETDDZ');
+        define('DB_NAME', 'laravelapp');
         $con = $secondaryConnection;
     } else {
         // Handle both primary and secondary connection failure

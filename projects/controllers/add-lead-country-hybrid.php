@@ -119,7 +119,7 @@ else {
     $send_to = "leads@hikalagency.ae";
     $notification = "common";
     $title = "New Lead Alert | Hikal CRM";
-    $emailBody = "<p>Lead Name: $leadName</p><p>Contact Number: $leadContact</p><p>Email address: $leadEmail</p><p>Language: $language</p><br /><p>Project Name: $project</p><p>Enquiry for: $enquiryType</p><p>Purpose of enquiry: $leadFor</p><br /><p>Source: $leadSource</p><p>IP Address: $ip</p><p>Devie: $device</p>";
+    $emailBody = "<p>Lead Name: $leadName</p><p>Contact Number: $leadContact</p><p>Email address: $leadEmail</p><p>Language: $language</p><br /><p>Project Name: $project</p><p>Enquiry for: $enquiryType</p><p>Purpose of enquiry: $leadFor</p><p>Call Time: $callTime</p><br /><p>Source: $leadSource</p><p>IP Address: $ip</p><p>Devie: $device</p>";
     $style = "span{font-weight: bold; color: #1245A8;}";
 
     // SEND EMAIL
@@ -231,7 +231,7 @@ else {
             //     exit();
             // }
             // else {
-                $query = mysqli_query($con, "INSERT INTO leads (leadName,notes, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName','$callTime, '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'Not Verified', '$country')");
+                $query = mysqli_query($con, "INSERT INTO leads (leadName, notes, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$callTime', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'Not Verified', '$country')");
                 if ($query) {
                     // SEND OTP
                     $otpData = array(
