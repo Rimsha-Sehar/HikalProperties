@@ -5,7 +5,7 @@ include('../dbconfig/dbhybrid.php');
 
 // IP AND DEVICE
 $ip = $_SERVER['REMOTE_ADDR'];
-$device = $_SERVER['HTTP_USER_AGENT']; 
+$device = $_SERVER['HTTP_USER_AGENT'];
 
 // DEFAULT DATA FIELD
 $leadSource = "Campaign";
@@ -14,7 +14,7 @@ $feedback = "New";
 $addedBy = "101";
 $otpText = "No OTP used";
 
-// APIS 
+// APIS
 $api_snapchat = "https://staging.hikalcrm.com/api/validate-snap";
 $api_sendEmail = "https://staging.hikalcrm.com/api/newEmail";
 $api_addLead = "https://staging.hikalcrm.com/api/create-lead";
@@ -28,6 +28,7 @@ $leadSource = $_GET['LeadSource'];
 $filename = $_GET['Filename'];
 $country = $_GET['Country'];
 
+
 if (isset($_GET['phone']['main']) && !empty($_GET['phone']['main'])) {
     $leadContact = $_GET['phone']['main'];
 }
@@ -38,7 +39,10 @@ elseif (isset($_GET['phone']['full']) && !empty($_GET['phone']['full'])) {
 if (isset($_GET['leadContact'])) {
     $leadContact = $_GET['leadContact'];
 }
-
+$callTime='';
+if (isset($_GET['time'])) {
+    $callTime = $_GET['time'];
+}
 $leadEmail = $_GET['LeadEmail1'];
 $leadName = $_GET['LeadName1'];
 $leadFor = $_GET['LeadForRadio1'];
@@ -48,7 +52,7 @@ if (isset($_GET['EnquiryType']) && $_GET['EnquiryType'] !== "") {
     $enquiryType = $_GET['EnquiryType'];
 }
 
-// SNAP PIXEL 
+// SNAP PIXEL
 if ($leadSource == "Campaign Snapchat") {
     $phone = preg_replace('/[^0-9]/', '', $leadContact);
     $page_url = $_SESSION["page_url"];
@@ -73,11 +77,11 @@ if ($leadSource == "Campaign Snapchat") {
         "event_type" => "SIGN_UP",
         "event_conversion_type" => "WEB",
         "event_tag" => "Hikal Properties",
-        "page_url" => (string)$page_url, 
+        "page_url" => (string)$page_url,
         "hashed_email" => (string)$hashed_email,
         "hashed_phone_number" => (string)$hashed_phone,
         "user_agent" => (string)$device,
-        "hashed_ip_address" => (string)$hashed_ip 
+        "hashed_ip_address" => (string)$hashed_ip
     );
     // print_r($data);
 
@@ -106,7 +110,7 @@ if ($leadSource == "Campaign Snapchat") {
 // Check if name and contact fields are empty
 if (empty($leadName) || empty($leadContact)) {
     $error = "Please enter name and contact to register!";
-} 
+}
 else {
     $dupq = mysqli_query($con, "SELECT leadName, leadContact, project, language FROM leads ORDER BY id DESC LIMIT 1");
     $dupf = mysqli_fetch_array($dupq);
@@ -118,11 +122,11 @@ else {
     $emailBody = "<p>Lead Name: $leadName</p><p>Contact Number: $leadContact</p><p>Email address: $leadEmail</p><p>Language: $language</p><br /><p>Project Name: $project</p><p>Enquiry for: $enquiryType</p><p>Purpose of enquiry: $leadFor</p><br /><p>Source: $leadSource</p><p>IP Address: $ip</p><p>Devie: $device</p>";
     $style = "span{font-weight: bold; color: #1245A8;}";
 
-    // SEND EMAIL 
+    // SEND EMAIL
     $emailData = array(
-        "email" => $send_to, 
+        "email" => $send_to,
         "notification" => $notification,
-        "title" => $title,  
+        "title" => $title,
         "message" => $emailBody,
         "style" => $style,
     );
@@ -134,35 +138,35 @@ else {
     curl_setopt($sech, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
     $emailResponse = curl_exec($sech);
     curl_close($sech);
-    // SEND EMAIL END 
+    // SEND EMAIL END
 
     if ($dupf['leadName'] == $leadName && $dupf['leadContact'] == $leadContact && $dupf['project'] == $project && $dupf['language'] == $language) {
         header("Location: ../thankyou");
     }
     else {
-        // UAE NUMBER 
+        // UAE NUMBER
         if (substr($leadContact, 0, 4) === "+971") {
             $otpText = "Not Verified";
 
-            // ADD NEW LEAD 
+            // ADD NEW LEAD
             // $leadData = array(
-            //     "leadName" => (string)$leadName, 
-            //     "leadContact" => (string)$leadContact, 
-            //     "leadEmail" => (string)$leadEmail, 
-            //     "enquiryType" => (string)$enquiryType, 
-            //     "leadFor" => (string)$leadFor, 
-            //     "leadType" => (string)$leadType, 
-            //     "project" => (string)$project, 
-            //     "projectName" => (string)$project, 
-            //     "leadStatus" => (string)$leadStatus, 
-            //     "leadSource" => (string)$leadSource, 
-            //     "feedback" => (string)$feedback, 
-            //     "language" => (string)$language, 
-            //     "addedBy" => $addedBy, 
-            //     "filename" => (string)$filename, 
-            //     "ip" => (string)$ip, 
-            //     "device" => (string)$device, 
-            //     "otp" => (string)$otpText, 
+            //     "leadName" => (string)$leadName,
+            //     "leadContact" => (string)$leadContact,
+            //     "leadEmail" => (string)$leadEmail,
+            //     "enquiryType" => (string)$enquiryType,
+            //     "leadFor" => (string)$leadFor,
+            //     "leadType" => (string)$leadType,
+            //     "project" => (string)$project,
+            //     "projectName" => (string)$project,
+            //     "leadStatus" => (string)$leadStatus,
+            //     "leadSource" => (string)$leadSource,
+            //     "feedback" => (string)$feedback,
+            //     "language" => (string)$language,
+            //     "addedBy" => $addedBy,
+            //     "filename" => (string)$filename,
+            //     "ip" => (string)$ip,
+            //     "device" => (string)$device,
+            //     "otp" => (string)$otpText,
             //     "country" => (string)$country,
             // );
 
@@ -180,7 +184,7 @@ else {
             //     $_SESSION['lead_id'] = $lead_id;
 
             //     curl_close($clch);
-            //     // ADD NEW LEAD END 
+            //     // ADD NEW LEAD END
 
             //     // SEND OTP
             //     $otpData = array(
@@ -200,7 +204,7 @@ else {
             //         $message = $otpResponseData['message'];
             //         echo json_encode(['otp' => true]);
             //     }
-            //     // SEND OTP END 
+            //     // SEND OTP END
 
             //     else {
             //         if ($language == "English") {
@@ -227,7 +231,7 @@ else {
             //     exit();
             // }
             // else {
-                $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'Not Verified', '$country')");
+                $query = mysqli_query($con, "INSERT INTO leads (leadName,notes, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName','$callTime, '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'Not Verified', '$country')");
                 if ($query) {
                     // SEND OTP
                     $otpData = array(
@@ -248,7 +252,7 @@ else {
                         echo json_encode(['otp' => true]);
                         exit();
                     }
-                    // SEND OTP END 
+                    // SEND OTP END
 
                     else {
                         if ($language == "English") {
@@ -278,27 +282,27 @@ else {
                 exit();
             // }
         }
-        // NON UAE NUMBERS 
+        // NON UAE NUMBERS
         else {
-            // ADD NEW LEAD 
+            // ADD NEW LEAD
             // $leadData = array(
-            //     "leadName" => (string)$leadName, 
-            //     "leadContact" => (string)$leadContact, 
-            //     "leadEmail" => (string)$leadEmail, 
-            //     "enquiryType" => (string)$enquiryType, 
-            //     "leadFor" => (string)$leadFor, 
-            //     "leadType" => (string)$leadType, 
-            //     "project" => (string)$project, 
-            //     "projectName" => (string)$project, 
-            //     "leadStatus" => (string)$leadStatus, 
-            //     "leadSource" => (string)$leadSource, 
-            //     "feedback" => (string)$feedback, 
-            //     "language" => (string)$language, 
-            //     "addedBy" => $addedBy, 
-            //     "filename" => (string)$filename, 
-            //     "ip" => (string)$ip, 
-            //     "device" => (string)$device, 
-            //     "otp" => (string)$otpText, 
+            //     "leadName" => (string)$leadName,
+            //     "leadContact" => (string)$leadContact,
+            //     "leadEmail" => (string)$leadEmail,
+            //     "enquiryType" => (string)$enquiryType,
+            //     "leadFor" => (string)$leadFor,
+            //     "leadType" => (string)$leadType,
+            //     "project" => (string)$project,
+            //     "projectName" => (string)$project,
+            //     "leadStatus" => (string)$leadStatus,
+            //     "leadSource" => (string)$leadSource,
+            //     "feedback" => (string)$feedback,
+            //     "language" => (string)$language,
+            //     "addedBy" => $addedBy,
+            //     "filename" => (string)$filename,
+            //     "ip" => (string)$ip,
+            //     "device" => (string)$device,
+            //     "otp" => (string)$otpText,
             //     "country" => (string)$country,
             // );
 
@@ -316,7 +320,7 @@ else {
             //     $_SESSION['lead_id'] = $lead_id;
 
             //     curl_close($clch);
-            //     // ADD NEW LEAD END 
+            //     // ADD NEW LEAD END
 
             //     if ($language == "English") {
             //     header("Location: ../thankyou/en");
@@ -339,7 +343,7 @@ else {
             //     exit("here");
             // }
             // else {
-                $query = mysqli_query($con, "INSERT INTO leads (leadName, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'No OTP Used', '$country')");
+                $query = mysqli_query($con, "INSERT INTO leads (leadName, notes, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName','$callTime','$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'No OTP Used', '$country')");
                 if ($query) {
                     if ($language == "English") {
                         $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";

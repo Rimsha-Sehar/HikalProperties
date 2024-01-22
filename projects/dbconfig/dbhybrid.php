@@ -19,7 +19,7 @@ $primaryConnection = establishConnection("34.234.40.81", "laravelappuser", "NjPJ
 // If primary connection failed, attempt secondary connection
 if (!$primaryConnection) {
     $secondaryConnection = establishConnection("localhost", "puxqglmy_hikalcrmbluehost_user", "hikal@2704", "puxqglmy_hikalcrmbluehost");
-    
+
     if ($secondaryConnection) {
         // Secondary connection succeeded, set constants
         define('DB_HOST', 'localhost');
@@ -58,7 +58,7 @@ try
 catch (PDOException $e)
 {
   exit("Error: " . $e->getMessage());
-} 
+}
 
 $dt = new DateTime("now", new DateTimeZone('Asia/Dubai'));
 $now = $dt->format('Y-m-d h:i:s');

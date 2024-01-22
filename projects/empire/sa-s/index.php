@@ -32,7 +32,7 @@ $data = array(
     "timestamp" => (string)$cur_time,
     "event_conversion_type" => "WEB",
     "event_tag" => "Hikal Properties",
-    "page_url" => (string)$fullUrl, 
+    "page_url" => (string)$fullUrl,
     "user_agent" => (string)$device,
     "hashed_ip_address" => (string)$hashed_ip,
     "item_category" => "Empire",
@@ -53,7 +53,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 
 $response = curl_exec($ch);
 
-if(curl_errno($ch)){
+if (curl_errno($ch)) {
     // echo 'Error: ' . curl_error($ch);
 }
 
@@ -81,14 +81,14 @@ curl_close($ch);
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js" integrity="sha512-0RxGTiFXp36+bSbJM+/QSTl1LDQ4pHdDZ8Ua9ZXl454qKSsYu228AOLHYfzx/rm4Dm6I+176ETRF55DpvrHTgw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+
     <!-- JQUERY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- DROPDOWN COUNTRY CODE  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js" integrity="sha512-DNeDhsl+FWnx5B1EQzsayHMyP6Xl/Mg+vcnFPXGNjUZrW28hQaa1+A4qL9M+AiOMmkAhKAWYHh1a+t6qxthzUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <!-- ICON -->
     <link rel="icon" type="image/png" href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
     <!-- STYLES -->
@@ -96,28 +96,27 @@ curl_close($ch);
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
 
     <!-- PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script> 
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script>
 </head>
 
 <body class="arabic" dir="rtl">
     <?php include_once("../../gtm/pixel.php"); ?>
-    
+
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
     $fetchip = mysqli_fetch_array($checkip);
     if (mysqli_num_rows($checkip) > 0) {
-        ?>
+    ?>
         <div class="d-flex justify-content-center align-items-center text-center p-5" style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع 
+                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
                 للحصول على المساعدة الإضافية!
             </h1>
         </div>
-        <?php
-    }
-    else {
-        ?>
+    <?php
+    } else {
+    ?>
         <!-- LOADING OVERLAY  -->
         <div id="loadingOverlay" class="overlay" style="display: none;">
             <?php include_once("../../components/loading-circle.php"); ?>
@@ -127,12 +126,12 @@ curl_close($ch);
         <button onclick="topFunction()" id="myBtn" title="Go to top" style="background: transparent;"><i class="fa fa-arrow-up gold-grad"></i></button>
 
         <!-- WHATSAPP  -->
-        <?php 
+        <?php
         // $wa_project = "Mercedes-Benz";
         // $wa_lang = "Arabic";
         // include_once("../../components/whatsapp-brand.php");
         ?>
-        
+
         <!--HEADINGS & FORM-->
         <div class="first_section">
             <div class="container container-fluid">
@@ -142,7 +141,7 @@ curl_close($ch);
                             <span class="gold-grad-anim">تملك بأقساط </span>
                             <span class="num-glow">1%</span>
                             <span class="gold-grad-anim"> شهريا لمدة </span>
-                            <span class="num-glow">80</span> 
+                            <span class="num-glow">80</span>
                             <span class="gold-grad-anim">شهر</span>
                         </h1>
                         <h3 class="text-expand mt-2" style="text-align: center; line-height: 1.5rem; font-size: 1rem; ">
@@ -174,22 +173,23 @@ curl_close($ch);
                                         <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
                                             <form method="POST" action="../../controllers/verify-otp.php">
                                                 <h5 class="gold-grad" style="text-align: center;">
-                                                    OTP has been sent to 
+                                                    OTP has been sent to
                                                     <span id="phone_no"></span>
                                                 </h5>
                                                 <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 
                                                 <div style="display: none">
                                                     <input type="text" name="phone_number" id="phone_number">
-                                                    <input type="text" name="lead_name" id="lead_name" >
-                                                    <input type="text" name="lead_email" id="lead_email" >
-                                                    <input type="text" name="lang" id="lang" >
-                                                    <input type="text" name="project_name" id="project_name" >
-                                                    <input type="text" name="lead_type" id="lead_type" >
-                                                    <input type="text" name="lead_source" id="lead_source" >
-                                                    <input type="text" name="enquiry_type" id="enquiry_type" >
-                                                    <input type="text" name="lead_for" id="lead_for" >
-                                                    <input type="text" name="country_name" id="country_name" >
+                                                    <input type="text" name="lead_name" id="lead_name">
+                                                    <input type="text" name="lead_email" id="lead_email">
+                                                    <input type="text" name="time" id="time">
+                                                    <input type="text" name="lang" id="lang">
+                                                    <input type="text" name="project_name" id="project_name">
+                                                    <input type="text" name="lead_type" id="lead_type">
+                                                    <input type="text" name="lead_source" id="lead_source">
+                                                    <input type="text" name="enquiry_type" id="enquiry_type">
+                                                    <input type="text" name="lead_for" id="lead_for">
+                                                    <input type="text" name="country_name" id="country_name">
                                                     <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
                                                 </div>
 
@@ -202,14 +202,13 @@ curl_close($ch);
                                         $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
                                         $fetch = mysqli_fetch_array($query);
                                         if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
-                                            ?>
+                                        ?>
                                             <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
                                                 شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
                                             </div>
-                                            <?php
-                                        }
-                                        else {
-                                            ?>
+                                        <?php
+                                        } else {
+                                        ?>
                                             <!--NEW FORM-->
                                             <div class="contact-form" dir="ltr">
                                                 <form id="lead-form" onsubmit="return submitLeadForm();">
@@ -222,15 +221,15 @@ curl_close($ch);
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                                         <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                                     </div>
-                                                    
+
                                                     <!-- NAME -->
                                                     <label class="gold-grad" style="margin-top: 0px;">الاسم</label>
                                                     <input type="text" name="LeadName1" id="LeadName1" required />
-                                            
+
                                                     <!-- CONTACT NUMBER -->
                                                     <label class="gold-grad">رقم الاتصال</label>
                                                     <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
-                                                    
+
                                                     <!--EMAIL-->
                                                     <!-- <label class="gold-grad">عنوان البريد الإلكتروني</label>
                                                     <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" /> -->
@@ -261,7 +260,7 @@ curl_close($ch);
                                                             ثلاث غرف نوم + حمام سباحة
                                                         </label>
                                                     </div>
-                                            
+
                                                     <!-- PURPOSE  -->
                                                     <label class="gold-grad">غرض الاستفسار</label>
                                                     <div style="display: flex;" dir="rtl">
@@ -276,12 +275,12 @@ curl_close($ch);
                                                             سكني
                                                         </label>
                                                     </div>
-                                                    
+
                                                     <!-- TIME  -->
-                                                    <label class="gold-grad" style="margin-top: 0px;">ماهو الموعد المناسب للاتصال ؟</label>
+                                                    <label class="gold-grad">ماهو الموعد المناسب للاتصال ؟</label>
                                                     <input type="time" name="time" id="time" />
-                                                    
-                                            
+
+
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
                                                             <button type="submit" class="submit-click">إرسال</button>
@@ -289,7 +288,7 @@ curl_close($ch);
                                                     </div>
                                                 </form>
                                             </div>
-                                            <?php
+                                        <?php
                                         }
                                         ?>
                                     </div>
@@ -297,14 +296,14 @@ curl_close($ch);
                             </div>
                         </div>
                     </div>
-                
+
                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
                         <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-main.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
                     </div>
                 </div>
             </div>
         </div>
-    
+
         <!--CONTENT-->
         <div class="second_section">
             <div class="container container-fluid py-3">
@@ -392,7 +391,7 @@ curl_close($ch);
                 </div>
             </div>
         </div>
-        
+
         <!--LOCATION-->
         <div class="third_section mt-5">
             <div class="container container-fluid py-5">
@@ -405,8 +404,8 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                05
-                            </b></div>
+                                    05
+                                </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
@@ -419,8 +418,8 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                10
-                            </b></div>
+                                    10
+                                </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
@@ -433,8 +432,8 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                25
-                            </b></div>
+                                    25
+                                </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
@@ -447,8 +446,8 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                25
-                            </b></div>
+                                    25
+                                </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
@@ -461,8 +460,8 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                25
-                            </b></div>
+                                    25
+                                </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
@@ -475,8 +474,8 @@ curl_close($ch);
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
-                                25
-                            </b></div>
+                                    25
+                                </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
                                 دقائق
                             </p>
@@ -489,27 +488,27 @@ curl_close($ch);
                 </div>
             </div>
         </div>
-    
+
         <!--IMAGE-->
         <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
             <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
             <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
         </div>
-    
+
         <!--AMENITIES-->
         <div class="fourth_section my-5">
             <?php include_once("../../components/amenities-ar.php"); ?>
         </div>
-    
+
         <!--WHY DUBAI-->
         <div class="fifth_section my-5">
             <?php include_once("../../components/whydubai-ar.php"); ?>
         </div>
-        
+
         <footer style="background-color: #000000;">
             <?php include_once("../../components/footer-copyright.php"); ?>
         </footer>
-        
+
         <!--COUNTRY CODE-->
         <script>
             var minput = document.querySelector("#mobile");
@@ -520,17 +519,17 @@ curl_close($ch);
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });
         </script>
-    
+
         <!--SCROLL TO TOP-->
         <script>
             // Get the button
             let mybutton = document.getElementById("myBtn");
-    
+
             // When the user scrolls down 20px from the top of the document, show the button
             window.onscroll = function() {
                 scrollFunction()
             };
-    
+
             function scrollFunction() {
                 if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                     mybutton.style.display = "block";
@@ -538,7 +537,7 @@ curl_close($ch);
                     mybutton.style.display = "none";
                 }
             }
-    
+
             // When the user clicks on the button, scroll to the top of the document
             function topFunction() {
                 document.body.scrollTop = 0;
@@ -559,22 +558,25 @@ curl_close($ch);
                 phoneTitle.textContent = full_number;
 
                 var LeadName1 = document.getElementById('lead_name');
-                LeadName1.value = $("#LeadName1").val(); 
+                LeadName1.value = $("#LeadName1").val();
 
                 var LeadEmail1 = document.getElementById('lead_email');
-                LeadEmail1.value = $("#LeadEmail1").val(); 
+                LeadEmail1.value = $("#LeadEmail1").val();
+
+                // var callTime = document.getElementById('time');
+                // callTime.value = $("#time").val(); //adde by usama
 
                 var Language = document.getElementById('lang');
-                Language.value = $("#Language").val(); 
+                Language.value = $("#Language").val();
 
                 var Project = document.getElementById('project_name');
-                Project.value = $("#Project").val(); 
+                Project.value = $("#Project").val();
 
                 var LeadType = document.getElementById('lead_type');
-                LeadType.value = $("#LeadType").val(); 
+                LeadType.value = $("#LeadType").val();
 
                 var LeadSource = document.getElementById('lead_source');
-                LeadSource.value = $("#LeadSource").val(); 
+                LeadSource.value = $("#LeadSource").val();
 
                 // TIKTOK SUBMIT FORM
                 if (LeadSource.value == "Campaign TikTok") {
@@ -588,13 +590,13 @@ curl_close($ch);
                 }
 
                 var EnquiryRadio1 = document.getElementById('enquiry_type');
-                EnquiryRadio1.value = $("#EnquiryRadio1").val(); 
+                EnquiryRadio1.value = $("#EnquiryRadio1").val();
 
                 var LeadForRadio1 = document.getElementById('lead_for');
-                LeadForRadio1.value = $("#LeadForRadio1").val(); 
+                LeadForRadio1.value = $("#LeadForRadio1").val();
 
                 var Country = document.getElementById('country_name');
-                Country.value = $("#Country").val(); 
+                Country.value = $("#Country").val();
 
                 var formData = $("#lead-form").serialize();
                 formData += "&leadContact=" + encodeURIComponent(full_number);
@@ -608,14 +610,12 @@ curl_close($ch);
                     success: function(response) {
                         if (response.otp) {
                             document.getElementById('loadingOverlay').style.display = 'none';
-                            // RENDER OTP FORM 
+                            // RENDER OTP FORM
                             $("#lead-form").hide();
                             $("#otp-form").show();
-                        }
-                        else if (response.thankyou) {
+                        } else if (response.thankyou) {
                             window.location.href = response.redirectUrl;
-                        }
-                        else {
+                        } else {
                             console.log("Error: ", response);
                         }
                     },
@@ -628,10 +628,10 @@ curl_close($ch);
                 return false;
             }
         </script>
-        <?php
+    <?php
     }
     ?>
-    
+
 </body>
 
 </html>
