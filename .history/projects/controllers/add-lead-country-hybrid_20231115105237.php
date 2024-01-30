@@ -64,7 +64,8 @@ if ($leadSource == "Campaign Snapchat") {
 
     $data = array(
         "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
-        "timestamp" => (string)$cur_time,
+            "timestamp" => (string)$cur_time,
+    "client_dedup_id" => (string) round((time() * 1000) * (rand() / getrandmax())),
         "event_type" => "SIGN_UP",
         "event_conversion_type" => "WEB",
         "event_tag" => "Hikal Properties",
