@@ -131,8 +131,8 @@ curl_close($ch);
             <div class="container container-fluid">
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
-                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">فرصتك قبل الطرح أحصل علي كوبون فرش لشقتك مجانا</h1>
-                        <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">سجل بياناتك الحين للمزيد من التفاصيل</h3>
+                        <!-- <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">فرصتك قبل الطرح أحصل علي كوبون فرش لشقتك مجانا</h1> -->
+                        <h1 class="gold-grad-anim" style="text-align: center; line-height: 2rem; font-weight: 800;">سجل بياناتك الحين للمزيد من التفاصيل</h1>
                     </div>
                 </div>
             </div>
