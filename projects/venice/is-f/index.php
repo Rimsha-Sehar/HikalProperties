@@ -201,7 +201,8 @@ curl_close($ch);
                                                     <!-- action="../controllers/add-lead-country-hybrid.php" -->
                                                     <div style="display: none">
                                                         <input type="text" id="Project" name="Project" value="Venice" />
-                                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
+                                                        <!-- <input type="text" id="LeadType" name="LeadType" value="Apartment" /> -->
+                                                        <input type="text" id="LeadType" name="LeadType" value="-" />
                                                         <input type="text" id="Language" name="Language" value="Arabic" />
                                                         <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
                                                         <input type="text" id="Country" name="Country" value="" />
