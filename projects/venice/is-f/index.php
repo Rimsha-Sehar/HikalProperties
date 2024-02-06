@@ -417,7 +417,7 @@ curl_close($ch);
             var minput = document.querySelector("#mobile");
             var phone_number = window.intlTelInput(minput, {
                 separateDialCode: true,
-                preferredCountries: ["ae", "sa", "qa", "om", "kw", "iq"],
+                preferredCountries: ["il", "sa", "qa", "om", "kw", "iq"],
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });
