@@ -143,11 +143,11 @@ curl_close($ch);
                             </span>
                             <br />
                             <span class="gold-grad-anim">
-                                صافي ومضمون
+                                تتخطي  
                             </span>
                             <span class="num-glow">15%</span> 
                             <span class="gold-grad-anim">
-                                تتخطي  
+                                صافي ومضمون
                             </span>
                         </h1>
                         <h3 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
