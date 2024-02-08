@@ -157,7 +157,11 @@ curl_close($ch);
                 </div>
             </div>
             <div class="mobile">
-                <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/5.jpg" alt="HIKAL PROPERTIES" style="width: 100%" />
+                <!-- <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/5.jpg" alt="HIKAL PROPERTIES" style="width: 100%" /> -->
+                <video autoplay muted loop class="mobile" style="width: 100%">
+                    <source src="https://hikalproperties.com/projects/assets/video/projects/riviera/riviera.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div class="container container-fluid">
                 <div class="row d-flex align-items-center">
@@ -265,7 +269,11 @@ curl_close($ch);
                     </div>
                 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
-                        <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/4.webp" alt="HIKAL PROPERTIES" style="width: 100%" />
+                        <!-- <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/riviera/4.webp" alt="HIKAL PROPERTIES" style="width: 100%" /> -->
+                        <video autoplay muted loop class="desktop" style="width: 100%">
+                            <source src="https://hikalproperties.com/projects/assets/video/projects/riviera/riviera.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
