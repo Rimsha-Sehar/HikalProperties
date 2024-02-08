@@ -39,7 +39,7 @@ elseif (isset($_GET['phone']['full']) && !empty($_GET['phone']['full'])) {
 if (isset($_GET['leadContact'])) {
     $leadContact = $_GET['leadContact'];
 }
-$callTime='';
+$callTime = '';
 if (isset($_GET['time'])) {
     $callTime = $_GET['time'];
 }
@@ -53,59 +53,59 @@ if (isset($_GET['EnquiryType']) && $_GET['EnquiryType'] !== "") {
 }
 
 // SNAP PIXEL
-if ($leadSource == "Campaign Snapchat") {
-    $phone = preg_replace('/[^0-9]/', '', $leadContact);
-    $page_url = $_SESSION["page_url"];
+// if ($leadSource == "Campaign Snapchat") {
+//     $phone = preg_replace('/[^0-9]/', '', $leadContact);
+//     $page_url = $_SESSION["page_url"];
 
-    $hashed_ip = hash('sha256', $ip);
-    $hashed_email = hash('sha256', $leadEmail);
-    $hashed_phone = hash('sha256', $phone);
+//     $hashed_ip = hash('sha256', $ip);
+//     $hashed_email = hash('sha256', $leadEmail);
+//     $hashed_phone = hash('sha256', $phone);
 
-    date_default_timezone_set('Asia/Dubai');
-    $cur_time = time();
+//     date_default_timezone_set('Asia/Dubai');
+//     $cur_time = time();
 
-    $_SESSION['leadSource'] = $leadSource;
-    $_SESSION['fileName'] = $page_url;
-    $_SESSION['hashed_email'] = $hashed_email;
-    $_SESSION['hashed_phone_number'] = $hashed_phone;
-    $_SESSION['hashed_ip'] = $hashed_ip;
-    $_SESSION['user_agent'] = $device;
+//     $_SESSION['leadSource'] = $leadSource;
+//     $_SESSION['fileName'] = $page_url;
+//     $_SESSION['hashed_email'] = $hashed_email;
+//     $_SESSION['hashed_phone_number'] = $hashed_phone;
+//     $_SESSION['hashed_ip'] = $hashed_ip;
+//     $_SESSION['user_agent'] = $device;
 
-    $data = array(
-        "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
-            "timestamp" => (string)$cur_time,
-    "client_dedup_id" => (string) round((time() * 1000) * (rand() / getrandmax())),
-        "event_type" => "SIGN_UP",
-        "event_conversion_type" => "WEB",
-        "event_tag" => "Hikal Properties",
-        "page_url" => (string)$page_url,
-        "hashed_email" => (string)$hashed_email,
-        "hashed_phone_number" => (string)$hashed_phone,
-        "user_agent" => (string)$device,
-        "hashed_ip_address" => (string)$hashed_ip
-    );
-    // print_r($data);
+//     $data = array(
+//         "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
+//             "timestamp" => (string)$cur_time,
+//     "client_dedup_id" => (string) round((time() * 1000) * (rand() / getrandmax())),
+//         "event_type" => "SIGN_UP",
+//         "event_conversion_type" => "WEB",
+//         "event_tag" => "Hikal Properties",
+//         "page_url" => (string)$page_url,
+//         "hashed_email" => (string)$hashed_email,
+//         "hashed_phone_number" => (string)$hashed_phone,
+//         "user_agent" => (string)$device,
+//         "hashed_ip_address" => (string)$hashed_ip
+//     );
+//     // print_r($data);
 
-    $token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
+//     $token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
 
-    $ch = curl_init($api_snapchat);
+//     $ch = curl_init($api_snapchat);
 
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Content-Type: application/json',
-        'Authorization: Bearer ' . $token
-    ));
+//     curl_setopt($ch, CURLOPT_POST, true);
+//     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+//         'Content-Type: application/json',
+//         'Authorization: Bearer ' . $token
+//     ));
 
-    $response = curl_exec($ch);
+//     $response = curl_exec($ch);
 
-    if(curl_errno($ch)){
-        // echo 'Error: ' . curl_error($ch);
-    }
+//     if(curl_errno($ch)){
+//         // echo 'Error: ' . curl_error($ch);
+//     }
 
-    curl_close($ch);
-}
+//     curl_close($ch);
+// }
 // SNAP PIXEL END
 
 // Check if name and contact fields are empty
