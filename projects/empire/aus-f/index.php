@@ -301,94 +301,6 @@ curl_close($ch);
             </div>
         </div>
 
-        <!--CONTENT-->
-        <div class="second_section">
-            <div class="container container-fluid py-3">
-                <div class="desktop">
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-pool.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    العيش الفاخر في أرجان
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    اختبر الفخامة في أوجها مع المشروع السكني المتميز في أرجان. يقف هذا التطوير الشاهق كمعلم في المجتمع، حيث يتميز ببنية رائعة والتفاني القوي في العيش الفاخر. وفوق التوقعات، قام المطور بصياغة تجربة سكنية استثنائية من خلال تقديم وسائل راقية مثل مركز لياقة بدنية وحدائق ذات مناظر طبيعية جميلة وتقنيات متقدمة وأتمتة المنزل. تم تصميم كل شقة بتفاصيل داخلية رائعة، تعكس التفاني الدائم نحو التميز. مع كل مشروع جديد، نرفع مستوى العيش الفاخر، ضمانًا للسكان بالاستمتاع بمستوى لا مثيل له من الفخامة والأناقة.
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    الموقع الممتاز للراحة الحضرية
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    تقع في أرجان، تجمع مجتمعنا بسلاسة بين الهدوء وراحة الحياة الحضرية. يتمتع السكان بسهولة الوصول إلى مختلف الوجهات، مما يضمن لهم السفر بسهولة في أي وقت. يفخر الحي بتوفير وسائل الترفيه، ومناطق التسلية، والمدارس، والمستشفيات، وجميع الضروريات لنمط حياة فاخر ومريح. موقعنا لا يقدم فقط مساحات سكنية فاخرة، ولكنه يضع السكان في منطقة رئيسية حيث تتناغم وسائل الراحة الحضرية مع المحيط الهادئ.
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-whole.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                    </div>
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    رفع معايير العيش الفاخر
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    يحافظ مشروع أرجان على إرث تعزيز معايير العيش الفاخر. تظهر التفاني الشديد للمطور في التخطيط الدقيق وتنفيذ كل مشروع، مما يضمن للسكان الاستمتاع بذروة الأناقة والراحة. بفضل الهياكل الرائعة ووسائل الراحة الحديثة، يهدف المشروع إلى إعادة تعريف الفخامة، وخلق فضاءات حياة تعكس التزامهم بتوفير نمط حياة مرتفع في كل مشروع.
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile">
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            العيش الفاخر في أرجان
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            اختبر الفخامة في أوجها مع المشروع السكني المتميز في أرجان. يقف هذا التطوير الشاهق كمعلم في المجتمع، حيث يتميز ببنية رائعة والتفاني القوي في العيش الفاخر. وفوق التوقعات، قام المطور بصياغة تجربة سكنية استثنائية من خلال تقديم وسائل راقية مثل مركز لياقة بدنية وحدائق ذات مناظر طبيعية جميلة وتقنيات متقدمة وأتمتة المنزل. تم تصميم كل شقة بتفاصيل داخلية رائعة، تعكس التفاني الدائم نحو التميز. مع كل مشروع جديد، نرفع مستوى العيش الفاخر، ضمانًا للسكان بالاستمتاع بمستوى لا مثيل له من الفخامة والأناقة.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-pool.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            الموقع الممتاز للراحة الحضرية
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            تقع في أرجان، تجمع مجتمعنا بسلاسة بين الهدوء وراحة الحياة الحضرية. يتمتع السكان بسهولة الوصول إلى مختلف الوجهات، مما يضمن لهم السفر بسهولة في أي وقت. يفخر الحي بتوفير وسائل الترفيه، ومناطق التسلية، والمدارس، والمستشفيات، وجميع الضروريات لنمط حياة فاخر ومريح. موقعنا لا يقدم فقط مساحات سكنية فاخرة، ولكنه يضع السكان في منطقة رئيسية حيث تتناغم وسائل الراحة الحضرية مع المحيط الهادئ.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-whole.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            رفع معايير العيش الفاخر
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            يحافظ مشروع أرجان على إرث تعزيز معايير العيش الفاخر. تظهر التفاني الشديد للمطور في التخطيط الدقيق وتنفيذ كل مشروع، مما يضمن للسكان الاستمتاع بذروة الأناقة والراحة. بفضل الهياكل الرائعة ووسائل الراحة الحديثة، يهدف المشروع إلى إعادة تعريف الفخامة، وخلق فضاءات حياة تعكس التزامهم بتوفير نمط حياة مرتفع في كل مشروع.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                </div>
-            </div>
-        </div>
-
         <!--LOCATION-->
         <div class="third_section mt-5">
             <div class="container container-fluid py-5">
@@ -490,16 +402,6 @@ curl_close($ch);
         <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
             <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
             <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
-        </div>
-
-        <!--AMENITIES-->
-        <div class="fourth_section my-5">
-            <?php include_once("../../components/amenities-ar.php"); ?>
-        </div>
-
-        <!--WHY DUBAI-->
-        <div class="fifth_section my-5">
-            <?php include_once("../../components/whydubai-ar.php"); ?>
         </div>
 
         <footer style="background-color: #000000;">

@@ -316,95 +316,6 @@ curl_close($ch);
                 </div>
             </div>
         </div>
-    
-        <!--CONTENT-->
-        <div class="second_section">
-            <div class="container container-fluid py-3">
-                <div class="desktop">
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-pool.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    LUXURIOUS LIVING AT ARJAN
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    Experience luxury at its finest with the distinguished residential project in Arjan. This high-rise development stands as a community landmark, boasting a grand structure and a strong dedication to luxurious living. Beyond the ordinary, the developer has crafted an exceptional living experience by offering top-notch amenities like a fitness center, beautiful landscaped parks, cutting-edge technology, and home automation. Each apartment is designed with exquisite interiors, showcasing an unwavering commitment to excellence. With each new project, we raise the bar for luxury living, ensuring residents enjoy an unparalleled level of opulence and sophistication.
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    PRIME LOCATION FOR URBAN CONVENIENCE
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    Located in Arjan, our community seamlessly combines tranquility with urban convenience. Residents experience easy access to various destinations, ensuring effortless travel anytime. The neighborhood boasts leisure amenities, entertainment zones, schools, hospitals, and all essentials for a luxurious and convenient lifestyle. Our location not only offers opulent living spaces but also positions residents in a prime area where urban conveniences harmonize with peaceful surroundings.
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-whole.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                    </div>
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    ELEVATING LUXURY LIVING STANDARDS
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    The Arjan project upholds a legacy of enhancing luxury living standards. The developer's dedication to excellence is clear in the careful planning and execution of each project, ensuring residents enjoy the pinnacle of sophistication and comfort. With impressive structures and state-of-the-art amenities, the project aims to redefine opulence, creating living spaces that showcase their commitment to providing an elevated lifestyle in every project.
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile">
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            LUXURIOUS LIVING AT ARJAN
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            Experience luxury at its finest with the distinguished residential project in Arjan. This high-rise development stands as a community landmark, boasting a grand structure and a strong dedication to luxurious living. Beyond the ordinary, the developer has crafted an exceptional living experience by offering top-notch amenities like a fitness center, beautiful landscaped parks, cutting-edge technology, and home automation. Each apartment is designed with exquisite interiors, showcasing an unwavering commitment to excellence. With each new project, we raise the bar for luxury living, ensuring residents enjoy an unparalleled level of opulence and sophistication.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-pool.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            PRIME LOCATION FOR URBAN CONVENIENCE
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            Located in Arjan, our community seamlessly combines tranquility with urban convenience. Residents experience easy access to various destinations, ensuring effortless travel anytime. The neighborhood boasts leisure amenities, entertainment zones, schools, hospitals, and all essentials for a luxurious and convenient lifestyle. Our location not only offers opulent living spaces but also positions residents in a prime area where urban conveniences harmonize with peaceful surroundings.
-
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-whole.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            ELEVATING LUXURY LIVING STANDARDS
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            The Arjan project upholds a legacy of enhancing luxury living standards. The developer's dedication to excellence is clear in the careful planning and execution of each project, ensuring residents enjoy the pinnacle of sophistication and comfort. With impressive structures and state-of-the-art amenities, the project aims to redefine opulence, creating living spaces that showcase their commitment to providing an elevated lifestyle in every project.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                </div>
-            </div>
-        </div>
         
         <!--LOCATION-->
         <div class="third_section mt-5">
@@ -507,16 +418,6 @@ curl_close($ch);
         <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
             <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 60%" />
             <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
-        </div>
-    
-        <!--AMENITIES-->
-        <div class="fourth_section my-5">
-            <?php include_once("../../components/amenities-en.php"); ?>
-        </div>
-    
-        <!--WHY DUBAI-->
-        <div class="fifth_section my-5">
-            <?php include_once("../../components/whydubai-en.php"); ?>
         </div>
         
         <footer style="background-color: #000000;">

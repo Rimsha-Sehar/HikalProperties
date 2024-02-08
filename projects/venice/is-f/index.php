@@ -244,94 +244,6 @@ curl_close($ch);
             </div>
         </div>
 
-        <!--CONTENT-->
-        <div class="second_section">
-            <div class="container container-fluid py-3">
-                <div class="desktop">
-                    <div class="row my-4">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    فخمة ملاذ سكني في دبي الجنوب
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    انطلق في رحلة من الفخامة مع مشروع مصمم بعناية. استكشف مجموعة من الاستوديوهات والشقق بغرفة واحدة واثنتين وثلاث غرف نوم، بالإضافة إلى الفلل الاستثنائية، وكلها تقع على واجهة المياه. يعكس هذا العمل المعماري الرائع الأسلوب المعاصر والأناقة الخالدة. مع أبراج تتراوح بين الطابق الأرضي + 10 إلى الطابق الأرضي + 22، يضع هذا المشروع معايير جديدة للعيش الرفيع، مقدماً تجربة لا مثيل لها في نمط الحياة.
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row my-4">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    موقع متميز واتصالات لا مثيل لها
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    يقع هذا المشروع في قلب دبي الجنوب، حيث يتمتع بموقع استراتيجي يجاور مطار المكتوم الدولي ويقع بالقرب من مشروع إعمار الجنوب الراقي. ويتزايد جاذبيته بفضل قربه من محطة المترو المخطط لها، مما يضمن للسكان تجربة استثنائية في الاتصال وسهولة الوصول. ابحث عن إقامة تجمع بين الراحة والملاءمة.
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                    </div>
-                    <div class="row my-4">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    واحة من الفخامة على واجهة المياه
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    هذا المكان الاستثنائي ليس مجرد مسكن؛ بل هو ملاذ من الفرح على واجهة المياه. ومع 23% من مساحته مغطاة بالمياه، يتميز هذا المكان بوجود بحيرة بطول 18 كيلومتراً، مع موجات صناعية ومياه عذبة. هنا، يمكن للسكان الاستمتاع بجمال البحر عن كثب. القلب النابض لهذه المجتمع، بوليفارد بطول 700 متر، يضمن توفر متاجر متنوعة، مما يضمن توفير جميع الضروريات على مقربة من الجميع. علاوة على ذلك، يوفر المجتمع أماكن ثقافية ومدارس ومستشفيات وفنادق فاخرة، مما يخلق أجواء حيوية ومليئة بالإثراء.
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile">
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            فخمة ملاذ سكني في دبي الجنوب
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            انطلق في رحلة من الفخامة مع مشروع مصمم بعناية. استكشف مجموعة من الاستوديوهات والشقق بغرفة واحدة واثنتين وثلاث غرف نوم، بالإضافة إلى الفلل الاستثنائية، وكلها تقع على واجهة المياه. يعكس هذا العمل المعماري الرائع الأسلوب المعاصر والأناقة الخالدة. مع أبراج تتراوح بين الطابق الأرضي + 10 إلى الطابق الأرضي + 22، يضع هذا المشروع معايير جديدة للعيش الرفيع، مقدماً تجربة لا مثيل لها في نمط الحياة.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v4.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            موقع متميز واتصالات لا مثيل لها
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            يقع هذا المشروع في قلب دبي الجنوب، حيث يتمتع بموقع استراتيجي يجاور مطار المكتوم الدولي ويقع بالقرب من مشروع إعمار الجنوب الراقي. ويتزايد جاذبيته بفضل قربه من محطة المترو المخطط لها، مما يضمن للسكان تجربة استثنائية في الاتصال وسهولة الوصول. ابحث عن إقامة تجمع بين الراحة والملاءمة.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v1.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            واحة من الفخامة على واجهة المياه
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            هذا المكان الاستثنائي ليس مجرد مسكن؛ بل هو ملاذ من الفرح على واجهة المياه. ومع 23% من مساحته مغطاة بالمياه، يتميز هذا المكان بوجود بحيرة بطول 18 كيلومتراً، مع موجات صناعية ومياه عذبة. هنا، يمكن للسكان الاستمتاع بجمال البحر عن كثب. القلب النابض لهذه المجتمع، بوليفارد بطول 700 متر، يضمن توفر متاجر متنوعة، مما يضمن توفير جميع الضروريات على مقربة من الجميع. علاوة على ذلك، يوفر المجتمع أماكن ثقافية ومدارس ومستشفيات وفنادق فاخرة، مما يخلق أجواء حيوية ومليئة بالإثراء.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/v5.png" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                </div>
-            </div>
-        </div>
-
         <!--LOCATION-->
         <div class="third_section mt-5">
             <div class="container container-fluid py-5">
@@ -397,16 +309,6 @@ curl_close($ch);
         <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
             <img loading="eager" class="desktop img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 60%" />
             <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/venice/1416.webp" alt="HIKAL PROPERTIES" style="width: 100%" />
-        </div>
-
-        <!--AMENITIES-->
-        <div class="fourth_section my-5">
-            <?php include_once("../../components/amenities-ar.php"); ?>
-        </div>
-
-        <!--WHY DUBAI-->
-        <div class="fifth_section my-5">
-            <?php include_once("../../components/whydubai-ar.php"); ?>
         </div>
 
         <footer style="background-color: #000000;">
