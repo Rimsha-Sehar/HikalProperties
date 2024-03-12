@@ -137,12 +137,12 @@ curl_close($ch);
             <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
                     <div class="px-2 gold-grad d-flex align-items-center">
-                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.png" />
+                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
                         EN
                     </div>
                     <a href="https://hikalproperties.com/projects/empire/ar-g/">
                         <div class="px-2 white d-flex align-items-center">
-                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.jpg" />
+                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
                             AR
                         </div>
                     </a>
