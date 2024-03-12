@@ -13,64 +13,33 @@ function establishConnection($host, $user, $pass, $dbname) {
 }
 
 // Attempt to establish primary connection
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 $primaryConnection = establishConnection('34.234.40.81', 'appuser', 'HIK@2704!@#$db', 'hikalcrm');
-=======
-$primaryConnection = establishConnection("34.234.40.81", "laravelappuser", "HIK@2704!@#$db", "hikalcrm");
->>>>>>> Stashed changes
-=======
-$primaryConnection = establishConnection("34.234.40.81", "laravelappuser", "HIK@2704!@#$db", "hikalcrm");
->>>>>>> Stashed changes
 // $primaryConnection = establishConnection("34.234.40.81", "laravelappuser", "NjPJvbWETDDZ", "laravelapp");
 
 // If primary connection failed, attempt secondary connection
-if (!$primaryConnection) {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    $secondaryConnection = establishConnection("localhost", "root", "", "laravelapp");
+// if (!$primaryConnection) {
+//     $secondaryConnection = establishConnection("localhost", "root", "", "laravelapp");
 
-    if ($secondaryConnection) {
-        // Secondary connection succeeded, set constants
-        define('DB_HOST', 'localhost');
-        define('DB_USER', 'root');
-        define('DB_PASS', '');
-=======
-=======
->>>>>>> Stashed changes
-    $secondaryConnection = establishConnection("34.234.40.81", "laravelappuser", "HIK@2704!@#$db", "laravelapp");
-
-    if ($secondaryConnection) {
-        // Secondary connection succeeded, set constants
-        define('DB_HOST', '34.234.40.81');
-        define('DB_USER', 'laravelappuser');
-        define('DB_PASS', 'HIK@2704!@#$db');
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-        define('DB_NAME', 'laravelapp');
-        $con = $secondaryConnection;
-    } else {
-        // Handle both primary and secondary connection failure
-        exit("Failed to connect to both databases.");
-    }
-} else {
+//     if ($secondaryConnection) {
+//         // Secondary connection succeeded, set constants
+//         define('DB_HOST', 'localhost');
+//         define('DB_USER', 'root');
+//         define('DB_PASS', '');
+//         define('DB_NAME', 'laravelapp');
+//         $con = $secondaryConnection;
+//     } else {
+//         // Handle both primary and secondary connection failure
+//         exit("Failed to connect to both databases.");
+//     }
+// } else {
     // Primary connection succeeded, set constants
     define('DB_HOST', '34.234.40.81');
-<<<<<<< Updated upstream
     define('DB_USER', 'appuser');
-=======
-    define('DB_USER', 'laravelappuser');
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     define('DB_PASS', 'HIK@2704!@#$db');
     define('DB_NAME', 'hikalcrm');
     // define('DB_NAME', 'laravelapp');
     $con = $primaryConnection;
-}
+// }
 
 // Check connection
 if (mysqli_connect_errno()) {
