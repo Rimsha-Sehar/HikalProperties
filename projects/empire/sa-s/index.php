@@ -101,6 +101,9 @@ curl_close($ch);
 </head>
 
 <body class="arabic" dir="rtl">
+    <!-- RAMADAN  -->
+    <?php include_once("../../components/ramadan-loading.php"); ?>
+
     <?php include_once("../../gtm/pixel.php"); ?>
 
     <?php
@@ -132,6 +135,9 @@ curl_close($ch);
         // $wa_lang = "Arabic";
         // include_once("../../components/whatsapp-brand.php");
         ?>
+
+        <!-- RAMADAN  -->
+        <?php include_once("../../components/ramadan-light.php"); ?>
 
         <!--HEADINGS & FORM-->
         <div class="first_section">

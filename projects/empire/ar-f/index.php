@@ -102,6 +102,9 @@ curl_close($ch);
 </head>
 
 <body class="arabic" dir="rtl">
+    <!-- RAMADAN  -->
+    <?php include_once("../../components/ramadan-loading.php"); ?>
+
     <?php include_once("../../gtm/pixel.php"); ?>
 
     <?php
@@ -152,6 +155,10 @@ curl_close($ch);
                 </div>
             </div>
         </div>
+
+        <!-- RAMADAN  -->
+        <?php include_once("../../components/ramadan-light.php"); ?>
+        
         
         <!--HEADINGS & FORM-->
         <div class="first_section">
@@ -426,7 +433,8 @@ curl_close($ch);
         <footer style="background-color: #000000;">
             <?php include_once("../../components/footer-copyright.php"); ?>
         </footer>
-        
+
+    
         <!--COUNTRY CODE-->
         <script>
             var minput = document.querySelector("#mobile");
