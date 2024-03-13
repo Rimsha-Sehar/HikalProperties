@@ -22,7 +22,8 @@
 	}
 </style>	
 
-<img class="desktop ramadan" src="https://hikalproperties.com/projects/assets/images/events/ramadan.png" />
+<img class="desktop ramadan" loading="eager" src="https://hikalproperties.com/projects/assets/images/events/ramadan.svg" />
 <div class="ramadan-mobile">
-    <img class="mobile ramadan" src="https://hikalproperties.com/projects/assets/images/events/ramadan.png" />
+    <img class="mobile ramadan" loading="eager" src="https://hikalproperties.com/projects/assets/images/events/ramadan.svg" />
+    <!-- <img class="mobile ramadan" loading="eager" src="../../assets/images/events/ramadan.svg" /> -->
 </div>

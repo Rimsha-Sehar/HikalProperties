@@ -40,6 +40,7 @@ $primaryConnection = establishConnection('34.234.40.81', 'appuser', 'HIK@2704!@#
     // define('DB_NAME', 'laravelapp');
     $con = $primaryConnection;
 // }
+// }
 
 // Check connection
 if (mysqli_connect_errno()) {
