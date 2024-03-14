@@ -45,11 +45,13 @@
             Introduction
         </h3>
         <p class="pp-content">
-            We respect your privacy and are committed to protecting it through our compliance with this policy. This Privacy Policy describes:
+            We respect your privacy and are committed to protecting it through our compliance with this policy. This Privacy
+            Policy describes:
         </p>
         <p class="pp-content">
             &#9830;&nbsp;&nbsp;&nbsp;&nbsp;
-            The types of information we may collect or that you may provide when you use our website (hikalproperties.com).
+            The types of information we may collect or that you may provide when you use our website
+                (hikalproperties.com).
         </p>
         <p class="pp-content">
             &#9830;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -59,24 +61,13 @@
             &#9830;&nbsp;&nbsp;&nbsp;&nbsp;
             This policy applies to information we collect:
         </p>
-        <p class="pp-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &#8594;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            On this website.
-        </p>
-        <p class="pp-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &#8594;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            In email, text, and other electronic messages between you and this website.
-        </p>
-        <p class="pp-content">
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &#8594;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            Through mobile and desktop applications you download from this website, which provide dedicated non-browser-based interaction between you and this website.
-        </p>
+            <ul>
+                <li>On this website.</li>
+                <li>In email, text, and other electronic messages between you and this website.</li>
+                <li>Through mobile and desktop applications you download from this website, which provide dedicated
+                    non-browser-based interaction between you and this website.</li>
+            </ul>
+        </ul>
 
         <h3 class="pp-title">
             Information We Collect
@@ -86,7 +77,8 @@
         </p>
         <p class="pp-content">
             &#9830;&nbsp;&nbsp;&nbsp;&nbsp;
-            By which you may be personally identified, such as name, postal address, e-mail address, or telephone number ("personal information").
+            By which you may be personally identified, such as name, postal address, e-mail address, or telephone number
+                ("personal information").
         </p>
         <p class="pp-content">
             &#9830;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -101,14 +93,16 @@
             Disclosure of Your Information
         </h3>
         <p class="pp-content">
-            We may disclose aggregated information about our users, and information that does not identify any individual, without restriction.
+            We may disclose aggregated information about our users, and information that does not identify any individual,
+            without restriction.
         </p>
 
         <h3 class="pp-title">
             Data Security
         </h3>
         <p class="pp-content">
-            We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure.
+            We have implemented measures designed to secure your personal information from accidental loss and from
+            unauthorized access, use, alteration, and disclosure.
         </p>
 
         <h3 class="pp-title">
@@ -122,7 +116,8 @@
             Contact Information
         </h3>
         <p class="pp-content">
-            To ask questions or comment about this privacy policy and our privacy practices, contact us at <code>info@hikalproperties.ae</code>.
+            To ask questions or comment about this privacy policy and our privacy practices, contact us at
+            <code>info@hikalproperties.ae</code>.
         </p>
     </div>
     @endsection
