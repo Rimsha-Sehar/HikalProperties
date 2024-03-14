@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\InstallController;
-use App\Http\Controllers\PrivacyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
@@ -303,8 +302,8 @@ Route::controller(HomeController::class)->group(function () {
 
 });
 
-Route::controller(PrivacyController::class)->group(function () {
-    Route::get('privacypolicy', 'privacypolicy')->name('privacypolicy');
+Route::get('/privacy-policy', function () {
+    return view('privacypolicy.privacypolicy');
 });
 
 

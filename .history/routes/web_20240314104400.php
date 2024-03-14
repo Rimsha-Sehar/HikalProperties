@@ -304,7 +304,9 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 Route::controller(PrivacyController::class)->group(function () {
-    Route::get('privacypolicy', 'privacypolicy')->name('privacypolicy');
+    Route::get('privacy-policy', function () {
+        return view('privacypolicy.privacypolicy');
+    });
 });
 
 

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\InstallController;
-use App\Http\Controllers\PrivacyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
@@ -69,7 +68,7 @@ Route::prefix('')->group(function () {
 
     // New Email Verification
     Route::get('email/verification', [App\Http\Controllers\Auth\AuthController::class, 'VerificationGmail'])->name('verification');
-    Route::post('/verify-code', [App\Http\Controllers\Auth\AuthController::class, 'verifyCode'])->name('verification.verify');
+    Route::post('/verify-code',  [App\Http\Controllers\Auth\AuthController::class, 'verifyCode'])->name('verification.verify');
 
 });
 
@@ -113,7 +112,7 @@ Route::controller(AdminController::class)->middleware('auth')->group(function ()
     Route::get('admin/cities/edit/modal/{id}', 'EditCitiesModal')->name('admin.EditCitiesModal');
     Route::post('admin/cities/edit/modal/post', 'EditCitiesModalPost')->name('admin.EditCitiesModalPost');
     Route::get('admin/cities/delete/{id}', 'DeleteCities')->name('admin.DeleteCities');
-    Route::get('admin/get_state/by_country', 'get_state_by_country')->name('get_state_by_country');
+    Route::get('admin/get_state/by_country',  'get_state_by_country')->name('get_state_by_country');
 
     //Smtp settings routes
     Route::get('admin/settings/smtp', 'smtpSettings')->name('admin.smtp_settings');
@@ -133,9 +132,9 @@ Route::controller(AdminController::class)->middleware('auth')->group(function ()
     Route::post('admin/system/update', 'systemUpdate')->name('admin.system.update');
 
     //Website settings
-    Route::get('admin/settings/website', 'websiteSettings')->name('admin.website_settings');
-    Route::post('admin/website/update', 'websiteUpdate')->name('admin.website.update');
-    Route::post('admin/real_estate/update', 'realEstateUpdate')->name('admin.real_estate.update');
+     Route::get('admin/settings/website', 'websiteSettings')->name('admin.website_settings');
+     Route::post('admin/website/update', 'websiteUpdate')->name('admin.website.update');
+     Route::post('admin/real_estate/update', 'realEstateUpdate')->name('admin.real_estate.update');
 
     Route::post('admin/website/bannar/add', 'bannarImageAdd')->name('admin.website_bannar.add');
     Route::post('admin/website/video-img', 'videoImageAdd')->name('admin.video_image');
@@ -303,160 +302,157 @@ Route::controller(HomeController::class)->group(function () {
 
 });
 
-Route::controller(PrivacyController::class)->group(function () {
-    Route::get('privacypolicy', 'privacypolicy')->name('privacypolicy');
-});
 
 
-Route::controller(CustomerController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::controller(CustomerController::class)->middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('customer/account', 'customerAccount')->name('customerAccount');
-    Route::post('customer/account/update', 'customerAccountUpdate')->name('customerAccountUpdate');
+        Route::get('customer/account', 'customerAccount')->name('customerAccount');
+        Route::post('customer/account/update', 'customerAccountUpdate')->name('customerAccountUpdate');
 
 
 
-    Route::get('customer/select/listings', 'select_listings')->name('select_listings');
+        Route::get('customer/select/listings', 'select_listings')->name('select_listings');
 
-    Route::get('country/wise/state/{id}', 'countryWiseState')->name('countryWiseState');
-    Route::get('state/wise/city/{id}', 'stateWiseCity')->name('stateWiseCity');
+        Route::get('country/wise/state/{id}', 'countryWiseState')->name('countryWiseState');
+        Route::get('state/wise/city/{id}', 'stateWiseCity')->name('stateWiseCity');
 
 
 
 
-    Route::get('agent/mylistings/select/listings', 'selectListigForMyListings')->name('selectListigForMyListings');
-    Route::get('agent/mylistings/{type}', 'showMyListings')->name('showMyListings');
+        Route::get('agent/mylistings/select/listings', 'selectListigForMyListings')->name('selectListigForMyListings');
+        Route::get('agent/mylistings/{type}', 'showMyListings')->name('showMyListings');
 
 
-    Route::get('customer/appointment/{type}', 'customerAppointmentList')->name('customerAppointmentList');
-    Route::get('customer/appointment/select/listings', 'selectListigForCustomerAppointment')->name('selectListigForCustomerAppointment');
+        Route::get('customer/appointment/{type}', 'customerAppointmentList')->name('customerAppointmentList');
+        Route::get('customer/appointment/select/listings', 'selectListigForCustomerAppointment')->name('selectListigForCustomerAppointment');
 
-    Route::get('agent/appointment/select/listings', 'selectListigForAgentAppointment')->name('selectListigForAgentAppointment');
-    Route::get('agent/appointment/{type}', 'agentAppointmentList')->name('agentAppointmentList');
-    Route::get('appointment/{id}', 'deleteAppointment')->name('deleteAppointment');
+        Route::get('agent/appointment/select/listings', 'selectListigForAgentAppointment')->name('selectListigForAgentAppointment');
+        Route::get('agent/appointment/{type}', 'agentAppointmentList')->name('agentAppointmentList');
+        Route::get('appointment/{id}', 'deleteAppointment')->name('deleteAppointment');
 
-    Route::post('customer/book/appointment', 'customerBookAppointment')->name('customerBookAppointment');
+        Route::post('customer/book/appointment', 'customerBookAppointment')->name('customerBookAppointment');
 
 
-    Route::get('customer/wishList', 'checkWishlist')->name('checkWishlist');
+        Route::get('customer/wishList', 'checkWishlist')->name('checkWishlist');
 
-    //wishlists
-    Route::get('customer/wishList/details/{type}', 'checkWishlistDetails')->name('checkWishlistDetails');
-    Route::get('customer/wishlist/select/listings', 'selectListigForWishlist')->name('selectListigForWishlist');
+        //wishlists
+        Route::get('customer/wishList/details/{type}', 'checkWishlistDetails')->name('checkWishlistDetails');
+        Route::get('customer/wishlist/select/listings', 'selectListigForWishlist')->name('selectListigForWishlist');
 
-    Route::get('customer/wishList/delete/{id}', 'checkWishlistDelete')->name('checkWishlistDelete');
+        Route::get('customer/wishList/delete/{id}', 'checkWishlistDelete')->name('checkWishlistDelete');
 
 
-    Route::get('agent/followUnfollow', 'followUnfollow')->name('followUnfollow');
+        Route::get('agent/followUnfollow', 'followUnfollow')->name('followUnfollow');
 
-    Route::get('customer/following_agent', 'followingAgentView')->name('followingAgentView');
+        Route::get('customer/following_agent', 'followingAgentView')->name('followingAgentView');
 
-    Route::get('agent/unfollow/{id}', 'unfollowAgent')->name('unfollowAgent');
+        Route::get('agent/unfollow/{id}', 'unfollowAgent')->name('unfollowAgent');
 
-    Route::get('agent/add_listings/{type}', 'add_listings_view')->name('add_listings_view');
+        Route::get('agent/add_listings/{type}', 'add_listings_view')->name('add_listings_view');
 
-    Route::post('agent/realstate/listing/save', 'saveRealEstateListing')->name('saveRealEstateListing');
+        Route::post('agent/realstate/listing/save', 'saveRealEstateListing')->name('saveRealEstateListing');
 
-    Route::get('agent/realstate/listing/edit/{id}', 'editRealEstateListing')->name('editRealEstateListing');
+        Route::get('agent/realstate/listing/edit/{id}', 'editRealEstateListing')->name('editRealEstateListing');
 
-    Route::post('agent/realstate/listing/Update/{id}/{form}', 'updateRealEstateListing')->name('updateRealEstateListing');
+        Route::post('agent/realstate/listing/Update/{id}/{form}', 'updateRealEstateListing')->name('updateRealEstateListing');
 
 
-    Route::get('set/listing_type/session', 'setListingTypeSession')->name('setListingTypeSession');
-    Route::get('unset/listing_type/session', 'unsetListingTypeSession')->name('unsetListingTypeSession');
+        Route::get('set/listing_type/session', 'setListingTypeSession')->name('setListingTypeSession');
+        Route::get('unset/listing_type/session', 'unsetListingTypeSession')->name('unsetListingTypeSession');
 
 
 
-    Route::get('empty/{type}', 'empty')->name('empty');
+        Route::get('empty/{type}', 'empty')->name('empty');
 
 
-    Route::get('agent/real-estate/listing/hide/{id}', 'hideRealEstateListing')->name('hideRealEstateListing');
+        Route::get('agent/real-estate/listing/hide/{id}', 'hideRealEstateListing')->name('hideRealEstateListing');
 
-    Route::get('agent/real-estate/listing/show/{id}', 'showRealEstateListing')->name('showRealEstateListing');
+        Route::get('agent/real-estate/listing/show/{id}', 'showRealEstateListing')->name('showRealEstateListing');
 
-    Route::get('agent/real-estate/listing/delete/{id}', 'deleteRealEstateListing')->name('deleteRealEstateListing');
+        Route::get('agent/real-estate/listing/delete/{id}', 'deleteRealEstateListing')->name('deleteRealEstateListing');
 
 
-    Route::get('agent/real-estate/join/meeting/{id}', 'joinZoomAsAgent')->name('joinZoomAsAgent');
-    Route::get('customer/real-estate/join/meeting/{id}', 'joinZoomAsCustomer')->name('joinZoomAsCustomer');
+        Route::get('agent/real-estate/join/meeting/{id}', 'joinZoomAsAgent')->name('joinZoomAsAgent');
+        Route::get('customer/real-estate/join/meeting/{id}', 'joinZoomAsCustomer')->name('joinZoomAsCustomer');
 
 
 
-    Route::post('agent/listing/nearby/location/save', 'saveNearByLocation')->name('saveNearByLocation');
+        Route::post('agent/listing/nearby/location/save', 'saveNearByLocation')->name('saveNearByLocation');
 
-    Route::get('agent/listing/nearby/location/add/{listing_id}', 'addNearByLocation')->name('addNearByLocation');
+        Route::get('agent/listing/nearby/location/add/{listing_id}', 'addNearByLocation')->name('addNearByLocation');
 
-    Route::get('agent/listing/nearby/location/edit/{id}', 'editNearByLocation')->name('editNearByLocation');
+        Route::get('agent/listing/nearby/location/edit/{id}', 'editNearByLocation')->name('editNearByLocation');
 
-    Route::post('agent/listing/nearby/location/update/{id}', 'updateNearByLocation')->name('updateNearByLocation');
+        Route::post('agent/listing/nearby/location/update/{id}', 'updateNearByLocation')->name('updateNearByLocation');
 
-    Route::get('agent/listing/nearby/location/delete/{id}', 'deleteNearByLocation')->name('deleteNearByLocation');
+        Route::get('agent/listing/nearby/location/delete/{id}', 'deleteNearByLocation')->name('deleteNearByLocation');
 
 
-    //--------------------------------------
+        //--------------------------------------
 
 
 
-    Route::get('customer/become_an_agent', 'becomeAnAgentFor')->name('becomeAnAgentFor');
+        Route::get('customer/become_an_agent', 'becomeAnAgentFor')->name('becomeAnAgentFor');
 
-    Route::get('agent/customer_messsage/{param1?}/{param2?}', 'customerMesssage')->name('customerMesssage');
+        Route::get('agent/customer_messsage/{param1?}/{param2?}', 'customerMesssage')->name('customerMesssage');
 
-    Route::post('agent/customer_messsage/message_read/{param1}', 'customerReplyMessage')->name('customerReplyMessage');
+        Route::post('agent/customer_messsage/message_read/{param1}', 'customerReplyMessage')->name('customerReplyMessage');
 
-    Route::get('get_single_message/{param1}', 'getSingleMassege')->name('getSingleMassege');
+        Route::get('get_single_message/{param1}', 'getSingleMassege')->name('getSingleMassege');
 
-    Route::get('customer/agent_messsage/{param1?}/{param2?}', 'agentMesssage')->name('agentMesssage');
+        Route::get('customer/agent_messsage/{param1?}/{param2?}', 'agentMesssage')->name('agentMesssage');
 
-    Route::get('get_agent_single_message/{param1}', 'getAgentSingleMassege')->name('getAgentSingleMassege');
+        Route::get('get_agent_single_message/{param1}', 'getAgentSingleMassege')->name('getAgentSingleMassege');
 
-    Route::post('customer/agent_messsage/message_read/{param1}', 'agentReplyMessage')->name('agentReplyMessage');
+        Route::post('customer/agent_messsage/message_read/{param1}', 'agentReplyMessage')->name('agentReplyMessage');
 
-    Route::get('agent/subscription/status', 'subscriptionStatus')->name('subscriptionStatus');
+        Route::get('agent/subscription/status', 'subscriptionStatus')->name('subscriptionStatus');
 
 
-    //----------------------------------------------------------------
+        //----------------------------------------------------------------
 
 
-    Route::get('customer/pay/subscription/{package_id}', 'paymentForSubscription')->name('paymentForSubscription');
+        Route::get('customer/pay/subscription/{package_id}', 'paymentForSubscription')->name('paymentForSubscription');
 
-    Route::post('agent/update/information', 'updateUserInfo')->name('updateUserInfo');
+        Route::post('agent/update/information', 'updateUserInfo')->name('updateUserInfo');
 
 
 
-    //---------------------------
+        //---------------------------
 
-    Route::get('agent/subscription/details', 'subscriptionDetails')->name('subscriptionDetails');
+        Route::get('agent/subscription/details', 'subscriptionDetails')->name('subscriptionDetails');
 
-    Route::get('agent/subscription/details_page', 'subscriptionDetailsOnly')->name('subscriptionDetailsOnly');
+        Route::get('agent/subscription/details_page', 'subscriptionDetailsOnly')->name('subscriptionDetailsOnly');
 
-    Route::get('agent/subscription/download_invoice/{id}', 'subscriptionInvoice')->name('subscriptionInvoice');
+        Route::get('agent/subscription/download_invoice/{id}', 'subscriptionInvoice')->name('subscriptionInvoice');
 
-    Route::get('agent/subscription/package', 'renewSubscription')->name('renewSubscription');
+        Route::get('agent/subscription/package', 'renewSubscription')->name('renewSubscription');
 
-    Route::get('agent/subscription/package/purchase/{id}', 'purchasePackage')->name('purchasePackage');
+        Route::get('agent/subscription/package/purchase/{id}', 'purchasePackage')->name('purchasePackage');
 
-    Route::get('agent/modify_billing/infromation', 'modifyBilling')->name('modifyBilling');
+        Route::get('agent/modify_billing/infromation', 'modifyBilling')->name('modifyBilling');
 
 
-    //---------------------------
-    Route::get('agent/blogs', 'blogList')->name('blogList');
-    Route::get('agent/blogs/write', 'writeBlog')->name('writeBlog');
-    Route::post('agent/blogs/add', 'blogAdd')->name('blogAdd');
-    Route::get('agent/blogs/edit/{id}', 'editBlog')->name('editBlog');
-    Route::post('agent/blogs/update/{id}', 'blogUpdate')->name('blogUpdate');
-    Route::get('agent/blogs/delete/{id}', 'blogDelete')->name('blogDelete');
+        //---------------------------
+        Route::get('agent/blogs', 'blogList')->name('blogList');
+        Route::get('agent/blogs/write', 'writeBlog')->name('writeBlog');
+        Route::post('agent/blogs/add', 'blogAdd')->name('blogAdd');
+        Route::get('agent/blogs/edit/{id}', 'editBlog')->name('editBlog');
+        Route::post('agent/blogs/update/{id}', 'blogUpdate')->name('blogUpdate');
+        Route::get('agent/blogs/delete/{id}', 'blogDelete')->name('blogDelete');
 
-    // Zoom Link
-    Route::post('agent/zoom/{id}', 'ZoomLink')->name('agent.zoom');
+        // Zoom Link
+        Route::post('agent/zoom/{id}', 'ZoomLink')->name('agent.zoom');
 
 
-});
+    });
 
 
-// Online Payment Gateways
+        // Online Payment Gateways
 Route::controller(PaymentController::class)->group(function () {
 
     // Paypal
-    Route::post('customer/PayWithPaypal', 'payWithPaypal_ForSubscription')->name('payWithPaypal_ForSubscription');
+    Route::post('customer/PayWithPaypal','payWithPaypal_ForSubscription')->name('payWithPaypal_ForSubscription');
     // Stripe
     Route::post('customer/PayWithStripe', 'PayWithStripe_ForSubscription')->name('PayWithStripe_ForSubscription');
 

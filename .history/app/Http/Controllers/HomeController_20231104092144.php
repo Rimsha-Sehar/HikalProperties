@@ -112,7 +112,7 @@ class HomeController extends Controller
          $all_amenities=Listing_arrtibute_type::where('listring_attribute_id',$amenities_id->id)->get();
         }else{
             $all_amenities = '';
-        }
+        }  
         $area=Listing_arrtibute_type::where('type','area')->value('id');
         $max_area=Listing_attribute_value::where('listing_attribute_type_id',$area)->max('value');
         $page_data['max_area']=$max_area;
@@ -128,7 +128,7 @@ class HomeController extends Controller
         $page_data['price_amount']="";
 
         $location_response = array();
-
+        
         foreach($listings as $listing){
 
             $info = array(
@@ -138,7 +138,7 @@ class HomeController extends Controller
             array_push($location_response, $info);
 
         }
-
+        
          $page_data['locations'] = json_encode($location_response);
          Session::forget('property_view');
          Session::put('property_view', 'grid_view');
@@ -200,7 +200,7 @@ class HomeController extends Controller
             $query->where('type', $filter['searched_type']);
             $page_data['searched_type']= $filter['searched_type'];
         }
-
+        
 
         if(isset($filter['bedroom']))
         {
@@ -217,7 +217,7 @@ class HomeController extends Controller
             $page_data['searched_bathroom']=$filter['bathroom'];
 
         }
-
+        
 
         if(isset($filter['garage']))
         {
@@ -302,9 +302,9 @@ class HomeController extends Controller
         $page_data['left_search_options']=$left_search_options;
         $page_data['price_amount']="";
         $page_data['categoris'] = Listing_arrtibute_type::all();
-
+        
         $location_response = array();
-
+        
         foreach($listings as $listing){
 
             $info = array(
@@ -314,7 +314,7 @@ class HomeController extends Controller
             array_push($location_response, $info);
 
         }
-
+        
          $page_data['locations'] = json_encode($location_response);
          Session::forget('property_view');
          Session::put('property_view', 'grid_view');
@@ -424,12 +424,12 @@ class HomeController extends Controller
 
 
 
-
+        
 
         $amenities_id = Listing_attribute::where('attribute_name','amenities')->where('listing_type_id',$filter_listing_type)->first();
         $all_amenities = Listing_arrtibute_type::where('listring_attribute_id',$amenities_id->id)->get();
 
-
+        
         $page_data['real_estate_categories'] = $real_estate_categories;
         $page_data['all_amenities'] = $all_amenities;
         $page_data['cities'] = City::all();
@@ -664,7 +664,7 @@ class HomeController extends Controller
     public function customerQuery(Request $request)
     {
         $data = $request->all();
-
+        
         $message    = $data['message'];
         $receiver   = $data['agent_id'];
 
@@ -1155,7 +1155,7 @@ class HomeController extends Controller
         $page_data['latest_blogs'] = Blog::where('status',1)->orderBy('id', 'DESC')->take(3)->get();
         $page_data['blog_categories'] = BlogCategory::all();
         $page_data['tags'] = $tags;
-
+        
         return view('global.blog_details', $page_data);
     }
 
@@ -1165,7 +1165,7 @@ class HomeController extends Controller
         return view('global.contact_us');
     }
 
-    function emailSubscribe(Request $request)
+    function emailSubscribe(Request $request) 
     {
         if(!empty($request->all()))
         {
