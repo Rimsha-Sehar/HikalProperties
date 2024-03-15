@@ -226,7 +226,7 @@ input[type=email] {
     box-shadow: inset 3px 3px 3px #cbced1, inset -3px 3px 3px white;
     margin-bottom: 3px;
 }
-
+        
 input[type=tel] {
     background: #e3e1ee;
     padding: 5px;
@@ -278,7 +278,7 @@ button {
     /*border-radius: 11px;*/
     /*cursor: pointer;*/
     /*transition: 0.5s;*/
-
+    
     display: inline-block;
     outline: none;
     font-family: inherit;
@@ -317,7 +317,7 @@ button:hover {
         border-radius: 20px;
         padding: 30px;
     }
-
+    
     .desktop {
         display: none;
     }
@@ -509,8 +509,8 @@ button:hover {
     border-left: 0.11em solid #9c7625;
     border-right: 0.11em solid #9c7625;
     border-bottom: 0.11em solid #9c7625;
-    overflow-y: scroll;
-    min-height: 60vh;
+    overflow-y: scroll; 
+    min-height: 60vh; 
     max-height: 90vh;
     transition: transform 0.5s ease-in-out;
 }
@@ -543,9 +543,9 @@ button:hover {
 
 /*LANGUAGE HEADER */
 .language_header {
-    background: #000000;
-    min-height: 10px;
-    font-weight: bold;
+    background: #000000; 
+    min-height: 10px; 
+    font-weight: bold; 
     box-shadow: 0 2px 5px rgba(110,80,20,.5);
 }
 
@@ -596,7 +596,7 @@ iframe {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {   
     .text-glow {
         font-size: 1.4rem;
     }
@@ -631,7 +631,7 @@ iframe {
     }
 
     50% {
-        text-shadow: -1px -1px #dfb842;
+        text-shadow: -1px -1px #000000;
     }
     100% {
         text-shadow: 0 2px 10px rgba(255, 255, 255, 1);

@@ -108,11 +108,6 @@ $_SESSION["params"] = $params;
         integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- SLICK CAROUSEL -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
-        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <!-- ICON -->
     <link rel="icon" type="image/png"
         href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
@@ -296,8 +291,7 @@ $_SESSION["params"] = $params;
                                     <input type="text" id="Project" name="Project" value="Empire Estates (Private Pool)" />
                                     <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                     <input type="text" id="Language" name="Language" value="Arabic" />
-                                    <input type="text" id="Country" name="Country" value="" /> <input type="text" id="Country"
-                                        name="Country" value="" />
+                                    <input type="text" id="Country" name="Country" value="" />                                  <input type="text" id="Country" name="Country" value="" />
                                     <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                     <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                 </div>

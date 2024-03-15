@@ -385,7 +385,7 @@ $_SESSION["params"] = $params;
                         مميزات الموقع
                     </h4>
                 </div>
-                <div class="row" style="justify-content: center;">
+                <!-- <div class="row" style="justify-content: center;">
                     <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
                         <div style="display: block; text-align: center;">
                             <div style="font-size: 2.2rem; margin: 0px;"><b>
@@ -470,7 +470,7 @@ $_SESSION["params"] = $params;
                             <br>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

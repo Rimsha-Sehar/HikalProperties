@@ -232,7 +232,21 @@ $_SESSION["params"] = $params;
                 margin-left: 7%;
                 margin-right: 7%;
                 width: 360px;
+                position: relative;
+                animation: move 2s infinite alternate;
             }
+
+            /* Keyframes for animation */
+            @keyframes move {
+                from {
+                    left: 0px;
+                }
+
+                to {
+                    left: 200px;
+                }
+            }
+
 
             @media screen and (max-width: 800px) {
                 .form-section {
