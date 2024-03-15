@@ -92,6 +92,7 @@ curl_close($ch);
 
     <!-- ICON -->
     <link rel="icon" type="image/png" href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
+
     <!-- STYLES -->
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" />
     <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" />
@@ -100,7 +101,8 @@ curl_close($ch);
     <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script>
 </head>
 
-<body class="english">
+<body class="arabic" dir="rtl">
+
     <?php include_once("../../gtm/pixel.php"); ?>
 
     <?php
@@ -110,9 +112,9 @@ curl_close($ch);
         ?>
         <div class="d-flex justify-content-center align-items-center text-center p-5" style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                Some suspicious activities have been detected from your device! Please contact
+                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                for further assistance!
+                للحصول على المساعدة الإضافية!
             </h1>
         </div>
         <?php
@@ -130,26 +132,43 @@ curl_close($ch);
         <!-- WHATSAPP  -->
         <?php
         // $wa_project = "Mercedes-Benz";
-        // $wa_lang = "English";
+        // $wa_lang = "Arabic";
         // include_once("../../components/whatsapp-brand.php");
         ?>
 
+        <!-- HEADER  -->
         <div class="language_header">
             <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
-                    <div class="px-2 gold-grad d-flex align-items-center">
-                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
-                        EN
-                    </div>
-                    <a href="https://hikalproperties.com/projects/empire/ar-y/">
+                    <a href="https://hikalproperties.com/projects/empire/en-f/">
                         <div class="px-2 white d-flex align-items-center">
-                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
-                            AR
+                            <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
+                            EN
                         </div>
                     </a>
+                    <div class="px-2 gold-grad d-flex align-items-center">
+                        <img class="lang-flag mx-1" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
+                        AR
+                    </div>
                 </div>
             </div>
         </div>
+
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+       <div class="d-flex align-items-start justify-content-center">
+        <dotlottie-player src="https://lottie.host/f8e4cb5e-a93a-4b74-bb01-9ce85e5fa6e5/1NBQ1z6I5f.json" background="transparent" speed="1" style="width: 300px;" loop autoplay class="desktop"></dotlottie-player>
+        <dotlottie-player src="https://lottie.host/f8e4cb5e-a93a-4b74-bb01-9ce85e5fa6e5/1NBQ1z6I5f.json" background="transparent" speed="1" style="width: 300px;" loop autoplay></dotlottie-player>
+
+
+
+        <dotlottie-player src="https://lottie.host/f8e4cb5e-a93a-4b74-bb01-9ce85e5fa6e5/1NBQ1z6I5f.json" background="transparent" speed="1" style="width: 300px;" loop autoplay ></dotlottie-player>
+    <dotlottie-player src="https://lottie.host/f8e4cb5e-a93a-4b74-bb01-9ce85e5fa6e5/1NBQ1z6I5f.json" background="transparent" speed="1" style="width: 300px;" loop autoplay class="desktop"></dotlottie-player>
+        <!-- <img src="https://lottie.host/f8e4cb5e-a93a-4b74-bb01-9ce85e5fa6e5/1NBQ1z6I5f.json" /> -->
+       </div>
+        <!-- RAMADAN  -->
+        <?php include_once("../../components/ramadan-light.php"); ?>
+
+
 
         <!--HEADINGS & FORM-->
         <div class="first_section">
@@ -157,17 +176,17 @@ curl_close($ch);
                 <div class="row text-center d-flex align-items-center py-2">
                     <div class="col-12">
                         <h1 class="my-2" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                            <span class="gold-grad-anim">Own with </span>
+                            <span class="gold-grad-anim">تملك بأقساط </span>
                             <span class="num-glow">1%</span>
-                            <span class="gold-grad-anim"> monthly installments for </span>
+                            <span class="gold-grad-anim"> شهريا لمدة </span>
                             <span class="num-glow">80</span>
-                            <span class="gold-grad-anim"> months!</span>
+                            <span class="gold-grad-anim">شهر</span>
                         </h1>
                         <h3 class="text-expand mt-2" style="text-align: center; line-height: 1.5rem; font-size: 1rem; ">
-                            Limited Time Offer!
+                            وفرصتك قبل الطرح
                         </h3>
                         <h3 class="mt-2" style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
-                            Get a Fully Equipped Kitchen
+                            أحصل علي آلمطبخ مجهّز بالكامل
                         </h3>
                     </div>
                 </div>
@@ -182,7 +201,7 @@ curl_close($ch);
                             <!-- FORM -->
                             <div style="width: 100%; z-index: 1; display: flex; justify-content: center;">
                                 <div class="containerform">
-                                    <div class="inputs">
+                                    <div class="inputs" style="font-weight: 400; overflow-y: scroll;">
                                         <?php
                                         $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                                         $parsedUrl = parse_url($url);
@@ -212,7 +231,7 @@ curl_close($ch);
                                                 </div>
 
                                                 <button type="submit" style="font-weight: bold;">
-                                                    VERIFY
+                                                    تحقق من رمز التحقق
                                                 </button>
                                             </form>
                                         </div>
@@ -222,7 +241,7 @@ curl_close($ch);
                                         if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
                                             ?>
                                             <div class="p-5 d-flex justify-content-center align-items-center text-center" style="width: 100%; height: 100%; line-height: 2.5rem;">
-                                                Thank you for registering with us. Our professionals will contact you soon!
+                                                شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
                                             </div>
                                             <?php
                                         }
@@ -234,70 +253,70 @@ curl_close($ch);
                                                     <div style="display: none">
                                                         <input type="text" id="Project" name="Project" value="Empire Estates (Private Pool)" />
                                                         <input type="text" id="LeadType" name="LeadType" value="Apartment" />
-                                                        <input type="text" id="Language" name="Language" value="English" />
-                                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign YouTube" />
+                                                        <input type="text" id="Language" name="Language" value="Arabic" />
+                                                        <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
                                                         <input type="text" id="Country" name="Country" value="" />
                                                         <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                                                         <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                                     </div>
 
                                                     <!-- NAME -->
-                                                    <label class="gold-grad" style="margin-top: 0px;">NAME</label>
+                                                    <label class="gold-grad" style="margin-top: 0px;">الاسم</label>
                                                     <input type="text" name="LeadName1" id="LeadName1" required />
 
                                                     <!-- CONTACT NUMBER -->
-                                                    <label class="gold-grad">CONTACT NUMBER</label>
+                                                    <label class="gold-grad">رقم الاتصال</label>
                                                     <input type="tel" name="phone[main]" id="mobile" style="color: #000000;" placeholder="56 789 0123" required />
 
                                                     <!--EMAIL-->
-                                                    <!-- <label class="gold-grad">EMAIL ADDRESS</label>
+                                                    <!-- <label class="gold-grad">عنوان البريد الإلكتروني</label>
                                                     <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" /> -->
 
                                                     <!-- HOW MANY BEDROOMS -->
-                                                    <label class="gold-grad">HOW MANY BEDROOMS?</label>
-                                                    <div class="d-flex align-items-center">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="Studio" style="width: 20px;" required>
+                                                    <label class="gold-grad">كم عدد غرف النوم؟</label>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            استوديو + حمام سباحة
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            غرفة نوم + حمام سباحة
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms" style="width: 20px;" required>
                                                         <label for="EnquiryRadio3" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            Studio + Private Pool
+                                                            غرفتين نوم + حمام سباحة
                                                         </label>
                                                     </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="1 Bedroom" style="width: 20px;" required>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms" style="width: 20px;" required>
                                                         <label for="EnquiryRadio4" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            1 Bedroom + Private Pool
-                                                        </label>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="2 Bedrooms" style="width: 20px;" required>
-                                                        <label for="EnquiryRadio5" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            2 Bedrooms + Private Pool
-                                                        </label>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="3 Bedrooms" style="width: 20px;" required>
-                                                        <label for="EnquiryRadio6" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            3 Bedrooms + Private Pool
+                                                            ثلاث غرف نوم + حمام سباحة
                                                         </label>
                                                     </div>
 
                                                     <!-- PURPOSE  -->
-                                                    <label class="gold-grad">PURPOSE OF ENQUIRY</label>
-                                                    <div class="d-flex align-items-center">
+                                                    <label class="gold-grad">غرض الاستفسار</label>
+                                                    <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" style="width: 20px;" required>
                                                         <label for="PurposeRadio1" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            Investment
+                                                            استثمار
                                                         </label>
                                                     </div>
-                                                    <div class="d-flex align-items-center">
+                                                    <div style="display: flex;" dir="rtl">
                                                         <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user" style="width: 20px;" required>
                                                         <label for="PurposeRadio2" style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                            End-user
+                                                            سكني
                                                         </label>
                                                     </div>
 
                                                     <div id="FormButton" name="FormButton">
                                                         <div class="form_button">
-                                                            <button type="submit" class="submit-click">SUBMIT</button>
+                                                            <button type="submit" class="submit-click">إرسال</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -318,101 +337,12 @@ curl_close($ch);
             </div>
         </div>
 
-        <!--CONTENT-->
-        <div class="second_section">
-            <div class="container container-fluid py-3">
-                <div class="desktop">
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-pool.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    LUXURIOUS LIVING AT ARJAN
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    Experience luxury at its finest with the distinguished residential project in Arjan. This high-rise development stands as a community landmark, boasting a grand structure and a strong dedication to luxurious living. Beyond the ordinary, the developer has crafted an exceptional living experience by offering top-notch amenities like a fitness center, beautiful landscaped parks, cutting-edge technology, and home automation. Each apartment is designed with exquisite interiors, showcasing an unwavering commitment to excellence. With each new project, we raise the bar for luxury living, ensuring residents enjoy an unparalleled level of opulence and sophistication.
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    PRIME LOCATION FOR URBAN CONVENIENCE
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    Located in Arjan, our community seamlessly combines tranquility with urban convenience. Residents experience easy access to various destinations, ensuring effortless travel anytime. The neighborhood boasts leisure amenities, entertainment zones, schools, hospitals, and all essentials for a luxurious and convenient lifestyle. Our location not only offers opulent living spaces but also positions residents in a prime area where urban conveniences harmonize with peaceful surroundings.
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-whole.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                    </div>
-                    <div class="row my-4 d-flex align-items-center">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center;">
-                            <div class="p-2">
-                                <h5 class="gold-grad">
-                                    ELEVATING LUXURY LIVING STANDARDS
-                                </h5>
-                                <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                                <h6>
-                                    The Arjan project upholds a legacy of enhancing luxury living standards. The developer's dedication to excellence is clear in the careful planning and execution of each project, ensuring residents enjoy the pinnacle of sophistication and comfort. With impressive structures and state-of-the-art amenities, the project aims to redefine opulence, creating living spaces that showcase their commitment to providing an elevated lifestyle in every project.
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile">
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            LUXURIOUS LIVING AT ARJAN
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            Experience luxury at its finest with the distinguished residential project in Arjan. This high-rise development stands as a community landmark, boasting a grand structure and a strong dedication to luxurious living. Beyond the ordinary, the developer has crafted an exceptional living experience by offering top-notch amenities like a fitness center, beautiful landscaped parks, cutting-edge technology, and home automation. Each apartment is designed with exquisite interiors, showcasing an unwavering commitment to excellence. With each new project, we raise the bar for luxury living, ensuring residents enjoy an unparalleled level of opulence and sophistication.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-pool.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            PRIME LOCATION FOR URBAN CONVENIENCE
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            Located in Arjan, our community seamlessly combines tranquility with urban convenience. Residents experience easy access to various destinations, ensuring effortless travel anytime. The neighborhood boasts leisure amenities, entertainment zones, schools, hospitals, and all essentials for a luxurious and convenient lifestyle. Our location not only offers opulent living spaces but also positions residents in a prime area where urban conveniences harmonize with peaceful surroundings.
-
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-whole.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                    <div class="p-2">
-                        <h5 class="gold-grad">
-                            ELEVATING LUXURY LIVING STANDARDS
-                        </h5>
-                        <hr style="width: 50px; height: 2px; background-color: #d4a556; opacity: 0.5;">
-                        <h6>
-                            The Arjan project upholds a legacy of enhancing luxury living standards. The developer's dedication to excellence is clear in the careful planning and execution of each project, ensuring residents enjoy the pinnacle of sophistication and comfort. With impressive structures and state-of-the-art amenities, the project aims to redefine opulence, creating living spaces that showcase their commitment to providing an elevated lifestyle in every project.
-                        </h6>
-                    </div>
-                    <img class="img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg" loading="lazy" alt="HIKAL PROPERTIES" style="width: 100%;" />
-                </div>
-            </div>
-        </div>
-
         <!--LOCATION-->
         <div class="third_section mt-5">
             <div class="container container-fluid py-5">
                 <div class="row" style="text-align: center;">
                     <h4 class="gold-grad-anim">
-                        LOCATION BENEFITS
+                        مميزات الموقع
                     </h4>
                 </div>
                 <div class="row" style="justify-content: center;">
@@ -422,10 +352,10 @@ curl_close($ch);
                                 05
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Dubai Miracle Garden
+                                حديقة دبي للزهور العجيبة
                             </p>
                             <br>
                         </div>
@@ -436,10 +366,10 @@ curl_close($ch);
                                 10
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Mall of the Emirates
+                                مول الإمارات
                             </p>
                             <br>
                         </div>
@@ -450,10 +380,10 @@ curl_close($ch);
                                 25
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Burj Khalifa
+                                برج خليفة
                             </p>
                             <br>
                         </div>
@@ -464,10 +394,10 @@ curl_close($ch);
                                 25
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Palm Jumeirah
+                                مرسى دبي
                             </p>
                             <br>
                         </div>
@@ -478,10 +408,10 @@ curl_close($ch);
                                 25
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Dubai International Airport
+                                مطار دبي الدولي
                             </p>
                             <br>
                         </div>
@@ -492,10 +422,10 @@ curl_close($ch);
                                 25
                             </b></div>
                             <p style="display: flex; justify-content: center; color: #d4a556;">
-                                MINUTES
+                                دقائق
                             </p>
                             <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                Al Maktoum International Airport
+                                مطار آل مكتوم الدولي
                             </p>
                             <br>
                         </div>
@@ -510,19 +440,10 @@ curl_close($ch);
             <img loading="eager" class="mobile img-style" src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES" style="width: 100%" />
         </div>
 
-        <!--AMENITIES-->
-        <div class="fourth_section my-5">
-            <?php include_once("../../components/amenities-en.php"); ?>
-        </div>
-
-        <!--WHY DUBAI-->
-        <div class="fifth_section my-5">
-            <?php include_once("../../components/whydubai-en.php"); ?>
-        </div>
-
         <footer style="background-color: #000000;">
             <?php include_once("../../components/footer-copyright.php"); ?>
         </footer>
+
 
         <!--COUNTRY CODE-->
         <script>

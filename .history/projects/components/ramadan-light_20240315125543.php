@@ -4,7 +4,7 @@
 <style>
 	.ramadan {
 	    width: 200px;
-	    position: absolute;
+	    /* position: absolute; */
 	    left: 10px;
 	    z-index: 2;
 	}

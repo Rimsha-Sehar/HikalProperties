@@ -14,13 +14,13 @@
 	        position: relative;
 	        display: flex;
 	        justify-content: center;
-	    }
+	    } 
 	    .ramadan{
 	        position: relative;
 	        width: 150px;
 	    }
 	}
-</style>
+</style>	
 
 <img class="desktop ramadan" loading="eager" src="https://hikalproperties.com/projects/assets/images/events/ramadan.svg" />
 <div class="ramadan-mobile">
