@@ -392,7 +392,7 @@ $_SESSION["params"] = $params;
                 </div>
             </section>
 
-            <section>
+            <section class="containerform">
                 <div class="container container-fluid py-5">
                     <div class="row" style="text-align: center;">
                         <h4 class="gold-grad-anim">
@@ -487,16 +487,11 @@ $_SESSION["params"] = $params;
                     </div>
                 </div>
             </section>
-        </div>
 
-        <!--IMAGE-->
-        <div class="map_section pb-5" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style"
-                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
-                style="width: 60%" />
-            <img loading="eager" class="mobile img-style"
-                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
-                style="width: 100%" />
+            <section>
+                <div class="parallax-two"></div>
+            </section>
+
         </div>
 
         <footer style="background-color: #000000;">

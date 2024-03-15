@@ -176,14 +176,14 @@ $_SESSION["params"] = $params;
         // include_once("../../components/whatsapp-brand.php");
         ?>
 
-        <!-- RAMADAN  -->
-        <?php include_once("../../components/ramadan-anim.php"); ?>
-
         <div id="parallax-world-of-ugg">
             <section>
+                <!-- RAMADAN  -->
+                <?php include_once("../../components/ramadan-single.php"); ?>
+
                 <!-- HEADER  -->
-                <div class="container container-fluid d-flex justify-content-between align-items-start">
-                    <div class="d-flex align-items-center py-2">
+                <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
                         <a href="https://hikalproperties.com/projects/empire/ar?<?php echo $_SESSION["params"]; ?>">
                             <div class="px-2 white d-flex align-items-center">
                                 <img class="lang-flag mx-1"
@@ -388,11 +388,11 @@ $_SESSION["params"] = $params;
             </section>
 
             <section>
-                <div class="parallax-three">
+                <div class="parallax-two">
                 </div>
             </section>
 
-            <section>
+            <section class="containerform">
                 <div class="container container-fluid py-5">
                     <div class="row" style="text-align: center;">
                         <h4 class="gold-grad-anim">
@@ -487,16 +487,11 @@ $_SESSION["params"] = $params;
                     </div>
                 </div>
             </section>
-        </div>
 
-        <!--IMAGE-->
-        <div class="map_section pb-5" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style"
-                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
-                style="width: 60%" />
-            <img loading="eager" class="mobile img-style"
-                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
-                style="width: 100%" />
+            <section>
+                <div class="parallax-three"></div>
+            </section>
+
         </div>
 
         <footer style="background-color: #000000;">

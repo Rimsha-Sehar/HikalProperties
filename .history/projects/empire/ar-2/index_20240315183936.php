@@ -140,7 +140,7 @@ $_SESSION["params"] = $params;
     </style>
 </head>
 
-<body class="english">
+<body class="arabic" dir="rtl">
 
     <?php include_once("../../gtm/pixel.php"); ?>
 
@@ -152,9 +152,9 @@ $_SESSION["params"] = $params;
         <div class="d-flex justify-content-center align-items-center text-center p-5"
             style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                Some suspicious activities have been detected from your device! Please contact
+                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                for further assistance!
+                للحصول على المساعدة الإضافية!
             </h1>
         </div>
         <?php
@@ -182,19 +182,19 @@ $_SESSION["params"] = $params;
         <div id="parallax-world-of-ugg">
             <section>
                 <!-- HEADER  -->
-                <div class="container container-fluid d-flex justify-content-between align-items-start">
-                    <div class="d-flex align-items-center py-2">
-                        <a href="https://hikalproperties.com/projects/empire/ar?<?php echo $_SESSION["params"]; ?>">
+                <div class="container container-fluid py-2 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <a href="https://hikalproperties.com/projects/empire/en?<?php echo $_SESSION["params"]; ?>">
                             <div class="px-2 white d-flex align-items-center">
                                 <img class="lang-flag mx-1"
-                                    src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
-                                AR
+                                    src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
+                                EN
                             </div>
                         </a>
                         <div class="px-2 gold-grad d-flex align-items-center">
                             <img class="lang-flag mx-1"
-                                src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
-                            EN
+                                src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
+                            AR
                         </div>
                     </div>
                 </div>
@@ -203,18 +203,18 @@ $_SESSION["params"] = $params;
                     <div class="row text-center d-flex align-items-center py-2">
                         <div class="col-12">
                             <h1 class="my-2" style="text-align: center; line-height: 2rem; font-weight: 800;">
-                                <span class="gold-grad-anim">Own with </span>
+                                <span class="gold-grad-anim">تملك بأقساط </span>
                                 <span class="num-glow">1%</span>
-                                <span class="gold-grad-anim"> monthly installments for </span>
+                                <span class="gold-grad-anim"> شهريا لمدة </span>
                                 <span class="num-glow">80</span>
-                                <span class="gold-grad-anim"> months!</span>
+                                <span class="gold-grad-anim">شهر</span>
                             </h1>
                             <h3 class="text-expand mt-2" style="text-align: center; line-height: 1.5rem; font-size: 1rem; ">
-                                Limited Time Offer!
+                                وفرصتك قبل الطرح
                             </h3>
                             <h3 class="mt-2"
                                 style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
-                                Get a Fully Equipped Kitchen
+                                أحصل علي آلمطبخ مجهّز بالكامل
                             </h3>
                         </div>
                     </div>
@@ -272,7 +272,7 @@ $_SESSION["params"] = $params;
                                     </div>
 
                                     <button type="submit" style="font-weight: bold;">
-                                        VERIFY
+                                        تحقق من رمز التحقق
                                     </button>
                                 </form>
                             </div>
@@ -283,7 +283,7 @@ $_SESSION["params"] = $params;
                                 ?>
                                 <div class="p-5 d-flex justify-content-center align-items-center text-center"
                                     style="width: 100%; height: 100%; line-height: 2.5rem;">
-                                    Thank you for registering with us. Our professionals will contact you soon!
+                                    شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
                                 </div>
                                 <?php
                             } else {
@@ -305,68 +305,68 @@ $_SESSION["params"] = $params;
                                         <div class="row">
                                             <div class="col-12 col-md-6 col-lg-6 px-0 px-md-3 px-lg-6">
                                                 <!-- NAME -->
-                                                <label class="gold-grad">NAME</label>
+                                                <label class="gold-grad">الاسم</label>
                                                 <input type="text" name="LeadName1" id="LeadName1" required />
                                             </div>
                                             <div class="col-12 col-md-6 col-lg-6 px-0 px-md-3 px-lg-6">
                                                 <!-- CONTACT NUMBER -->
-                                                <label class="gold-grad">CONTACT NUMBER</label>
+                                                <label class="gold-grad">رقم الاتصال</label>
                                                 <input type="tel" name="phone[main]" id="mobile" style="color: #000000;"
                                                     placeholder="56 789 0123" required />
                                             </div>
                                             <div class="col-12 col-md-6 col-lg-6 px-0 px-md-3 px-lg-6">
                                                 <!-- HOW MANY BEDROOMS -->
-                                                <label class="gold-grad">HOW MANY BEDROOMS?</label>
-                                                <div style="display: flex;">
+                                                <label class="gold-grad">كم عدد غرف النوم؟</label>
+                                                <div style="display: flex;" dir="rtl">
                                                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1"
                                                         value="Studio" style="width: 20px;" required>
                                                     <label for="EnquiryRadio1"
                                                         style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                        Studio + Private Pool
+                                                        استوديو + حمام سباحة
                                                     </label>
                                                 </div>
-                                                <div style="display: flex;">
+                                                <div style="display: flex;" dir="rtl">
                                                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2"
                                                         value="1 Bedroom" style="width: 20px;" required>
                                                     <label for="EnquiryRadio2"
                                                         style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                        1 Bedroom + Private Pool
+                                                        غرفة نوم + حمام سباحة
                                                     </label>
                                                 </div>
-                                                <div style="display: flex;">
+                                                <div style="display: flex;" dir="rtl">
                                                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3"
                                                         value="2 Bedrooms" style="width: 20px;" required>
                                                     <label for="EnquiryRadio3"
                                                         style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                        2 Bedrooms + Private Pool
+                                                        غرفتين نوم + حمام سباحة
                                                     </label>
                                                 </div>
-                                                <div style="display: flex;">
+                                                <div style="display: flex;" dir="rtl">
                                                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4"
                                                         value="3 Bedrooms" style="width: 20px;" required>
                                                     <label for="EnquiryRadio4"
                                                         style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                        3 Bedrooms + Private Pool
+                                                        ثلاث غرف نوم + حمام سباحة
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-6 col-lg-6 px-0 px-md-3 px-lg-6">
                                                 <!-- PURPOSE  -->
-                                                <label class="gold-grad">PURPOSE OF ENQUIRY</label>
-                                                <div style="display: flex;">
+                                                <label class="gold-grad">غرض الاستفسار</label>
+                                                <div style="display: flex;" dir="rtl">
                                                     <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1"
                                                         value="Investment" style="width: 20px;" required>
                                                     <label for="PurposeRadio1"
                                                         style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                        Investment
+                                                        استثمار
                                                     </label>
                                                 </div>
-                                                <div style="display: flex;">
+                                                <div style="display: flex;" dir="rtl">
                                                     <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2"
                                                         value="End-user" style="width: 20px;" required>
                                                     <label for="PurposeRadio2"
                                                         style="margin-top: 0px; padding-left: 7px; color: #fff;">
-                                                        End-user
+                                                        سكني
                                                     </label>
                                                 </div>
                                             </div>
@@ -374,7 +374,7 @@ $_SESSION["params"] = $params;
 
                                         <div id="FormButton" name="FormButton" class="pb-4">
                                             <div class="form_button">
-                                                <button type="submit" class="submit-click">SUBMIT</button>
+                                                <button type="submit" class="submit-click">إرسال</button>
                                             </div>
                                         </div>
                                     </form>
@@ -392,11 +392,11 @@ $_SESSION["params"] = $params;
                 </div>
             </section>
 
-            <section>
+            <section class="containerform">
                 <div class="container container-fluid py-5">
                     <div class="row" style="text-align: center;">
                         <h4 class="gold-grad-anim">
-                            LOCATION BENEFITS
+                            مميزات الموقع
                         </h4>
                     </div>
                     <div class="row" style="justify-content: center;">
@@ -406,10 +406,10 @@ $_SESSION["params"] = $params;
                                         05
                                     </b></div>
                                 <p style="display: flex; justify-content: center; color: #d4a556;">
-                                    MINUTES
+                                    دقائق
                                 </p>
                                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                    Dubai Miracle Garden
+                                    حديقة دبي للزهور العجيبة
                                 </p>
                                 <br>
                             </div>
@@ -420,10 +420,10 @@ $_SESSION["params"] = $params;
                                         10
                                     </b></div>
                                 <p style="display: flex; justify-content: center; color: #d4a556;">
-                                    MINUTES
+                                    دقائق
                                 </p>
                                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                    Mall of the Emirates
+                                    مول الإمارات
                                 </p>
                                 <br>
                             </div>
@@ -434,10 +434,10 @@ $_SESSION["params"] = $params;
                                         25
                                     </b></div>
                                 <p style="display: flex; justify-content: center; color: #d4a556;">
-                                    MINUTES
+                                    دقائق
                                 </p>
                                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                    Burj Khalifa
+                                    برج خليفة
                                 </p>
                                 <br>
                             </div>
@@ -448,10 +448,10 @@ $_SESSION["params"] = $params;
                                         25
                                     </b></div>
                                 <p style="display: flex; justify-content: center; color: #d4a556;">
-                                    MINUTES
+                                    دقائق
                                 </p>
                                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                    Palm Jumeirah
+                                    مرسى دبي
                                 </p>
                                 <br>
                             </div>
@@ -462,10 +462,10 @@ $_SESSION["params"] = $params;
                                         25
                                     </b></div>
                                 <p style="display: flex; justify-content: center; color: #d4a556;">
-                                    MINUTES
+                                    دقائق
                                 </p>
                                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                    Dubai International Airport
+                                    مطار دبي الدولي
                                 </p>
                                 <br>
                             </div>
@@ -476,10 +476,10 @@ $_SESSION["params"] = $params;
                                         25
                                     </b></div>
                                 <p style="display: flex; justify-content: center; color: #d4a556;">
-                                    MINUTES
+                                    دقائق
                                 </p>
                                 <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
-                                    Al Maktoum International Airport
+                                    مطار آل مكتوم الدولي
                                 </p>
                                 <br>
                             </div>
@@ -487,16 +487,11 @@ $_SESSION["params"] = $params;
                     </div>
                 </div>
             </section>
-        </div>
 
-        <!--IMAGE-->
-        <div class="map_section pb-5" style="display: flex; align-items: center; justify-content: space-evenly;">
-            <img loading="eager" class="desktop img-style"
-                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
-                style="width: 60%" />
-            <img loading="eager" class="mobile img-style"
-                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
-                style="width: 100%" />
+            <section>
+                <div class="parallax-two"></div>
+            </section>
+
         </div>
 
         <footer style="background-color: #000000;">
