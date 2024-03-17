@@ -1,0 +1,63 @@
+#parallax .title {
+    background: transparent;
+    padding: 5px 5%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#parallax .parallax-one {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* background-image: url(https://hikalproperties.com/projects/assets/images/projects/empire/ee-main.jpg); */
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    min-height: 60vh;
+}
+
+#parallax .parallax-two {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* background-image: url(https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png); */
+    background-attachment: fixed;
+    background-size: contain;
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#parallax .parallax-three {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* background-image: url(https://hikalproperties.com/projects/assets/images/projects/empire/ee-outdoor.jpg); */
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 60vh;
+}
+
+/* @media screen and (max-width: 800px) {
+    #parallax-world-of-ugg .parallax-one,
+    #parallax-world-of-ugg .parallax-two,
+    #parallax-world-of-ugg .parallax-three {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        min-height: 60vh;
+    }
+} */
