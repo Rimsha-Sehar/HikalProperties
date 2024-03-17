@@ -186,25 +186,25 @@ if (empty($leadName) || empty($leadContact)) {
                 // ADD NEW LEAD END
 
                 // SEND OTP
-                // $otpData = array(
-                //     'phone_number' => (string) $leadContact,
-                //     'senderAddr' => "AD-HIKAL",
-                //     'message' => "The OTP for verification is: "
-                // );
+                $otpData = array(
+                    'phone_number' => (string) $leadContact,
+                    'senderAddr' => "AD-HIKAL",
+                    'message' => "The OTP for verification is: "
+                );
 
-                // $soch = curl_init($api_sendOtp);
-                // curl_setopt($soch, CURLOPT_POST, 1);
-                // curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
-                // curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
-                // $otpResponse = curl_exec($soch);
-                // $otpResponseData = json_decode($otpResponse, true);
+                $soch = curl_init($api_sendOtp);
+                curl_setopt($soch, CURLOPT_POST, 1);
+                curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+                curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+                $otpResponse = curl_exec($soch);
+                $otpResponseData = json_decode($otpResponse, true);
 
-                // if (isset($otpResponseData['message'])) {
-                //     $message = $otpResponseData['message'];
-                //     echo json_encode(['otp' => true]);
-                // }
+                if (isset($otpResponseData['message'])) {
+                    $message = $otpResponseData['message'];
+                    echo json_encode(['otp' => true]);
+                }
                 // SEND OTP END
-                // else {
+                else {
                     if ($language == "English") {
                         $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";
                     } elseif ($language == "Arabic") {
@@ -219,31 +219,31 @@ if (empty($leadName) || empty($leadContact)) {
                         $redirectUrl = "https://hikalproperties.com/projects/thankyou";
                     }
                     echo json_encode(['thankyou' => true, 'redirectUrl' => $redirectUrl]);
-                // }
+                }
             } else {
                 $query = mysqli_query($con, "INSERT INTO leads (leadName, notes, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$callTime', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'Not Verified', '$country')");
                 if ($query) {
                     // SEND OTP
-                    // $otpData = array(
-                    //     'phone_number' => (string) $leadContact,
-                    //     'senderAddr' => "AD-HIKAL",
-                    //     'message' => "The OTP for verification is: "
-                    // );
+                    $otpData = array(
+                        'phone_number' => (string) $leadContact,
+                        'senderAddr' => "AD-HIKAL",
+                        'message' => "The OTP for verification is: "
+                    );
 
-                    // $soch = curl_init($api_sendOtp);
-                    // curl_setopt($soch, CURLOPT_POST, 1);
-                    // curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
-                    // curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
-                    // $otpResponse = curl_exec($soch);
-                    // $otpResponseData = json_decode($otpResponse, true);
+                    $soch = curl_init($api_sendOtp);
+                    curl_setopt($soch, CURLOPT_POST, 1);
+                    curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+                    curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+                    $otpResponse = curl_exec($soch);
+                    $otpResponseData = json_decode($otpResponse, true);
 
-                    // if (isset($otpResponseData['message'])) {
-                    //     $message = $otpResponseData['message'];
-                    //     echo json_encode(['otp' => true]);
-                    //     exit();
-                    // }
+                    if (isset($otpResponseData['message'])) {
+                        $message = $otpResponseData['message'];
+                        echo json_encode(['otp' => true]);
+                        exit();
+                    }
                     // SEND OTP END
-                    // else {
+                    else {
                         if ($language == "English") {
                             $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";
                         } elseif ($language == "Arabic") {
@@ -257,14 +257,14 @@ if (empty($leadName) || empty($leadContact)) {
                         } else {
                             $redirectUrl = "https://hikalproperties.com/projects/thankyou";
                         }
-                    // }
+                    }
                 } else {
                     $redirectUrl = "https://hikalproperties.com/projects/thankyou";
                 }
                 echo json_encode(['thankyou' => true, 'redirectUrl' => $redirectUrl]);
             }
 
-            sleep(5);
+            sleep(10);
 
             // SEND SMS NOTIFICATION
             $otpData = array(
