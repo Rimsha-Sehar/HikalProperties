@@ -142,7 +142,7 @@ $_SESSION["params"] = $params;
 
         <!-- IMAGE AND LANGUAGE AND HEADING AND COUNTDOWN -->
         <div class="first_section">
-            <img class="main-image" src="../../assets/images/projects/empire/main.webp" loading="eager" alt="Hikal Real Estate">
+            <img class="main-image" src="../../assets/images/projects/empire/empire-main.webp" alt="Hikal Real Estate">
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">

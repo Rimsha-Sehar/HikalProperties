@@ -90,7 +90,7 @@ $_SESSION["params"] = $params;
     </style>
 </head>
 
-<body class="english">
+<body class="arabic">
 
     <?php include_once ("../../gtm/gtm-pixel.php"); ?>
 
@@ -102,9 +102,9 @@ $_SESSION["params"] = $params;
         <div class="d-flex justify-content-center align-items-center text-center p-5"
             style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                Some suspicious activities have been detected from your device! Please contact
-                <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                for further assistance!
+                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
+                <a href="tel:+97142722249" style="font-weight: bold;">+97142722249</a>
+                للحصول على المساعدة الإضافية!
             </h1>
         </div>
         <?php
@@ -142,14 +142,14 @@ $_SESSION["params"] = $params;
 
         <!-- IMAGE AND LANGUAGE AND HEADING AND COUNTDOWN -->
         <div class="first_section">
-            <img class="main-image" src="../../assets/images/projects/empire/main.webp" loading="eager" alt="Hikal Real Estate">
+            <img class="main-image" src="../../assets/images/projects/empire/empire-main.webp" alt="Hikal Real Estate">
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
-                    <a href="https://hikalproperties.com/projects/empire/ar?<?php echo $_SESSION["params"]; ?>">
+                    <a href="https://hikalproperties.com/projects/empire/en?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
-                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/ar.png" />
-                            <span class="next-language">AR</span>
+                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
+                            <span class="next-language">EN</span>
                         </div>
                     </a>
                 </div>
@@ -163,22 +163,22 @@ $_SESSION["params"] = $params;
                         </div>
                         <h1 class="d-flex flex-column px-2 m-0">
                             <span>
-                                MONTHLY
+                                أقساط
                             </span>
                             <span>
-                                INSTALLMENTS
+                                شهرية
                             </span>
                         </h1>
                     </div>
                     <h1 class="text-center px-2 m-0">
-                        FOR 80 MONTHS
+                        لمدة 80 شهر
                     </h1>
                 </div>
             </div>
             <!-- COUNTDOWN -->
             <div class="countdown-overlay">
                 <div class="countdown-text">
-                    LIMITED TIME OFFER
+                    الفرصة لفترة محدودة
                 </div>
                 <div class="countdown-clock">
                     <div class="clock">
@@ -243,7 +243,7 @@ $_SESSION["params"] = $params;
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
-                            VERIFY
+                            تحقق من رمز التحقق
                         </button>
                     </form>
                 </div>
@@ -254,7 +254,7 @@ $_SESSION["params"] = $params;
                     ?>
                     <div class="p-5 d-flex justify-content-center align-items-center text-center"
                         style="width: 100%; height: 100%; line-height: 2.5rem;">
-                        Thank you for registering with us. Our professionals will contact you soon!
+                        شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
                     </div>
                     <?php
                 } else {
@@ -264,33 +264,36 @@ $_SESSION["params"] = $params;
                         <div style="display: none">
                             <input type="text" id="Project" name="Project" value="Empire Estates (Private Pool)" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
-                            <input type="text" id="Language" name="Language" value="English" />
+                            <input type="text" id="Language" name="Language" value="Arabic" />
                             <input type="text" id="Country" name="Country" value="" />
-                            <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
+                            <input type="text" id="Filename" name="Filename"
+                                value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                         </div>
                         <!-- NAME -->
                         <label>
-                            Name
+                            الاسم
                         </label>
                         <input type="text" name="LeadName1" id="LeadName1" required />
 
                         <!-- CONTACT NUMBER -->
                         <label>
-                            Contact Number
+                            رقم الاتصال
+
                         </label>
-                        <input type="tel" name="phone[main]" id="mobile" placeholder="56 789 0123" required />
+                        <input type="tel" name="phone[main]" id="mobile" placeholder="56 789 0123"
+                            required />
 
                         <!-- HOW MANY BEDROOMS -->
                         <label>
-                            How Many Bedrooms?
+                            كم عدد غرف النوم؟
                         </label>
-                        <div class="enquiry-radio" style="display: flex;">
+                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" required>
                             <label for="EnquiryRadio1" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        STUDIO + POOL
+                                        استوديو + حمام سباحة
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-water-ladder px-2"></i>
@@ -299,12 +302,12 @@ $_SESSION["params"] = $params;
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;">
+                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" required>
                             <label for="EnquiryRadio2" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        1 BEDROOM + POOL
+                                        غرفة نوم + حمام سباحة
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-water-ladder px-2"></i>
@@ -313,13 +316,13 @@ $_SESSION["params"] = $params;
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;">
+                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms"
                                 required>
                             <label for="EnquiryRadio3" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        2 BEDROOMS + POOL
+                                        غرفتين نوم + حمام سباحة
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-water-ladder px-2"></i>
@@ -328,13 +331,13 @@ $_SESSION["params"] = $params;
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;">
+                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms"
                                 required>
                             <label for="EnquiryRadio4" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        3 BEDROOMS + POOL
+                                        ثلاث غرف نوم + حمام سباحة
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-water-ladder px-2"></i>
@@ -346,27 +349,27 @@ $_SESSION["params"] = $params;
 
                         <!-- PURPOSE  -->
                         <label>
-                            Purpose of Enquiry
+                            غرض الاستفسار
                         </label>
                         <div class="row">
-                            <div class="col-6 purpose-radio text-center">
+                            <div class="col-6 purpose-radio text-center" dir="rtl">
                                 <input class="" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment"
                                     required>
                                 <label for="PurposeRadio1" class="m-0">
-                                    INVESTMENT
+                                    استثمار
                                 </label>
                             </div>
-                            <div class="col-6 purpose-radio text-center">
+                            <div class="col-6 purpose-radio text-center" dir="rtl">
                                 <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user"
                                     required>
                                 <label for="PurposeRadio2" class="m-0">
-                                    END-USER
+                                    سكني
                                 </label>
                             </div>
                         </div>
                         <!-- BUTTON  -->
                         <button type="submit" class="submit-click my-3">
-                            SUBMIT
+                            إرسال
                         </button>
                     </form>
                     <?php
@@ -378,7 +381,7 @@ $_SESSION["params"] = $params;
         <!-- LOCATION BENEFITS -->
         <div class="third_section container container-fluid my-4 py-4">
             <h4 class="primary-text text-center">
-                LOCATION BENEFITS
+                مميزات الموقع
             </h4>
             <div class="row container container-fluid">
                 <!-- DUBAI MIRACLE GARDEN  -->
@@ -394,7 +397,7 @@ $_SESSION["params"] = $params;
                                 <span class="px-1">MIN</span>
                             </div>
                             <div class="location-name">
-                                DUBAI MIRACLE GARDEN
+                                حديقة دبي للزهور العجيبة
                             </div>
                         </div>
                     </div>
@@ -412,7 +415,7 @@ $_SESSION["params"] = $params;
                                 <span class="px-1">MIN</span>
                             </div>
                             <div class="location-name">
-                                MALL OF THE EMIRATES
+                                مول الإمارات
                             </div>
                         </div>
                     </div>
@@ -430,7 +433,7 @@ $_SESSION["params"] = $params;
                                 <span class="px-1">MIN</span>
                             </div>
                             <div class="location-name">
-                                BURJ KHALIFA
+                                برج خليفة
                             </div>
                         </div>
                     </div>
@@ -448,7 +451,7 @@ $_SESSION["params"] = $params;
                                 <span class="px-1">MIN</span>
                             </div>
                             <div class="location-name">
-                                DUBAI MARINA
+                                مرسى دبي
                             </div>
                         </div>
                     </div>
@@ -466,7 +469,7 @@ $_SESSION["params"] = $params;
                                 <span class="px-1">MIN</span>
                             </div>
                             <div class="location-name">
-                                DUBAI INTERNATIONAL AIRPORT
+                                مطار دبي الدولي
                             </div>
                         </div>
                     </div>
@@ -484,7 +487,7 @@ $_SESSION["params"] = $params;
                                 <span class="px-1">MIN</span>
                             </div>
                             <div class="location-name">
-                                AL MAKTOUM INTERNATIONAL AIRPORT
+                                مطار آل مكتوم الدولي
                             </div>
                         </div>
                     </div>

@@ -44,10 +44,10 @@ $_SESSION["params"] = $params;
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
         integrity="sha512-0RxGTiFXp36+bSbJM+/QSTl1LDQ4pHdDZ8Ua9ZXl454qKSsYu228AOLHYfzx/rm4Dm6I+176ETRF55DpvrHTgw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- JQUERY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
@@ -142,7 +142,7 @@ $_SESSION["params"] = $params;
 
         <!-- IMAGE AND LANGUAGE AND HEADING AND COUNTDOWN -->
         <div class="first_section">
-            <img class="main-image" src="../../assets/images/projects/empire/main.webp" loading="eager" alt="Hikal Real Estate">
+            <img class="main-image" src="../../assets/images/projects/empire/empire-main.webp" alt="Hikal Real Estate">
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
