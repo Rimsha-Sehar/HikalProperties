@@ -63,9 +63,9 @@ $_SESSION["params"] = $params;
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- SLICK CAROUSEL -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
         integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- ICON -->
     <link rel="icon" type="image/png"
@@ -75,7 +75,7 @@ $_SESSION["params"] = $params;
     <link rel="stylesheet" href="../../assets/css/mobile-theme.css" />
 
     <!-- PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/gtm-pixel.js"></script>
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script>
 
     <style>
         /* ROOT */
@@ -92,7 +92,7 @@ $_SESSION["params"] = $params;
 
 <body class="arabic">
 
-    <?php include_once ("../../gtm/gtm-pixel.php"); ?>
+    <?php include_once ("../../gtm/pixel.php"); ?>
 
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
@@ -148,7 +148,7 @@ $_SESSION["params"] = $params;
                 <div class="language_selection">
                     <a href="https://hikalproperties.com/projects/empire/en?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
-                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
+                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.jpg" />
                             <span class="next-language">EN</span>
                         </div>
                     </a>
@@ -501,12 +501,12 @@ $_SESSION["params"] = $params;
         </footer>
 
         <!-- SCROLL TO FORM -->
-        <!-- <script>
+        <script>
             function scrollToForm() {
                 var element = document.getElementById("form-container");
                 element.scrollIntoView({ behavior: "smooth", block: "start" });
             }
-        </script> -->
+        </script>
 
         <!-- COUNTDOWN -->
         <script>

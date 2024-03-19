@@ -75,7 +75,7 @@ $_SESSION["params"] = $params;
     <link rel="stylesheet" href="../../assets/css/mobile-theme.css" />
 
     <!-- PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/gtm-pixel.js"></script>
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script>
 
     <style>
         /* ROOT */

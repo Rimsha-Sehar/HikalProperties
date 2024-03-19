@@ -75,7 +75,7 @@ $_SESSION["params"] = $params;
     <link rel="stylesheet" href="../../assets/css/mobile-theme.css" />
 
     <!-- PIXEL -->
-    <script src="https://hikalproperties.com/projects/gtm/gtm-pixel.js"></script>
+    <script src="https://hikalproperties.com/projects/gtm/pixel.js"></script>
 
     <style>
         /* ROOT */
@@ -92,7 +92,7 @@ $_SESSION["params"] = $params;
 
 <body class="arabic">
 
-    <?php include_once ("../../gtm/gtm-pixel.php"); ?>
+    <?php include_once ("../../gtm/pixel.php"); ?>
 
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
@@ -501,12 +501,12 @@ $_SESSION["params"] = $params;
         </footer>
 
         <!-- SCROLL TO FORM -->
-        <!-- <script>
+        <script>
             function scrollToForm() {
                 var element = document.getElementById("form-container");
                 element.scrollIntoView({ behavior: "smooth", block: "start" });
             }
-        </script> -->
+        </script>
 
         <!-- COUNTDOWN -->
         <script>
