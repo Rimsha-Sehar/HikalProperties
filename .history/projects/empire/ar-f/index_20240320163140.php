@@ -269,15 +269,14 @@ curl_close($ch);
                         <div style="display: none">
                             <input type="text" name="phone_number" id="phone_number">
                             <input type="text" name="lead_name" id="lead_name">
-                            <input type="text" name="lead_email" id="lead_email">
+                            <!-- <input type="text" name="lead_email" id="lead_email"> -->
                             <input type="text" name="lang" id="lang">
                             <input type="text" name="project_name" id="project_name">
                             <input type="text" name="lead_type" id="lead_type">
                             <input type="text" name="enquiry_type" id="enquiry_type">
                             <input type="text" name="lead_for" id="lead_for">
-                            <input type="text" name="country_name" id="country_name">
+                            <!-- <input type="text" name="country_name" id="country_name"> -->
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <input type="text" name="lead_source" id="lead_source">
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
@@ -303,10 +302,10 @@ curl_close($ch);
                             <input type="text" id="Project" name="Project" value="Empire Estates (Private Pool)" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                             <input type="text" id="Language" name="Language" value="Arabic" />
-                            <input type="text" id="Country" name="Country" value="" />
+                            <!-- <input type="text" id="Country" name="Country" value="" /> -->
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
-                            <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
-                            <input type="text" id="LeadSource" name="LeadSource" value="Campaign TikTok" />
+                            <!-- <input type="text" id="LeadEmail1" name="LeadEmail1" value="" /> -->
+                            <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
                         </div>
                         <!-- NAME -->
                         <label>
@@ -672,8 +671,8 @@ curl_close($ch);
                 var LeadName1 = document.getElementById('lead_name');
                 LeadName1.value = $("#LeadName1").val();
 
-                var LeadEmail1 = document.getElementById('lead_email');
-                LeadEmail1.value = $("#LeadEmail1").val();
+                // var LeadEmail1 = document.getElementById('lead_email');
+                // LeadEmail1.value = $("#LeadEmail1").val();
 
                 var Language = document.getElementById('lang');
                 Language.value = $("#Language").val();
@@ -704,8 +703,8 @@ curl_close($ch);
                 var LeadForRadio1 = document.getElementById('lead_for');
                 LeadForRadio1.value = $("#LeadForRadio1").val();
 
-                var Country = document.getElementById('country_name');
-                Country.value = $("#Country").val();
+                // var Country = document.getElementById('country_name');
+                // Country.value = $("#Country").val();
 
                 var formData = $("#lead-form").serialize();
                 formData += "&leadContact=" + encodeURIComponent(full_number);

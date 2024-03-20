@@ -523,14 +523,14 @@ button:hover {
 /* COUNTDOWN OVERLAY */
 .countdown-overlay {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     right: 7%;
     width: auto;
 }
 
 .countdown-text {
-    background-color: var(--primary);
-    color: var(--white);
+    /* background-color: var(--primary); */
+    color: var(--primary);
     border-radius: 30px;
     width: 100%;
     padding: 2px 15px;
@@ -546,7 +546,7 @@ button:hover {
     direction: ltr;
     display: flex;
     justify-content: center;
-    background-color: var(--secondary);
+    /* background-color: var(--secondary); */
     color: var(--primary);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -556,20 +556,29 @@ button:hover {
 }
 
 .clock__item {
-    margin: 0 0.2rem;
+    margin: 0.4rem 0.4rem;
+    padding: 0.3rem 0.6rem;
+    /* border-radius: 1px; */
+    box-shadow: 0 0 10px 1px var(--secondary);
+    background-color: var(--secondary);
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.clock__item-text {
+    font-size: normal;
 }
 
 .clock__colon {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 5px;
 }
 
 .clock__colon-item {
-    width: 2px;
-    height: 2px;
+    width: 4px;
+    height: 4px;
     background-color: var(--primary);
     border-radius: 50%;
 }

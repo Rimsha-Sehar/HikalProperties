@@ -8,18 +8,15 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 ?>
 
 <?php
+
 $protocol = isset ($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
 $host = $_SERVER['HTTP_HOST'];
 $uri = $_SERVER['REQUEST_URI'];
-
 $fullUrl = $protocol . $host . $uri;
+
 $_SESSION["page_url"] = $fullUrl;
 
-$params = parse_url($fullUrl, PHP_URL_QUERY);
-$_SESSION["params"] = $params;
-?>
 
-<?php
 date_default_timezone_set('Asia/Dubai');
 $cur_time = time();
 
@@ -277,7 +274,6 @@ curl_close($ch);
                             <input type="text" name="lead_for" id="lead_for">
                             <input type="text" name="country_name" id="country_name">
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <input type="text" name="lead_source" id="lead_source">
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
@@ -306,7 +302,7 @@ curl_close($ch);
                             <input type="text" id="Country" name="Country" value="" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
-                            <input type="text" id="LeadSource" name="LeadSource" value="Campaign TikTok" />
+                            <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
                         </div>
                         <!-- NAME -->
                         <label>
@@ -688,15 +684,15 @@ curl_close($ch);
                 LeadSource.value = $("#LeadSource").val();
 
                 // TIKTOK SUBMIT FORM
-                // if (LeadSource.value == "Campaign TikTok") {
-                //     ttq.track('SubmitForm');
-                // }
+                if (LeadSource.value == "Campaign TikTok") {
+                    ttq.track('SubmitForm');
+                }
                 // TWITTER SUBMIT FORM
-                // if (LeadSource.value == "Campaign Twitter") {
-                //     twq('event', 'tw-ohu9a-oivb1', {
-                //         phone_number: encodeURIComponent(full_number)
-                //     });
-                // }
+                if (LeadSource.value == "Campaign Twitter") {
+                    twq('event', 'tw-ohu9a-oivb1', {
+                        phone_number: encodeURIComponent(full_number)
+                    });
+                }
 
                 var EnquiryRadio1 = document.getElementById('enquiry_type');
                 EnquiryRadio1.value = $("#EnquiryRadio1").val();
@@ -712,7 +708,7 @@ curl_close($ch);
                 // console.log(formData);
 
                 $.ajax({
-                    url: "../../controllers/add-lead-by-source.php",
+                    url: "../../controllers/add-lead-country-hybrid.php",
                     method: "GET",
                     data: formData,
                     dataType: "json",

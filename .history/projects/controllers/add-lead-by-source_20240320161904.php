@@ -8,7 +8,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
 
 // SOURCE
-if ($_SESSION["params"]) {
+if ($$_SESSION["params"]) {
     $params = $_SESSION["params"];
     if (strpos($params, "gclid") === 0) {
         $leadSource = "GoogleAds";
@@ -24,7 +24,7 @@ if ($_SESSION["params"]) {
         $leadSource = "Website";
     }
 }
-if (isset($_GET['LeadSource'])) {
+if ($_GET['LeadSource']) {
     $leadSource = $_GET['LeadSource'];
 }
 
@@ -45,10 +45,7 @@ $project = $_GET['Project'];
 $leadType = $_GET['LeadType'];
 $language = $_GET['Language'];
 $filename = $_GET['Filename'];
-
-$callTime = "";
-$country = "";
-$leadEmail = "";
+$country = $_GET['Country'];
 
 
 if (isset ($_GET['phone']['main']) && !empty ($_GET['phone']['main'])) {
@@ -60,23 +57,18 @@ if (isset ($_GET['phone']['main']) && !empty ($_GET['phone']['main'])) {
 if (isset ($_GET['leadContact'])) {
     $leadContact = $_GET['leadContact'];
 }
+$callTime = '';
 if (isset ($_GET['time'])) {
     $callTime = $_GET['time'];
 }
 if (isset ($_GET['AttendanceNote'])) {
     $callTime = "Event Day: " . $_GET['AttendanceNote'];
 }
-if (isset ($_GET['LeadEmail1'])) {
-    $leadEmail = $_GET['LeadEmail1'];
-}
-if (isset ($_GET['Country'])) {
-    $country = $_GET['Country'];
-}
-
-// USER DATA
+$leadEmail = $_GET['LeadEmail1'];
 $leadName = $_GET['LeadName1'];
 $leadFor = $_GET['LeadForRadio1'];
 $enquiryType = $_GET['EnquiryRadio1'];
+
 if (isset ($_GET['EnquiryType']) && $_GET['EnquiryType'] !== "") {
     $enquiryType = $_GET['EnquiryType'];
 }

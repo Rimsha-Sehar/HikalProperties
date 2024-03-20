@@ -1,34 +1,14 @@
 <?php
 session_start();
 
-include ('../dbconfig/dbhybrid.php');
+include('../dbconfig/dbhybrid.php');
 
 // IP AND DEVICE
 $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
 
-// SOURCE
-if ($_SESSION["params"]) {
-    $params = $_SESSION["params"];
-    if (strpos($params, "gclid") === 0) {
-        $leadSource = "GoogleAds";
-    } elseif (strpos($params, "ttclid") === 0) {
-        $leadSource = "TikTok";
-    } elseif (strpos($params, "ScCid") === 0) {
-        $leadSource = "Snapchat";
-    } elseif (strpos($params, "fbclid") === 0) {
-        $leadSource = "Facebook";
-    } elseif (strpos($params, "twclid") === 0) {
-        $leadSource = "Twitter";
-    } else {
-        $leadSource = "Website";
-    }
-}
-if (isset($_GET['LeadSource'])) {
-    $leadSource = $_GET['LeadSource'];
-}
-
 // DEFAULT DATA FIELD
+$leadSource = "Campaign";
 $leadStatus = "New";
 $feedback = "New";
 $addedBy = "101";
@@ -44,40 +24,30 @@ $api_sendOtp = "https://staging.hikalcrm.com/api/otp";
 $project = $_GET['Project'];
 $leadType = $_GET['LeadType'];
 $language = $_GET['Language'];
+$leadSource = $_GET['LeadSource'];
 $filename = $_GET['Filename'];
-
-$callTime = "";
-$country = "";
-$leadEmail = "";
+$country = $_GET['Country'];
 
 
-if (isset ($_GET['phone']['main']) && !empty ($_GET['phone']['main'])) {
+if (isset($_GET['phone']['main']) && !empty($_GET['phone']['main'])) {
     $leadContact = $_GET['phone']['main'];
-} elseif (isset ($_GET['phone']['full']) && !empty ($_GET['phone']['full'])) {
+} elseif (isset($_GET['phone']['full']) && !empty($_GET['phone']['full'])) {
     $leadContact = $_GET['phone']['full'];
 }
 
-if (isset ($_GET['leadContact'])) {
+if (isset($_GET['leadContact'])) {
     $leadContact = $_GET['leadContact'];
 }
-if (isset ($_GET['time'])) {
+$callTime = '';
+if (isset($_GET['time'])) {
     $callTime = $_GET['time'];
 }
-if (isset ($_GET['AttendanceNote'])) {
-    $callTime = "Event Day: " . $_GET['AttendanceNote'];
-}
-if (isset ($_GET['LeadEmail1'])) {
-    $leadEmail = $_GET['LeadEmail1'];
-}
-if (isset ($_GET['Country'])) {
-    $country = $_GET['Country'];
-}
-
-// USER DATA
+$leadEmail = $_GET['LeadEmail1'];
 $leadName = $_GET['LeadName1'];
 $leadFor = $_GET['LeadForRadio1'];
 $enquiryType = $_GET['EnquiryRadio1'];
-if (isset ($_GET['EnquiryType']) && $_GET['EnquiryType'] !== "") {
+
+if (isset($_GET['EnquiryType']) && $_GET['EnquiryType'] !== "") {
     $enquiryType = $_GET['EnquiryType'];
 }
 
@@ -138,7 +108,7 @@ if (isset ($_GET['EnquiryType']) && $_GET['EnquiryType'] !== "") {
 // SNAP PIXEL END
 
 // Check if name and contact fields are empty
-if (empty ($leadName) || empty ($leadContact)) {
+if (empty($leadName) || empty($leadContact)) {
     $error = "Please enter name and contact to register!";
 } else {
     $dupq = mysqli_query($con, "SELECT leadName, leadContact, project, language FROM leads ORDER BY id DESC LIMIT 1");
@@ -208,7 +178,7 @@ if (empty ($leadName) || empty ($leadContact)) {
             $leadResponse = curl_exec($clch);
             $leadResponseData = json_decode($leadResponse, true);
 
-            if (isset ($leadResponseData['status']) && $leadResponseData['status'] === true) {
+            if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
                 $lead_id = $leadResponseData['lead']['id'];
                 $_SESSION['lead_id'] = $lead_id;
 
@@ -217,7 +187,7 @@ if (empty ($leadName) || empty ($leadContact)) {
 
                 // SEND OTP
                 // $otpData = array(
-                //     'phone_number' => (string)$leadContact,
+                //     'phone_number' => (string) $leadContact,
                 //     'senderAddr' => "AD-HIKAL",
                 //     'message' => "The OTP for verification is: "
                 // );
@@ -233,30 +203,29 @@ if (empty ($leadName) || empty ($leadContact)) {
                 //     $message = $otpResponseData['message'];
                 //     echo json_encode(['otp' => true]);
                 // }
-                // // SEND OTP END
-
+                // SEND OTP END
                 // else {
-                if ($language == "English") {
-                    $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";
-                } elseif ($language == "Arabic") {
-                    $redirectUrl = "https://hikalproperties.com/projects/thankyou/ar";
-                } elseif ($language == "French") {
-                    $redirectUrl = "https://hikalproperties.com/projects/thankyou/fr";
-                } elseif ($language == "Hebrew") {
-                    $redirectUrl = "https://hikalproperties.com/projects/thankyou/he";
-                } elseif ($language == "Chinese") {
-                    $redirectUrl = "https://hikalproperties.com/projects/thankyou/cn";
-                } else {
-                    $redirectUrl = "https://hikalproperties.com/projects/thankyou";
-                }
-                echo json_encode(['thankyou' => true, 'redirectUrl' => $redirectUrl]);
+                    if ($language == "English") {
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";
+                    } elseif ($language == "Arabic") {
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/ar";
+                    } elseif ($language == "French") {
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/fr";
+                    } elseif ($language == "Hebrew") {
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/he";
+                    } elseif ($language == "Chinese") {
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/cn";
+                    } else {
+                        $redirectUrl = "https://hikalproperties.com/projects/thankyou";
+                    }
+                    echo json_encode(['thankyou' => true, 'redirectUrl' => $redirectUrl]);
                 // }
             } else {
                 $query = mysqli_query($con, "INSERT INTO leads (leadName, notes, leadContact, leadEmail, enquiryType, leadFor, leadType, project, projectName, leadStatus, leadSource, feedback, language, addedBy, filename, ip, device, otp, country) VALUES ('$leadName', '$callTime', '$leadContact', '$leadEmail', '$enquiryType','$leadFor', '$leadType', '$project', '$project', '$leadStatus', '$leadSource', '$feedback', '$language', '$addedBy', '$filename', '$ip', '$device', 'Not Verified', '$country')");
                 if ($query) {
                     // SEND OTP
                     // $otpData = array(
-                    //     'phone_number' => (string)$leadContact,
+                    //     'phone_number' => (string) $leadContact,
                     //     'senderAddr' => "AD-HIKAL",
                     //     'message' => "The OTP for verification is: "
                     // );
@@ -273,28 +242,28 @@ if (empty ($leadName) || empty ($leadContact)) {
                     //     echo json_encode(['otp' => true]);
                     //     exit();
                     // }
-                    // // SEND OTP END
-
+                    // SEND OTP END
                     // else {
-                    if ($language == "English") {
-                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";
-                    } elseif ($language == "Arabic") {
-                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/ar";
-                    } elseif ($language == "French") {
-                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/fr";
-                    } elseif ($language == "Hebrew") {
-                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/he";
-                    } elseif ($language == "Chinese") {
-                        $redirectUrl = "https://hikalproperties.com/projects/thankyou/cn";
-                    } else {
-                        $redirectUrl = "https://hikalproperties.com/projects/thankyou";
-                    }
+                        if ($language == "English") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/en";
+                        } elseif ($language == "Arabic") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/ar";
+                        } elseif ($language == "French") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/fr";
+                        } elseif ($language == "Hebrew") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/he";
+                        } elseif ($language == "Chinese") {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou/cn";
+                        } else {
+                            $redirectUrl = "https://hikalproperties.com/projects/thankyou";
+                        }
                     // }
                 } else {
                     $redirectUrl = "https://hikalproperties.com/projects/thankyou";
                 }
                 echo json_encode(['thankyou' => true, 'redirectUrl' => $redirectUrl]);
             }
+
             sleep(5);
 
             // SEND SMS NOTIFICATION
@@ -314,7 +283,7 @@ if (empty ($leadName) || empty ($leadContact)) {
             $otpResponse = curl_exec($soch);
             $otpResponseData = json_decode($otpResponse, true);
 
-            if (isset ($otpResponseData['message'])) {
+            if (isset($otpResponseData['message'])) {
                 $message = $otpResponseData['message'];
                 echo json_encode(['otp' => true]);
                 exit();
@@ -358,7 +327,7 @@ if (empty ($leadName) || empty ($leadContact)) {
             $leadResponse = curl_exec($clch);
             $leadResponseData = json_decode($leadResponse, true);
 
-            if (isset ($leadResponseData['status']) && $leadResponseData['status'] === true) {
+            if (isset($leadResponseData['status']) && $leadResponseData['status'] === true) {
                 $lead_id = $leadResponseData['lead']['id'];
                 $_SESSION['lead_id'] = $lead_id;
 

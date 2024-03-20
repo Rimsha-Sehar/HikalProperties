@@ -8,18 +8,15 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 ?>
 
 <?php
+
 $protocol = isset ($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
 $host = $_SERVER['HTTP_HOST'];
 $uri = $_SERVER['REQUEST_URI'];
-
 $fullUrl = $protocol . $host . $uri;
+
 $_SESSION["page_url"] = $fullUrl;
 
-$params = parse_url($fullUrl, PHP_URL_QUERY);
-$_SESSION["params"] = $params;
-?>
 
-<?php
 date_default_timezone_set('Asia/Dubai');
 $cur_time = time();
 
@@ -125,12 +122,12 @@ curl_close($ch);
     <style>
         /* ROOT */
         :root {
-            --primary: #9d2f52;
-            /* --primary: #994e12; */
+            /* --primary: #9d2f52; */
+            --primary: #994e12;
             /* --primary: #cc661e; */
             /* --primary: #6c2411; */
-            --secondary: #f1effa;
-            /* --secondary: #ebc683; */
+            /* --secondary: #f1effa; */
+            --secondary: #ebc683;
             /* --secondary: #f2dfcb; */
             /* --secondary: #f9a602; */
             --white: #FFFFFF;
@@ -212,37 +209,38 @@ curl_close($ch);
                     </h1>
                 </div>
             </div>
-            <!-- COUNTDOWN -->
-            <div class="countdown-overlay">
-                <div class="countdown-text" style="width: auto;">
-                    الفرصة لفترة محدودة
-                </div>
-                <div class="countdown-clock">
-                    <div class="clock">
-                        <div class="clock__item">
-                            <span class="days"></span>
-                        </div>
-                        <div class="clock__colon">
-                            <div class="clock__colon-item"></div>
-                            <div class="clock__colon-item"></div>
-                        </div>
-                        <div class="clock__item">
-                            <span class="hours"></span>
-                        </div>
-                        <div class="clock__colon">
-                            <div class="clock__colon-item"></div>
-                            <div class="clock__colon-item"></div>
-                        </div>
-                        <div class="clock__item">
-                            <span class="minutes"></span>
-                        </div>
-                        <div class="clock__colon">
-                            <div class="clock__colon-item"></div>
-                            <div class="clock__colon-item"></div>
-                        </div>
-                        <div class="clock__item">
-                            <span class="seconds"></span>
-                        </div>
+        </div>
+
+        <!-- COUNTER -->
+        <div class="container container-fluid py-4">
+            <div class="countdown-text">
+                الفرصة لفترة محدودة
+            </div>
+            <div class="countdown-clock">
+                <div class="clock">
+                    <div class="clock__item">
+                        <span class="days"></span>
+                    </div>
+                    <div class="clock__colon">
+                        <div class="clock__colon-item"></div>
+                        <div class="clock__colon-item"></div>
+                    </div>
+                    <div class="clock__item">
+                        <span class="hours"></span>
+                    </div>
+                    <div class="clock__colon">
+                        <div class="clock__colon-item"></div>
+                        <div class="clock__colon-item"></div>
+                    </div>
+                    <div class="clock__item">
+                        <span class="minutes"></span>
+                    </div>
+                    <div class="clock__colon">
+                        <div class="clock__colon-item"></div>
+                        <div class="clock__colon-item"></div>
+                    </div>
+                    <div class="clock__item">
+                        <span class="seconds"></span>
                     </div>
                 </div>
             </div>
@@ -277,7 +275,6 @@ curl_close($ch);
                             <input type="text" name="lead_for" id="lead_for">
                             <input type="text" name="country_name" id="country_name">
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <input type="text" name="lead_source" id="lead_source">
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
@@ -306,7 +303,7 @@ curl_close($ch);
                             <input type="text" id="Country" name="Country" value="" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
-                            <input type="text" id="LeadSource" name="LeadSource" value="Campaign TikTok" />
+                            <input type="text" id="LeadSource" name="LeadSource" value="Campaign Facebook" />
                         </div>
                         <!-- NAME -->
                         <label>
@@ -415,147 +412,115 @@ curl_close($ch);
             </div>
         </div>
 
-        <!-- LOCATION BENEFITS -->
-        <div class="third_section container container-fluid my-4 py-4">
-            <h4 class="primary-text text-center">
-                مميزات الموقع
-            </h4>
-            <div class="row container container-fluid">
-                <!-- DUBAI MIRACLE GARDEN  -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-brands fa-pagelines location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/trees.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
-                                    5
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+        <!--LOCATION-->
+        <div class="third_section mt-5">
+            <div class="container container-fluid py-5">
+                <div class="row" style="text-align: center;">
+                    <h4 class="gold-grad-anim">
+                        مميزات الموقع
+                    </h4>
+                </div>
+                <div class="row" style="justify-content: center;">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                    05
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 حديقة دبي للزهور العجيبة
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- MALL OF THE EMIRATES -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-solid fa-bag-shopping location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/mall.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     10
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 مول الإمارات
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- BURJ KHALIFA -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-solid fa-ship location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/burjkhalifa.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     25
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 برج خليفة
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- PALM JUMEIRAH -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-brands fa-pagelines location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/cruise.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     25
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 مرسى دبي
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- DXB AIRPORT -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-solid fa-plane-departure location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/airport.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     25
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 مطار دبي الدولي
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- AL MAKTOUM AIRPORT -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-solid fa-plane-departure location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/airport.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     25
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 مطار آل مكتوم الدولي
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- BUTTOM NAV -->
-        <div id="bottom-nav">
-            <div class="row container container-fluid">
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <a href="tel:+971585550775">
-                        <i class="fa-solid fa-phone footer-icon"></i>
-                    </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <a href="https://wa.me/971585550775" target="_blank">
-                        <i class="fa-brands fa-whatsapp footer-icon"></i>
-                    </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <a href="mailto:info@hikalagency.ae">
-                        <i class="fa-solid fa-envelope footer-icon"></i>
-                    </a>
-                </div>
-            </div>
+        <!--IMAGE-->
+        <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
+            <img loading="eager" class="desktop img-style"
+                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
+                style="width: 60%" />
+            <img loading="eager" class="mobile img-style"
+                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
+                style="width: 100%" />
         </div>
 
-        <!-- FOOTER -->
-        <footer style="background-color: var(--primary);">
-            <?php include_once ("../../components/footer-only-light.php"); ?>
+        <footer style="background-color: #000000;">
+            <?php include_once ("../../components/footer-copyright.php"); ?>
         </footer>
 
         <!-- COUNTDOWN -->
@@ -598,26 +563,6 @@ curl_close($ch);
             }
 
             initializeClock('.clock', deadline);
-        </script>
-
-        <!-- HIDE BOTTOM NAV ON SCROLL TO END -->
-        <script>
-            window.addEventListener('scroll', function () {
-                var bottomNav = document.getElementById('bottom-nav');
-                var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-                var windowHeight = window.innerHeight;
-                var documentHeight = document.body.scrollHeight;
-
-                // console.log('Scroll Position:', scrollPosition);
-                // console.log('Window Height:', windowHeight);
-                // console.log('Document Height:', documentHeight);
-
-                if (scrollPosition + windowHeight >= documentHeight) {
-                    bottomNav.style.display = 'none';
-                } else {
-                    bottomNav.style.display = 'block';
-                }
-            });
         </script>
 
 
@@ -688,15 +633,15 @@ curl_close($ch);
                 LeadSource.value = $("#LeadSource").val();
 
                 // TIKTOK SUBMIT FORM
-                // if (LeadSource.value == "Campaign TikTok") {
-                //     ttq.track('SubmitForm');
-                // }
+                if (LeadSource.value == "Campaign TikTok") {
+                    ttq.track('SubmitForm');
+                }
                 // TWITTER SUBMIT FORM
-                // if (LeadSource.value == "Campaign Twitter") {
-                //     twq('event', 'tw-ohu9a-oivb1', {
-                //         phone_number: encodeURIComponent(full_number)
-                //     });
-                // }
+                if (LeadSource.value == "Campaign Twitter") {
+                    twq('event', 'tw-ohu9a-oivb1', {
+                        phone_number: encodeURIComponent(full_number)
+                    });
+                }
 
                 var EnquiryRadio1 = document.getElementById('enquiry_type');
                 EnquiryRadio1.value = $("#EnquiryRadio1").val();
@@ -712,7 +657,7 @@ curl_close($ch);
                 // console.log(formData);
 
                 $.ajax({
-                    url: "../../controllers/add-lead-by-source.php",
+                    url: "../../controllers/add-lead-country-hybrid.php",
                     method: "GET",
                     data: formData,
                     dataType: "json",

@@ -8,7 +8,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
 
 // SOURCE
-if ($_SESSION["params"]) {
+if ($$_SESSION["params"]) {
     $params = $_SESSION["params"];
     if (strpos($params, "gclid") === 0) {
         $leadSource = "GoogleAds";
@@ -24,7 +24,7 @@ if ($_SESSION["params"]) {
         $leadSource = "Website";
     }
 }
-if (isset($_GET['LeadSource'])) {
+if ($_GET['LeadSource']) {
     $leadSource = $_GET['LeadSource'];
 }
 

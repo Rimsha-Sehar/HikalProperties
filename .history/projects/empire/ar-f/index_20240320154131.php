@@ -8,18 +8,15 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 ?>
 
 <?php
+
 $protocol = isset ($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
 $host = $_SERVER['HTTP_HOST'];
 $uri = $_SERVER['REQUEST_URI'];
-
 $fullUrl = $protocol . $host . $uri;
+
 $_SESSION["page_url"] = $fullUrl;
 
-$params = parse_url($fullUrl, PHP_URL_QUERY);
-$_SESSION["params"] = $params;
-?>
 
-<?php
 date_default_timezone_set('Asia/Dubai');
 $cur_time = time();
 
@@ -125,12 +122,12 @@ curl_close($ch);
     <style>
         /* ROOT */
         :root {
-            --primary: #9d2f52;
-            /* --primary: #994e12; */
+            /* --primary: #9d2f52; */
+            --primary: #994e12;
             /* --primary: #cc661e; */
             /* --primary: #6c2411; */
-            --secondary: #f1effa;
-            /* --secondary: #ebc683; */
+            /* --secondary: #f1effa; */
+            --secondary: #ebc683;
             /* --secondary: #f2dfcb; */
             /* --secondary: #f9a602; */
             --white: #FFFFFF;
@@ -212,37 +209,38 @@ curl_close($ch);
                     </h1>
                 </div>
             </div>
-            <!-- COUNTDOWN -->
-            <div class="countdown-overlay">
-                <div class="countdown-text" style="width: auto;">
-                    الفرصة لفترة محدودة
-                </div>
-                <div class="countdown-clock">
-                    <div class="clock">
-                        <div class="clock__item">
-                            <span class="days"></span>
-                        </div>
-                        <div class="clock__colon">
-                            <div class="clock__colon-item"></div>
-                            <div class="clock__colon-item"></div>
-                        </div>
-                        <div class="clock__item">
-                            <span class="hours"></span>
-                        </div>
-                        <div class="clock__colon">
-                            <div class="clock__colon-item"></div>
-                            <div class="clock__colon-item"></div>
-                        </div>
-                        <div class="clock__item">
-                            <span class="minutes"></span>
-                        </div>
-                        <div class="clock__colon">
-                            <div class="clock__colon-item"></div>
-                            <div class="clock__colon-item"></div>
-                        </div>
-                        <div class="clock__item">
-                            <span class="seconds"></span>
-                        </div>
+        </div>
+
+        <!-- COUNTER -->
+        <div class="container container-fluid py-4">
+            <div class="countdown-text">
+                الفرصة لفترة محدودة
+            </div>
+            <div class="countdown-clock">
+                <div class="clock">
+                    <div class="clock__item">
+                        <span class="days"></span>
+                    </div>
+                    <div class="clock__colon">
+                        <div class="clock__colon-item"></div>
+                        <div class="clock__colon-item"></div>
+                    </div>
+                    <div class="clock__item">
+                        <span class="hours"></span>
+                    </div>
+                    <div class="clock__colon">
+                        <div class="clock__colon-item"></div>
+                        <div class="clock__colon-item"></div>
+                    </div>
+                    <div class="clock__item">
+                        <span class="minutes"></span>
+                    </div>
+                    <div class="clock__colon">
+                        <div class="clock__colon-item"></div>
+                        <div class="clock__colon-item"></div>
+                    </div>
+                    <div class="clock__item">
+                        <span class="seconds"></span>
                     </div>
                 </div>
             </div>
@@ -277,7 +275,6 @@ curl_close($ch);
                             <input type="text" name="lead_for" id="lead_for">
                             <input type="text" name="country_name" id="country_name">
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <input type="text" name="lead_source" id="lead_source">
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
@@ -306,7 +303,6 @@ curl_close($ch);
                             <input type="text" id="Country" name="Country" value="" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
-                            <input type="text" id="LeadSource" name="LeadSource" value="Campaign TikTok" />
                         </div>
                         <!-- NAME -->
                         <label>
@@ -415,147 +411,307 @@ curl_close($ch);
             </div>
         </div>
 
-        <!-- LOCATION BENEFITS -->
-        <div class="third_section container container-fluid my-4 py-4">
-            <h4 class="primary-text text-center">
-                مميزات الموقع
-            </h4>
-            <div class="row container container-fluid">
-                <!-- DUBAI MIRACLE GARDEN  -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-brands fa-pagelines location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/trees.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
-                                    5
-                                </span>
-                                <span class="px-1">MIN</span>
+
+        <!--HEADINGS & FORM-->
+        <div class="first_section">
+            <div class="container container-fluid">
+                <div class="row text-center d-flex align-items-center py-2">
+                    <div class="col-12">
+                        <h1 class="my-2" style="text-align: center; line-height: 2rem; font-weight: 800;">
+                            <span class="gold-grad-anim">تملك بأقساط </span>
+                            <span class="num-glow">1%</span>
+                            <span class="gold-grad-anim"> شهريا لمدة </span>
+                            <span class="num-glow">80</span>
+                            <span class="gold-grad-anim">شهر</span>
+                        </h1>
+                        <h3 class="text-expand mt-2" style="text-align: center; line-height: 1.5rem; font-size: 1rem; ">
+                            وفرصتك قبل الطرح
+                        </h3>
+                        <h3 class="mt-2"
+                            style="text-align: center; line-height: 1.5rem; font-weight: 500; font-size: 1rem; ">
+                            أحصل علي آلمطبخ مجهّز بالكامل
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile">
+                <img loading="eager" class="mobile img-style"
+                    src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-main.jpg"
+                    alt="HIKAL PROPERTIES" style="width: 100%" />
+            </div>
+            <div class="container container-fluid">
+                <div class="row d-flex align-items-center">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 px-1 py-1">
+                        <div style="display: flex; align-items: center;">
+                            <!-- FORM -->
+                            <div style="width: 100%; z-index: 1; display: flex; justify-content: center;">
+                                <div class="containerform">
+                                    <div class="inputs" style="font-weight: 400; overflow-y: scroll;">
+                                        <?php
+                                        $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                                        $parsedUrl = parse_url($url);
+                                        $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
+                                        ?>
+                                        <!-- OTP FORM  -->
+                                        <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
+                                            <form method="POST" action="../../controllers/verify-otp.php">
+                                                <h5 class="gold-grad" style="text-align: center;">
+                                                    OTP has been sent to
+                                                    <span id="phone_no"></span>
+                                                </h5>
+                                                <input type="text" name="otp" id="otp" maxlength="6" pattern="\d*"
+                                                    inputmode="numeric"
+                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+
+                                                <div style="display: none">
+                                                    <input type="text" name="phone_number" id="phone_number">
+                                                    <input type="text" name="lead_name" id="lead_name">
+                                                    <input type="text" name="lead_email" id="lead_email">
+                                                    <input type="text" name="lang" id="lang">
+                                                    <input type="text" name="project_name" id="project_name">
+                                                    <input type="text" name="lead_type" id="lead_type">
+                                                    <input type="text" name="lead_source" id="lead_source">
+                                                    <input type="text" name="enquiry_type" id="enquiry_type">
+                                                    <input type="text" name="lead_for" id="lead_for">
+                                                    <input type="text" name="country_name" id="country_name">
+                                                    <input type="text" name="file_name" id="file_name"
+                                                        value="<?php echo $filename; ?>">
+                                                </div>
+
+                                                <button type="submit" style="font-weight: bold;">
+                                                    تحقق من رمز التحقق
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <?php
+                                        $query = mysqli_query($con, "SELECT ip, filename FROM leads ORDER BY creationDate DESC LIMIT 1");
+                                        $fetch = mysqli_fetch_array($query);
+                                        if ($ip == $fetch['ip'] && $filename == $fetch['filename']) {
+                                            ?>
+                                            <div class="p-5 d-flex justify-content-center align-items-center text-center"
+                                                style="width: 100%; height: 100%; line-height: 2.5rem;">
+                                                شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
+                                            </div>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <!--NEW FORM-->
+                                            <div class="contact-form" dir="ltr">
+                                                <form id="lead-form" onsubmit="return submitLeadForm();">
+                                                    <div style="display: none">
+                                                        <input type="text" id="Project" name="Project"
+                                                            value="Empire Estates (Private Pool)" />
+                                                        <input type="text" id="LeadType" name="LeadType" value="Apartment" />
+                                                        <input type="text" id="Language" name="Language" value="Arabic" />
+                                                        <input type="text" id="LeadSource" name="LeadSource"
+                                                            value="Campaign Facebook" />
+                                                        <input type="text" id="Country" name="Country" value="" />
+                                                        <input type="text" id="Filename" name="Filename"
+                                                            value="<?php echo $filename; ?>" />
+                                                        <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
+                                                    </div>
+
+                                                    <!-- NAME -->
+                                                    <label class="gold-grad" style="margin-top: 0px;">الاسم</label>
+                                                    <input type="text" name="LeadName1" id="LeadName1" required />
+
+                                                    <!-- CONTACT NUMBER -->
+                                                    <label class="gold-grad">رقم الاتصال</label>
+                                                    <input type="tel" name="phone[main]" id="mobile" style="color: #000000;"
+                                                        placeholder="56 789 0123" required />
+
+                                                    <!--EMAIL-->
+                                                    <!-- <label class="gold-grad">عنوان البريد الإلكتروني</label>
+                                                    <input type="email" name="LeadEmail1" id="LeadEmail1" placeholder="example@gmail.com" /> -->
+
+                                                    <!-- HOW MANY BEDROOMS -->
+                                                    <label class="gold-grad">كم عدد غرف النوم؟</label>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1"
+                                                            value="Studio" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio1"
+                                                            style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            استوديو + حمام سباحة
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2"
+                                                            value="1 Bedroom" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio2"
+                                                            style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            غرفة نوم + حمام سباحة
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3"
+                                                            value="2 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio3"
+                                                            style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            غرفتين نوم + حمام سباحة
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4"
+                                                            value="3 Bedrooms" style="width: 20px;" required>
+                                                        <label for="EnquiryRadio4"
+                                                            style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            ثلاث غرف نوم + حمام سباحة
+                                                        </label>
+                                                    </div>
+
+                                                    <!-- PURPOSE  -->
+                                                    <label class="gold-grad">غرض الاستفسار</label>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio1"
+                                                            value="Investment" style="width: 20px;" required>
+                                                        <label for="PurposeRadio1"
+                                                            style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            استثمار
+                                                        </label>
+                                                    </div>
+                                                    <div style="display: flex;" dir="rtl">
+                                                        <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2"
+                                                            value="End-user" style="width: 20px;" required>
+                                                        <label for="PurposeRadio2"
+                                                            style="margin-top: 0px; padding-left: 7px; color: #fff;">
+                                                            سكني
+                                                        </label>
+                                                    </div>
+
+                                                    <div id="FormButton" name="FormButton">
+                                                        <div class="form_button">
+                                                            <button type="submit" class="submit-click">إرسال</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="location-name">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8 ps-5 py-1">
+                        <img loading="eager" class="desktop img-style"
+                            src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-main.jpg"
+                            alt="HIKAL PROPERTIES" style="width: 100%" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--LOCATION-->
+        <div class="third_section mt-5">
+            <div class="container container-fluid py-5">
+                <div class="row" style="text-align: center;">
+                    <h4 class="gold-grad-anim">
+                        مميزات الموقع
+                    </h4>
+                </div>
+                <div class="row" style="justify-content: center;">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
+                                    05
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 حديقة دبي للزهور العجيبة
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- MALL OF THE EMIRATES -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-solid fa-bag-shopping location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/mall.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     10
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 مول الإمارات
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- BURJ KHALIFA -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-solid fa-ship location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/burjkhalifa.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     25
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 برج خليفة
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- PALM JUMEIRAH -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-brands fa-pagelines location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/cruise.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     25
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 مرسى دبي
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- DXB AIRPORT -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-solid fa-plane-departure location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/airport.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     25
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 مطار دبي الدولي
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
-                </div>
-                <!-- AL MAKTOUM AIRPORT -->
-                <div class="col-6 col-md-4 col-lg-3 pb-3">
-                    <div class="d-flex justify-content-start align-items-center">
-                        <!-- <i class="fa-solid fa-plane-departure location-icon"></i> -->
-                        <img src="../../assets/images/icons/red-purple/airport.png" width="40" class="mx-2" />
-                        <div class="d-flex align-items-center flex-column justify-content-center">
-                            <div class="location-timing">
-                                <span class="location-time px-1">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 p-2">
+                        <div style="display: block; text-align: center;">
+                            <div style="font-size: 2.2rem; margin: 0px;"><b>
                                     25
-                                </span>
-                                <span class="px-1">MIN</span>
-                            </div>
-                            <div class="location-name">
+                                </b></div>
+                            <p style="display: flex; justify-content: center; color: #d4a556;">
+                                دقائق
+                            </p>
+                            <p class="icons-txtpara text-center" style="display: flex; justify-content: center;">
                                 مطار آل مكتوم الدولي
-                            </div>
+                            </p>
+                            <br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- BUTTOM NAV -->
-        <div id="bottom-nav">
-            <div class="row container container-fluid">
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <a href="tel:+971585550775">
-                        <i class="fa-solid fa-phone footer-icon"></i>
-                    </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <a href="https://wa.me/971585550775" target="_blank">
-                        <i class="fa-brands fa-whatsapp footer-icon"></i>
-                    </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <a href="mailto:info@hikalagency.ae">
-                        <i class="fa-solid fa-envelope footer-icon"></i>
-                    </a>
-                </div>
-            </div>
+        <!--IMAGE-->
+        <div class="map_section" style="display: flex; align-items: center; justify-content: space-evenly;">
+            <img loading="eager" class="desktop img-style"
+                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
+                style="width: 60%" />
+            <img loading="eager" class="mobile img-style"
+                src="https://hikalproperties.com/projects/assets/images/projects/empire/ee-map.png" alt="HIKAL PROPERTIES"
+                style="width: 100%" />
         </div>
 
-        <!-- FOOTER -->
-        <footer style="background-color: var(--primary);">
-            <?php include_once ("../../components/footer-only-light.php"); ?>
+        <footer style="background-color: #000000;">
+            <?php include_once ("../../components/footer-copyright.php"); ?>
         </footer>
 
         <!-- COUNTDOWN -->
@@ -598,26 +754,6 @@ curl_close($ch);
             }
 
             initializeClock('.clock', deadline);
-        </script>
-
-        <!-- HIDE BOTTOM NAV ON SCROLL TO END -->
-        <script>
-            window.addEventListener('scroll', function () {
-                var bottomNav = document.getElementById('bottom-nav');
-                var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-                var windowHeight = window.innerHeight;
-                var documentHeight = document.body.scrollHeight;
-
-                // console.log('Scroll Position:', scrollPosition);
-                // console.log('Window Height:', windowHeight);
-                // console.log('Document Height:', documentHeight);
-
-                if (scrollPosition + windowHeight >= documentHeight) {
-                    bottomNav.style.display = 'none';
-                } else {
-                    bottomNav.style.display = 'block';
-                }
-            });
         </script>
 
 
@@ -688,15 +824,15 @@ curl_close($ch);
                 LeadSource.value = $("#LeadSource").val();
 
                 // TIKTOK SUBMIT FORM
-                // if (LeadSource.value == "Campaign TikTok") {
-                //     ttq.track('SubmitForm');
-                // }
+                if (LeadSource.value == "Campaign TikTok") {
+                    ttq.track('SubmitForm');
+                }
                 // TWITTER SUBMIT FORM
-                // if (LeadSource.value == "Campaign Twitter") {
-                //     twq('event', 'tw-ohu9a-oivb1', {
-                //         phone_number: encodeURIComponent(full_number)
-                //     });
-                // }
+                if (LeadSource.value == "Campaign Twitter") {
+                    twq('event', 'tw-ohu9a-oivb1', {
+                        phone_number: encodeURIComponent(full_number)
+                    });
+                }
 
                 var EnquiryRadio1 = document.getElementById('enquiry_type');
                 EnquiryRadio1.value = $("#EnquiryRadio1").val();
@@ -712,7 +848,7 @@ curl_close($ch);
                 // console.log(formData);
 
                 $.ajax({
-                    url: "../../controllers/add-lead-by-source.php",
+                    url: "../../controllers/add-lead-country-hybrid.php",
                     method: "GET",
                     data: formData,
                     dataType: "json",

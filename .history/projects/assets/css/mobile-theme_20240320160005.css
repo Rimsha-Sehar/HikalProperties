@@ -523,7 +523,7 @@ button:hover {
 /* COUNTDOWN OVERLAY */
 .countdown-overlay {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     right: 7%;
     width: auto;
 }

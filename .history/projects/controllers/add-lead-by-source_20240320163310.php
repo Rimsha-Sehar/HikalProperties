@@ -24,7 +24,7 @@ if ($_SESSION["params"]) {
         $leadSource = "Website";
     }
 }
-if (isset($_GET['LeadSource'])) {
+if ($_GET['LeadSource']) {
     $leadSource = $_GET['LeadSource'];
 }
 

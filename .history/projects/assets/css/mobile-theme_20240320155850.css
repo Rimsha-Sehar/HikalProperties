@@ -523,7 +523,7 @@ button:hover {
 /* COUNTDOWN OVERLAY */
 .countdown-overlay {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     right: 7%;
     width: auto;
 }
@@ -547,7 +547,7 @@ button:hover {
     display: flex;
     justify-content: center;
     background-color: var(--secondary);
-    color: var(--primary);
+    color: var(--white);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     width: auto;
@@ -556,9 +556,13 @@ button:hover {
 }
 
 .clock__item {
-    margin: 0 0.2rem;
+    margin: 0.4rem 0.4rem;
+    padding: 0.4rem 0.6rem;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    /* border-radius: 1px; */
+    box-shadow: 0 0 10px 1px var(--secondary);
+    background-color: var(--secondary);
 }
 
 .clock__colon {
