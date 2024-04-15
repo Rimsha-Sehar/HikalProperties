@@ -507,7 +507,7 @@ $_SESSION["params"] = $params;
 
         <!-- COUNTDOWN -->
         <script>
-            const deadline = 'March 27 2024 23:59:59 GMT+0400';
+            const deadline = 'April 19 2024 23:59:59 GMT+0400';
             function getTimeRemaining(endtime) {
                 const total = Date.parse(endtime) - Date.parse(new Date());
                 const seconds = Math.floor((total / 1000) % 60);
