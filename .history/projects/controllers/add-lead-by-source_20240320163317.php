@@ -298,30 +298,30 @@ if (empty ($leadName) || empty ($leadContact)) {
             sleep(5);
 
             // SEND SMS NOTIFICATION
-            // $otpData = array(
-            //     'phone_number' => (string) $leadContact,
-            //     'senderAddr' => "AD-HIKAL",
-            //     'message' => "شكراً لتسجيل اهتمامك
-            //     مبروك حصولك علي جميع اجهزة المطبخ مجاناً سوف يقوم مستشارنا العقاري بالتواصل معك
-            //     رَمَضَان كَرِيم .",
-            //     'type' => "sms"
-            // );
+            $otpData = array(
+                'phone_number' => (string) $leadContact,
+                'senderAddr' => "AD-HIKAL",
+                'message' => "شكراً لتسجيل اهتمامك
+                مبروك حصولك علي جميع اجهزة المطبخ مجاناً سوف يقوم مستشارنا العقاري بالتواصل معك
+                رَمَضَان كَرِيم .",
+                'type' => "sms"
+            );
 
-            // $soch = curl_init($api_sendOtp);
-            // curl_setopt($soch, CURLOPT_POST, 1);
-            // curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
-            // curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
-            // $otpResponse = curl_exec($soch);
-            // $otpResponseData = json_decode($otpResponse, true);
+            $soch = curl_init($api_sendOtp);
+            curl_setopt($soch, CURLOPT_POST, 1);
+            curl_setopt($soch, CURLOPT_POSTFIELDS, $otpData);
+            curl_setopt($soch, CURLOPT_RETURNTRANSFER, true);
+            $otpResponse = curl_exec($soch);
+            $otpResponseData = json_decode($otpResponse, true);
 
-            // if (isset ($otpResponseData['message'])) {
-            //     $message = $otpResponseData['message'];
-            //     echo json_encode(['otp' => true]);
-            //     exit();
-            // }
+            if (isset ($otpResponseData['message'])) {
+                $message = $otpResponseData['message'];
+                echo json_encode(['otp' => true]);
+                exit();
+            }
             // SEND SMS NOTIFICATION END
 
-            // curl_close($soch);
+            curl_close($soch);
             exit();
         }
         // NON UAE NUMBERS
