@@ -590,10 +590,10 @@ button:hover {
 .location-timing {
     font-weight: bold;
     color: var(--light-bg-text);
-    font-family: 'Raleway';
+    font-family: 'Open Sans';
     direction: ltr;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     font-size: smaller;
 }

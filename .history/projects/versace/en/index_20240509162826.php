@@ -200,9 +200,9 @@ $cur_time = time();
                             </span>
                         </h1>
                     </div>
-                    <!-- <h1 class="text-center px-2 m-0">
+                    <h1 class="text-center px-2 m-0">
                         لمدة 80 شهر
-                    </h1> -->
+                    </h1>
                 </div>
             </div>
             <!-- COUNTDOWN -->

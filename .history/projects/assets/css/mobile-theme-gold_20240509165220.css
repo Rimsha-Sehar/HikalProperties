@@ -593,7 +593,7 @@ button:hover {
     font-family: 'Raleway';
     direction: ltr;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     font-size: smaller;
 }

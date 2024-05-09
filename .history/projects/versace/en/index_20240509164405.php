@@ -134,7 +134,7 @@ $cur_time = time();
     </style>
 </head>
 
-<body class="arabic" dir="rtl">
+<body class="english">
 
     <?php include_once ("../../gtm/pixel.php"); ?>
 
@@ -146,9 +146,9 @@ $cur_time = time();
         <div class="d-flex justify-content-center align-items-center text-center p-5"
             style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
+                Some suspicious activities have been detected from your device! Please contact
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                للحصول على المساعدة الإضافية!
+                for further assistance!
             </h1>
         </div>
         <?php
@@ -176,10 +176,10 @@ $cur_time = time();
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
-                    <a href="https://hikalproperties.com/projects/versace/en?<?php echo $_SESSION["params"]; ?>">
+                    <a href="https://hikalproperties.com/projects/versace/ar?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
-                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
-                            <span class="next-language">EN</span>
+                            <span class="next-language">AR</span>
+                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/ar.webp" />
                         </div>
                     </a>
                 </div>
@@ -200,9 +200,6 @@ $cur_time = time();
                             </span>
                         </h1>
                     </div>
-                    <!-- <h1 class="text-center px-2 m-0">
-                        لمدة 80 شهر
-                    </h1> -->
                 </div>
             </div>
             <!-- COUNTDOWN -->
