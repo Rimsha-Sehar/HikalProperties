@@ -9,7 +9,7 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 
 <?php
 
-$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+$protocol = isset ($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
 $host = $_SERVER['HTTP_HOST'];
 $uri = $_SERVER['REQUEST_URI'];
 
@@ -100,14 +100,14 @@ $_SESSION["params"] = $params;
     if (mysqli_num_rows($checkip) > 0) {
         ?>
         <div class="blocked-ip">
-            <div class="d-flex justify-content-center align-items-center text-center p-5"
-                style="width: 100%; min-height: 100vh;">
-                <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                    تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
-                    <a href="tel:+97142722249" style="font-weight: bold;">+97142722249</a>
-                    للحصول على المساعدة الإضافية!
-                </h1>
-            </div>
+        <div class="d-flex justify-content-center align-items-center text-center p-5"
+            style="width: 100%; min-height: 100vh;">
+            <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
+                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
+                <a href="tel:+97142722249" style="font-weight: bold;">+97142722249</a>
+                للحصول على المساعدة الإضافية!
+            </h1>
+        </div>
         </div>
         <?php
     } else {
@@ -123,7 +123,7 @@ $_SESSION["params"] = $params;
                     class="fa fa-arrow-up primary-text"></i></button>
 
             <!-- BUTTOM NAV -->
-            <!-- <div id="bottom-nav">
+            <div id="bottom-nav">
                 <div class="row">
                     <div class="col-4 d-flex justify-content-center align-items-center">
                         <a href="tel:+971585550775">
@@ -141,7 +141,7 @@ $_SESSION["params"] = $params;
                         </a>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- IMAGE AND LANGUAGE AND HEADING AND COUNTDOWN -->
             <div class="first_section">
@@ -505,12 +505,6 @@ $_SESSION["params"] = $params;
                 <?php include_once ("../../components/footer-only-light.php"); ?>
             </footer>
 
-            <div id="bottom-nav" onclick="scrollToForm();">
-                <div style="font-weight: bold; font-size: 1rem; color: var(--text-on-gold)">
-                    REGISTER NOW
-                </div>
-            </div>
-
             <!-- SCROLL TO FORM -->
             <!-- <script>
             function scrollToForm() {
@@ -521,8 +515,7 @@ $_SESSION["params"] = $params;
 
             <!-- COUNTDOWN -->
             <script>
-                // const deadline = 'April 19 2024 23:59:59 GMT+0400';
-                const deadline = '<?php include_once ("../../data/offer-date.php"); ?>';
+            const deadline = 'April 19 2024 23:59:59 GMT+0400';
                 function getTimeRemaining(endtime) {
                     const total = Date.parse(endtime) - Date.parse(new Date());
                     const seconds = Math.floor((total / 1000) % 60);
@@ -560,14 +553,6 @@ $_SESSION["params"] = $params;
                 }
 
                 initializeClock('.clock', deadline);
-            </script>
-
-            <!-- SCROLL TO FORM -->
-            <script>
-                function scrollToForm() {
-                    var formDiv = document.getElementById('form-container');
-                    formDiv.scrollIntoView({ behavior: 'smooth' });
-                }
             </script>
 
             <!--COUNTRY CODE-->

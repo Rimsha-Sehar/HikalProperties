@@ -123,7 +123,7 @@ $_SESSION["params"] = $params;
                     class="fa fa-arrow-up primary-text"></i></button>
 
             <!-- BUTTOM NAV -->
-            <!-- <div id="bottom-nav">
+            <div id="bottom-nav">
                 <div class="row">
                     <div class="col-4 d-flex justify-content-center align-items-center">
                         <a href="tel:+971585550775">
@@ -141,7 +141,7 @@ $_SESSION["params"] = $params;
                         </a>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- IMAGE AND LANGUAGE AND HEADING AND COUNTDOWN -->
             <div class="first_section">
@@ -504,12 +504,6 @@ $_SESSION["params"] = $params;
             <footer style="background-color: var(--primary);">
                 <?php include_once ("../../components/footer-only-light.php"); ?>
             </footer>
-
-            <div id="bottom-nav" onclick="scrollToForm();">
-                <div style="font-weight: bold; font-size: 1rem; color: var(--text-on-gold)">
-                    REGISTER NOW
-                </div>
-            </div>
 
             <!-- SCROLL TO FORM -->
             <!-- <script>

@@ -554,14 +554,6 @@ $_SESSION["params"] = $params;
             initializeClock('.clock', deadline);
         </script>
 
-        <!-- SCROLL TO FORM -->
-        <script>
-            function scrollToForm() {
-                var formDiv = document.getElementById('form-container');
-                formDiv.scrollIntoView({ behavior: 'smooth' });
-            }
-        </script>
-
         <!--COUNTRY CODE-->
         <script>
             var minput = document.querySelector("#mobile");
