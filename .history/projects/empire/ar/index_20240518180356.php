@@ -23,6 +23,48 @@ $_SESSION["params"] = $params;
 date_default_timezone_set('Asia/Dubai');
 $cur_time = time();
 
+// $hashed_ip = hash('sha256', $ip);
+?>
+
+<?php
+// $url = 'https://staging.hikalcrm.com/api/validate-snap';
+
+// $data = array(
+//     "pixel_id" => "4992376c-fb59-4050-8c91-bdb468b086d4",
+//     "event_type" => "PAGE_VIEW",
+//     "timestamp" => (string) $cur_time,
+//     "client_dedup_id" => (string) round((time() * 1000) * (rand() / getrandmax())),
+//     "event_conversion_type" => "WEB",
+//     "event_tag" => "Hikal Properties",
+//     "page_url" => (string) $fullUrl,
+//     "user_agent" => (string) $device,
+//     "hashed_ip_address" => (string) $hashed_ip,
+//     "item_category" => "Empire",
+// );
+
+// $token = "eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNjk4MTYxMzEwLCJzdWIiOiJkNzUxOGRkOS02YWM0LTQ0YjUtYmY5Ni0xY2JmNWUwZDBmOTR-UFJPRFVDVElPTn5lZjAwYzBiYS03NmQ5LTQwYmUtYmYxNi05NjExZGY5YzM5OWIifQ.bA8_O0hp4eIrg83dCkrKaNm8CZjmPK-E1KzFLmJUBbY";
+
+// $ch = curl_init($url);
+
+// curl_setopt($ch, CURLOPT_POST, true);
+// curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// curl_setopt(
+//     $ch,
+//     CURLOPT_HTTPHEADER,
+//     array(
+//         'Content-Type: application/json',
+//         'Authorization: Bearer ' . $token
+//     )
+// );
+
+// $response = curl_exec($ch);
+
+// if (curl_errno($ch)) {
+//     // echo 'Error: ' . curl_error($ch);
+// }
+
+// curl_close($ch);
 ?>
 
 <!DOCTYPE html>
@@ -31,10 +73,10 @@ $cur_time = time();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hikal Real Estate Properties | Empire Estates</title>
+    <title>Hikal Real Estate Properties | Versace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="Hikal Real Estate | Hikal Properties | Empire Developments | Empire Estates by Empire Developments">
+        content="Hikal Real Estate | Hikal Properties | Peace Homes Development | Versace by Peace Homes Development">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +114,8 @@ $cur_time = time();
         href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
 
     <!-- STYLES -->
+    <!-- <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/dark-theme-gold.css" /> -->
+    <!-- <link rel="stylesheet" href="https://hikalproperties.com/projects/assets/css/animation.css" /> -->
     <link rel="stylesheet" href="../../assets/css/mobile-theme-gold.css" />
 
     <!-- PIXEL -->
@@ -132,7 +176,7 @@ $cur_time = time();
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
-                    <a href="https://hikalproperties.com/projects/empire/en?<?php echo $_SESSION["params"]; ?>">
+                    <a href="https://hikalproperties.com/projects/versace/en?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
                             <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
                             <span class="next-language">EN</span>
@@ -156,9 +200,9 @@ $cur_time = time();
                             </span>
                         </h1>
                     </div>
-                    <h1 class="text-center px-2 m-0">
+                    <!-- <h1 class="text-center px-2 m-0">
                         لمدة 80 شهر
-                    </h1>
+                    </h1> -->
                 </div>
             </div>
             <!-- COUNTDOWN -->
@@ -249,7 +293,7 @@ $cur_time = time();
                     <!--NEW FORM-->
                     <form id="lead-form" dir="ltr" onsubmit="return submitLeadForm();">
                         <div style="display: none">
-                            <input type="text" id="Project" name="Project" value="Empire Estates" />
+                            <input type="text" id="Project" name="Project" value="Sky Suites Versace (Peace Homes)" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                             <input type="text" id="Language" name="Language" value="Arabic" />
                             <input type="text" id="Country" name="Country" value="" />
@@ -376,42 +420,42 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/flowers.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                5
-                            </span>
-                            <span class="px-1">MIN</span>
-                        </div>
-                        <div class="location-name">
-                        حديقة دبي للزهور العجيبة
-                        </div>
-                    </div>
-                </div>
-                <!-- MALL OF THE EMIRATES -->
-                <div class="col-6 col-md-4 col-lg-3 pb-4">
-                    <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/mall.png" width="40" class="col-4" />
-                        <div class="location-timing">
-                            <span class="location-time px-1">
                                 10
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                        مول الإمارات
+                            حديقة الزهور
                         </div>
                     </div>
                 </div>
-                <!-- BURJ KHALIFA -->
+                <!-- MARINA -->
                 <div class="col-6 col-md-4 col-lg-3 pb-4">
                     <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
+                        <img src="../../assets/images/icons/white/cruise.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                25
+                                12
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            برج خليفة
+                            مارينا دبى
+                        </div>
+                    </div>
+                </div>
+                <!-- GLOBAL VILLAGE -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/houses.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            القرية العالمية
                         </div>
                     </div>
                 </div>
@@ -421,12 +465,42 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/palm.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                25
+                                15
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
                             نخلة جميرا
+                        </div>
+                    </div>
+                </div>
+                <!-- MALL OF THE EMIRATES -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/mall.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                17
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            مول الإمارات
+                        </div>
+                    </div>
+                </div>
+                <!-- BURJ KHALIFA -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                20
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            برج خليفة
                         </div>
                     </div>
                 </div>

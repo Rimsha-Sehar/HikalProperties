@@ -249,7 +249,7 @@ $cur_time = time();
                     <!--NEW FORM-->
                     <form id="lead-form" dir="ltr" onsubmit="return submitLeadForm();">
                         <div style="display: none">
-                            <input type="text" id="Project" name="Project" value="Empire Estates" />
+                            <input type="text" id="Project" name="Project" value="Sky Suites Versace (Peace Homes)" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                             <input type="text" id="Language" name="Language" value="Arabic" />
                             <input type="text" id="Country" name="Country" value="" />
@@ -427,6 +427,36 @@ $cur_time = time();
                         </div>
                         <div class="location-name">
                             نخلة جميرا
+                        </div>
+                    </div>
+                </div>
+                <!-- GLOBAL VILLAGE -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/houses.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            القرية العالمية
+                        </div>
+                    </div>
+                </div>
+                <!-- MALL OF THE EMIRATES -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/mall.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                17
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            مول الإمارات
                         </div>
                     </div>
                 </div>
