@@ -440,18 +440,33 @@ $cur_time = time();
                         </div>
                     </div>
                 </div>
-                <!-- BURJ KHALIFA -->
+                <!-- MARINA -->
                 <div class="col-6 col-md-4 col-lg-3 pb-4">
                     <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
+                        <img src="../../assets/images/icons/white/cruise.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                25
+                                12
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            Burj Khalifa
+                            Dubai Marina
+                        </div>
+                    </div>
+                </div>
+                <!-- GLOBAL VILLAGE -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/houses.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Global Village
                         </div>
                     </div>
                 </div>
@@ -461,12 +476,27 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/palm.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                25
+                                15
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
                             Palm Jumeirah
+                        </div>
+                    </div>
+                </div>
+                <!-- BURJ KHALIFA -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                20
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Burj Khalifa
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ if ($_SESSION["params"]) {
     } elseif (strpos($params, "twclid") === 0) {
         $leadSource = "Twitter";
     } else {
-        $leadSource = "Snapchat";
+        $leadSource = "Website";
     }
 }
 if (isset($_GET['LeadSource'])) {
