@@ -73,10 +73,10 @@ $cur_time = time();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hikal Real Estate Properties | Empire Estates</title>
+    <title>Hikal Real Estate Properties | Versace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="Hikal Real Estate | Hikal Properties | Empire Developments | Empire Estates by Empire Developments">
+        content="Hikal Real Estate | Hikal Properties | Peace Homes Development | Versace by Peace Homes Development">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,7 +176,7 @@ $cur_time = time();
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
-                    <a href="https://hikalproperties.com/projects/empire/ar?<?php echo $_SESSION["params"]; ?>">
+                    <a href="https://hikalproperties.com/projects/versace/ar?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
                             <span class="next-language">AR</span>
                             <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/ar.webp" />
@@ -267,7 +267,7 @@ $cur_time = time();
                             <input type="text" name="lead_for" id="lead_for">
                             <input type="text" name="country_name" id="country_name">
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <!-- <input type="text" name="lead_source" id="lead_source"> -->
+                            <input type="text" name="lead_source" id="lead_source">
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
@@ -290,7 +290,7 @@ $cur_time = time();
                     <!--NEW FORM-->
                     <form id="lead-form" dir="ltr" onsubmit="return submitLeadForm();">
                         <div style="display: none">
-                            <input type="text" id="Project" name="Project" value="Empire Estates" />
+                            <input type="text" id="Project" name="Project" value="Sky Suites Versace (Peace Homes)" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                             <input type="text" id="Language" name="Language" value="English" />
                             <input type="text" id="Country" name="Country" value="" />
@@ -416,12 +416,57 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/flowers.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                05
+                                10
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
                             Dubai Miracle Garden
+                        </div>
+                    </div>
+                </div>
+                <!-- MARINA -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/cruise.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                12
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Dubai Marina
+                        </div>
+                    </div>
+                </div>
+                <!-- GLOBAL VILLAGE -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/houses.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Global Village
+                        </div>
+                    </div>
+                </div>
+                <!-- PALM JUMEIRAH -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/palm.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Palm Jumeirah
                         </div>
                     </div>
                 </div>
@@ -431,7 +476,7 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/mall.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                10
+                                17
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
@@ -446,27 +491,12 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                25
+                                20
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
                             Burj Khalifa
-                        </div>
-                    </div>
-                </div>
-                <!-- PALM JUMEIRAH -->
-                <div class="col-6 col-md-4 col-lg-3 pb-4">
-                    <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/palm.png" width="40" class="col-4" />
-                        <div class="location-timing">
-                            <span class="location-time px-1">
-                                25
-                            </span>
-                            <span class="px-1">MIN</span>
-                        </div>
-                        <div class="location-name">
-                            Palm Jumeirah
                         </div>
                     </div>
                 </div>
@@ -669,8 +699,8 @@ $cur_time = time();
                 var LeadType = document.getElementById('lead_type');
                 LeadType.value = $("#LeadType").val();
 
-                // var LeadSource = document.getElementById('lead_source');
-                // LeadSource.value = $("#LeadSource").val();
+                var LeadSource = document.getElementById('lead_source');
+                LeadSource.value = $("#LeadSource").val();
 
                 // TIKTOK SUBMIT FORM
                 // if (LeadSource.value == "Campaign TikTok") {

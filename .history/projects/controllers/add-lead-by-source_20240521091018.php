@@ -26,10 +26,6 @@ if ($_SESSION["params"]) {
 }
 else if (isset($_GET['LeadSource'])) {
     $leadSource = $_GET['LeadSource'];
-
-    if ($leadSource === null || $leadSource === "") {
-        $leadSource = "Snapchat";
-    }
 }
 else {
     $leadSource = "Snapchat";

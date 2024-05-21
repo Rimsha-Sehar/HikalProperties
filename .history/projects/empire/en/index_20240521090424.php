@@ -267,7 +267,7 @@ $cur_time = time();
                             <input type="text" name="lead_for" id="lead_for">
                             <input type="text" name="country_name" id="country_name">
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <!-- <input type="text" name="lead_source" id="lead_source"> -->
+                            <input type="text" name="lead_source" id="lead_source">
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">

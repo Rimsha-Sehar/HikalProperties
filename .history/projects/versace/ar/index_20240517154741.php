@@ -73,10 +73,10 @@ $cur_time = time();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hikal Real Estate Properties | Empire Estates</title>
+    <title>Hikal Real Estate Properties | Versace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="Hikal Real Estate | Hikal Properties | Empire Developments | Empire Estates by Empire Developments">
+        content="Hikal Real Estate | Hikal Properties | Peace Homes Development | Versace by Peace Homes Development">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,7 +134,7 @@ $cur_time = time();
     </style>
 </head>
 
-<body class="english">
+<body class="arabic" dir="rtl">
 
     <?php include_once ("../../gtm/pixel.php"); ?>
 
@@ -146,9 +146,9 @@ $cur_time = time();
         <div class="d-flex justify-content-center align-items-center text-center p-5"
             style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                Some suspicious activities have been detected from your device! Please contact
+                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                for further assistance!
+                للحصول على المساعدة الإضافية!
             </h1>
         </div>
         <?php
@@ -176,10 +176,10 @@ $cur_time = time();
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
-                    <a href="https://hikalproperties.com/projects/empire/ar?<?php echo $_SESSION["params"]; ?>">
+                    <a href="https://hikalproperties.com/projects/versace/en?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
-                            <span class="next-language">AR</span>
-                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/ar.webp" />
+                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
+                            <span class="next-language">EN</span>
                         </div>
                     </a>
                 </div>
@@ -193,19 +193,22 @@ $cur_time = time();
                         </div>
                         <h1 class="d-flex flex-column px-2 m-0">
                             <span>
-                                Monthly
+                                أقساط
                             </span>
                             <span>
-                                Installments
+                                شهرية
                             </span>
                         </h1>
                     </div>
+                    <!-- <h1 class="text-center px-2 m-0">
+                        لمدة 80 شهر
+                    </h1> -->
                 </div>
             </div>
             <!-- COUNTDOWN -->
             <div class="countdown-overlay">
                 <div class="countdown-text" style="width: auto;">
-                    LIMITED TIME OFFER
+                    الفرصة لفترة محدودة
                 </div>
                 <div class="countdown-clock">
                     <div class="clock">
@@ -267,7 +270,7 @@ $cur_time = time();
                             <input type="text" name="lead_for" id="lead_for">
                             <input type="text" name="country_name" id="country_name">
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <!-- <input type="text" name="lead_source" id="lead_source"> -->
+                            <input type="text" name="lead_source" id="lead_source">
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
@@ -282,7 +285,7 @@ $cur_time = time();
                     ?>
                     <div class="p-5 d-flex justify-content-center align-items-center text-center"
                         style="width: 100%; height: 100%; line-height: 2.5rem;">
-                        Thank you for registering with us. Our professionals will contact you soon!
+                        شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
                     </div>
                     <?php
                 } else {
@@ -290,9 +293,9 @@ $cur_time = time();
                     <!--NEW FORM-->
                     <form id="lead-form" dir="ltr" onsubmit="return submitLeadForm();">
                         <div style="display: none">
-                            <input type="text" id="Project" name="Project" value="Empire Estates" />
+                            <input type="text" id="Project" name="Project" value="Sky Suites Versace (Peace Homes)" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
-                            <input type="text" id="Language" name="Language" value="English" />
+                            <input type="text" id="Language" name="Language" value="Arabic" />
                             <input type="text" id="Country" name="Country" value="" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
@@ -300,26 +303,27 @@ $cur_time = time();
                         </div>
                         <!-- NAME -->
                         <label>
-                            NAME
+                            الاسم
                         </label>
                         <input type="text" name="LeadName1" id="LeadName1" required />
 
                         <!-- CONTACT NUMBER -->
                         <label>
-                            CONTACT NUMBER
+                            رقم الاتصال
+
                         </label>
                         <input type="tel" name="phone[main]" id="mobile" placeholder="56 789 0123" required />
 
                         <!-- HOW MANY BEDROOMS -->
                         <label>
-                            HOW MANY BEDROOMS?
+                            كم عدد غرف النوم؟
                         </label>
-                        <div class="enquiry-radio" style="display: flex;">
+                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" required>
                             <label for="EnquiryRadio1" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        Studio + Private Pool
+                                        استوديو + حمام سباحة
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-water-ladder px-2"></i>
@@ -328,12 +332,12 @@ $cur_time = time();
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;">
+                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" required>
                             <label for="EnquiryRadio2" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        1 Bedroom + Private Pool
+                                        غرفة نوم + حمام سباحة
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-water-ladder px-2"></i>
@@ -342,13 +346,13 @@ $cur_time = time();
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;">
+                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms"
                                 required>
                             <label for="EnquiryRadio3" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        2 Bedrooms + Private Pool
+                                        غرفتين نوم + حمام سباحة
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-water-ladder px-2"></i>
@@ -357,13 +361,13 @@ $cur_time = time();
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;">
+                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="3 Bedrooms"
                                 required>
                             <label for="EnquiryRadio4" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        3 Bedrooms + Private Pool
+                                        ثلاث غرف نوم + حمام سباحة
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-water-ladder px-2"></i>
@@ -375,27 +379,27 @@ $cur_time = time();
 
                         <!-- PURPOSE  -->
                         <label>
-                            PURPOSE OF ENQUIRY
+                            غرض الاستفسار
                         </label>
                         <div class="row">
-                            <div class="col-6 purpose-radio text-center">
+                            <div class="col-6 purpose-radio text-center" dir="rtl">
                                 <input class="" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment"
                                     required>
                                 <label for="PurposeRadio1" class="m-0">
-                                    Investment
+                                    استثمار
                                 </label>
                             </div>
-                            <div class="col-6 purpose-radio text-center">
+                            <div class="col-6 purpose-radio text-center" dir="rtl">
                                 <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user"
                                     required>
                                 <label for="PurposeRadio2" class="m-0">
-                                    End-user
+                                    سكني
                                 </label>
                             </div>
                         </div>
                         <!-- BUTTON  -->
                         <button type="submit" class="submit-click my-3">
-                            SUBMIT
+                            إرسال
                         </button>
                     </form>
                     <?php
@@ -407,7 +411,7 @@ $cur_time = time();
         <!-- LOCATION BENEFITS -->
         <div class="third_section container container-fluid my-4 py-4">
             <h4 class="primary-text text-center">
-                LOCATION BENEFITS
+                مميزات الموقع
             </h4>
             <div class="row container container-fluid">
                 <!-- DUBAI MIRACLE GARDEN  -->
@@ -416,42 +420,42 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/flowers.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                05
-                            </span>
-                            <span class="px-1">MIN</span>
-                        </div>
-                        <div class="location-name">
-                            Dubai Miracle Garden
-                        </div>
-                    </div>
-                </div>
-                <!-- MALL OF THE EMIRATES -->
-                <div class="col-6 col-md-4 col-lg-3 pb-4">
-                    <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/mall.png" width="40" class="col-4" />
-                        <div class="location-timing">
-                            <span class="location-time px-1">
                                 10
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            Mall of the Emirates
+                            حديقة الزهور
                         </div>
                     </div>
                 </div>
-                <!-- BURJ KHALIFA -->
+                <!-- MARINA -->
                 <div class="col-6 col-md-4 col-lg-3 pb-4">
                     <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
+                        <img src="../../assets/images/icons/white/cruise.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                25
+                                12
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            Burj Khalifa
+                            مارينا دبى
+                        </div>
+                    </div>
+                </div>
+                <!-- GLOBAL VILLAGE -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/houses.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            القرية العالمية
                         </div>
                     </div>
                 </div>
@@ -461,12 +465,42 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/palm.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                25
+                                15
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            Palm Jumeirah
+                            نخلة جميرا
+                        </div>
+                    </div>
+                </div>
+                <!-- MALL OF THE EMIRATES -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/mall.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                17
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            مول الإمارات
+                        </div>
+                    </div>
+                </div>
+                <!-- BURJ KHALIFA -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                20
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            برج خليفة
                         </div>
                     </div>
                 </div>
@@ -481,7 +515,7 @@ $cur_time = time();
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            Dubai International Airport
+                            مطار دبي الدولي
                         </div>
                     </div>
                 </div>
@@ -496,7 +530,7 @@ $cur_time = time();
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            Al Makhtoum International Airport
+                            مطار آل مكتوم الدولي
                         </div>
                     </div>
                 </div>
@@ -669,8 +703,8 @@ $cur_time = time();
                 var LeadType = document.getElementById('lead_type');
                 LeadType.value = $("#LeadType").val();
 
-                // var LeadSource = document.getElementById('lead_source');
-                // LeadSource.value = $("#LeadSource").val();
+                var LeadSource = document.getElementById('lead_source');
+                LeadSource.value = $("#LeadSource").val();
 
                 // TIKTOK SUBMIT FORM
                 // if (LeadSource.value == "Campaign TikTok") {
