@@ -459,19 +459,19 @@ button:hover {
 /* LANGUAGE-OVERLAY */
 .language-overlay {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 10px;
+    left: 0;
     color: white;
 }
 
 .language_selection {
     width: auto;
-    margin: 5px;
+    /* margin: 5px; */
     padding: 3px;
     background-color: var(--primary);
-    border-top-left-radius: 30px;
+    /* border-top-left-radius: 30px; */
     border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
+    /* border-bottom-left-radius: 30px; */
     border-bottom-right-radius: 30px;
     display: flex;
     align-items: center;
@@ -504,7 +504,7 @@ button:hover {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    border: 1px solid var(--white);
+    border: 2px solid var(--secondary);
 }
 
 .heading-box {

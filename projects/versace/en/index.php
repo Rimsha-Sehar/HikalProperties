@@ -271,7 +271,7 @@ $cur_time = time();
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
-                            تحقق من رمز التحقق
+                            VERIFY OTP
                         </button>
                     </form>
                 </div>
@@ -567,7 +567,7 @@ $cur_time = time();
         <!-- COUNTDOWN -->
         <script>
             // const deadline = 'May 20 2024 23:59:59 GMT+0400';
-            const deadline = '<?php include_once("../../data/offer-date.php"); ?>';
+            const deadline = '<?php include_once ("../../data/offer-date.php"); ?>';
             function getTimeRemaining(endtime) {
                 const total = Date.parse(endtime) - Date.parse(new Date());
                 const seconds = Math.floor((total / 1000) % 60);
