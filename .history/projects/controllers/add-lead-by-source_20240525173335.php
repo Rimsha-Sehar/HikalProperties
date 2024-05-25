@@ -177,27 +177,24 @@ if ($client === true || $client === "true") {
             "message" => $emailBody,
             "style" => $style,
         );
-        $emailDataJson = json_encode($emailData);
-        $sech = curl_init($api_sendEmail);
-        curl_setopt($sech, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($sech, CURLOPT_POST, true);
-        curl_setopt($sech, CURLOPT_POSTFIELDS, $emailDataJson);
-        curl_setopt($sech, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
-        $emailResponse = curl_exec($sech);
-        curl_close($sech);
-        // CLIENT EMAIL
         $emailDataClient = array(
-            "email" => $send_to,
+            "email" => "workofmuskan@gmail.com",
             "notification" => $notification,
             "title" => $title,
             "message" => $emailBody,
             "style" => $style,
         );
+
+        $emailDataJson = json_encode($emailData);
         $emailDataClientJson = json_encode($emailDataClient);
+
         $sech = curl_init($api_sendEmail);
         curl_setopt($sech, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($sech, CURLOPT_POST, true);
+
+        curl_setopt($sech, CURLOPT_POSTFIELDS, $emailDataJson);
         curl_setopt($sech, CURLOPT_POSTFIELDS, $emailDataClientJson);
+
         curl_setopt($sech, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
         $emailResponse = curl_exec($sech);
         curl_close($sech);

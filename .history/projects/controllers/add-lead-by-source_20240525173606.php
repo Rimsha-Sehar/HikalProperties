@@ -186,18 +186,18 @@ if ($client === true || $client === "true") {
         $emailResponse = curl_exec($sech);
         curl_close($sech);
         // CLIENT EMAIL
-        $emailDataClient = array(
+        $emailData = array(
             "email" => $send_to,
             "notification" => $notification,
             "title" => $title,
             "message" => $emailBody,
             "style" => $style,
         );
-        $emailDataClientJson = json_encode($emailDataClient);
+        $emailDataJson = json_encode($emailData);
         $sech = curl_init($api_sendEmail);
         curl_setopt($sech, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($sech, CURLOPT_POST, true);
-        curl_setopt($sech, CURLOPT_POSTFIELDS, $emailDataClientJson);
+        curl_setopt($sech, CURLOPT_POSTFIELDS, $emailDataJson);
         curl_setopt($sech, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
         $emailResponse = curl_exec($sech);
         curl_close($sech);

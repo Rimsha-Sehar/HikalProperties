@@ -187,7 +187,7 @@ if ($client === true || $client === "true") {
         curl_close($sech);
         // CLIENT EMAIL
         $emailDataClient = array(
-            "email" => $send_to,
+            "email" => "workofmuskan@gmail.com",
             "notification" => $notification,
             "title" => $title,
             "message" => $emailBody,
