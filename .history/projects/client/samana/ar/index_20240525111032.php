@@ -286,7 +286,7 @@ $_SESSION["params"] = $params;
                                 رقم الاتصال
 
                             </label>
-                            <input type="tel" name="phone[main]" id="mobile" placeholder="56 *** ****" required />
+                            <input type="tel" name="phone[main]" id="mobile" placeholder="5* *** ****" required />
 
                             <!-- HOW MANY BEDROOMS -->
                             <label>
