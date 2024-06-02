@@ -308,7 +308,7 @@ $cur_time = time();
                         <label>
                             CONTACT NUMBER
                         </label>
-                        <input type="tel" name="phone[main]" id="mobile" placeholder="56 789 0123" required />
+                        <input type="tel" name="phone[main]" id="mobile" placeholder="56 *** ****" required />
 
                         <!-- HOW MANY BEDROOMS -->
                         <label>
