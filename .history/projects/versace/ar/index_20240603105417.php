@@ -414,10 +414,10 @@ $cur_time = time();
                 مميزات الموقع
             </h4>
             <div class="row container container-fluid">
-                <!-- SILICON OASIS  -->
+                <!-- DUBAI MIRACLE GARDEN  -->
                 <div class="col-6 col-md-4 col-lg-3 pb-4">
                     <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/city.png" width="40" class="col-4" />
+                        <img src="../../assets/images/icons/white/flowers.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
                                 10
@@ -425,7 +425,67 @@ $cur_time = time();
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            واحة السيليكون
+                            حديقة الزهور
+                        </div>
+                    </div>
+                </div>
+                <!-- MARINA -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/cruise.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                12
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            مارينا دبى
+                        </div>
+                    </div>
+                </div>
+                <!-- GLOBAL VILLAGE -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/houses.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            القرية العالمية
+                        </div>
+                    </div>
+                </div>
+                <!-- PALM JUMEIRAH -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/palm.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            نخلة جميرا
+                        </div>
+                    </div>
+                </div>
+                <!-- MALL OF THE EMIRATES -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/mall.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                17
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            مول الإمارات
                         </div>
                     </div>
                 </div>
@@ -435,58 +495,12 @@ $cur_time = time();
                         <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
                         <div class="location-timing">
                             <span class="location-time px-1">
-                                15
+                                20
                             </span>
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
                             برج خليفة
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ZAYED UNIVERSITY -->
-                <div class="col-6 col-md-4 col-lg-3 pb-4">
-                    <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/university.png" width="40" class="col-4" />
-                        <div class="location-timing">
-                            <span class="location-time px-1">
-                                15
-                            </span>
-                            <span class="px-1">MIN</span>
-                        </div>
-                        <div class="location-name">
-                            جامعة زايد
-                        </div>
-                    </div>
-                </div>
-                <!-- IMG Worlds of Adventure -->
-                <div class="col-6 col-md-4 col-lg-3 pb-4">
-                    <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/adventure.png" width="40" class="col-4" />
-                        <div class="location-timing">
-                            <span class="location-time px-1">
-                                15
-                            </span>
-                            <span class="px-1">MIN</span>
-                        </div>
-                        <div class="location-name">
-                            آي إم جي عالم من المغامرات
-                        </div>
-                    </div>
-                </div>
-                <!-- Falconcity of Wonders -->
-                <div class="col-6 col-md-4 col-lg-3 pb-4">
-                    <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/city.png" width="40" class="col-4" />
-                        <div class="location-timing">
-                            <span class="location-time px-1">
-                                15
-                            </span>
-                            <span class="px-1">MIN</span>
-                        </div>
-                        <div class="location-name">
-                            فالكونسيتي العجائب
                         </div>
                     </div>
                 </div>
@@ -517,6 +531,112 @@ $cur_time = time();
                         </div>
                         <div class="location-name">
                             مطار آل مكتوم الدولي
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SILICON OASIS  -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/city.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                10
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Silicon Oasis
+                        </div>
+                    </div>
+                </div>
+                <!-- BURJ KHALIFA -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Dubai Mall and Burj Khalifa
+                        </div>
+                    </div>
+                </div>
+                <!-- ZAYED UNIVERSITY -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/university.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Zayed University
+                        </div>
+                    </div>
+                </div>
+                <!-- IMG Worlds of Adventure -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/adventure.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            IMG Worlds of Adventure
+                        </div>
+                    </div>
+                </div>
+                <!-- Falconcity of Wonders -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/city.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                15
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Falconcity of Wonders
+                        </div>
+                    </div>
+                </div>
+                <!-- DXB AIRPORT -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/airport.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                25
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Dubai International Airport
+                        </div>
+                    </div>
+                </div>
+                <!-- AL MAKTOUM INTERNATIONAL AIRPORT -->
+                <div class="col-6 col-md-4 col-lg-3 pb-4">
+                    <div class="d-flex flex-column justify-content-start align-items-center">
+                        <img src="../../assets/images/icons/white/airport.png" width="40" class="col-4" />
+                        <div class="location-timing">
+                            <span class="location-time px-1">
+                                25
+                            </span>
+                            <span class="px-1">MIN</span>
+                        </div>
+                        <div class="location-name">
+                            Al Maktoum International Airport
                         </div>
                     </div>
                 </div>

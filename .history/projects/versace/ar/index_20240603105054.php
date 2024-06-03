@@ -425,26 +425,10 @@ $cur_time = time();
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            واحة السيليكون
+                            Silicon Oasis
                         </div>
                     </div>
                 </div>
-                <!-- BURJ KHALIFA -->
-                <div class="col-6 col-md-4 col-lg-3 pb-4">
-                    <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
-                        <div class="location-timing">
-                            <span class="location-time px-1">
-                                15
-                            </span>
-                            <span class="px-1">MIN</span>
-                        </div>
-                        <div class="location-name">
-                            برج خليفة
-                        </div>
-                    </div>
-                </div>
-
                 <!-- ZAYED UNIVERSITY -->
                 <div class="col-6 col-md-4 col-lg-3 pb-4">
                     <div class="d-flex flex-column justify-content-start align-items-center">
@@ -471,7 +455,7 @@ $cur_time = time();
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            آي إم جي عالم من المغامرات
+                            IMG Worlds of Adventure
                         </div>
                     </div>
                 </div>
@@ -486,7 +470,7 @@ $cur_time = time();
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            فالكونسيتي العجائب
+                            Falconcity of Wonders
                         </div>
                     </div>
                 </div>
@@ -502,21 +486,6 @@ $cur_time = time();
                         </div>
                         <div class="location-name">
                             مطار دبي الدولي
-                        </div>
-                    </div>
-                </div>
-                <!-- AL MAKTOUM AIRPORT -->
-                <div class="col-6 col-md-4 col-lg-3 pb-4">
-                    <div class="d-flex flex-column justify-content-start align-items-center">
-                        <img src="../../assets/images/icons/white/airport.png" width="40" class="col-4" />
-                        <div class="location-timing">
-                            <span class="location-time px-1">
-                                25
-                            </span>
-                            <span class="px-1">MIN</span>
-                        </div>
-                        <div class="location-name">
-                            مطار آل مكتوم الدولي
                         </div>
                     </div>
                 </div>

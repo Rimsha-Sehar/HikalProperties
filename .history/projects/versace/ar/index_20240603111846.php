@@ -486,7 +486,7 @@ $cur_time = time();
                             <span class="px-1">MIN</span>
                         </div>
                         <div class="location-name">
-                            فالكونسيتي العجائب
+                            Falconcity of Wonders
                         </div>
                     </div>
                 </div>
