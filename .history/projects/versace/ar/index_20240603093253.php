@@ -171,7 +171,7 @@ $cur_time = time();
         ?>
 
         <div class="first_section">
-            <img class="main-image" src="../../assets/images/projects/versace/peace-lagoon.webp" loading="eager"
+            <img class="main-image" src="../../assets/images/projects/versace/peace-lagoons.webp" loading="eager"
                 alt="Hikal Real Estate">
             <!-- LANGUAGE -->
             <div class="language-overlay">
