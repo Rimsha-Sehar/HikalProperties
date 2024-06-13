@@ -263,6 +263,7 @@ $cur_time = time();
                 } else {
                     $leadSource = "Website";
                 }
+                echo $leadSource;
                 ?>
                 <!-- OTP FORM  -->
                 <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
@@ -285,7 +286,7 @@ $cur_time = time();
                             <input type="text" name="lead_for" id="lead_for">
                             <input type="text" name="country_name" id="country_name">
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <input type="text" name="lead_source" id="lead_source">
+                            <!-- <input type="text" name="lead_source" id="lead_source"> -->
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
@@ -314,7 +315,7 @@ $cur_time = time();
                             <input type="text" id="Country" name="Country" value="" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
-                            <input type="text" id="LeadSource" name="LeadSource" value="<?php echo $leadSource; ?>" />
+                            <!-- <input type="text" id="LeadSource" name="LeadSource" value="" /> -->
                         </div>
                         <!-- NAME -->
                         <label>
@@ -704,8 +705,8 @@ $cur_time = time();
                 var LeadType = document.getElementById('lead_type');
                 LeadType.value = $("#LeadType").val();
 
-                var LeadSource = document.getElementById('lead_source');
-                LeadSource.value = $("#LeadSource").val();
+                // var LeadSource = document.getElementById('lead_source');
+                // LeadSource.value = $("#LeadSource").val();
 
                 // TIKTOK SUBMIT FORM
                 // if (LeadSource.value == "Campaign TikTok") {

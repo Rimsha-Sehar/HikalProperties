@@ -248,18 +248,27 @@ $cur_time = time();
                 $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                 $parsedUrl = parse_url($url);
                 $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
+                if ($_SESSION["params"]) {
+                    $params = $_SESSION["params"];
+                    if (strpos($params, "gclid") !== false) {
+                        $leadSource = "GoogleAds";
+                    } elseif (strpos($params, "ttclid") !== false) {
+                        $leadSource = "TikTok";
+                    } elseif (strpos($params, "ScCid") !== false) {
+                        $leadSource = "Snapchat";
+                    } elseif (strpos($params, "fbclid") !== false) {
+                        $leadSource = "Facebook";
+                    } elseif (strpos($params, "twclid") !== false) {
+                        $leadSource = "Twitter";
+                    } else {
+                        $leadSource = "Website";
+                    }
+                } else if (isset($_GET['LeadSource'])) {
+                    $leadSource = $_GET['LeadSource'];
 
-                // CHECK SOURCE
-                if (stripos($params, "gclid") !== false) {
-                    $leadSource = "GoogleAds";
-                } elseif (stripos($params, "ttclid") !== false) {
-                    $leadSource = "TikTok";
-                } elseif (stripos($params, "sccid") !== false) {
-                    $leadSource = "Snapchat";
-                } elseif (stripos($params, "fbclid") !== false) {
-                    $leadSource = "Facebook";
-                } elseif (stripos($params, "twclid") !== false) {
-                    $leadSource = "Twitter";
+                    if ($leadSource === null || $leadSource === "") {
+                        $leadSource = "Website";
+                    }
                 } else {
                     $leadSource = "Website";
                 }
@@ -285,7 +294,7 @@ $cur_time = time();
                             <input type="text" name="lead_for" id="lead_for">
                             <input type="text" name="country_name" id="country_name">
                             <input type="text" name="file_name" id="file_name" value="<?php echo $filename; ?>">
-                            <input type="text" name="lead_source" id="lead_source">
+                            <!-- <input type="text" name="lead_source" id="lead_source"> -->
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
@@ -314,7 +323,7 @@ $cur_time = time();
                             <input type="text" id="Country" name="Country" value="" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
-                            <input type="text" id="LeadSource" name="LeadSource" value="<?php echo $leadSource; ?>" />
+                            <!-- <input type="text" id="LeadSource" name="LeadSource" value="" /> -->
                         </div>
                         <!-- NAME -->
                         <label>
@@ -704,8 +713,8 @@ $cur_time = time();
                 var LeadType = document.getElementById('lead_type');
                 LeadType.value = $("#LeadType").val();
 
-                var LeadSource = document.getElementById('lead_source');
-                LeadSource.value = $("#LeadSource").val();
+                // var LeadSource = document.getElementById('lead_source');
+                // LeadSource.value = $("#LeadSource").val();
 
                 // TIKTOK SUBMIT FORM
                 // if (LeadSource.value == "Campaign TikTok") {

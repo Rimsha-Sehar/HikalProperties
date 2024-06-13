@@ -10,31 +10,18 @@ $device = $_SERVER['HTTP_USER_AGENT'];
 // SOURCE
 if ($_SESSION["params"]) {
     $params = $_SESSION["params"];
-    // if (strpos($params, "gclid") !== false) {
-    //     $leadSource = "GoogleAds";
-    // } elseif (strpos($params, "ttclid") !== false) {
-    //     $leadSource = "TikTok";
-    // } elseif (strpos($params, "ScCid") !== false) {
-    //     $leadSource = "Snapchat";
-    // } elseif (strpos($params, "fbclid") !== false) {
-    //     $leadSource = "Facebook";
-    // } elseif (strpos($params, "twclid") !== false) {
-    //     $leadSource = "Twitter";
-    // } else {
-    //     $leadSource = "Website";
-    // }
-    if (stripos($params, "gclid") !== false) {
+    if (strpos($params, "gclid") === 0) {
         $leadSource = "GoogleAds";
-    } elseif (stripos($params, "ttclid") !== false) {
+    } elseif (strpos($params, "ttclid") === 0) {
         $leadSource = "TikTok";
-    } elseif (stripos($params, "sccid") !== false) {
+    } elseif (strpos($params, "ScCid") === 0) {
         $leadSource = "Snapchat";
-    } elseif (stripos($params, "fbclid") !== false) {
+    } elseif (strpos($params, "fbclid") === 0) {
         $leadSource = "Facebook";
-    } elseif (stripos($params, "twclid") !== false) {
+    } elseif (strpos($params, "twclid") === 0) {
         $leadSource = "Twitter";
     } else {
-        $leadSource = "Website";
+        $leadSource = "Snapchat";
     }
 } else if (isset($_GET['LeadSource'])) {
     $leadSource = $_GET['LeadSource'];
