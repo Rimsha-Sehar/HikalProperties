@@ -134,7 +134,7 @@ $cur_time = time();
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
-                    <a href="https://hikalproperties.com/projects/binghatti/hills?<?php echo $_SESSION["params"]; ?>">
+                    <a href="https://hikalproperties.com/projects/binghatti/hills/en-il?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
                             <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
                             <span class="next-language">EN</span>
@@ -256,7 +256,7 @@ $cur_time = time();
                             <input type="text" id="Developer" name="Developer" value="Binghatti" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                             <input type="text" id="Language" name="Language" value="Arabic" />
-                            <input type="text" id="Country" name="Country" value="" />
+                            <input type="text" id="Country" name="Country" value="Israel" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                             <!-- <input type="text" id="LeadSource" name="LeadSource" value="" /> -->
@@ -272,7 +272,7 @@ $cur_time = time();
                             رقم الاتصال
 
                         </label>
-                        <input type="tel" name="phone[main]" id="mobile" placeholder="5* *** ****" required />
+                        <input type="tel" name="phone[main]" id="mobile" placeholder="*********" required />
 
                         <!-- HOW MANY BEDROOMS -->
                         <label>
@@ -368,7 +368,7 @@ $cur_time = time();
 
         <!-- LOCATION BENEFITS -->
         <div class="secondary-bg">
-            <?php include_once("../ar-location.php"); ?>
+            <?php include_once ("../ar-location.php"); ?>
         </div>
 
         <!-- BUTTOM NAV -->
@@ -475,7 +475,7 @@ $cur_time = time();
             var minput = document.querySelector("#mobile");
             var phone_number = window.intlTelInput(minput, {
                 separateDialCode: true,
-                preferredCountries: ["ae", "sa", "qa", "om", "kw", "iq"],
+                preferredCountries: ["il", "ae", "sa", "qa", "om", "kw", "iq"],
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });

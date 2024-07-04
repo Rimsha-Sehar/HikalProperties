@@ -368,7 +368,7 @@ $cur_time = time();
 
         <!-- LOCATION BENEFITS -->
         <div class="secondary-bg">
-            <?php include_once("../ar-location.php"); ?>
+            <?php include_once("ar-location.php"); ?>
         </div>
 
         <!-- BUTTOM NAV -->
