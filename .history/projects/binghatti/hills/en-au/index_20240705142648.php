@@ -92,7 +92,7 @@ $cur_time = time();
     </style>
 </head>
 
-<body class="arabic" dir="rtl">
+<body class="english">
 
     <?php include_once ("../../../gtm/pixel.php"); ?>
 
@@ -104,9 +104,9 @@ $cur_time = time();
         <div class="d-flex justify-content-center align-items-center text-center p-5"
             style="width: 100%; min-height: 100vh;">
             <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
+                Some suspicious activities have been detected from your device! Please contact
                 <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                للحصول على المساعدة الإضافية!
+                for further assistance!
             </h1>
         </div>
         <?php
@@ -134,10 +134,10 @@ $cur_time = time();
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
-                    <a href="https://hikalproperties.com/projects/binghatti/hills/en-il?<?php echo $_SESSION["params"]; ?>">
+                    <a href="https://hikalproperties.com/projects/binghatti/hills/ar-au?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
-                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
-                            <span class="next-language">EN</span>
+                            <span class="next-language">AR</span>
+                            <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/ar.webp" />
                         </div>
                     </a>
                 </div>
@@ -146,24 +146,27 @@ $cur_time = time();
             <div class="heading-overlay">
                 <div class="heading-box">
                     <div class="d-flex justify-content-center align-items-center">
+                        <div class="large-number px-2 m-0">
+                            1%
+                        </div>
                         <h1 class="d-flex flex-column px-2 m-0">
                             <span>
-                                خصم
+                                Monthly
+                            </span>
+                            <span>
+                                Installments
                             </span>
                         </h1>
-                        <div class="large-number px-2 m-0">
-                            200
-                        </div>
                     </div>
-                    <h1 class="text-center px-2 m-0 mb-1">
-                        الف درهم
+                    <h1 class="text-center px-2 m-0">
+                        for 80 months
                     </h1>
                 </div>
             </div>
             <!-- COUNTDOWN -->
             <div class="countdown-overlay">
                 <div class="countdown-text" style="width: auto;">
-                    الفرصة لفترة محدودة
+                    LIMITED TIME OFFER
                 </div>
                 <div class="countdown-clock">
                     <div class="clock">
@@ -230,7 +233,7 @@ $cur_time = time();
                         </div>
 
                         <button type="submit" class="mt-3" style="font-weight: bold;">
-                            تحقق من رمز التحقق
+                            VERIFY OTP
                         </button>
                     </form>
                 </div>
@@ -241,7 +244,7 @@ $cur_time = time();
                     ?>
                     <div class="p-5 d-flex justify-content-center align-items-center text-center"
                         style="width: 100%; height: 100%; line-height: 2.5rem;">
-                        شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
+                        Thank you for registering with us. Our professionals will contact you soon!
                     </div>
                     <?php
                 } else {
@@ -252,35 +255,34 @@ $cur_time = time();
                             <input type="text" id="Project" name="Project" value="Hills" />
                             <input type="text" id="Developer" name="Developer" value="Binghatti" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
-                            <input type="text" id="Language" name="Language" value="Arabic" />
-                            <input type="text" id="Country" name="Country" value="Israel" />
+                            <input type="text" id="Language" name="Language" value="English" />
+                            <input type="text" id="Country" name="Country" value="Australia" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                             <!-- <input type="text" id="LeadSource" name="LeadSource" value="" /> -->
                         </div>
                         <!-- NAME -->
                         <label>
-                            الاسم
+                            NAME
                         </label>
                         <input type="text" name="LeadName1" id="LeadName1" required />
 
                         <!-- CONTACT NUMBER -->
                         <label>
-                            رقم الاتصال
-
+                            CONTACT NUMBER
                         </label>
                         <input type="tel" name="phone[main]" id="mobile" placeholder="*********" required />
 
                         <!-- HOW MANY BEDROOMS -->
                         <label>
-                            كم عدد غرف النوم؟
+                            HOW MANY BEDROOMS?
                         </label>
-                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                        <div class="enquiry-radio" style="display: flex;">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" required>
                             <label for="EnquiryRadio1" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        استوديو
+                                        Studio
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-house px-2"></i>
@@ -288,12 +290,12 @@ $cur_time = time();
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                        <div class="enquiry-radio" style="display: flex;">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="1 Bedroom" required>
                             <label for="EnquiryRadio2" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        غرفة نوم
+                                        1 Bedroom
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-bed px-2"></i>
@@ -301,13 +303,13 @@ $cur_time = time();
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                        <div class="enquiry-radio" style="display: flex;">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="2 Bedrooms"
                                 required>
                             <label for="EnquiryRadio3" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        غرفتين نوم
+                                        2 Bedrooms
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-bed px-2"></i>
@@ -315,12 +317,12 @@ $cur_time = time();
                                 </div>
                             </label>
                         </div>
-                        <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                        <div class="enquiry-radio" style="display: flex;">
                             <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="Retail" required>
                             <label for="EnquiryRadio4" class="m-0">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="px-2">
-                                        محلات تجارية
+                                        Retail
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <i class="fa-solid fa-shop px-2"></i>
@@ -331,27 +333,27 @@ $cur_time = time();
 
                         <!-- PURPOSE  -->
                         <label>
-                            غرض الاستفسار
+                            PURPOSE OF ENQUIRY
                         </label>
                         <div class="row">
-                            <div class="col-6 purpose-radio text-center" dir="rtl">
+                            <div class="col-6 purpose-radio text-center">
                                 <input class="" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment"
                                     required>
                                 <label for="PurposeRadio1" class="m-0">
-                                    استثمار
+                                    Investment
                                 </label>
                             </div>
-                            <div class="col-6 purpose-radio text-center" dir="rtl">
+                            <div class="col-6 purpose-radio text-center">
                                 <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user"
                                     required>
                                 <label for="PurposeRadio2" class="m-0">
-                                    سكني
+                                    Residence
                                 </label>
                             </div>
                         </div>
                         <!-- BUTTON  -->
                         <button type="submit" class="submit-click my-3">
-                            إرسال
+                            SUBMIT
                         </button>
                     </form>
                     <?php
@@ -362,7 +364,7 @@ $cur_time = time();
 
         <!-- LOCATION BENEFITS -->
         <div class="secondary-bg">
-            <?php include_once ("../ar-location.php"); ?>
+            <?php include_once("../en-location.php"); ?>
         </div>
 
         <!-- BUTTOM NAV -->
@@ -469,7 +471,7 @@ $cur_time = time();
             var minput = document.querySelector("#mobile");
             var phone_number = window.intlTelInput(minput, {
                 separateDialCode: true,
-                preferredCountries: ["il", "ae", "sa", "qa", "om", "kw", "iq"],
+                preferredCountries: ["au", "ae", "sa", "qa", "om", "kw", "iq"],
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });

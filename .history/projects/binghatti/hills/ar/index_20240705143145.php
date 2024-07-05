@@ -134,7 +134,7 @@ $cur_time = time();
             <!-- LANGUAGE -->
             <div class="language-overlay">
                 <div class="language_selection">
-                    <a href="https://hikalproperties.com/projects/binghatti/hills/en-il?<?php echo $_SESSION["params"]; ?>">
+                    <a href="https://hikalproperties.com/projects/binghatti/hills?<?php echo $_SESSION["params"]; ?>">
                         <div class="d-flex align-items-center">
                             <img class="lang-flag" src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
                             <span class="next-language">EN</span>
@@ -148,15 +148,26 @@ $cur_time = time();
                     <div class="d-flex justify-content-center align-items-center">
                         <h1 class="d-flex flex-column px-2 m-0">
                             <span>
-                                خصم
+                                أقساط
+                            </span>
+                            <span>
+                                شهرية
                             </span>
                         </h1>
                         <div class="large-number px-2 m-0">
-                            200
+                            1%
                         </div>
+                        <h1 class="d-flex flex-column px-2 m-0">
+                            <span>
+                                أقساط
+                            </span>
+                            <span>
+                                شهرية
+                            </span>
+                        </h1>
                     </div>
-                    <h1 class="text-center px-2 m-0 mb-1">
-                        الف درهم
+                    <h1 class="text-center px-2 m-0">
+                        لمدة 80 شهر
                     </h1>
                 </div>
             </div>
@@ -253,7 +264,7 @@ $cur_time = time();
                             <input type="text" id="Developer" name="Developer" value="Binghatti" />
                             <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                             <input type="text" id="Language" name="Language" value="Arabic" />
-                            <input type="text" id="Country" name="Country" value="Israel" />
+                            <input type="text" id="Country" name="Country" value="" />
                             <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
                             <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                             <!-- <input type="text" id="LeadSource" name="LeadSource" value="" /> -->
@@ -269,7 +280,7 @@ $cur_time = time();
                             رقم الاتصال
 
                         </label>
-                        <input type="tel" name="phone[main]" id="mobile" placeholder="*********" required />
+                        <input type="tel" name="phone[main]" id="mobile" placeholder="5* *** ****" required />
 
                         <!-- HOW MANY BEDROOMS -->
                         <label>
@@ -469,7 +480,7 @@ $cur_time = time();
             var minput = document.querySelector("#mobile");
             var phone_number = window.intlTelInput(minput, {
                 separateDialCode: true,
-                preferredCountries: ["il", "ae", "sa", "qa", "om", "kw", "iq"],
+                preferredCountries: ["ae", "sa", "qa", "om", "kw", "iq"],
                 hiddenInput: "full",
                 utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
             });
