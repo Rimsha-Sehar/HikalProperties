@@ -278,7 +278,7 @@ $_SESSION["params"] = $params;
                                 <input type="text" id="Developer" name="Developer" value="Samana" />
                                 <input type="text" id="LeadType" name="LeadType" value="Apartment" />
                                 <input type="text" id="Language" name="Language" value="Arabic" />
-                                <input type="text" id="Country" name="Country" value="" />
+                                <input type="text" id="Country" name="Country" value="United Arab Emirates" />
                                 <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                                 <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
 
