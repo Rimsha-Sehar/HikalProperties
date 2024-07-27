@@ -155,7 +155,6 @@
                                 غرفة نوم دوبلكس + حمام سباحة
                             </div>
                             <div class="d-flex align-items-center">
-                                <i class="fa-solid fa-stairs px-2"></i>
                                 <i class="fa-solid fa-water-ladder px-2"></i>
                                 <i class="fa-solid fa-bed px-2"></i>
                             </div>
@@ -221,6 +220,9 @@
 
         var LeadType = document.getElementById('lead_type');
         LeadType.value = $("#LeadType").val();
+
+        var LeadSource = document.getElementById('lead_source');
+        LeadSource.value = $("#LeadSource").val();
 
         var EnquiryRadio1 = document.getElementById('enquiry_type');
         EnquiryRadio1.value = $("#EnquiryRadio1").val();

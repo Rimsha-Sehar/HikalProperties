@@ -6,6 +6,20 @@
         $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $parsedUrl = parse_url($url);
         $filename = ltrim($parsedUrl['path'], '/') . '?' . $parsedUrl['query'];
+        // CHECK SOURCE
+        if (stripos($params, "gclid") !== false) {
+            $leadSource = "GoogleAds";
+        } elseif (stripos($params, "ttclid") !== false) {
+            $leadSource = "TikTok";
+        } elseif (stripos($params, "sccid") !== false) {
+            $leadSource = "Snapchat";
+        } elseif (stripos($params, "fbclid") !== false) {
+            $leadSource = "Facebook";
+        } elseif (stripos($params, "twclid") !== false) {
+            $leadSource = "Twitter";
+        } else {
+            $leadSource = "Website";
+        }
         ?>
         <!-- OTP FORM  -->
         <div id="otp-form" class="contact-form" dir="ltr" style="display: none;">
@@ -43,7 +57,7 @@
             ?>
             <div class="p-5 d-flex justify-content-center align-items-center text-center"
                 style="width: 100%; height: 100%; line-height: 2.5rem;">
-                شكراً لتسجيلك معنا. سيقوم محترفونا بالتواصل معك قريباً!
+                Thank you for registering with us. Our professionals will contact you soon!
             </div>
             <?php
         } else {
@@ -54,7 +68,7 @@
                     <input type="text" id="Project" name="Project" value="Livings" />
                     <input type="text" id="Developer" name="Developer" value="Empire" />
                     <input type="text" id="LeadType" name="LeadType" value="Apartment" />
-                    <input type="text" id="Language" name="Language" value="Arabic" />
+                    <input type="text" id="Language" name="Language" value="English" />
                     <input type="text" id="Country" name="Country" value="United Arab Emirates" />
                     <input type="text" id="LeadEmail1" name="LeadEmail1" value="" />
                     <input type="text" id="Filename" name="Filename" value="<?php echo $filename; ?>" />
@@ -73,28 +87,27 @@
                 </div>
                 <!-- NAME -->
                 <label>
-                    الاسم
+                    NAME
                 </label>
                 <input type="text" name="LeadName1" id="LeadName1" required />
 
                 <!-- CONTACT NUMBER -->
                 <label>
-                    رقم الاتصال
-
+                    CONTACT NUMBER
                 </label>
                 <input type="tel" name="phone[main]" id="mobile" placeholder="** *** ****" required />
 
                 <!-- HOW MANY BEDROOMS -->
                 <label>
-                    كم عدد غرف النوم؟
+                    HOW MANY BEDROOMS?
                 </label>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                <div class="enquiry-radio" style="display: flex;">
                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio1" value="Studio" required
                         onchange="updateFields('Livings')" />
                     <label for="EnquiryRadio1" class="m-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="px-2">
-                                استوديو
+                                Studio
                             </div>
                             <div class="d-flex align-items-center">
                                 <i class="fa-solid fa-house px-2"></i>
@@ -102,13 +115,13 @@
                         </div>
                     </label>
                 </div>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                <div class="enquiry-radio" style="display: flex;">
                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio2" value="Studio" required
                         onchange="updateFields('Livings (Private Pool)')" />
                     <label for="EnquiryRadio2" class="m-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="px-2">
-                                استوديو + حمام سباحة
+                                Studio + Private Pool
                             </div>
                             <div class="d-flex align-items-center">
                                 <i class="fa-solid fa-water-ladder px-2"></i>
@@ -117,13 +130,13 @@
                         </div>
                     </label>
                 </div>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                <div class="enquiry-radio" style="display: flex;">
                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio3" value="1 Bedroom" required
                         onchange="updateFields('Livings')" />
                     <label for="EnquiryRadio3" class="m-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="px-2">
-                                غرفة نوم
+                                1 Bedroom
                             </div>
                             <div class="d-flex align-items-center">
                                 <i class="fa-solid fa-bed px-2"></i>
@@ -131,13 +144,13 @@
                         </div>
                     </label>
                 </div>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                <div class="enquiry-radio" style="display: flex;">
                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio4" value="1 Bedroom" required
                         onchange="updateFields('Livings (Private Pool)')" />
                     <label for="EnquiryRadio4" class="m-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="px-2">
-                                غرفة نوم + حمام سباحة
+                                1 Bedroom + Private Pool
                             </div>
                             <div class="d-flex align-items-center">
                                 <i class="fa-solid fa-water-ladder px-2"></i>
@@ -146,16 +159,15 @@
                         </div>
                     </label>
                 </div>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                <div class="enquiry-radio" style="display: flex;">
                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio5" value="1 Bedroom" required
                         onchange="updateFields('Livings (Duplex + Private Pool)')" />
                     <label for="EnquiryRadio5" class="m-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="px-2">
-                                غرفة نوم دوبلكس + حمام سباحة
+                                1 Bedroom Duplex + Private Pool
                             </div>
                             <div class="d-flex align-items-center">
-                                <i class="fa-solid fa-stairs px-2"></i>
                                 <i class="fa-solid fa-water-ladder px-2"></i>
                                 <i class="fa-solid fa-bed px-2"></i>
                             </div>
@@ -165,25 +177,25 @@
 
                 <!-- PURPOSE  -->
                 <label>
-                    غرض الاستفسار
+                    PURPOSE OF ENQUIRY
                 </label>
                 <div class="row">
-                    <div class="col-6 purpose-radio text-center" dir="rtl">
+                    <div class="col-6 purpose-radio text-center">
                         <input class="" type="radio" name="LeadForRadio1" id="PurposeRadio1" value="Investment" required>
                         <label for="PurposeRadio1" class="m-0">
-                            استثمار
+                            Investment
                         </label>
                     </div>
-                    <div class="col-6 purpose-radio text-center" dir="rtl">
+                    <div class="col-6 purpose-radio text-center">
                         <input class="mx-2" type="radio" name="LeadForRadio1" id="PurposeRadio2" value="End-user" required>
                         <label for="PurposeRadio2" class="m-0">
-                            سكني
+                            End-user
                         </label>
                     </div>
                 </div>
                 <!-- BUTTON  -->
                 <button type="submit" class="submit-click my-3">
-                    إرسال
+                    SUBMIT
                 </button>
             </form>
             <?php

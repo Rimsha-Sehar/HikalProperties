@@ -222,6 +222,9 @@
         var LeadType = document.getElementById('lead_type');
         LeadType.value = $("#LeadType").val();
 
+        var LeadSource = document.getElementById('lead_source');
+        LeadSource.value = $("#LeadSource").val();
+
         var EnquiryRadio1 = document.getElementById('enquiry_type');
         EnquiryRadio1.value = $("#EnquiryRadio1").val();
 

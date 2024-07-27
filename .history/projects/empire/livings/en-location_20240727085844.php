@@ -6,10 +6,9 @@
     </h4>
     <div class="row container container-fluid">
         <!-- DUABI HILLS MALL -->
-        <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
+        <div class="col-6 col-md-4 col-lg-3 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/mall.svg" width="30"
-                    class="col-4" style="height: 50px;" />
+                <img src="https://hikalproperties.com/projects/assets/images/icons/white/city.png" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         05
@@ -22,10 +21,9 @@
             </div>
         </div>
         <!-- MALL OF EMIRATES -->
-        <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
+        <div class="col-6 col-md-4 col-lg-3 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/mall.svg" width="30"
-                    class="col-4" style="height: 50px;" />
+                <img src="https://hikalproperties.com/projects/assets/images/icons/white/city.png" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         15
@@ -38,10 +36,9 @@
             </div>
         </div>
         <!-- BUSINESS BAY -->
-        <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
+        <div class="col-6 col-md-4 col-lg-3 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/work.svg" width="30"
-                    class="col-4" style="height: 50px;" />
+                <img src="../../assets/images/icons/white/burjkhalifa.png" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         15
@@ -54,11 +51,10 @@
             </div>
         </div>
 
-        <!-- PALM JUMEIRAH -->
-        <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
+        <!-- ZAYED UNIVERSITY -->
+        <div class="col-6 col-md-4 col-lg-3 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/palm-jumeirah.svg"
-                    width="30" class="col-4" style="height: 50px;" />
+                <img src="../../assets/images/icons/white/university.png" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         15
@@ -66,31 +62,44 @@
                     <span class="px-1">MIN</span>
                 </div>
                 <div class="location-name">
-                    Palm Jumeirah
+                    جامعة زايد
                 </div>
             </div>
         </div>
-        <!-- DUBAI MARINA -->
-        <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
+        <!-- IMG Worlds of Adventure -->
+        <div class="col-6 col-md-4 col-lg-3 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/cruise.svg"
-                    width="30" class="col-4" style="height: 50px;" />
+                <img src="../../assets/images/icons/white/adventure.png" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
-                        20
+                        15
                     </span>
                     <span class="px-1">MIN</span>
                 </div>
                 <div class="location-name">
-                    Dubai Marina
+                    آي إم جي عالم من المغامرات
+                </div>
+            </div>
+        </div>
+        <!-- Falconcity of Wonders -->
+        <div class="col-6 col-md-4 col-lg-3 pb-4">
+            <div class="d-flex flex-column justify-content-start align-items-center">
+                <img src="../../assets/images/icons/white/city.png" width="40" class="col-4" />
+                <div class="location-timing">
+                    <span class="location-time px-1">
+                        15
+                    </span>
+                    <span class="px-1">MIN</span>
+                </div>
+                <div class="location-name">
+                    فالكونسيتي العجائب
                 </div>
             </div>
         </div>
         <!-- DXB AIRPORT -->
-        <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
+        <div class="col-6 col-md-4 col-lg-3 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/airport.svg"
-                    width="30" class="col-4" style="height: 50px;" />
+                <img src="../../assets/images/icons/white/airport.png" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         25
@@ -98,7 +107,22 @@
                     <span class="px-1">MIN</span>
                 </div>
                 <div class="location-name">
-                    Dubai International Airport
+                    مطار دبي الدولي
+                </div>
+            </div>
+        </div>
+        <!-- AL MAKTOUM AIRPORT -->
+        <div class="col-6 col-md-4 col-lg-3 pb-4">
+            <div class="d-flex flex-column justify-content-start align-items-center">
+                <img src="../../assets/images/icons/white/airport.png" width="40" class="col-4" />
+                <div class="location-timing">
+                    <span class="location-time px-1">
+                        25
+                    </span>
+                    <span class="px-1">MIN</span>
+                </div>
+                <div class="location-name">
+                    مطار آل مكتوم الدولي
                 </div>
             </div>
         </div>

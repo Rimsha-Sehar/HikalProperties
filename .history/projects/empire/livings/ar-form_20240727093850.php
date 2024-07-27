@@ -155,7 +155,6 @@
                                 غرفة نوم دوبلكس + حمام سباحة
                             </div>
                             <div class="d-flex align-items-center">
-                                <i class="fa-solid fa-stairs px-2"></i>
                                 <i class="fa-solid fa-water-ladder px-2"></i>
                                 <i class="fa-solid fa-bed px-2"></i>
                             </div>

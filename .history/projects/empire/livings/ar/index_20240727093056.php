@@ -150,26 +150,12 @@ $_SESSION["params"] = $params;
 
             <!-- FORM -->
             <?php
-            // CHECK SOURCE
-            if (stripos($params, "gclid") !== false) {
-                $leadSource = "GoogleAds";
-            } elseif (stripos($params, "ttclid") !== false) {
-                $leadSource = "TikTok";
-            } elseif (stripos($params, "sccid") !== false) {
-                $leadSource = "Snapchat";
-            } elseif (stripos($params, "fbclid") !== false) {
-                $leadSource = "Facebook";
-            } elseif (stripos($params, "twclid") !== false) {
-                $leadSource = "Twitter";
-            } else {
-                $leadSource = "Website";
-            }
             $controller_url = "../../../controllers/add-lead-by-source.php";
             include_once ("../ar-form.php");
             ?>
 
             <!-- LOCATION -->
-            <?php include_once ("../ar-location.php"); ?>
+            <?php include_once("../ar-location.php"); ?>
 
             <!-- FOOTER -->
             <footer style="background-color: var(--primary);">

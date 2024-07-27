@@ -8,8 +8,8 @@
         <!-- DUABI HILLS MALL -->
         <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/mall.svg" width="30"
-                    class="col-4" style="height: 50px;" />
+                <!-- <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/palm-jumeirah.svg" width="40" class="col-4" /> -->
+                <img src="../../assets/images/projects/empire/icons/mall.svg" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         05
@@ -24,8 +24,7 @@
         <!-- MALL OF EMIRATES -->
         <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/mall.svg" width="30"
-                    class="col-4" style="height: 50px;" />
+                <img src="../../assets/images/projects/empire/icons/mall.svg" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         15
@@ -40,8 +39,7 @@
         <!-- BUSINESS BAY -->
         <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/work.svg" width="30"
-                    class="col-4" style="height: 50px;" />
+            <img src="../../assets/images/projects/empire/icons/business.svg" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         15
@@ -57,8 +55,7 @@
         <!-- PALM JUMEIRAH -->
         <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/palm-jumeirah.svg"
-                    width="30" class="col-4" style="height: 50px;" />
+                <img src="../../assets/images/projects/empire/icons/palm-jumeirah.svg" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         15
@@ -73,8 +70,7 @@
         <!-- DUBAI MARINA -->
         <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/cruise.svg"
-                    width="30" class="col-4" style="height: 50px;" />
+                <img src="../../assets/images/projects/empire/icons/cruise.svg" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         20
@@ -89,8 +85,7 @@
         <!-- DXB AIRPORT -->
         <div class="col-6 col-md-4 col-lg-3 p-2 pb-4">
             <div class="d-flex flex-column justify-content-start align-items-center">
-                <img src="https://hikalproperties.com/projects/assets/images/projects/empire/icons/airport.svg"
-                    width="30" class="col-4" style="height: 50px;" />
+            <img src="../../assets/images/projects/empire/icons/airport.svg" width="40" class="col-4" />
                 <div class="location-timing">
                     <span class="location-time px-1">
                         25
