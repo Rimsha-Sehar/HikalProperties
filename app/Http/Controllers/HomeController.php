@@ -54,6 +54,7 @@ class HomeController extends Controller
 
     public function index()
     {
+        <!-- this is test -->
         $page_data['blogs'] = Blog::where('is_popular', 1)->where('status' , 1)->take(3)->get();
         $page_data['packages'] = Package::where('status', 1)->take(3)->get();
         $page_data['listings'] = Listing::take(6)->get();
