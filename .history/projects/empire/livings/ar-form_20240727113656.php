@@ -162,7 +162,7 @@
                         </div>
                     </label>
                 </div>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                <div class="enquiry-radio" style="display: flex;">
                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="2 Bedrooms" required
                         onchange="updateFields('Livings (Private Pool)')" />
                     <label for="EnquiryRadio6" class="m-0">
@@ -177,7 +177,7 @@
                         </div>
                     </label>
                 </div>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
+                <div class="enquiry-radio" style="display: flex;">
                     <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio7" value="3 Bedrooms" required
                         onchange="updateFields('Livings (Private Pool)')" />
                     <label for="EnquiryRadio7" class="m-0">

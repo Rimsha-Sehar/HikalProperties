@@ -162,36 +162,6 @@
                         </div>
                     </label>
                 </div>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
-                    <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio6" value="2 Bedrooms" required
-                        onchange="updateFields('Livings (Private Pool)')" />
-                    <label for="EnquiryRadio6" class="m-0">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="px-2">
-                                غرفتين نوم + حمام سباحة
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="fa-solid fa-water-ladder px-2"></i>
-                                <i class="fa-solid fa-bed px-2"></i>
-                            </div>
-                        </div>
-                    </label>
-                </div>
-                <div class="enquiry-radio" style="display: flex;" dir="rtl">
-                    <input class="mx-2" type="radio" name="EnquiryRadio1" id="EnquiryRadio7" value="3 Bedrooms" required
-                        onchange="updateFields('Livings (Private Pool)')" />
-                    <label for="EnquiryRadio7" class="m-0">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="px-2">
-                                ثلاث غرف نوم + حمام سباحة
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="fa-solid fa-water-ladder px-2"></i>
-                                <i class="fa-solid fa-bed px-2"></i>
-                            </div>
-                        </div>
-                    </label>
-                </div>
 
                 <!-- PURPOSE  -->
                 <label>

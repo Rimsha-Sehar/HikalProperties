@@ -1,10 +1,11 @@
 <?php
 session_start();
 error_reporting(0);
-include ('../../dbconfig/dbcon.php');
+include ('../../../dbconfig/dbcon.php');
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $device = $_SERVER['HTTP_USER_AGENT'];
+
 ?>
 
 <?php
@@ -62,12 +63,17 @@ $_SESSION["params"] = $params;
         integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- SLICK CAROUSEL -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
     <!-- ICON -->
     <link rel="icon" type="image/png"
         href="https://hikalproperties.com/projects/assets/images/logo/hikalagency-icon.png" />
 
     <!-- STYLES -->
-    <link rel="stylesheet" href="../../assets/css/mobile-theme.css" />
+    <link rel="stylesheet" href="../../../assets/css/mobile-theme.css" />
 
     <!-- PIXEL -->
     <script src="https://hikalproperties.com/projects/gtm/gtm-pixel.js"></script>
@@ -86,9 +92,9 @@ $_SESSION["params"] = $params;
     </style>
 </head>
 
-<body class="english">
+<body class="arabic">
 
-    <?php include_once ("../../gtm/gtm-pixel.php"); ?>
+    <?php include_once ("../../../gtm/gtm-pixel.php"); ?>
 
     <?php
     $checkip = mysqli_query($con, "SELECT byIP FROM is_blocked WHERE status = 1 AND byIP = '$ip'");
@@ -99,9 +105,9 @@ $_SESSION["params"] = $params;
             <div class="d-flex justify-content-center align-items-center text-center p-5"
                 style="width: 100%; min-height: 100vh;">
                 <h1 class="text-center" style="font-size: 2.2rem; line-height: 4.4rem;">
-                    Some suspicious activities have been detected from your device! Please contact
-                    <a href="tel:+97142722249" class="gold-grad" style="font-weight: bold;">+97142722249</a>
-                    for further assistance!
+                    تم اكتشاف بعض الأنشطة المشبوهة من جهازك! الرجاء التواصل مع
+                    <a href="tel:+97142722249" style="font-weight: bold;">+97142722249</a>
+                    للحصول على المساعدة الإضافية!
                 </h1>
             </div>
         </div>
@@ -111,34 +117,35 @@ $_SESSION["params"] = $params;
         <div class="full-body">
             <!-- LOADING OVERLAY  -->
             <div id="loadingOverlay" class="overlay" style="display: none;">
-                <?php include_once ("../../components/loading-circle.php"); ?>
+                <?php include_once ("../../../components/loading-circle.php"); ?>
             </div>
 
             <!-- TOP SCROLL -->
-            <?php include_once ("../../components/top-scroll.php"); ?>
+            <?php include_once ("../../../components/top-scroll.php"); ?>
 
             <!-- IMAGE AND LANGUAGE AND HEADING AND COUNTDOWN -->
             <div class="first_section">
-                <img class="main-image" src="../../assets/images/projects/empire/empire-livings.webp" loading="eager"
+                <img class="main-image" src="../../../assets/images/projects/empire/empire-livings.webp" loading="eager"
                     alt="Hikal Real Estate">
                 <!-- LANGUAGE -->
                 <div class="language-overlay">
                     <div class="language_selection">
-                        <a href="https://hikalproperties.com/projects/empire/livings/ar?<?php echo $_SESSION["params"]; ?>">
+                        <a
+                            href="https://hikalproperties.com/projects/empire/livings/en-il?<?php echo $_SESSION["params"]; ?>">
                             <div class="d-flex align-items-center">
-                                <span class="next-language">AR</span>
                                 <img class="lang-flag"
-                                    src="https://hikalproperties.com/projects/assets/images/flags/ar.webp" />
+                                    src="https://hikalproperties.com/projects/assets/images/flags/en.webp" />
+                                <span class="next-language">EN</span>
                             </div>
                         </a>
                     </div>
                 </div>
                 <!-- HEADING -->
-                <?php include_once ("en-heading.php"); ?>
+                <?php include_once ("../ar-heading.php"); ?>
                 <!-- COUNTDOWN -->
                 <?php
-                $cd_lang = "English";
-                include_once ("../../components/countdown.php");
+                $cd_lang = "Arabic";
+                include_once ("../../../components/countdown.php");
                 ?>
             </div>
 
@@ -158,21 +165,21 @@ $_SESSION["params"] = $params;
             } else {
                 $leadSource = "Website";
             }
-            $countryname = "United Arab Emirates";
-            $controller_url = "../../controllers/add-lead-by-source.php";
-            include_once ("en-form.php");
+            $countryname = "Israel";
+            $controller_url = "../../../controllers/add-lead-by-source.php";
+            include_once ("../ar-form.php");
             ?>
 
             <!-- LOCATION -->
-            <?php include_once ("en-location.php"); ?>
+            <?php include_once ("../ar-location.php"); ?>
 
             <!-- FOOTER -->
             <footer style="background-color: var(--primary);">
-                <?php include_once ("../../components/footer-only-light.php"); ?>
+                <?php include_once ("../../../components/footer-only-light.php"); ?>
             </footer>
 
             <!-- SCROLL TO FORM  -->
-            <?php include_once ("../../components/register-now.php"); ?>
+            <?php include_once ("../../../components/register-now.php"); ?>
 
             <!--COUNTRY CODE-->
             <script>

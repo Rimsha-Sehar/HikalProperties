@@ -158,7 +158,6 @@ $_SESSION["params"] = $params;
             } else {
                 $leadSource = "Website";
             }
-            $countryname = "United Arab Emirates";
             $controller_url = "../../controllers/add-lead-by-source.php";
             include_once ("en-form.php");
             ?>
