@@ -12,16 +12,16 @@
                     <img src="{{ $imageUrl }}" alt="Banner Image" class="img-fluid">
 
                         @if (!empty($listing['meta_tags_for_listings']['promo_video']))
-                            <button class="btn btn-primary view-video-btn" data-toggle="modal" data-target="#promoVideoModal"
-                                data-video-url="{{ $listing['meta_tags_for_listings']['promo_video'] }}">watch
-                                Video</button>
+                            <button class="btn btn-primary view-video-btn" style="width: 130px !important;" data-toggle="modal" data-target="#promoVideoModal"
+                                data-video-url="{{ $listing['meta_tags_for_listings']['promo_video'] }}">WATCH VIDEO</button>
+
                         @endif
 
 
 
 
                         <button
-                            class="btn btn-secondary tag-btn">{{ $listing['listing_type']['name'] ?? $listing['listing_attribute']['name'] }}</button>
+                            class="btn btn-secondary tag-btn" style="margin-left:30px;">{{ $listing['listing_type']['name'] ?? $listing['listing_attribute']['name'] }}</button>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -48,19 +48,22 @@
             <div class="row mt-5">
                 <div class="col-md-8">
                     <div class="main-content">
-                        <h1><span>AED</span> {{ $listing['listing_attribute_type']['price'] ?? "0" }} Yearly</h1>
-                        <p style="font-weight: bold;">
+                        <h1 class="mb-3"><span>AED</span> {{ $listing['listing_attribute_type']['price'] ?? "0" }}</h1>
+                        <p style="font-weight: bold;" class="mb-3">
                             {{ $listing['city'] ?? 'N/A' }},
                             {{ $listing['state'] ?? 'N/A' }},
                             {{ $listing['country'] ?? 'N/A' }}
                         </p>
-                        <span><i class="fa-solid fa-bed mr-2"></i> {{ $listing['listing_attribute']['bedroom'] }} Bed
+                        <span><i class="fa-solid fa-bed mr-2"></i> {{ $listing['listing_attribute']['bedroom'] }}
                             &nbsp;&nbsp;</span>
                         <span><i class="fa-solid fa-sink mr-2"></i> {{ $listing['listing_attribute']['bathroom'] }}
-                            Bathroom
+                            
                             &nbsp;&nbsp;</span>
-                        <span><i class="fa-solid fa-warehouse mr-2"></i> {{ $listing['listing_attribute']['garage'] }}
-                            Garage &nbsp;&nbsp;</span>
+                            @if ($listing['listing_attribute']['garage'])
+                        
+                            <span><i class="fa-solid fa-warehouse mr-2"></i> {{ $listing['listing_attribute']['garage'] }}
+                                 &nbsp;&nbsp;</span>
+                            @endif
                         <br><br>
                         <h1>{{ $listing['title'] }}</h1>
                         <br>
@@ -85,20 +88,21 @@
 
                         <div class="card-body">
                             <div class="d-flex flex-row justify-content-between">
-                                <a href="tel:+1234567890" class="btn btn-light d-flex align-items-center">
+                                <a href="tel:+971585556605" class="btn btn-light d-flex align-items-center">
                                     <i class="fas fa-phone-alt mr-2"></i>&nbsp;&nbsp; Call
                                 </a>
-                                <a href="mailto:{{ $listing['user']['email'] }}"
+                                {{-- <a href="mailto:{{ $listing['user']['email'] }}" --}}
+                                <a href="mailto:info@hikalproperties.ae"
                                     class="btn btn-light d-flex align-items-center mx-2">
                                     <i class="fas fa-envelope mr-2"></i>&nbsp;&nbsp; Email
                                 </a>
-                                <a href="https://wa.me/+1234567890" class="btn btn-light d-flex align-items-center">
+                                <a href="https://wa.me/+971585556605" class="btn btn-light d-flex align-items-center">
                                     <i class="fab fa-whatsapp mr-2"></i>&nbsp;&nbsp; WhatsApp
                                 </a>
                             </div>
                         </div>
                         <div class="card-footer text-center">
-                            <small class="text-muted">Additional information or footer content</small>
+                            <small class="text-muted">Hikal Properties Sales Agent</small>
                         </div>
                     </div>
                 </div>
