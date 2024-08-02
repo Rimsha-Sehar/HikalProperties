@@ -287,7 +287,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::post('listing/review/comment', 'commentOnListingReview')->name('commentOnListingReview');
 
 
-    Route::get('pricing', 'subscriptionPackages')->name('subscriptionPackages');
+    // Route::get('pricing', 'subscriptionPackages')->name('subscriptionPackages');
 
 
     //Blog route

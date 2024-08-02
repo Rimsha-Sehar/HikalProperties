@@ -1,10 +1,10 @@
 @extends('global.index')
 @section('content')
     <div class="container">
-        <div class="sub-header antrySub">
+        {{-- <div class="sub-header antrySub">
             <!-- Add the row class to start a new row -->
-        </div>
-        <div class="row">
+        </div> --}}
+        <div class="row mt-5">
             @forelse ($listings as $listing)
                 @if (isset($listing['meta_tags_for_listings']['banner']))
                     @php
@@ -45,7 +45,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <h3 class="product-title mt-0 mb-0">{{ $listing['title'] }}</h3>
+                                            <h3 class="product-title mt-0 mb-0">{{ Str::limit($listing['title'], 80, '...') }}</h3>
                                         </div>
                                         <div class="antry_list_price">
                                             <div>
@@ -54,14 +54,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="l_text">{{ $listing['short_description'] }}</p>
+                                    {{-- <p class="l_text">{{ $listing['short_description'] }}</p> --}}
+                                    <p class="l_text">{{ Str::limit($listing['short_description'], 80, '...') }}</p>
+
                                     <div class="product-meta d-flex justify-content-between align-items-center">
                                         <div class="product-meta-item">
                                             <img class="bed"
                                                 src="https://hikalproperties.com/public/assets/real-estate/images/double.png"
                                                 alt="">
                                             <div><span class="number">{{ $listing['listing_attribute']['bedroom'] }}</span>
-                                                Bed</div>
+                                                </div>
                                         </div>
                                         <div class="product-meta-item">
                                             <img class="bed"
@@ -69,14 +71,14 @@
                                                 alt="">
                                             <div><span
                                                     class="number">{{ $listing['listing_attribute']['bathroom'] }}</span>
-                                                Bathroom</div>
+                                                </div>
                                         </div>
                                         <div class="product-meta-item">
                                             <img class="bed"
                                                 src="https://hikalproperties.com/public/assets/real-estate/images/double.png"
                                                 alt="">
                                             <div><span class="number">{{ $listing['listing_attribute']['garage'] }}</span>
-                                                Garage</div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>

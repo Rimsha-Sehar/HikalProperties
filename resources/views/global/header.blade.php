@@ -64,8 +64,8 @@
                                 href="{{ route('home') }}">{{ get_phrase('Home') }}</a></li>
                         <li class="{{ request()->is('listings') ? 'active' : '' }}"><a
                                 href="{{ route('realeStateListings') }}">{{ get_phrase('Listing') }}</a></li>
-                        <li class="{{ request()->is('pricing') ? 'active' : '' }}"><a
-                                href="{{ route('subscriptionPackages') }}">{{ get_phrase('Pricing') }}</a></li>
+                        {{-- <li class="{{ request()->is('pricing') ? 'active' : '' }}"><a
+                                href="{{ route('subscriptionPackages') }}">{{ get_phrase('Pricing') }}</a></li> --}}
                         @if (get_frontend_settings('blog_visibility_on_home_page') == 1)
                             <li class="{{ request()->is('blog') ? 'active' : '' }}"><a
                                     href="{{ route('blogGrid') }}">{{ get_phrase('Blog') }}</a></li>
@@ -113,7 +113,7 @@
                     @else
                         <a class="login-btn" href="{{ route('login') }}">{{ get_phrase('Login') }}</a>
                     @endif
-                    @if (!auth()->user() || auth()->user()->role != 'admin')
+                    {{-- @if (!auth()->user() || auth()->user()->role != 'admin')
                         @if (auth()->user() && auth()->user()->is_agent == 1)
                             <a class="listing-btn" href="{{ route('add_listings_view', ['type' => 1]) }}">+
                                 {{ get_phrase('Add Listing') }}</a>
@@ -121,7 +121,7 @@
                             <a class="listing-btn" href="{{ route('becomeAnAgentFor') }}">+
                                 {{ get_phrase('Add Listing') }}</a>
                         @endif
-                    @endif
+                    @endif --}}
 
 
                     <span class="toggle-icon"><i class="fa-solid fa-bars"></i></span>

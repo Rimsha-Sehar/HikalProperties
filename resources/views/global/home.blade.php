@@ -258,7 +258,7 @@
 
                                 <li><a href="{{ route('realeStateListings') }}">{{ get_phrase('Listing') }}</a></li>
 
-                                <li><a href="{{ route('subscriptionPackages') }}">{{ get_phrase('Pricing') }}</a></li>
+                                {{-- <li><a href="{{ route('subscriptionPackages') }}">{{ get_phrase('Pricing') }}</a></li> --}}
                                 @if (get_frontend_settings('blog_visibility_on_home_page') == 1)
                                     <li><a href="{{ route('blogGrid') }}">{{ get_phrase('Blog') }}</a></li>
                                 @endif
@@ -311,7 +311,7 @@
                                 <a class="login-btn" href="{{ route('login') }}">{{ get_phrase('Login') }}</a>
                             @endif
 
-                            @if (!auth()->user() || auth()->user()->role != 'admin')
+                            {{-- @if (!auth()->user() || auth()->user()->role != 'admin')
                                 @if (auth()->user() && auth()->user()->is_agent == 1)
                                     <a class="listing-btn" href="{{ route('add_listings_view', ['type' => 1]) }}">+
                                         {{ get_phrase('Add Listing') }}</a>
@@ -319,7 +319,7 @@
                                     <a class="listing-btn" href="{{ route('becomeAnAgentFor') }}">+
                                         {{ get_phrase('Add Listing') }}</a>
                                 @endif
-                            @endif
+                            @endif --}}
 
 
                             <span class="toggle-icon"><i class="fa-solid fa-bars"></i></span>
@@ -632,7 +632,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <h3 class="product-title mt-0 mb-0">{{ $listing['title'] }}</h3>
+                                            <h3 class="product-title mt-0 mb-0">{{ Str::limit($listing['title'], 45, '...') }}</h3>
                                         </div>
                                         <div class="antry_list_price">
                                             <div>
@@ -642,19 +642,19 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="l_text">{{ $listing['short_description'] }}</p>
+                                    <p class="l_text">{{ Str::limit($listing['short_description'], 80, '...') }}</p>
                                     <div class="product-meta d-flex justify-content-between align-items-center">
                                         <div class="product-meta-item">
                                             <img class="bed" src="https://hikalproperties.com/public/assets/real-estate/images/double.png" alt="">
-                                            <div><span class="number">{{ $listing['listing_attribute']['bedroom'] }}</span> Bed</div>
+                                            <div><span class="number">{{ $listing['listing_attribute']['bedroom'] }}</span></div>
                                         </div>
                                         <div class="product-meta-item">
                                             <img class="bed" src="https://hikalproperties.com/public/assets/real-estate/images/double.png" alt="">
-                                            <div><span class="number">{{ $listing['listing_attribute']['bathroom'] }}</span> Bathroom</div>
+                                            <div><span class="number">{{ $listing['listing_attribute']['bathroom'] }}</span></div>
                                         </div>
                                         <div class="product-meta-item">
                                             <img class="bed" src="https://hikalproperties.com/public/assets/real-estate/images/double.png" alt="">
-                                            <div><span class="number">{{ $listing['listing_attribute']['garage'] }}</span> Garage</div>
+                                            <div><span class="number">{{ $listing['listing_attribute']['garage'] }}</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -701,7 +701,7 @@
     </section>
     <!-- Hero  Area End   -->
     <!-- Testimonials  Area Start   -->
-    <section class="testimonials-area section-padding wow fadeInUp" data-wow-duration="1000ms"
+    {{-- <section class="testimonials-area section-padding wow fadeInUp" data-wow-duration="1000ms"
         data-wow-delay="700ms">
         <div class="container">
             <div class="row">
@@ -720,11 +720,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Testimonials  Area End   -->
     <!-- Pricing Plan  Area Start   -->
-    <section class="pricing_plan wow fadeInUp mt-5" data-wow-duration="1000ms" data-wow-delay="700ms">
+    {{-- <section class="pricing_plan wow fadeInUp mt-5" data-wow-duration="1000ms" data-wow-delay="700ms">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -813,7 +813,7 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Pricing Plan  Area End   -->
     <!-- Faq   Area Start    -->
     <section class="faq-area wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="700ms">
