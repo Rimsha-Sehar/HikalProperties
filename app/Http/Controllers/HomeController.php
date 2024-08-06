@@ -45,6 +45,7 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
+        // hi
         $page_data['packages'] = Package::where('status', 1)->limit(3)->get();
 
         $page = $request->input('page', 1);
