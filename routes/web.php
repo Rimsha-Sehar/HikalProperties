@@ -244,15 +244,16 @@ Route::controller(AdminController::class)->middleware('auth')->group(function ()
 
 Route::controller(HomeController::class)->group(function () {
 
-    //Frontend site
-    Route::get('real-estate/home', 'realEstateHome')->name('realEstateHome');
-    //search listings
-    Route::get('listings', 'realeStateListings')->name('realeStateListings');
-    Route::get('listings/filter/{type?}', 'realeStateListingsFilter')->name('realeStateListingsFilter');
+     //Frontend site
+     Route::get('real-estate/home', 'realEstateHome')->name('realEstateHome');
+     //search listings
+     Route::get('listings', 'realeStateListings')->name('realeStateListings');
+     Route::get('listings/{type}/{id}', 'singleListing')->name('singleListing');
+     Route::get('listings/filter/{type?}', 'realeStateListingsFilter')->name('realeStateListingsFilter');
 
-    Route::get('set/property/view/session/{view_type}', 'setPropertyViewSession')->name('setPropertyViewSession');
+     Route::get('set/property/view/session/{view_type}', 'setPropertyViewSession')->name('setPropertyViewSession');
 
-    Route::get('real-estate/{slug}/{id}', 'singlePropertyView')->name('singlePropertyView');
+     Route::get('real-estate/{slug}/{id}', 'singlePropertyView')->name('singlePropertyView');
 
     //review
 
@@ -286,7 +287,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::post('listing/review/comment', 'commentOnListingReview')->name('commentOnListingReview');
 
 
-    Route::get('pricing', 'subscriptionPackages')->name('subscriptionPackages');
+    // Route::get('pricing', 'subscriptionPackages')->name('subscriptionPackages');
 
 
     //Blog route

@@ -5,29 +5,22 @@
             <div class="col-md-8 col-lg-8 col-sm-8 col-12">
                 <div class="new_header_left">
                     <ul class="d-flex align-items-center">
-                        {{-- <li><a href="#"><i
-                            class="fa-solid fa-phone"></i>+971 54 433 5041</a></li>
-                            <li><a href="#"><i
-                                class="fa-solid fa-envelope"></i>info@hikalagency.ae</a></li> --}}
+                        <li><a href="tel:+971585556605"><i class="fa-solid fa-phone"></i>+971 58 555 6605</a></li>
+                        <li><a href="mailto:info@hikalproperties.ae"><i class="fa-solid fa-envelope"></i>info@hikalproperties.ae</a></li>
 
-                                <li><a href="tel:{{ get_settings('phone') }}"><i class="fa-solid fa-phone"></i>
-                                    <span>{{ get_settings('phone') }}</span>
-
-                        <li><a href="mailto:{{ get_settings('system_email') }}"><i
-                                    class="fa-solid fa-envelope"></i>{{ get_settings('system_email') }}</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-4 col-lg-4 col-sm-4 col-12">
                 <div class="new_header_right">
                     <ul class="d-flex align-items-center">
-                        <li><a href="{{ get_frontend_settings('facebook_link') }}" target="_blank"><i
+                        <li><a href="https://www.facebook.com/hikalrealestate" target="_blank"><i
                                     class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="{{ get_frontend_settings('twitter_link') }}" target="_blank"><i
-                                    class="fa-brands fa-twitter"></i></a></li>
-                        <li><a href="{{ get_frontend_settings('linkedin_link') }}" target="_blank"><i
+                        <li><a href="https://www.tiktok.com/@hikalagency" target="_blank"><i
+                                    class="fa-brands fa-tiktok"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/hikal-properties" target="_blank"><i
                                     class="fa-brands fa-linkedin-in"></i></a></li>
-                        <li><a href="{{ get_frontend_settings('instagram_link') }}" target="_blank"><i
+                        <li><a href="https://www.instagram.com/hikalrealestate" target="_blank"><i
                                     class="fa-brands fa-instagram"></i></a></li>
                     </ul>
                 </div>
@@ -64,8 +57,8 @@
                                 href="{{ route('home') }}">{{ get_phrase('Home') }}</a></li>
                         <li class="{{ request()->is('listings') ? 'active' : '' }}"><a
                                 href="{{ route('realeStateListings') }}">{{ get_phrase('Listing') }}</a></li>
-                        <li class="{{ request()->is('pricing') ? 'active' : '' }}"><a
-                                href="{{ route('subscriptionPackages') }}">{{ get_phrase('Pricing') }}</a></li>
+                        {{-- <li class="{{ request()->is('pricing') ? 'active' : '' }}"><a
+                                href="{{ route('subscriptionPackages') }}">{{ get_phrase('Pricing') }}</a></li> --}}
                         @if (get_frontend_settings('blog_visibility_on_home_page') == 1)
                             <li class="{{ request()->is('blog') ? 'active' : '' }}"><a
                                     href="{{ route('blogGrid') }}">{{ get_phrase('Blog') }}</a></li>
@@ -112,15 +105,6 @@
                         <!-- User Profile End -->
                     @else
                         <a class="login-btn" href="{{ route('login') }}">{{ get_phrase('Login') }}</a>
-                    @endif
-                    @if (!auth()->user() || auth()->user()->role != 'admin')
-                        @if (auth()->user() && auth()->user()->is_agent == 1)
-                            <a class="listing-btn" href="{{ route('add_listings_view', ['type' => 1]) }}">+
-                                {{ get_phrase('Add Listing') }}</a>
-                        @else
-                            <a class="listing-btn" href="{{ route('becomeAnAgentFor') }}">+
-                                {{ get_phrase('Add Listing') }}</a>
-                        @endif
                     @endif
 
 

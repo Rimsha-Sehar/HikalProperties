@@ -66,7 +66,7 @@ $categoris = App\Models\Listing_arrtibute_type::where('listring_attribute_id', 1
                             <ul class="footer-menu-link">
                                 <li><a href="{{ route('home') }}">{{ get_phrase('Home') }}</a></li>
                                 <li><a href="{{ route('realeStateListingsFilter') }}">{{ get_phrase('Listings') }}</a></li>
-                                <li><a href="{{ route('subscriptionPackages') }}">{{ get_phrase('Pricing') }}</a></li>
+                                {{-- <li><a href="{{ route('subscriptionPackages') }}">{{ get_phrase('Pricing') }}</a></li> --}}
                                 <li><a href="{{ route('blogGrid') }}">{{ get_phrase('Blog') }}</a></li>
 
                             </ul>
@@ -78,13 +78,11 @@ $categoris = App\Models\Listing_arrtibute_type::where('listring_attribute_id', 1
                         <ul class="contact ">
                             <li><a href="{{ route('contactUs') }}">{{ get_phrase('Contact Us') }}</a></li>
 
-                            <li><a href="mailto:{{ get_settings('system_email') }}"><i class="fa-solid fa-envelope"></i>
-                            <span>{{ get_settings('system_email') }}</span>
-                            {{-- <span>info@hikalagency.ae</span> --}}
+                            <li><a href="mailto:info@hikalproperties.ae"><i class="fa-solid fa-envelope"></i>
+                            <span>info@hikalproperties.ae</span>
                             </a></li>
-                            <li><a href="tel:{{ get_settings('phone') }}" class="contact-num"><i class="fa-solid fa-phone"></i>
-                            <span>{{ get_settings('phone') }}</span>
-                            {{-- <span>+971 54 433 5041</span> --}}
+                            <li><a href="tel:+971585556605" class="contact-num"><i class="fa-solid fa-phone"></i>
+                            <span>+971 58 555 6605</span>
                            </a></li>
                         </ul>
 
@@ -108,10 +106,10 @@ $categoris = App\Models\Listing_arrtibute_type::where('listring_attribute_id', 1
                 <div class="col-lg-12 col-md-12">
                     <div class="social-link f-social-links">
                         <ul>
-                            <li><a href="{{ get_frontend_settings('facebook_link') }}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a href="{{ get_frontend_settings('twitter_link') }}" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="{{ get_frontend_settings('linkedin_link') }}" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            <li><a href="{{ get_frontend_settings('instagram_link') }}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/hikalrealestate/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.tiktok.com/@hikalagency" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/hikal-properties" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href="https://www.instagram.com/hikalrealestate" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
