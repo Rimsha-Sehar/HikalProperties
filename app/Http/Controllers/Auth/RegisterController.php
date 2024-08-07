@@ -129,11 +129,11 @@ class RegisterController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                'role' => 'user',
-                'archive' => 1,
-                'verification_code' => $verificationCode,
                 'email_verified_at' => $emailVerifiedAt,
             ]);
+
+            $user->assignRole('lead');
+
             if (get_settings('signup_email_verification') == 1) {
                 // Send verification email
                 Mail::to($user->email)->send(new WelcomeEmail($user));

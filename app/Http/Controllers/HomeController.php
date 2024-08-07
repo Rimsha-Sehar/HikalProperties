@@ -54,8 +54,8 @@ class HomeController extends Controller
 
         // Attempt to get cached data
         $listings = Cache::remember($cacheKey, now()->addMinutes(10), function () use ($page, $perPage) {
-            $apiUrl = 'https://testing.hikalcrm.com/api/new-listings?per_page=' . $perPage . '&page=' . $page;
-            // $apiUrl = 'http://127.0.0.1:8000/api/new-listings?per_page=' . $perPage . '&page=' . $page;
+            // $apiUrl = 'https://testing.hikalcrm.com/api/new-listings?per_page=' . $perPage . '&page=' . $page;
+            $apiUrl = 'http://127.0.0.1:8000/api/new-listings?per_page=' . $perPage . '&page=' . $page;
 
             $response = Http::get($apiUrl);
             $responseData = $response->json();
@@ -66,7 +66,7 @@ class HomeController extends Controller
         $page_data['listings'] = array_filter($listings, function ($listing) {
             return isset($listing['meta_tags_for_listings']['is_featured']) && $listing['meta_tags_for_listings']['is_featured'] == 1;
         });
-
+        // dd($page_data['listings']);
         $page_data['faqs'] = Faq::all();
         $page_data['users'] = User::all();
 
@@ -93,8 +93,8 @@ class HomeController extends Controller
     {
         $page = $request->input('page', 1);
         $perPage = 6;
-        $apiUrl = 'https://testing.hikalcrm.com/api/new-listings?per_page=' . $perPage . '&page=' . $page;
-        // $apiUrl = 'http://127.0.0.1:8000/api/new-listings?per_page=' . $perPage . '&page=' . $page;
+        // $apiUrl = 'https://testing.hikalcrm.com/api/new-listings?per_page=' . $perPage . '&page=' . $page;
+        $apiUrl = 'http://127.0.0.1:8000/api/new-listings?per_page=' . $perPage . '&page=' . $page;
 
         $response = Http::get($apiUrl);
         $responseData = $response->json();
@@ -108,8 +108,8 @@ class HomeController extends Controller
     {
         try {
 
-            $response = Http::get("https://testing.hikalcrm.com/api/new-listings/{$id}");
-            // $response = Http::get("http://127.0.0.1:8000/api/new-listings/{$id}");
+            // $response = Http::get("https://testing.hikalcrm.com/api/new-listings/{$id}");
+            $response = Http::get("http://127.0.0.1:8000/api/new-listings/{$id}");
 
             if ($response->successful()) {
                 $listing = $response->json();

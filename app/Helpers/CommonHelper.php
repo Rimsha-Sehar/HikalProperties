@@ -20,13 +20,9 @@ if (! function_exists('get_user_image')) {
 
         if($user_id > 0){
             $user_id = $file_name_or_user_id;
-            $file_name = DB::table('users')->where('id', $user_id)->value('image');
+            $file_name = DB::table('users')->where('id', $user_id);
+            return asset('public/uploads/user_image/no.jpg');
 
-            if(isset($file_name) && File::exists('public/uploads/user_image/'.$file_name)){
-                return asset('public/uploads/user_image/'.$file_name);
-            }else{
-                return asset('public/uploads/user_image/no.jpg');
-            }
         }
     }
 }
