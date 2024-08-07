@@ -354,8 +354,8 @@
                                                 <span>
                                                     <i class="fa-regular fa-building" aria-hidden="true" style="font-size:30px; color: #da1f26;"></i>
                                                 </span>
-                                                
-                                                
+
+
                                                 <div>
                                                     <select name="searched_category"
                                                         class="form-select nice-control cate" aria-label=""
@@ -447,7 +447,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-lg-3 col-md-6 res-mb-20 ">
                                             <div class="single-search">
                                                 <button type="submit" class="main-btn w-100"><svg width="18"
@@ -568,9 +568,9 @@
                                                 <div class="product-meta-item">
                                                     <i class="fa-solid fa-location-dot" ></i>
                                                     <p style="width: 70%;">
-                                                        {{ $listing['city'] ?? 'N/A' }},
-                                                        {{ $listing['state'] ?? 'N/A' }},
-                                                        {{ $listing['country'] ?? 'N/A' }}
+                                                        {{ $listing['city']['name'] ?? 'N/A' }},
+                                                        {{ $listing['state']['name'] ?? 'N/A' }},
+                                                        {{ $listing['country']['name'] ?? 'N/A' }}
                                                     </p>
                                                 </div>
                                             </div>

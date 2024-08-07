@@ -33,9 +33,9 @@
                                                 <div class="product-meta-item">
                                                     <i class="fa-solid fa-location-dot" ></i>
                                                     <p style="width: 70%;">
-                                                        {{ $listing['city'] ?? 'N/A' }},
-                                                        {{ $listing['state'] ?? 'N/A' }},
-                                                        {{ $listing['country'] ?? 'N/A' }}
+                                                        {{ $listing['city']['name'] ?? 'N/A' }},
+                                                        {{ $listing['state']['name'] ?? 'N/A' }},
+                                                        {{ $listing['country']['name'] ?? 'N/A' }}
                                                     </p>
                                                 </div>
                                             </div>

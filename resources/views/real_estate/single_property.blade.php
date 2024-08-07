@@ -50,17 +50,17 @@
                     <div class="main-content">
                         <h1 class="mb-3"><span>AED</span> {{ $listing['listing_attribute_type']['price'] ?? "0" }}</h1>
                         <p style="font-weight: bold;" class="mb-3">
-                            {{ $listing['city'] ?? 'N/A' }},
-                            {{ $listing['state'] ?? 'N/A' }},
-                            {{ $listing['country'] ?? 'N/A' }}
+                            {{ $listing['city']['name'] ?? 'N/A' }},
+                            {{ $listing['state']['name'] ?? 'N/A' }},
+                            {{ $listing['country']['name'] ?? 'N/A' }}
                         </p>
                         <span><i class="fa-solid fa-bed mr-2"></i> {{ $listing['listing_attribute']['bedroom'] }}
                             &nbsp;&nbsp;</span>
                         <span><i class="fa-solid fa-sink mr-2"></i> {{ $listing['listing_attribute']['bathroom'] }}
-                            
+
                             &nbsp;&nbsp;</span>
                             @if ($listing['listing_attribute']['garage'])
-                        
+
                             <span><i class="fa-solid fa-warehouse mr-2"></i> {{ $listing['listing_attribute']['garage'] }}
                                  &nbsp;&nbsp;</span>
                             @endif
