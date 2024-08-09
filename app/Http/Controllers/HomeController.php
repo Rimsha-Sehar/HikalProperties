@@ -45,19 +45,17 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        // hi
         $page_data['packages'] = Package::where('status', 1)->limit(3)->get();
 
         $page = $request->input('page', 1);
         $perPage = 5;
         $cacheKey = 'new_listings_page_' . $page . '_per_' . $perPage;
 
-        // Attempt to get cached data
         $listings = Cache::remember($cacheKey, now()->addMinutes(10), function () use ($page, $perPage) {
-            $apiUrl = 'https://testing.hikalcrm.com/api/new-listings?per_page=' . $perPage . '&page=' . $page;
-            // $apiUrl = 'http://127.0.0.1:8000/api/new-listings?per_page=' . $perPage . '&page=' . $page;
+            $apiUrl = env('HIKALAPI_BASE_URL') . '/new-listings?per_page=' . $perPage . '&page=' . $page;
 
             $response = Http::get($apiUrl);
+
             $responseData = $response->json();
 
             return $responseData['data'] ?? [];
@@ -66,8 +64,11 @@ class HomeController extends Controller
         $page_data['listings'] = array_filter($listings, function ($listing) {
             return isset($listing['meta_tags_for_listings']['is_featured']) && $listing['meta_tags_for_listings']['is_featured'] == 1;
         });
+
         // dd($page_data['listings']);
+
         $page_data['faqs'] = Faq::all();
+
         $page_data['users'] = User::all();
 
         return view('global.home', $page_data);
@@ -92,15 +93,19 @@ class HomeController extends Controller
     public function realeStateListings(Request $request)
     {
         $page = $request->input('page', 1);
+
         $perPage = 6;
-        $apiUrl = 'https://testing.hikalcrm.com/api/new-listings?per_page=' . $perPage . '&page=' . $page;
-        // $apiUrl = 'http://127.0.0.1:8000/api/new-listings?per_page=' . $perPage . '&page=' . $page;
+
+        $apiUrl = env('HIKALAPI_BASE_URL') . '/new-listings?per_page=' . $perPage . '&page=' . $page;
 
         $response = Http::get($apiUrl);
+
         $responseData = $response->json();
+
         $listings = $responseData['data'] ?? [];
+
         $pagination = $responseData['pagination'] ?? [];
-        // dd($listings);
+
         return view('real_estate.filter', compact('listings', 'pagination'));
     }
 
@@ -108,13 +113,11 @@ class HomeController extends Controller
     {
         try {
 
-            $response = Http::get("https://testing.hikalcrm.com/api/new-listings/{$id}");
-            // $response = Http::get("http://127.0.0.1:8000/api/new-listings/{$id}");
+            $response = Http::get(env('HIKALAPI_BASE_URL') . "/new-listings/{$id}");
 
             if ($response->successful()) {
                 $listing = $response->json();
                 $listing = $listing['data'];
-                // dd($listing);
 
                 return view('real_estate.single_property', compact('listing'));
             } else {
@@ -129,11 +132,9 @@ class HomeController extends Controller
 
     public function clearListingsCache()
     {
-        $localCacheKey = 'real_estate_listings_' . md5('http://127.0.0.1:8000/api/new-listings');
-        $liveCacheKey = 'real_estate_listings_' . md5('https://testing.hikalcrm.com/api/new-listings');
+        $CacheKey = 'real_estate_listings_' . md5(env('HIKALAPI_BASE_URL') . '/new-listings');
 
-        Cache::forget($localCacheKey);
-        Cache::forget($liveCacheKey);
+        Cache::forget($CacheKey);
 
         return response()->json(['status' => 'success', 'message' => 'Listings cache cleared']);
     }

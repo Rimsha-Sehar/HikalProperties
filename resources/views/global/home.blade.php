@@ -165,6 +165,7 @@
             font-size: 1rem; /* Further adjust font size for heading */
         }
     }
+
 </style>
 @php
     $banner_image = asset('public/assets/uploads/bannar/' . get_frontend_settings('bannar'));

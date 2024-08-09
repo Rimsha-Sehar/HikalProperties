@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth\LoginController;
@@ -240,6 +241,11 @@ Route::controller(AdminController::class)->middleware('auth')->group(function ()
 
     // Admin Mail To Agent
     Route::post('admin/message', 'sendAdminToAgentEmail')->name('mailAgent');
+});
+
+Route::controller(SearchController::class)->group(function () {
+
+    Route::get('search', 'search')->name('search');
 });
 
 Route::controller(HomeController::class)->group(function () {
